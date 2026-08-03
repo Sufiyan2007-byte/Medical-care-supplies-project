@@ -1,0 +1,243 @@
+/* ── Product Detail Page ──────────────────────────────────────────────────── */
+
+.detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2rem 6rem;
+  font-family: 'Inter', sans-serif;
+  animation: detailPageIn 0.5s ease-out forwards;
+}
+
+@keyframes detailPageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb a {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover { color: #2563eb; }
+.breadcrumb span { color: #cbd5e1; }
+
+/* ── Status Messages ─────────────────────────────────────────────────────── */
+
+.detail-status {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+/* ── Product Header ──────────────────────────────────────────────────────── */
+
+.detail-header {
+  margin-bottom: 2.5rem;
+}
+
+.detail-sku {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.detail-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  letter-spacing: -0.5px;
+}
+
+.detail-description {
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.7;
+  max-width: 800px;
+}
+
+/* ── Specifications Table ────────────────────────────────────────────────── */
+
+.detail-section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+}
+
+.detail-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.specs-table tr:last-child th,
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.specs-table th {
+  width: 30%;
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.95rem;
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.specs-table td {
+  font-weight: 500;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+/* ── Set Contents List ───────────────────────────────────────────────────── */
+
+.contents-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contents-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contents-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border-color: #cbd5e1;
+}
+
+.item-quantity {
+  font-weight: 700;
+  color: #d97706; /* Matches sets accent */
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  min-width: 45px;
+  text-align: center;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.item-sku {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-family: 'Courier New', monospace;
+}
+
+.item-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Dark Mode ───────────────────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  .detail-title { color: #f8fafc; }
+  .detail-description { color: #94a3b8; }
+  
+  .detail-section {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .detail-section-title { color: #f8fafc; }
+  
+  .specs-table th,
+  .specs-table td {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .specs-table th {
+    background: rgba(15, 23, 42, 0.3);
+    color: #94a3b8;
+  }
+  
+  .specs-table td {
+    color: #e2e8f0;
+  }
+  
+  .contents-item {
+    background: rgba(15, 23, 42, 0.4);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .contents-item:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .item-name { color: #e2e8f0; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .detail-title { font-size: 2rem; }
+  .specs-table th { width: 40%; }
+}

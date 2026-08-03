@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Pantone 151 C / Hex #FF6600 Design Tokens */
+  --primary-color: #FF6600;
+  --primary-dark: #D95700;
+  --primary-light: #FF8533;
+  --primary-soft: rgba(255, 102, 0, 0.08);
+  --primary-border: rgba(255, 102, 0, 0.25);
+  --primary-gradient: linear-gradient(135deg, #E65C00 0%, #FF6600 50%, #FF8533 100%);
+  --dark-gradient: linear-gradient(135deg, #111827 0%, #1F2937 60%, #E65C00 100%);
+
+  color-scheme: light dark;
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+/* ── Global Responsive Typography ───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+  h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: clamp(1.5rem, 7vw, 2rem); }
+}
+
+/* ── Dark Mode ───────────────────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #f3f4f6;
+    background-color: #121214;
+  }
+}
+
+/* ── RTL (Arabic) Global Layout Fixes ───────────────────────────────────── */
+
+/* Load Arabic-compatible font when dir is rtl */
+:root[dir="rtl"] {
+  font-family: 'Tajawal', 'Cairo', Inter, system-ui, Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Flip list padding for RTL */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+/* Reverse flex direction on nav items for RTL */
+[dir="rtl"] .desktop-nav {
+  direction: rtl;
+}
+
+/* Ensure form inputs align correctly in RTL */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Flip table label alignment for RTL */
+[dir="rtl"] .legal-table td:first-child {
+  text-align: right;
+}
+
+/* Flip breadcrumb separator for RTL */
+[dir="rtl"] .breadcrumb {
+  direction: rtl;
+}

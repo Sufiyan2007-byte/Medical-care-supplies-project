@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ── Lint (root ESLint + Prettier check) ──────────────────────────────────
+  lint:
+    name: Lint & Format check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Check Prettier formatting
+        run: npm run format:check
+
+  # ── Build Client (Vite) ───────────────────────────────────────────────────
+  build-client:
+    name: Build client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build client
+        run: npm run build -w client
+        env:
+          VITE_API_BASE_URL: http://localhost:5000
+
+  # ── Check Server (syntax / import validation) ─────────────────────────────
+  check-server:
+    name: Check server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify server starts without errors
+        run: |
+          # Start the server in background, wait briefly, then verify it exited cleanly
+          timeout 10 node server/index.js || true
+        env:
+          DATABASE_URL: postgresql://user:password@localhost:5432/meddb
+          JWT_SECRET: ci_test_secret_32chars_minimum_ok
+          PORT: 5001

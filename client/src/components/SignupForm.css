@@ -1,0 +1,356 @@
+/* ─────────────────────────────────────────────
+   SignupForm Component Styles
+   Shares the same brand tokens as AuthLayout.css
+───────────────────────────────────────────── */
+
+@keyframes sf-shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-6px); }
+  30%       { transform: translateX(6px); }
+  45%       { transform: translateX(-4px); }
+  60%       { transform: translateX(4px); }
+  75%       { transform: translateX(-2px); }
+  90%       { transform: translateX(2px); }
+}
+
+@keyframes sf-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sf-fade-in-dup {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sf-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Root ── */
+.sf {
+  width: 100%;
+}
+
+.sf--shake {
+  animation: sf-shake 0.45s ease;
+}
+
+/* ── Header ── */
+.sf__header {
+  margin-bottom: 1.75rem;
+}
+
+.sf__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 0.6rem;
+}
+
+.sf__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--auth-form-text, #1e293b);
+  margin: 0 0 0.4rem;
+  line-height: 1.2;
+}
+
+.sf__subtitle {
+  font-size: 0.9rem;
+  color: var(--auth-form-muted, #64748b);
+  margin: 0;
+}
+
+/* ── Server Error Banner ── */
+.sf__banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  animation: sf-fade-in 0.25s ease;
+}
+
+.sf__banner--error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sf__banner--error { color: #fca5a5; }
+}
+
+.sf__banner-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+/* ── Form ── */
+.sf__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* ── Field ── */
+.sf__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sf__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--auth-form-text, #1e293b);
+  letter-spacing: 0.2px;
+}
+
+.sf__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sf__input-icon {
+  position: absolute;
+  left: 0.9rem;
+  font-size: 1rem;
+  pointer-events: none;
+  color: var(--auth-form-muted, #94a3b8);
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.sf__input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1.5px solid var(--auth-border, #e2e8f0);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--auth-form-text, #1e293b);
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.sf__input::placeholder {
+  color: var(--auth-form-muted, #94a3b8);
+}
+
+.sf__input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+}
+
+.sf__input-wrap:focus-within .sf__input-icon {
+  color: var(--primary-color);
+}
+
+.sf__input--error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.sf__input--password {
+  padding-right: 3rem;
+}
+
+.sf__toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--auth-form-muted, #94a3b8);
+  font-size: 1.05rem;
+  line-height: 1;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.sf__toggle-btn:hover {
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.08);
+}
+
+.sf__field-error {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: #ef4444;
+  animation: sf-fade-in 0.2s ease;
+}
+
+/* ── Password Strength Bar ── */
+.sf__strength {
+  margin-top: 0.3rem;
+}
+
+.sf__strength-track {
+  height: 4px;
+  border-radius: 99px;
+  background: var(--auth-border, #e2e8f0);
+  overflow: hidden;
+}
+
+.sf__strength-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.35s ease, background-color 0.35s ease;
+}
+
+.sf__strength-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+  transition: color 0.35s ease;
+}
+
+/* ── Terms Checkbox ── */
+.sf__terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  cursor: pointer;
+}
+
+.sf__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--auth-border, #cbd5e1);
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 1px;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.sf__checkbox:checked {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.sf__checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.sf__checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.2);
+}
+
+.sf__terms-text {
+  font-size: 0.82rem;
+  color: var(--auth-form-muted, #64748b);
+  line-height: 1.5;
+}
+
+.sf__terms-text a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sf__terms-text a:hover {
+  text-decoration: underline;
+}
+
+.sf__terms-error {
+  font-size: 0.78rem;
+  color: #ef4444;
+  animation: sf-fade-in 0.2s ease;
+}
+
+/* ── Submit ── */
+.sf__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-gradient);
+  color: #fff;
+  font-size: 0.975rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
+  margin-top: 0.25rem;
+}
+
+.sf__submit:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
+}
+
+.sf__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.sf__submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.sf__spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: sf-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Footer ── */
+.sf__footer {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--auth-form-muted, #64748b);
+}
+
+.sf__footer a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sf__footer a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}

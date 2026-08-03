@@ -1,0 +1,333 @@
+/* ─────────────────────────────────────────────
+   LoginForm Component Styles
+───────────────────────────────────────────── */
+
+/* Shake animation — runs when form validation fails */
+@keyframes lf-shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-6px); }
+  30%       { transform: translateX(6px); }
+  45%       { transform: translateX(-4px); }
+  60%       { transform: translateX(4px); }
+  75%       { transform: translateX(-2px); }
+  90%       { transform: translateX(2px); }
+}
+
+@keyframes lf-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes lf-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Root ── */
+.lf {
+  width: 100%;
+}
+
+.lf--shake {
+  animation: lf-shake 0.45s ease;
+}
+
+/* ── Header ── */
+.lf__header {
+  margin-bottom: 2rem;
+}
+
+.lf__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 0.6rem;
+}
+
+.lf__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--auth-form-text, #1e293b);
+  margin: 0 0 0.4rem;
+  line-height: 1.2;
+}
+
+.lf__subtitle {
+  font-size: 0.9rem;
+  color: var(--auth-form-muted, #64748b);
+  margin: 0;
+}
+
+/* ── Server Error / Warning Banner ── */
+.lf__banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  animation: lf-fade-in 0.25s ease;
+}
+
+.lf__banner--error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #b91c1c;
+}
+
+.lf__banner--warning {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #92400e;
+}
+
+@media (prefers-color-scheme: dark) {
+  .lf__banner--error  { color: #fca5a5; }
+  .lf__banner--warning { color: #fcd34d; }
+}
+
+.lf__banner-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.lf__banner-text {
+  flex: 1;
+}
+
+.lf__banner-resend {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d97706;
+  text-decoration: underline;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.lf__banner-resend:hover {
+  color: #b45309;
+}
+
+/* ── Form ── */
+.lf__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Field group ── */
+.lf__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lf__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--auth-form-text, #1e293b);
+  letter-spacing: 0.2px;
+}
+
+/* Input wrapper holds icon + input */
+.lf__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lf__input-icon {
+  position: absolute;
+  left: 0.9rem;
+  font-size: 1rem;
+  pointer-events: none;
+  color: var(--auth-form-muted, #94a3b8);
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.lf__input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1.5px solid var(--auth-border, #e2e8f0);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--auth-form-text, #1e293b);
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.lf__input::placeholder {
+  color: var(--auth-form-muted, #94a3b8);
+}
+
+.lf__input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+}
+
+.lf__input:focus + .lf__input-icon,
+.lf__input-wrap:focus-within .lf__input-icon {
+  color: var(--primary-color);
+}
+
+.lf__input--error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Password has extra right padding for the toggle button */
+.lf__input--password {
+  padding-right: 3rem;
+}
+
+.lf__toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--auth-form-muted, #94a3b8);
+  font-size: 1.05rem;
+  line-height: 1;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf__toggle-btn:hover {
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.08);
+}
+
+.lf__field-error {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: #ef4444;
+  animation: lf-fade-in 0.2s ease;
+}
+
+/* ── Password row (label + forgot link) ── */
+.lf__password-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lf__forgot-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.lf__forgot-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ── Submit button ── */
+.lf__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-gradient);
+  color: #fff;
+  font-size: 0.975rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
+  margin-top: 0.25rem;
+}
+
+.lf__submit:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
+}
+
+.lf__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.lf__submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Spinner inside button */
+.lf__spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: lf-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Footer / Sign-up nudge ── */
+.lf__footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--auth-form-muted, #64748b);
+}
+
+.lf__footer a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.lf__footer a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.lf__divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+  color: var(--auth-form-muted, #94a3b8);
+  font-size: 0.78rem;
+}
+
+.lf__divider::before,
+.lf__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--auth-border, #e2e8f0);
+}

@@ -1,0 +1,138 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model for medical website
+model User {
+  id            Int          @id @default(autoincrement())
+  name          String
+  email         String       @unique
+  password_hash String       @map("password_hash")
+  is_verified   Boolean      @default(false) @map("is_verified")
+  role          String       @default("user")
+  created_at    DateTime     @default(now()) @map("created_at")
+  email_tokens  EmailToken[]
+
+  @@map("users")
+}
+
+// Email tokens model for verification & password resets
+model EmailToken {
+  id         Int       @id @default(autoincrement())
+  user_id    Int       @map("user_id")
+  token      String
+  type       String    // 'verify' or 'reset'
+  expires_at DateTime  @map("expires_at")
+  used_at    DateTime? @map("used_at")
+
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([token])
+  @@map("email_tokens")
+}
+
+// Revoked JWT tokens blocklist for logout / token invalidation
+model RevokedToken {
+  id         Int      @id @default(autoincrement())
+  jti        String   @unique // JWT ID claim
+  user_id    Int      @map("user_id")
+  expires_at DateTime @map("expires_at") // mirrors JWT exp so we can prune stale rows
+  revoked_at DateTime @default(now()) @map("revoked_at")
+
+  @@index([jti])
+  @@map("revoked_tokens")
+}
+
+// Product Categories (Surgical Instruments, Medical Consumables, Surgical Sets)
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String?
+  products    Product[]
+
+  @@map("categories")
+}
+
+// Product items & sets catalog
+model Product {
+  id           Int           @id @default(autoincrement())
+  category_id  Int           @map("category_id")
+  name         String
+  description  String?
+  sku          String?       @unique
+  category     Category      @relation(fields: [category_id], references: [id])
+  set_items    ProductItem[] @relation("SetToItem")
+  part_of_sets ProductItem[] @relation("ItemToSet")
+  surgical_set SurgicalSet?
+
+  @@map("products")
+}
+
+// Surgical set specifications
+model SurgicalSet {
+  id            Int     @id @default(autoincrement())
+  product_id    Int     @unique @map("product_id")
+  name          String
+  piece_count   Int     @map("piece_count")
+  description   String?
+  material      String?
+  finish        String?
+  sterilization String?
+  standard      String?
+  tray_case     String? @map("tray_case")
+
+  product Product @relation(fields: [product_id], references: [id], onDelete: Cascade)
+
+  @@map("surgical_sets")
+}
+
+// Set content items with quantity
+model ProductItem {
+  id         Int @id @default(autoincrement())
+  set_id     Int @map("set_id")
+  product_id Int @map("product_id")
+  quantity   Int @default(1)
+
+  set     Product @relation("SetToItem", fields: [set_id], references: [id], onDelete: Cascade)
+  product Product @relation("ItemToSet", fields: [product_id], references: [id], onDelete: Cascade)
+
+  @@map("product_items")
+}
+
+// Company profile & information
+model CompanyInfo {
+  id         Int      @id @default(autoincrement())
+  about_text String?
+  vision     String?
+  mission    String?
+  cr_number      String?  @map("cr_number")
+  vat_number     String?  @map("vat_number")
+  entity_type    String?  @map("entity_type")
+  certifications String?
+  address    String?
+  email      String?
+  phone      String?
+  created_at DateTime @default(now()) @map("created_at")
+  updated_at DateTime @updatedAt @map("updated_at")
+
+  @@map("company_info")
+}
+
+// Contact form messages
+model ContactMessage {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String
+  message    String
+  created_at DateTime @default(now()) @map("created_at")
+
+  @@map("contact_messages")
+}
