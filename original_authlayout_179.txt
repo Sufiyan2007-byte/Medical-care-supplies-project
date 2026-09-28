@@ -1,0 +1,168 @@
+Created At: 2026-09-20T22:32:23+05:00
+Completed At: 2026-09-20T22:32:23+05:00
+File Path: `file:///c:/Users/lenovo/Desktop/medical/client/src/layouts/AuthLayout.css`
+Total Lines: 365
+Total Bytes: 9832
+Showing lines 1 to 160
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: /* ─────────────────────────────────────────────
+2:    CSS Custom Properties — Auth Brand Tokens
+3: ───────────────────────────────────────────── */
+4: :root {
+5:   --auth-brand-primary: var(--brand-dark);
+6:   --auth-brand-secondary: var(--brand-black);
+7:   --auth-brand-gradient: var(--bg-gradient);
+8:   --auth-brand-accent: var(--brand-green);
+9:   --auth-brand-teal: var(--brand-teal);
+10:   --auth-brand-cyan: var(--brand-cyan);
+11:   --auth-form-bg: #ffffff;
+12:   --auth-form-text: var(--brand-dark);
+13:   --auth-form-muted: var(--muted-text);
+14:   --auth-border: rgba(var(--accent-rgb), 0.2);
+15:   --auth-radius: 1.25rem;
+16:   --auth-shadow: 0 20px 45px rgba(var(--dark-rgb), 0.1);
+17:   --auth-transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+18: }
+19: 
+20: @media (prefers-color-scheme: dark) {
+21:   :root {
+22:     --auth-form-bg: var(--dark-card);
+23:     --auth-form-text: #F0FAF6;
+24:     --auth-form-muted: #94A3B8;
+25:     --auth-border: rgba(var(--accent-rgb), 0.2);
+26:     --auth-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+27:   }
+28: }
+29: 
+30: /* ─────────────────────────────────────────────
+31:    Keyframe Animations
+32: ───────────────────────────────────────────── */
+33: @keyframes auth-fadeInUp {
+34:   from {
+35:     opacity: 0;
+36:     transform: translateY(18px);
+37:   }
+38:   to {
+39:     opacity: 1;
+40:     transform: translateY(0);
+41:   }
+42: }
+43: 
+44: @keyframes auth-float {
+45:   0%, 100% { transform: translateY(0px); }
+46:   50%       { transform: translateY(-8px); }
+47: }
+48: 
+49: @keyframes auth-spin-slow {
+50:   from { transform: rotate(0deg); }
+51:   to   { transform: rotate(360deg); }
+52: }
+53: 
+54: /* ─────────────────────────────────────────────
+55:    Root Layout Shell
+56: ─────────────────────────────────────────────── */
+57: .auth-layout {
+58:   display: flex;
+59:   min-height: 100vh;
+60:   width: 100%;
+61:   overflow-x: hidden;
+62:   font-family: 'Tajawal', 'Inter', system-ui, -apple-system, sans-serif;
+63:   background: var(--auth-form-bg);
+64: }
+65: 
+66: /* ─────────────────────────────────────────────
+67:    Left — Brand Panel
+68: ───────────────────────────────────────────── */
+69: .auth-layout__brand {
+70:   position: relative;
+71:   flex: 0 0 42%;
+72:   background: var(--auth-brand-gradient);
+73:   display: flex;
+74:   flex-direction: column;
+75:   justify-content: space-between;
+76:   padding: 2.2rem 2.8rem;
+77:   overflow: hidden;
+78:   color: #ffffff;
+79:   border-inline-end: 1px solid rgba(43, 201, 137, 0.22);
+80: }
+81: 
+82: .auth-layout__brand-glow {
+83:   position: absolute;
+84:   top: -15%;
+85:   inset-inline-end: -25%;
+86:   width: 520px;
+87:   height: 520px;
+88:   background: radial-gradient(circle, rgba(var(--accent-rgb), 0.2) 0%, rgba(var(--accent-rgb), 0.08) 40%, transparent 68%);
+89:   pointer-events: none;
+90: }
+91: 
+92: /* Decorative background shapes */
+93: .auth-layout__brand::before {
+94:   content: '';
+95:   position: absolute;
+96:   width: 380px;
+97:   height: 380px;
+98:   background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+99:   bottom: -80px;
+100:   left: -80px;
+101:   pointer-events: none;
+102: }
+103: 
+104: /* Center content */
+105: .auth-layout__brand-body {
+106:   z-index: 1;
+107:   flex: 1;
+108:   display: flex;
+109:   flex-direction: column;
+110:   justify-content: center;
+111:   gap: 1.8rem;
+112: }
+113: 
+114: /* Hero logo */
+115: .auth-layout__hero {
+116:   position: relative;
+117:   display: flex;
+118:   align-items: center;
+119:   justify-content: center;
+120:   animation: auth-float 4s ease-in-out infinite;
+121: }
+122: 
+123: .auth-layout__hero-ring {
+124:   position: absolute;
+125:   width: min(300px, 88%);
+126:   height: 110px;
+127:   border-radius: 20px;
+128:   background: linear-gradient(135deg, var(--auth-brand-accent) 0%, var(--auth-brand-cyan) 100%);
+129:   opacity: 0.35;
+130:   filter: blur(18px);
+131: }
+132: 
+133: .auth-layout__hero-logo {
+134:   position: relative;
+135:   z-index: 1;
+136:   height: 88px;
+137:   width: auto;
+138:   max-width: min(300px, 88vw);
+139:   object-fit: contain;
+140:   display: block;
+141:   filter: drop-shadow(0 8px 24px rgba(var(--accent-rgb), 0.35));
+142: }
+143: 
+144: /* Heading & tagline */
+145: .auth-layout__headline {
+146:   text-align: center;
+147: }
+148: 
+149: .auth-layout__title {
+150:   font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+151:   font-weight: 800;
+152:   line-height: 1.35;
+153:   letter-spacing: -0.4px;
+154:   margin: 0 0 0.6rem;
+155:   background: linear-gradient(90deg, var(--auth-brand-accent) 0%, var(--auth-brand-cyan) 100%);
+156:   -webkit-background-clip: text;
+157:   background-clip: text;
+158:   color: transparent;
+159: }
+160: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

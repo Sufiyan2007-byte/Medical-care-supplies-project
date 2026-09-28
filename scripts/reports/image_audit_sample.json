@@ -1,0 +1,354 @@
+[
+  {
+    "slug": "backhaus-towel-clamp",
+    "name": "Backhaus Towel Clamp",
+    "folder": "anaesthesia",
+    "image": "/xelpov_images/anaesthesia/backhaus-towel-clamp.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/backhaus-towel-clamp/"
+  },
+  {
+    "slug": "mccoy-laryngoscope",
+    "name": "McCoy Laryngoscope",
+    "folder": "anaesthesia",
+    "image": "/xelpov_images/anaesthesia/mccoy-laryngoscope.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/mccoy-laryngoscope/"
+  },
+  {
+    "slug": "finochietto-baby-rib-spreader",
+    "name": "Finochietto-Baby Rib Spreader",
+    "folder": "cardiovascular",
+    "image": "/xelpov_images/cardiovascular/finochietto-baby-rib-spreader.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/finochietto-baby-rib-spreader/"
+  },
+  {
+    "slug": "lambert-kay-atrauma-anastomosis-clamps",
+    "name": "Lambert-Kay Atrauma Anastomosis",
+    "folder": "cardiovascular",
+    "image": "/xelpov_images/cardiovascular/lambert-kay-atrauma-anastomosis-clamps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/lambert-kay-atrauma-anastomosis-clamps/"
+  },
+  {
+    "slug": "laboratory-spatula-fig-8r",
+    "name": "Laboratory Spatula Fig.8R",
+    "folder": "dental",
+    "image": "/xelpov_images/dental/laboratory-spatula-fig-8r.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/laboratory-spatula-fig-8r/"
+  },
+  {
+    "slug": "schmeckbier-apexo-root-elevator-fig-5",
+    "name": "Schmeckbier (Apexo) Root Elevator Fig. 5",
+    "folder": "dental",
+    "image": "/xelpov_images/dental/schmeckbier-apexo-root-elevator-fig-5.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/schmeckbier-apexo-root-elevator-fig-5/"
+  },
+  {
+    "slug": "dermal-punch",
+    "name": "Dermal Punch",
+    "folder": "dermatology",
+    "image": "/xelpov_images/dermatology/dermal-punch.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/dermal-punch/"
+  },
+  {
+    "slug": "unna-comedone-extractor",
+    "name": "Unna Comedone Extractor",
+    "folder": "dermatology",
+    "image": "/xelpov_images/dermatology/unna-comedone-extractor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/unna-comedone-extractor/"
+  },
+  {
+    "slug": "lucae-tuning-fork",
+    "name": "Lucae Tuning Fork",
+    "folder": "diagnostic",
+    "image": "/xelpov_images/diagnostic/lucae-tuning-fork.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/lucae-tuning-fork/"
+  },
+  {
+    "slug": "buck-percussion-reflex-hammer",
+    "name": "Buck Percussion Reflex Hammer",
+    "folder": "diagnostic",
+    "image": "/xelpov_images/diagnostic/buck-percussion-reflex-hammer.png",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/buck-percussion-reflex-hammer/"
+  },
+  {
+    "slug": "beeson-plaster-cast-spreader",
+    "name": "Beeson Plaster Cast Spreader",
+    "folder": "dressing-instruments",
+    "image": "/xelpov_images/dressing-instruments/beeson-plaster-cast-spreader.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/beeson-plaster-cast-spreader/"
+  },
+  {
+    "slug": "babcock-intestinal-and-tissue-grasping-forceps",
+    "name": "Babcock Intestinal and Tissue Grasping Forceps",
+    "folder": "dressing-instruments",
+    "image": "/xelpov_images/dressing-instruments/babcock-intestinal-and-tissue-grasping-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/babcock-intestinal-and-tissue-grasping-forceps/"
+  },
+  {
+    "slug": "quire-foreign-body-forceps",
+    "name": "Quire Foreign Body Forceps",
+    "folder": "ent",
+    "image": "/xelpov_images/ent/quire-foreign-body-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/quire-foreign-body-forceps/"
+  },
+  {
+    "slug": "ballanger-swivel-knife",
+    "name": "Ballanger Swivel Knife",
+    "folder": "ent",
+    "image": "/xelpov_images/ent/ballanger-swivel-knife.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/ballanger-swivel-knife/"
+  },
+  {
+    "slug": "xelpov-syringe-stand",
+    "name": "Xelpov Syringe Stand",
+    "folder": "general",
+    "image": "/xelpov_images/general/xelpov-syringe-stand.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/xelpov-syringe-stand/"
+  },
+  {
+    "slug": "pyramid-style-cannula-3-ports",
+    "name": "Pyramid Style Cannula \u2013 3 Ports",
+    "folder": "general",
+    "image": "/xelpov_images/general/pyramid-style-cannula-3-ports.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/pyramid-style-cannula-3-ports/"
+  },
+  {
+    "slug": "interosseous-knife",
+    "name": "Interosseous Knife",
+    "folder": "general-surgery",
+    "image": "/xelpov_images/general-surgery/interosseous-knife.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/interosseous-knife/"
+  },
+  {
+    "slug": "northbent-stitch-scissor",
+    "name": "Northbent Stitch Scissor",
+    "folder": "general-surgery",
+    "image": "/xelpov_images/general-surgery/northbent-stitch-scissor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/northbent-stitch-scissor/"
+  },
+  {
+    "slug": "heaney-hysterectomy-forceps",
+    "name": "Heaney Hysterectomy Forceps",
+    "folder": "gynecology-obstetrics",
+    "image": "/xelpov_images/gynecology-obstetrics/heaney-hysterectomy-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/heaney-hysterectomy-forceps/"
+  },
+  {
+    "slug": "simpson-braun-obstetrical-forceps",
+    "name": "Simpson-Braun Obstetrical Forceps",
+    "folder": "gynecology-obstetrics",
+    "image": "/xelpov_images/gynecology-obstetrics/simpson-braun-obstetrical-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/simpson-braun-obstetrical-forceps/"
+  },
+  {
+    "slug": "throat-surgery-set-basic",
+    "name": "Throat Surgery Set \u2013 Basic",
+    "folder": "mammaplasty",
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/throat-surgery-set-basic/"
+  },
+  {
+    "slug": "mastoid-surgery-set",
+    "name": "Mastoid Surgery Set",
+    "folder": "mammaplasty",
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/mastoid-surgery-set/"
+  },
+  {
+    "slug": "brophy-dressing-forceps",
+    "name": "Brophy Dressing Forceps",
+    "folder": "microsurgery",
+    "image": "/xelpov_images/microsurgery/brophy-dressing-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/brophy-dressing-forceps/"
+  },
+  {
+    "slug": "jacobson-micro-suture-pusher",
+    "name": "Jacobson Micro Suture Pusher",
+    "folder": "microsurgery",
+    "image": "/xelpov_images/microsurgery/jacobson-micro-suture-pusher.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/jacobson-micro-suture-pusher/"
+  },
+  {
+    "slug": "ferrozell-handle-volkmann-bone-curette",
+    "name": "Ferrozell Handle Volkmann Bone Curette",
+    "folder": "neurosurgery-spine",
+    "image": "/xelpov_images/neurosurgery-spine/ferrozell-handle-volkmann-bone-curette.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/ferrozell-handle-volkmann-bone-curette/"
+  },
+  {
+    "slug": "resano-cartilage-scissor",
+    "name": "Resano Cartilage Scissor",
+    "folder": "neurosurgery-spine",
+    "image": "/xelpov_images/neurosurgery-spine/resano-cartilage-scissor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/resano-cartilage-scissor/"
+  },
+  {
+    "slug": "wilder-lacrimal-dilator",
+    "name": "Wilder Lacrimal Dilator",
+    "folder": "ophthalmic",
+    "image": "/xelpov_images/ophthalmic/wilder-lacrimal-dilator.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/wilder-lacrimal-dilator/"
+  },
+  {
+    "slug": "corneal-graft-surgery-set",
+    "name": "Corneal Graft Surgery Set",
+    "folder": "ophthalmic",
+    "image": "/xelpov_images/ophthalmic/crawford-lacrimal-intubation-set.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/corneal-graft-surgery-set/"
+  },
+  {
+    "slug": "english-pattern-tooth-extraction-forceps-fig-107",
+    "name": "English Pattern Tooth Extraction Forceps Fig. 107",
+    "folder": "oral-maxillofacial",
+    "image": "/xelpov_images/oral-maxillofacial/english-pattern-tooth-extraction-forceps-fig-107.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/english-pattern-tooth-extraction-forceps-fig-107/"
+  },
+  {
+    "slug": "webster-glabella-nasal-rasp",
+    "name": "Webster Glabella Nasal Rasp",
+    "folder": "oral-maxillofacial",
+    "image": "/xelpov_images/oral-maxillofacial/webster-glabella-nasal-rasp.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/webster-glabella-nasal-rasp/"
+  },
+  {
+    "slug": "ulrich-bone-holding-forceps",
+    "name": "Ulrich Bone Holding Forceps",
+    "folder": "orthopedic",
+    "image": "/xelpov_images/orthopedic/ulrich-bone-holding-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/ulrich-bone-holding-forceps/"
+  },
+  {
+    "slug": "bohler-bone-cutting-forceps",
+    "name": "Bohler Bone Cutting Forceps",
+    "folder": "orthopedic",
+    "image": "/xelpov_images/orthopedic/bohler-bone-cutting-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/bohler-bone-cutting-forceps/"
+  },
+  {
+    "slug": "gregory-facelift-scissor",
+    "name": "Gregory Facelift Scissor",
+    "folder": "plastic-surgery",
+    "image": "/xelpov_images/plastic-surgery/gregory-facelift-scissor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/gregory-facelift-scissor/"
+  },
+  {
+    "slug": "gil-vernet-lid-retractor",
+    "name": "Gil-Vernet Lid Retractor",
+    "folder": "plastic-surgery",
+    "image": "/xelpov_images/plastic-surgery/gil-vernet-lid-retractor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/gil-vernet-lid-retractor/"
+  },
+  {
+    "slug": "nail-elevator",
+    "name": "Nail Elevator",
+    "folder": "podiatry",
+    "image": "/xelpov_images/podiatry/nail-elevator.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/nail-elevator/"
+  },
+  {
+    "slug": "heavy-duty-nail-cutter",
+    "name": "Heavy Duty Nail Cutter",
+    "folder": "podiatry",
+    "image": "/xelpov_images/podiatry/heavy-duty-nail-cutter.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/heavy-duty-nail-cutter/"
+  },
+  {
+    "slug": "mod-usa-dissecting-forceps",
+    "name": "Mod. USA Dissecting Forceps",
+    "folder": "post-mortem",
+    "image": "/xelpov_images/post-mortem/mod-usa-dissecting-forceps.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/mod-usa-dissecting-forceps/"
+  },
+  {
+    "slug": "stille-bone-osteotome",
+    "name": "Stille Bone Osteotome",
+    "folder": "post-mortem",
+    "image": "/xelpov_images/post-mortem/stille-bone-osteotome.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/stille-bone-osteotome/"
+  },
+  {
+    "slug": "scalpel-handle-no-7",
+    "name": "Scalpel Handle No. 7",
+    "folder": "skin-grafting",
+    "image": "/xelpov_images/skin-grafting/scalpel-handle-no-7.png",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/scalpel-handle-no-7/"
+  },
+  {
+    "slug": "silver-dermatome-skin-graft-knife",
+    "name": "Silver Dermatome (Skin Graft Knife)",
+    "folder": "skin-grafting",
+    "image": "/xelpov_images/skin-grafting/silver-dermatome-skin-graft-knife.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/silver-dermatome-skin-graft-knife/"
+  },
+  {
+    "slug": "langenbeck-retractor",
+    "name": "Langenbeck Retractor",
+    "folder": "stomach-intestine-rectum",
+    "image": "/xelpov_images/stomach-intestine-rectum/langenbeck-retractor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/langenbeck-retractor/"
+  },
+  {
+    "slug": "de-martel-wolfson-clamps-holder",
+    "name": "De Martel-Wolfson Clamps",
+    "folder": "stomach-intestine-rectum",
+    "image": "/xelpov_images/stomach-intestine-rectum/de-martel-wolfson-clamps-holder.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/de-martel-wolfson-clamps-holder/"
+  },
+  {
+    "slug": "roux-retractor",
+    "name": "Roux Retractor",
+    "folder": "urology",
+    "image": "/xelpov_images/urology/roux-retractor.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/roux-retractor/"
+  },
+  {
+    "slug": "polloson-retractor-3",
+    "name": "Polloson Retractor",
+    "folder": "urology",
+    "image": "/xelpov_images/urology/polloson-retractor-3.jpg",
+    "file_exists": true,
+    "sourceUrl": "https://xelpovsurgical.com/product/polloson-retractor-3/"
+  }
+]

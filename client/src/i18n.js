@@ -15,17 +15,29 @@ const resources = {
 };
 
 i18n
-  // Detects user language
   .use(LanguageDetector)
-  // Passes i18n down to react-i18next
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'ar',
     fallbackLng: 'en',
-    
+    supportedLngs: ['ar', 'en'],
+    detection: {
+      order: ['localStorage'],
+      caches: ['localStorage'],
+    },
     interpolation: {
-      escapeValue: false, // React already safe from xss
+      escapeValue: false,
     },
   });
+
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.dir = i18n.dir(lng);
+  document.documentElement.lang = lng;
+});
+
+// Set initial direction
+document.documentElement.dir = i18n.dir(i18n.language);
+document.documentElement.lang = i18n.language;
 
 export default i18n;

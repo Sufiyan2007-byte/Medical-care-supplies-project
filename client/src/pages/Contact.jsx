@@ -155,8 +155,8 @@ function Contact() {
       <section className="contact-hero">
         <div className="contact-hero-inner">
           <span className="contact-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#FF6600" stroke="none"><circle cx="12" cy="12" r="12"/></svg>
-            Contact MedPortal
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent-color)" stroke="none"><circle cx="12" cy="12" r="12"/></svg>
+            {t('contact.eyebrow', 'Contact MedPortal')}
           </span>
           <h1>{t('contact.header_title', 'Connect with Our Medical Specialists')}</h1>
           <p className="contact-hero-lead">
@@ -180,8 +180,8 @@ function Contact() {
               <IconMapPin />
             </div>
             <div className="channel-body">
-              <h3>{t('contact.office', 'Headquarters')}</h3>
-              <p>{companyInfo?.address || 'King Fahd Road, Olaya District, Riyadh, Saudi Arabia'}</p>
+              <h3>{t('contact.headquarters', 'Headquarters')}</h3>
+              <p>{companyInfo?.address || t('contact.address_default', 'King Fahd Road, Olaya District, Riyadh, Saudi Arabia')}</p>
             </div>
           </div>
 
@@ -190,11 +190,11 @@ function Contact() {
               <IconPhone />
             </div>
             <div className="channel-body">
-              <h3>{t('contact.phone', 'Sales & Orders')}</h3>
-              <a href={`tel:${companyInfo?.phone || '+966112345678'}`}>
-                {companyInfo?.phone || '+966 (11) 234-5678'}
+              <h3>{t('contact.phone_label', 'Sales & Orders')}</h3>
+              <a href={`tel:${(companyInfo?.phone || '+966 55 928 6613').replace(/[^+\d]/g, '')}`} dir="ltr">
+                {companyInfo?.phone || '+966 55 928 6613'}
               </a>
-              <span className="channel-subtext">Direct Procurement Line</span>
+              <span className="channel-subtext">{t('contact.support_subtext', '24/7 RFQ & Technical Inquiry')}</span>
             </div>
           </div>
 
@@ -203,11 +203,11 @@ function Contact() {
               <IconMail />
             </div>
             <div className="channel-body">
-              <h3>{t('contact.email', 'Customer Support')}</h3>
-              <a href={`mailto:${companyInfo?.email || 'support@medportal.sa'}`}>
-                {companyInfo?.email || 'support@medportal.sa'}
+              <h3>{t('contact.support_label', 'Customer Support')}</h3>
+              <a href={`mailto:${companyInfo?.email || 'Info@medicaresupplies.net'}`} dir="ltr">
+                {companyInfo?.email || 'Info@medicaresupplies.net'}
               </a>
-              <span className="channel-subtext">24/7 Priority Response</span>
+              <span className="channel-subtext">{t('contact.email_subtext', 'Sales, support & general inquiries')}</span>
             </div>
           </div>
 
@@ -216,9 +216,9 @@ function Contact() {
               <IconClock />
             </div>
             <div className="channel-body">
-              <h3>Operating Hours</h3>
-              <p>Sun – Thu: 8:00 AM – 5:00 PM AST</p>
-              <span className="channel-badge">Emergency Dispatch Active</span>
+              <h3>{t('contact.hours_label', 'Operating Hours')}</h3>
+              <p>{t('contact.hours_value', 'Sun – Thu: 8:00 AM – 5:00 PM AST')}</p>
+              <span className="channel-badge">{t('contact.emergency_badge', 'Emergency Dispatch Active')}</span>
             </div>
           </div>
         </div>
@@ -232,7 +232,7 @@ function Contact() {
           <div className="contact-form-card">
             <div className="form-card-header">
               <h2>{t('contact.form_title', 'Send a Message')}</h2>
-              <p>Fill out the details below and our team will get back to you within 2 business hours.</p>
+              <p>{t('contact.form_subtitle', 'Fill out the details below and our team will get back to you within 2 business hours.')}</p>
             </div>
 
             <form onSubmit={handleSubmit} className="contact-form">
@@ -267,11 +267,12 @@ function Contact() {
 
               <div className="form-row-2">
                 <div className="form-group">
-                  <label htmlFor="phone">Phone Number</label>
+                  <label htmlFor="phone">{t('contact.phone_field_label', 'Phone Number')}</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
+                    dir="ltr"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+966 50 123 4567"
@@ -279,31 +280,31 @@ function Contact() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="facility">Hospital / Facility Name</label>
+                  <label htmlFor="facility">{t('contact.facility_label', 'Hospital / Facility Name')}</label>
                   <input
                     type="text"
                     id="facility"
                     name="facility"
                     value={formData.facility}
                     onChange={handleChange}
-                    placeholder="King Faisal Specialist Hospital"
+                    placeholder={t('contact.facility_placeholder', 'King Faisal Specialist Hospital')}
                   />
                 </div>
               </div>
 
               <div className="form-group">
-                <label htmlFor="department">Inquiry Type / Department</label>
+                <label htmlFor="department">{t('contact.department_label', 'Inquiry Type / Department')}</label>
                 <select
                   id="department"
                   name="department"
                   value={formData.department}
                   onChange={handleChange}
                 >
-                  <option value="sales">Sales Quote & Volume Pricing</option>
-                  <option value="sfda">SFDA Compliance & Certifications</option>
-                  <option value="technical">Technical Product Specs</option>
-                  <option value="order">Order Tracking & Logistics</option>
-                  <option value="general">General Support</option>
+                  <option value="sales">{t('contact.dept_sales', 'Sales Quote & Volume Pricing')}</option>
+                  <option value="sfda">{t('contact.dept_sfda', 'SFDA Compliance & Certifications')}</option>
+                  <option value="technical">{t('contact.dept_technical', 'Technical Product Specs')}</option>
+                  <option value="order">{t('contact.dept_order', 'Order Tracking & Logistics')}</option>
+                  <option value="general">{t('contact.dept_general', 'General Support')}</option>
                 </select>
               </div>
 
@@ -355,12 +356,12 @@ function Contact() {
               <div className="box-icon-head">
                 <div className="box-icon"><IconTruckFast /></div>
                 <div>
-                  <h4>Urgent Surgical Supply Line</h4>
-                  <span className="box-badge">24/7 Hospital Dispatch</span>
+                  <h4>{t('contact.urgent_title', 'Urgent Surgical Supply Line')}</h4>
+                  <span className="box-badge">{t('contact.urgent_badge', '24/7 Hospital Dispatch')}</span>
                 </div>
               </div>
-              <p>For immediate emergency theatre supplies or urgent instrument replacements across KSA, call our direct logistics hot desk.</p>
-              <a href="tel:+966112345678" className="box-link">+966 11 234 5678 (Ext 1) →</a>
+              <p>{t('contact.urgent_text', 'For immediate emergency theatre supplies or urgent instrument replacements across KSA, call our direct logistics hot desk.')}</p>
+              <a href={`tel:${(companyInfo?.phone || '+966 55 928 6613').replace(/[^+\d]/g, '')}`} className="box-link" dir="ltr">{companyInfo?.phone || '+966 55 928 6613'} →</a>
             </div>
 
             {/* SFDA Compliance Box */}
@@ -368,12 +369,12 @@ function Contact() {
               <div className="box-icon-head">
                 <div className="box-icon"><IconShieldCheck /></div>
                 <div>
-                  <h4>SFDA & Quality Regulatory Desk</h4>
-                  <span className="box-sub">Compliance Verification</span>
+                  <h4>{t('contact.sfda_desk_title', 'SFDA & Quality Regulatory Desk')}</h4>
+                  <span className="box-sub">{t('contact.sfda_desk_sub', 'Compliance Verification')}</span>
                 </div>
               </div>
-              <p>Need batch analysis certificates, ISO documentation, or SFDA registration letters for procurement records?</p>
-              <a href="mailto:regulatory@medportal.sa" className="box-link">regulatory@medportal.sa →</a>
+              <p>{t('contact.sfda_desk_text', 'Need batch analysis certificates, ISO documentation, or SFDA registration letters for procurement records?')}</p>
+              <a href={`mailto:${companyInfo?.email || 'Info@medicaresupplies.net'}`} className="box-link" dir="ltr">{companyInfo?.email || 'Info@medicaresupplies.net'} →</a>
             </div>
 
             {/* Map / Location Mockup Box */}
@@ -382,9 +383,9 @@ function Contact() {
                 <div className="map-pin-pulse">
                   <IconMapPin />
                 </div>
-                <h4>MedPortal Central Hub</h4>
-                <p>Riyadh Logistics & Procurement Office</p>
-                <span className="map-coords">24.7136° N, 46.6753° E</span>
+                <h4>{t('contact.hub_title', 'MedPortal Central Hub')}</h4>
+                <p>{t('contact.hub_sub', 'Riyadh Logistics & Procurement Office')}</p>
+                <span className="map-coords" dir="ltr">24.7136° N, 46.6753° E</span>
               </div>
             </div>
 
@@ -395,9 +396,9 @@ function Contact() {
       {/* ── FAQ Section ──────────────────────────────────────────────────── */}
       <section className="contact-faq-section">
         <div className="faq-header">
-          <span className="faq-tag">Frequently Asked Questions</span>
-          <h2>Quick Answers for Procurement Teams</h2>
-          <p>Common questions regarding ordering, SFDA certificates, and logistics across Saudi Arabia.</p>
+          <span className="faq-tag">{t('contact.faq_tag', 'Frequently Asked Questions')}</span>
+          <h2>{t('contact.faq_title', 'Quick Answers for Procurement Teams')}</h2>
+          <p>{t('contact.faq_subtitle', 'Common questions regarding ordering, SFDA certificates, and logistics across Saudi Arabia.')}</p>
         </div>
 
         <div className="faq-list">
@@ -428,3 +429,4 @@ function Contact() {
 }
 
 export default Contact;
+

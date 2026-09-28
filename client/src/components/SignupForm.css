@@ -27,6 +27,19 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Mobile Logo Badge (hidden on desktop) ── */
+.auth-mobile-logo {
+  display: none;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .auth-mobile-logo {
+    display: block;
+  }
+}
+
 /* ── Root ── */
 .sf {
   width: 100%;
@@ -38,34 +51,39 @@
 
 /* ── Header ── */
 .sf__header {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.1rem;
 }
 
 .sf__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
+  gap: 0.45rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: var(--primary-color);
-  margin-bottom: 0.6rem;
+  color: var(--brand-teal);
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.65rem;
 }
 
 .sf__title {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  color: var(--auth-form-text, #1e293b);
-  margin: 0 0 0.4rem;
-  line-height: 1.2;
+  color: var(--auth-form-text, var(--dark-card));
+  margin: 0 0 0.3rem;
+  line-height: 1.25;
 }
 
 .sf__subtitle {
-  font-size: 0.9rem;
-  color: var(--auth-form-muted, #64748b);
+  font-size: 0.88rem;
+  color: var(--auth-form-muted, var(--muted-text));
   margin: 0;
+  line-height: 1.45;
 }
 
 /* ── Server Error Banner ── */
@@ -110,7 +128,7 @@
 .sf__label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--auth-form-text, #1e293b);
+  color: var(--auth-form-text, var(--dark-card));
   letter-spacing: 0.2px;
 }
 
@@ -122,10 +140,10 @@
 
 .sf__input-icon {
   position: absolute;
-  left: 0.9rem;
+  inset-inline-start: 0.9rem;
   font-size: 1rem;
   pointer-events: none;
-  color: var(--auth-form-muted, #94a3b8);
+  color: var(--auth-form-muted, var(--muted-text));
   transition: color 0.2s;
   line-height: 1;
 }
@@ -133,11 +151,11 @@
 .sf__input {
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 2.75rem;
-  border: 1.5px solid var(--auth-border, #e2e8f0);
+  border: 1.5px solid var(--auth-border, var(--muted-text));
   border-radius: 10px;
   font-size: 0.95rem;
   font-family: inherit;
-  color: var(--auth-form-text, #1e293b);
+  color: var(--auth-form-text, var(--dark-card));
   background: transparent;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -145,12 +163,12 @@
 }
 
 .sf__input::placeholder {
-  color: var(--auth-form-muted, #94a3b8);
+  color: var(--auth-form-muted, var(--muted-text));
 }
 
 .sf__input:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25) ;
 }
 
 .sf__input-wrap:focus-within .sf__input-icon {
@@ -163,17 +181,17 @@
 }
 
 .sf__input--password {
-  padding-right: 3rem;
+  padding-inline-end: 3rem;
 }
 
 .sf__toggle-btn {
   position: absolute;
-  right: 0.75rem;
+  inset-inline-end: 0.75rem;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.25rem;
-  color: var(--auth-form-muted, #94a3b8);
+  color: var(--auth-form-muted, var(--muted-text));
   font-size: 1.05rem;
   line-height: 1;
   border-radius: 6px;
@@ -184,7 +202,7 @@
 
 .sf__toggle-btn:hover {
   color: var(--primary-color);
-  background: rgba(255, 102, 0, 0.08);
+  background: rgba(var(--accent-rgb), 0.12) ;
 }
 
 .sf__field-error {
@@ -204,7 +222,7 @@
 .sf__strength-track {
   height: 4px;
   border-radius: 99px;
-  background: var(--auth-border, #e2e8f0);
+  background: var(--auth-border, var(--muted-text));
   overflow: hidden;
 }
 
@@ -256,7 +274,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--on-accent);
   font-size: 0.7rem;
   font-weight: 800;
   line-height: 1;
@@ -264,12 +282,12 @@
 
 .sf__checkbox:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.2);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25) ;
 }
 
 .sf__terms-text {
   font-size: 0.82rem;
-  color: var(--auth-form-muted, #64748b);
+  color: var(--auth-form-muted, var(--muted-text));
   line-height: 1.5;
 }
 
@@ -289,47 +307,75 @@
   animation: sf-fade-in 0.2s ease;
 }
 
+/* ── Password Match Indicator ── */
+.sf__field-match {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brand-teal);
+  margin-top: 0.25rem;
+  animation: sf-fade-in 0.2s ease;
+}
+
 /* ── Submit ── */
 .sf__submit {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   width: 100%;
-  padding: 0.85rem 1.5rem;
+  padding: 0.85rem 1.6rem;
   border: none;
-  border-radius: 10px;
-  background: var(--primary-gradient);
-  color: #fff;
-  font-size: 0.975rem;
-  font-weight: 700;
+  border-radius: 12px;
+  background: var(--card-gradient);
+  color: var(--on-accent);
+  font-size: 1rem;
+  font-weight: 800;
   font-family: inherit;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
-  margin-top: 0.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.38), inset 0 1px 0 rgba(var(--fg-rgb), 0.25);
+  margin-top: 0.35rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .sf__submit:hover:not(:disabled) {
-  opacity: 0.92;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(var(--accent-rgb), 0.55), inset 0 1px 0 rgba(var(--fg-rgb), 0.35);
+  filter: brightness(1.04);
+}
+
+.sf__submit:hover:not(:disabled) .sf__submit-arrow {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .sf__submit:hover:not(:disabled) .sf__submit-arrow {
+  transform: translateX(4px);
+}
+
+.sf__submit-arrow {
+  transition: transform 0.25s ease;
 }
 
 .sf__submit:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
 }
 
 .sf__submit:disabled {
   cursor: not-allowed;
   opacity: 0.65;
+  filter: grayscale(0.2);
 }
 
 .sf__spinner {
   width: 18px;
   height: 18px;
-  border: 2.5px solid rgba(255, 255, 255, 0.4);
-  border-top-color: #fff;
+  border: 2.5px solid rgba(var(--fg-rgb), 0.4);
+  border-top-color: var(--on-accent);
   border-radius: 50%;
   animation: sf-spin 0.7s linear infinite;
   flex-shrink: 0;
@@ -340,7 +386,7 @@
   text-align: center;
   margin-top: 1.25rem;
   font-size: 0.875rem;
-  color: var(--auth-form-muted, #64748b);
+  color: var(--auth-form-muted, var(--muted-text));
 }
 
 .sf__footer a {
@@ -351,6 +397,80 @@
 }
 
 .sf__footer a:hover {
-  color: var(--primary-dark);
+  color: var(--c-ink-2);
   text-decoration: underline;
 }
+
+
+/* ═════════════════════════════════════════════════════════════════════════
+   Polish: fields, buttons and messages use the theme tokens (same look as
+   the login form). Overrides only.
+═════════════════════════════════════════════════════════════════════════ */
+.sf__title { color: var(--c-strong); }
+.sf__subtitle { color: var(--c-silver-2); }
+
+.sf__eyebrow {
+  color: var(--c-accent-text);
+  background: rgba(var(--accent-rgb), 0.12);
+  border-color: rgba(var(--accent-rgb), 0.35);
+}
+
+.sf__label { color: var(--c-silver-2); font-size: 0.82rem; }
+
+.sf__input {
+  height: 48px;
+  padding-block: 0;
+  padding-inline: 2.9rem 1rem;
+  background: var(--c-input);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  border-radius: 10px;
+  color: var(--c-text);
+}
+.sf__input--password { padding-inline-end: 3rem; }
+.sf__input::placeholder { color: var(--c-placeholder); }
+.sf__input:hover { border-color: rgba(var(--fg-rgb), 0.2); }
+.sf__input:focus {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.3);
+}
+.sf__input-icon { inset-inline-start: 1rem; color: var(--c-faint); }
+.sf__input:-webkit-autofill {
+  -webkit-text-fill-color: var(--c-text);
+  box-shadow: 0 0 0 100px var(--c-input) inset;
+  caret-color: var(--c-text);
+}
+.sf__toggle-btn { color: var(--c-faint); }
+.sf__toggle-btn:hover { color: var(--c-strong); }
+
+.sf__footer, .sf__terms-text { color: var(--c-silver-2); text-transform: none; letter-spacing: 0; }
+.sf__terms { text-transform: none; letter-spacing: 0; }
+.sf__footer a, .sf__terms-text a, .sf__back-link { color: var(--c-accent-text); }
+.sf__footer a:hover, .sf__terms-text a:hover, .sf__back-link:hover { color: var(--c-strong); }
+.sf__checkbox { border-color: var(--c-border-strong); background: var(--c-input); }
+.sf__checkbox:checked { background: var(--c-accent); border-color: var(--c-accent); }
+
+.sf__submit, .sf__cta {
+  height: 48px;
+  padding-block: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--c-accent) 0%, var(--c-accent-2) 100%);
+  color: var(--on-accent);
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.35), inset 0 1px 0 rgba(var(--fg-rgb), 0.2);
+}
+.sf__submit:hover:not(:disabled), .sf__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(var(--accent-rgb), 0.5), inset 0 1px 0 rgba(var(--fg-rgb), 0.3);
+}
+
+/* errors / warnings: readable on both light and dark themes */
+.sf__banner--error, .sf__field-error, .sf__terms-error, .sf__field-match--bad {
+  color: color-mix(in srgb, #dc2626 62%, var(--c-strong));
+}
+.sf__banner--warning { color: color-mix(in srgb, #d97706 62%, var(--c-strong)); }
+.sf__input--error { border-color: color-mix(in srgb, #dc2626 70%, var(--c-strong)) !important; }
+
+/* success / invalid-link cards */
+.sf__success-title, .sf__invalid-title { color: var(--c-strong); }
+.sf__success-msg, .sf__success-note, .sf__invalid-msg, .sf__strength-label { color: var(--c-silver-2); }
+.sf__success-icon, .sf__invalid-icon { color: var(--c-accent-text); }
+.sf__strength-track { background: rgba(var(--fg-rgb), 0.14); }

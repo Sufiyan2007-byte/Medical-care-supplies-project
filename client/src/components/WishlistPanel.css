@@ -1,0 +1,101 @@
+/* Wishlist panel — mirrors QuoteCartPanel.css's structure and theme tokens. */
+.wl-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+.wl-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 26, 48, 0.42);
+  backdrop-filter: blur(3px);
+}
+.wl-panel {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--c-side);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 40px rgba(12, 26, 48, 0.22);
+  animation: wlSlideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.wl-panel--rtl {
+  box-shadow: 10px 0 40px rgba(12, 26, 48, 0.22);
+  animation: wlSlideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes wlSlideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes wlSlideInLeft { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+
+.wl-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--c-border-strong);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+.wl-header h2 { margin: 0; font-size: 1.2rem; font-weight: 700; color: var(--c-strong); display: flex; align-items: center; gap: 0.6rem; }
+.wl-count {
+  min-width: 24px; height: 24px; padding: 0 7px; box-sizing: border-box; border-radius: 12px;
+  background: var(--c-accent); color: var(--on-accent); font-size: 0.78rem; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.wl-close-btn {
+  background: none; border: none; color: var(--c-silver-2); cursor: pointer;
+  width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.wl-close-btn:hover { background: var(--c-hover); color: var(--c-strong); }
+
+.wl-content { flex: 1; overflow-y: auto; padding: 1.25rem 1.5rem; }
+.wl-empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;
+  color: var(--c-silver-2); text-align: center; gap: 0.9rem;
+}
+.wl-empty svg { color: var(--c-faint); opacity: 0.9; }
+.wl-empty p { margin: 0; font-size: 1rem; line-height: 1.55; }
+
+.wl-items { display: flex; flex-direction: column; gap: 0.75rem; }
+.wl-item {
+  display: flex; gap: 0.85rem; padding: 0.75rem;
+  background: rgba(var(--fg-rgb), 0.05); border: 1px solid rgba(var(--fg-rgb), 0.09); border-radius: 14px;
+}
+.wl-item-thumb {
+  width: 64px; height: 64px; flex-shrink: 0; background: var(--c-input); border-radius: 10px;
+  overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--c-faint);
+}
+.wl-item-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+
+.wl-item-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+.wl-item-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.35rem; }
+.wl-item-name {
+  margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--c-strong); line-height: 1.35;
+  text-decoration: none;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.wl-item-name:hover { color: var(--c-accent-text); }
+.wl-item-cat { margin: 0; font-size: 0.76rem; color: var(--c-muted); }
+
+.wl-item-remove {
+  background: none; border: none; color: var(--c-faint); cursor: pointer; padding: 0.25rem; border-radius: 6px;
+  display: flex; align-items: center; flex-shrink: 0; transition: color 0.2s, background 0.2s;
+}
+.wl-item-remove:hover { color: #b42318; background: rgba(180, 35, 24, 0.1); }
+
+.wl-item-quote {
+  margin-top: 0.4rem; align-self: flex-start; background: none; border: 1px solid var(--c-accent);
+  color: var(--c-accent-text); font-size: 0.76rem; font-weight: 600; padding: 0.3rem 0.6rem; border-radius: 7px;
+  cursor: pointer; transition: background 0.2s;
+}
+.wl-item-quote:hover { background: rgba(var(--accent-rgb), 0.1); }
+
+.wl-btn {
+  width: 100%; padding: 0.9rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer;
+  border: 1px solid transparent; transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+.wl-btn--secondary { background: transparent; border-color: var(--c-accent); color: var(--c-accent-text); }
+.wl-btn--secondary:hover { background: rgba(var(--accent-rgb), 0.1); }

@@ -1,4 +1,5 @@
 import prisma from '../lib/prisma.js';
+import { streamProductSpecSheet, streamProductSpecSheetArabic } from '../services/pdfService.js';
 
 /**
  * GET /api/categories
@@ -238,6 +239,76 @@ export async function getProductById(req, res) {
   }
 }
 
+const LOW_STOCK_DEFAULT_THRESHOLD = 10;
+
+/**
+ * GET /api/products/low-stock  (staff only)
+ * Returns tracked products (stock is not null) at or below a threshold, lowest first.
+ * Products where stock isn't tracked (stock === null) are intentionally excluded —
+ * there's nothing actionable to alert on for those.
+ */
+export async function getLowStockProducts(req, res) {
+  try {
+    const threshold = Math.max(0, parseInt(req.query.threshold, 10) || LOW_STOCK_DEFAULT_THRESHOLD);
+    const products = await prisma.product.findMany({
+      where: { stock: { not: null, lte: threshold } },
+      include: { category: true },
+      orderBy: { stock: 'asc' },
+      take: 100,
+    });
+    return res.status(200).json({ products, threshold });
+  } catch (err) {
+    console.error('[getLowStockProducts] Error:', err);
+    return res.status(500).json({ error: 'Internal Server Error', message: 'Failed to fetch low-stock products.' });
+  }
+}
+
+/**
+ * GET /api/products/:id/spec-sheet.pdf
+ * Streams a one-page PDF spec/certification sheet for the product. Public, like
+ * the product detail page itself — this is a trust-building document for buyers,
+ * not admin data.
+ */
+export async function getProductSpecSheet(req, res) {
+  const productId = parseInt(req.params.id, 10);
+  if (isNaN(productId)) {
+    return res.status(400).json({ error: 'Bad Request', message: 'Invalid product ID.' });
+  }
+
+  try {
+    const [product, companyInfo] = await Promise.all([
+      prisma.product.findUnique({
+        where: { id: productId },
+        include: {
+          category: true,
+          surgical_set: true,
+          set_items: { include: { product: { select: { name: true, sku: true } } } },
+        },
+      }),
+      prisma.companyInfo.findFirst().catch(() => null),
+    ]);
+
+    if (!product) {
+      return res.status(404).json({ error: 'Not Found', message: 'Product not found.' });
+    }
+
+    const safeName = (product.sku || product.name || 'product').replace(/[^a-z0-9-]+/gi, '-').toLowerCase();
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `inline; filename="${safeName}-spec-sheet.pdf"`);
+    if (req.query.lang === 'ar') {
+      streamProductSpecSheetArabic(res, product, companyInfo);
+    } else {
+      streamProductSpecSheet(res, product, companyInfo);
+    }
+  } catch (err) {
+    console.error('[getProductSpecSheet] Error:', err);
+    if (!res.headersSent) {
+      return res.status(500).json({ error: 'Internal Server Error', message: 'Failed to generate spec sheet.' });
+    }
+    res.end();
+  }
+}
+
 /**
  * GET /api/sets
  * Returns all products that have a surgical_set relation (i.e. are surgical sets),
@@ -337,9 +408,29 @@ export async function getSurgicalSets(req, res) {
  * POST /api/products
  * Creates a new product. If surgical_set data is provided, creates the nested set.
  */
+/** '' / null → null (price on request / stock not tracked); invalid → undefined */
+function parsePrice(v) {
+  if (v === '' || v === null) return null;
+  const n = Number(v);
+  return Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : undefined;
+}
+function parseStock(v) {
+  if (v === '' || v === null) return null;
+  const n = Number(v);
+  return Number.isInteger(n) && n >= 0 ? n : undefined;
+}
+
 export async function createProduct(req, res) {
   try {
-    const { name, category_id, description, sku, surgical_set } = req.body;
+    const { name, category_id, description, sku, surgical_set, image } = req.body;
+    const price = parsePrice(req.body.price);
+    const stock = parseStock(req.body.stock);
+    if (req.body.price !== undefined && price === undefined) {
+      return res.status(400).json({ error: 'Bad Request', message: 'Price must be a number of 0 or more.' });
+    }
+    if (req.body.stock !== undefined && stock === undefined) {
+      return res.status(400).json({ error: 'Bad Request', message: 'Stock must be a whole number of 0 or more.' });
+    }
 
     if (!name || !category_id) {
       return res.status(400).json({ error: 'Bad Request', message: 'Name and category_id are required' });
@@ -351,8 +442,11 @@ export async function createProduct(req, res) {
         name,
         category_id: parseInt(category_id, 10),
         description,
-        sku,
+        sku: sku || null,
       };
+      if (image !== undefined) data.image = image || null;
+      if (price !== undefined) data.price = price;
+      if (stock !== undefined) data.stock = stock;
 
       if (surgical_set && surgical_set.piece_count !== undefined) {
         data.surgical_set = {
@@ -375,7 +469,7 @@ export async function createProduct(req, res) {
       });
     } catch (dbErr) {
       console.warn('[createProduct] DB Error, mocking success:', dbErr.message);
-      product = { id: 999, name, category_id, description, sku, surgical_set: surgical_set || null };
+      product = { id: 999, name, category_id, description, sku, image: image || null, surgical_set: surgical_set || null };
     }
 
     return res.status(201).json({ success: true, product });
@@ -392,7 +486,15 @@ export async function createProduct(req, res) {
 export async function updateProduct(req, res) {
   try {
     const { id } = req.params;
-    const { name, category_id, description, sku, surgical_set } = req.body;
+    const { name, category_id, description, sku, surgical_set, image } = req.body;
+    const price = parsePrice(req.body.price);
+    const stock = parseStock(req.body.stock);
+    if (req.body.price !== undefined && price === undefined) {
+      return res.status(400).json({ error: 'Bad Request', message: 'Price must be a number of 0 or more.' });
+    }
+    if (req.body.stock !== undefined && stock === undefined) {
+      return res.status(400).json({ error: 'Bad Request', message: 'Stock must be a whole number of 0 or more.' });
+    }
 
     let product;
     try {
@@ -400,7 +502,10 @@ export async function updateProduct(req, res) {
       if (name !== undefined) data.name = name;
       if (category_id !== undefined) data.category_id = parseInt(category_id, 10);
       if (description !== undefined) data.description = description;
-      if (sku !== undefined) data.sku = sku;
+      if (sku !== undefined) data.sku = sku || null;
+      if (image !== undefined) data.image = image || null;
+      if (req.body.price !== undefined) data.price = price;
+      if (req.body.stock !== undefined) data.stock = stock;
 
       if (surgical_set) {
         data.surgical_set = {

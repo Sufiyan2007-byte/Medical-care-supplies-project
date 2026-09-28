@@ -51,16 +51,16 @@ export async function submitContactForm(req, res) {
     }
 
     // Send email notification to company admin
-    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@medportal.com';
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || process.env.ORDER_NOTIFY_EMAIL;
     const emailSubject = `New Contact Submission from ${name}`;
     const emailHtml = generateContactNotificationEmail(name, email, message);
     
     try {
-      await sendEmail({
-        to: ADMIN_EMAIL,
-        subject: emailSubject,
-        htmlContent: emailHtml,
-      });
+      if (!ADMIN_EMAIL) {
+        console.warn('[submitContactForm] ADMIN_EMAIL is not set — contact message saved but not emailed.');
+      } else {
+        await sendEmail(ADMIN_EMAIL, emailSubject, emailHtml);
+      }
     } catch (emailErr) {
       console.error('[submitContactForm] Failed to send email notification via Brevo:', emailErr);
       // We don't fail the request if just the notification fails
@@ -77,5 +77,21 @@ export async function submitContactForm(req, res) {
       error: 'Internal Server Error',
       message: 'Failed to submit contact form.',
     });
+  }
+}
+
+/**
+ * GET /api/contact/messages — staff inbox, newest first.
+ */
+export async function listContactMessages(req, res) {
+  try {
+    const messages = await prisma.contactMessage.findMany({
+      orderBy: { created_at: 'desc' },
+      take: 200,
+    });
+    return res.json({ messages });
+  } catch (err) {
+    console.error('[listContactMessages] Error:', err);
+    return res.status(500).json({ error: 'Internal Server Error', message: 'Could not load messages.' });
   }
 }

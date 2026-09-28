@@ -20,6 +20,10 @@ model User {
   role          String       @default("user")
   created_at    DateTime     @default(now()) @map("created_at")
   email_tokens  EmailToken[]
+  orders        Order[]
+  phone         String?
+  city          String?
+  address       String?
 
   @@map("users")
 }
@@ -68,6 +72,9 @@ model Product {
   name         String
   description  String?
   sku          String?       @unique
+  price        Decimal?      @db.Decimal(10, 2) // SAR, excluding VAT. null = "price on request"
+  stock        Int?          // null = stock not tracked
+  image        String?
   category     Category      @relation(fields: [category_id], references: [id])
   set_items    ProductItem[] @relation("SetToItem")
   part_of_sets ProductItem[] @relation("ItemToSet")
@@ -135,4 +142,49 @@ model ContactMessage {
   created_at DateTime @default(now()) @map("created_at")
 
   @@map("contact_messages")
+}
+
+// Customer orders (cash on delivery or bank transfer)
+model Order {
+  id             Int         @id @default(autoincrement())
+  order_number   String      @unique @map("order_number")
+  user_id        Int?        @map("user_id") // null for guest checkout
+  customer_name  String      @map("customer_name")
+  customer_email String      @map("customer_email")
+  customer_phone String      @map("customer_phone")
+  city           String
+  address        String
+  notes          String?
+  payment_method String      @map("payment_method") // 'cod' | 'bank_transfer'
+  status         String      @default("pending") // pending | confirmed | shipped | delivered | cancelled
+  subtotal       Decimal?    @db.Decimal(12, 2) // sum of priced lines only
+  vat            Decimal?    @db.Decimal(12, 2)
+  total          Decimal?    @db.Decimal(12, 2)
+  needs_quote    Boolean     @default(false) @map("needs_quote") // true when any line has no price yet
+  lang           String      @default("ar")
+  created_at     DateTime    @default(now()) @map("created_at")
+  updated_at     DateTime    @updatedAt @map("updated_at")
+
+  user  User?       @relation(fields: [user_id], references: [id], onDelete: SetNull)
+  items OrderItem[]
+
+  @@index([user_id])
+  @@index([customer_email])
+  @@map("orders")
+}
+
+// Snapshot of each ordered line (name/sku/price are copied so later catalog edits don't change history)
+model OrderItem {
+  id         Int      @id @default(autoincrement())
+  order_id   Int      @map("order_id")
+  product_id Int?     @map("product_id")
+  sku        String?
+  name       String
+  quantity   Int
+  unit_price Decimal? @db.Decimal(10, 2)
+  line_total Decimal? @db.Decimal(12, 2)
+
+  order Order @relation(fields: [order_id], references: [id], onDelete: Cascade)
+
+  @@map("order_items")
 }

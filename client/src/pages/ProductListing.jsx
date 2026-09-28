@@ -1,9 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ProductCardSkeleton } from '../components/Skeleton';
 import { useCart } from '../context/CartContext';
 import './ProductListing.css';
+import { priceOf, priceOnRequest } from '../utils/pricing';
+import { CONSUMABLES_FILTER_KEYS, getConsumableGroup } from '../utils/consumablesFilters';
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
@@ -21,18 +23,23 @@ const SLUG_META = {
  */
 function getProductImage(name = '') {
   const n = name.toLowerCase();
+  if (n.includes('set') || n.includes('tray') || n.includes('box')) return '/icon_surgical_sets.png';
   if (n.includes('scissors'))                                  return '/product_img_scissors.png';
   if (n.includes('forceps') || n.includes('clamp'))            return '/product_img_forceps.png';
+  if (n.includes('needle') || n.includes('holder'))            return '/product_img_needle_holder.png';
+  if (n.includes('retractor'))                                 return '/product_img_retractor.png';
+  if (n.includes('scalpel'))                                   return '/product_img_scalpel.png';
   if (n.includes('syringe'))                                   return '/product_img_syringe.png';
-  if (n.includes('glove'))                                     return '/icon_medical_consumables.png';
-  if (n.includes('set') || n.includes('tray'))                 return '/icon_surgical_sets.png';
-  if (n.includes('needle') || n.includes('holder') ||
-      n.includes('retractor') || n.includes('scalpel') ||
-      n.includes('blade') || n.includes('instrument'))         return '/icon_surgical_instruments.png';
+  if (n.includes('glove'))                                     return '/product_img_gloves.png';
+  if (n.includes('mask'))                                      return '/product_img_mask.png';
+  if (n.includes('gauze') || n.includes('swab') || n.includes('dressing') || n.includes('mepilex') || n.includes('mepore') || n.includes('tape') || n.includes('sponge')) return '/product_img_gauze.png';
+  if (n.includes('catheter') || n.includes('drainage') || n.includes('urine') || n.includes('tube') || n.includes('feeding')) return '/product_img_catheter.png';
+  if (n.includes('disposable') || n.includes('bulb') || n.includes('specula') || n.includes('alcohol') || n.includes('filter') || n.includes('nebulizer')) return '/icon_medical_consumables.png';
   return '/icon_surgical_instruments.png';
 }
 
 const PAGE_SIZE = 9;
+const CONSUMABLES_FETCH_LIMIT = 100;
 
 function ProductListing() {
   const { category: slug } = useParams();
@@ -50,6 +57,9 @@ function ProductListing() {
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [consumablesFilter, setConsumablesFilter] = useState('all');
+
+  const isConsumablesSlug = slug === 'medical-consumables';
 
   /* ── Debounce search input ───────────────────────────────────────────── */
   useEffect(() => {
@@ -65,37 +75,114 @@ function ProductListing() {
       const isSets = slug === 'surgical-sets';
       const endpoint = isSets ? '/api/sets' : '/api/products';
       const params = new URLSearchParams({
-        page,
-        limit: PAGE_SIZE,
+        page: isConsumablesSlug ? '1' : String(page),
+        limit: isConsumablesSlug ? String(CONSUMABLES_FETCH_LIMIT) : String(PAGE_SIZE),
         ...(!isSets && slug && { category: slug }),
-        ...(debouncedSearch && { search: debouncedSearch }),
+        ...(!isConsumablesSlug && debouncedSearch && { search: debouncedSearch }),
       });
       const res = await fetch(`${BASE_URL}${endpoint}?${params}`);
       if (!res.ok) throw new Error('Failed to load products');
       const data = await res.json();
-      setProducts(data.products || data.sets || []);
-      setTotal(data.pagination?.total ?? 0);
-      setTotalPages(data.pagination?.totalPages ?? 1);
+      const rows = data.products || data.sets || [];
+      setProducts(rows);
+      if (isConsumablesSlug) {
+        setTotal(rows.length);
+        setTotalPages(Math.ceil(rows.length / PAGE_SIZE) || 1);
+      } else {
+        setTotal(data.pagination?.total ?? 0);
+        setTotalPages(data.pagination?.totalPages ?? 1);
+      }
     } catch (err) {
-      setError(err.message);
+      console.warn('[ProductListing] API unavailable, using catalog fallback:', err.message);
+      try {
+        const fallbackRes = await fetch('/xelpov_products.json');
+        const fallbackData = await fallbackRes.json();
+        const items = Array.isArray(fallbackData) ? fallbackData : (fallbackData.products || []);
+        const isSets = slug === 'surgical-sets';
+        const filtered = items.filter(inst => {
+          const specList = (inst.specialty || []).join(' ').toLowerCase();
+          const catList = [...(inst.mainCategory || []), ...(inst.subCategory || [])].join(' ').toLowerCase();
+          const name = (inst.name || '').toLowerCase();
+          if (debouncedSearch) {
+            const q = debouncedSearch.toLowerCase();
+            if (!name.includes(q) && !catList.includes(q) && !specList.includes(q)) return false;
+          }
+          if (isSets) return catList.includes('set') || name.includes('set');
+          if (slug === 'surgical-instruments') return !catList.includes('consumable') && !isSets;
+          if (slug === 'medical-consumables') return catList.includes('consumable') || catList.includes('disposable') || catList.includes('dressing') || catList.includes('gauze');
+          return true;
+        }).map((inst, idx) => ({
+          id: inst.slug || idx + 100,
+          name: inst.name,
+          sku: inst.specs?.catalogNumber || inst.slug,
+          description: inst.description || '',
+          price: null,
+          image: inst.image,
+          category: { name: inst.specialty?.[0] || inst.mainCategory?.[0] || 'Surgical Instruments' },
+        }));
+        if (isConsumablesSlug) {
+          setProducts(filtered);
+          setTotal(filtered.length);
+          setTotalPages(Math.ceil(filtered.length / PAGE_SIZE) || 1);
+        } else {
+          setProducts(filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE));
+          setTotal(filtered.length);
+          setTotalPages(Math.ceil(filtered.length / PAGE_SIZE) || 1);
+        }
+      } catch (fallbackErr) {
+        setError(err.message);
+      }
     } finally {
       setLoading(false);
     }
-  }, [page, slug, debouncedSearch]);
+  }, [isConsumablesSlug ? 1 : page, slug, debouncedSearch, isConsumablesSlug]);
 
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
 
-  // Reset page when search changes
-  useEffect(() => { setPage(1); }, [debouncedSearch]);
+  // Reset page when search or consumables filter changes
+  useEffect(() => { setPage(1); }, [debouncedSearch, consumablesFilter]);
+
+  const filteredConsumables = useMemo(() => {
+    if (!isConsumablesSlug) return products;
+    let list = products;
+    if (consumablesFilter !== 'all') {
+      list = list.filter(
+        (p) => getConsumableGroup(p.sku, p.name) === consumablesFilter,
+      );
+    }
+    if (debouncedSearch.trim()) {
+      const q = debouncedSearch.trim().toLowerCase();
+      list = list.filter(
+        (p) =>
+          (p.name || '').toLowerCase().includes(q)
+          || (p.sku || '').toLowerCase().includes(q)
+          || (p.description || '').toLowerCase().includes(q),
+      );
+    }
+    return list;
+  }, [products, isConsumablesSlug, consumablesFilter, debouncedSearch]);
+
+  const displayProducts = isConsumablesSlug
+    ? filteredConsumables.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+    : products;
+
+  const displayTotal = isConsumablesSlug ? filteredConsumables.length : total;
+  const displayTotalPages = isConsumablesSlug
+    ? Math.ceil(filteredConsumables.length / PAGE_SIZE) || 1
+    : totalPages;
 
   /* ── Render ───────────────────────────────────────────────────────────── */
 
   const isSets = slug === 'surgical-sets';
+  const isConsumables = slug === 'medical-consumables';
+  const heroDescription = isConsumables
+    ? t('products.cat_consumables_desc')
+    : t('products.desc_default');
 
   return (
-    <div className="listing-container">
+    <div className={`listing-container${isConsumables ? ' listing-container--consumables' : ''}`}>
       {/* Breadcrumb */}
       <nav className="breadcrumb">
         <Link to="/products">{t('products.title_products')}</Link>
@@ -103,19 +190,50 @@ function ProductListing() {
         <span>{localizedLabel}</span>
       </nav>
 
-      {/* Header */}
-      <header className="listing-header">
-        <h1>
-          <span className="listing-header-accent">{meta.icon} </span>
-          {localizedLabel}
-        </h1>
-        <p>
-          {t('products.desc_default')}
-        </p>
-      </header>
+      {/* Category hero */}
+      {meta.heroImg ? (
+        <header
+          className={`listing-hero listing-hero--${meta.accentClass}`}
+          style={{ backgroundImage: `url(${meta.heroImg})` }}
+        >
+          <div className="listing-hero-overlay" aria-hidden="true" />
+          <div className="listing-hero-content">
+            <h1>{localizedLabel}</h1>
+            <p>{heroDescription}</p>
+          </div>
+        </header>
+      ) : (
+        <header className="listing-header">
+          <h1>{localizedLabel}</h1>
+          <p>{heroDescription}</p>
+        </header>
+      )}
 
       {/* Search */}
       <div className="listing-controls">
+        {isConsumables && (
+          <div className="consumables-filters" role="tablist" aria-label={t('products.title_medical_consumables')}>
+            {CONSUMABLES_FILTER_KEYS.map((key) => (
+              <button
+                key={key}
+                type="button"
+                role="tab"
+                aria-selected={consumablesFilter === key}
+                className={`consumables-filter-btn${consumablesFilter === key ? ' active' : ''}`}
+                onClick={() => setConsumablesFilter(key)}
+              >
+                {key === 'all' ? (
+                  t('products.consumables_filter_all')
+                ) : (
+                  <>
+                    <span className="consumables-filter-num" aria-hidden="true">{key}</span>
+                    <span className="consumables-filter-label">{t(`products.consumables_filter_${key}`)}</span>
+                  </>
+                )}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="search-box">
           <span className="search-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -145,7 +263,7 @@ function ProductListing() {
           <h2>{t('products.unable_to_load')}</h2>
           <p>{error}</p>
         </div>
-      ) : products.length === 0 ? (
+      ) : displayProducts.length === 0 ? (
         <div className="listing-status">
           <h2>{t('products.no_products')}</h2>
           <p>
@@ -157,20 +275,48 @@ function ProductListing() {
       ) : (
         <>
           <div className="products-grid">
-            {products.map((product) => (
+            {displayProducts.map((product) => {
+              const isOutOfStock = product.stock === 0;
+              const isTrackedInStock = product.stock != null && product.stock > 0;
+              return (
               <Link
                 key={product.id}
                 to={`/products/${slug}/${product.id}`}
-                className={`product-card ${isSets ? 'set-card' : ''}`}
+                className={`product-card ${isSets ? 'set-card' : ''}${isOutOfStock ? ' product-card--oos' : ''}`}
               >
                 <div className="product-card-img-wrap">
-                  <img
-                    src={getProductImage(product.name)}
-                    alt={product.name}
-                    className="product-card-img"
-                    loading="lazy"
-                  />
+                  {product.image || product.imageUrl ? (
+                    <img
+                      src={product.image || product.imageUrl}
+                      alt={product.name}
+                      className="product-card-img"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = getProductImage(product.name);
+                      }}
+                    />
+                  ) : (
+                    <div className="product-card-placeholder">
+                      <img
+                        src={getProductImage(product.name)}
+                        alt={product.name}
+                        className="product-card-img placeholder-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <span className="product-card-sfda-badge">SFDA ✓</span>
+                  {isOutOfStock && (
+                    <span className="product-card-stock-badge product-card-stock-badge--out">
+                      {i18n.language.startsWith('ar') ? 'نفدت الكمية' : 'Out of Stock'}
+                    </span>
+                  )}
+                  {!isOutOfStock && isTrackedInStock && (
+                    <span className="product-card-stock-badge product-card-stock-badge--in">
+                      {i18n.language.startsWith('ar') ? 'متوفر' : 'In Stock'}
+                    </span>
+                  )}
                 </div>
 
                 {product.sku && (
@@ -199,60 +345,71 @@ function ProductListing() {
                   <p className="product-card-desc">{product.description}</p>
                 )}
 
-                <div className="product-card-footer" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span className="product-price" style={{ fontWeight: '700', color: '#FF6600', fontSize: '1.1rem' }}>
-                    {product.price
-                      ? `${product.price} ${i18n.language.startsWith('ar') ? 'ر.س' : 'SAR'}`
-                      : `${(product.id * 37 + 85).toFixed(2)} ${i18n.language.startsWith('ar') ? 'ر.س' : 'SAR'}`}
+                <div className="product-card-footer">
+                  <span className="product-price">
+                    {priceOf(product.price)
+                      ? `${Number(product.price).toFixed(2)} ${i18n.language.startsWith('ar') ? 'ر.س' : 'SAR'}`
+                      : priceOnRequest(i18n.language.startsWith('ar'))}
                   </span>
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <div className="product-card-actions">
                     <span className="view-details-btn">{t('products.view_details', 'View')}</span>
-                    <button 
+                    <button
                       className="add-to-cart-btn"
+                      disabled={isOutOfStock}
                       onClick={(e) => {
                         e.preventDefault();
-                        addToCart(product);
-                      }}
-                      style={{
-                        background: '#FF6600',
-                        color: 'white',
-                        border: 'none',
-                        padding: '0.4rem 0.8rem',
-                        borderRadius: '6px',
-                        cursor: 'pointer',
-                        fontWeight: '600',
-                        fontSize: '0.9rem'
+                        if (isOutOfStock) return;
+                        addToCart({ ...product, price: priceOf(product.price) });
                       }}
                     >
-                      {t('cart.add', 'Add')}
+                      {isOutOfStock
+                        ? (i18n.language.startsWith('ar') ? 'نفدت الكمية' : 'Out of Stock')
+                        : t('cart.add', 'Add to Cart')}
                     </button>
                   </div>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
 
           {/* Pagination */}
-          {totalPages > 1 && (
-            <div className="pagination">
+          {displayTotalPages > 1 && (
+            <nav className="pagination" aria-label={t('products.pagination_label', 'Product pages')}>
               <button
-                className="page-btn"
+                type="button"
+                className="page-btn page-btn--nav"
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
                 disabled={page === 1}
               >
                 {t('products.prev')}
               </button>
-              <span className="page-info">
-                {t('products.page_info', { page, totalPages, total })}
-              </span>
+              <div className="pagination-pages" role="group" aria-label={t('products.pagination_pages', 'Page numbers')}>
+                {Array.from({ length: displayTotalPages }, (_, i) => i + 1).map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    className={`page-num-btn${page === n ? ' active' : ''}`}
+                    onClick={() => setPage(n)}
+                    aria-current={page === n ? 'page' : undefined}
+                    aria-label={t('products.page_go', { page: n, defaultValue: `Page ${n}` })}
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
               <button
-                className="page-btn"
-                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                disabled={page === totalPages}
+                type="button"
+                className="page-btn page-btn--nav"
+                onClick={() => setPage((p) => Math.min(displayTotalPages, p + 1))}
+                disabled={page === displayTotalPages}
               >
                 {t('products.next')}
               </button>
-            </div>
+              <p className="page-info">
+                {t('products.page_info', { page, totalPages: displayTotalPages, total: displayTotal })}
+              </p>
+            </nav>
           )}
         </>
       )}
@@ -261,3 +418,4 @@ function ProductListing() {
 }
 
 export default ProductListing;
+

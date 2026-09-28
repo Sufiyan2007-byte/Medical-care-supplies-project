@@ -11,15 +11,19 @@ const CATEGORY_CONFIG = [
   {
     key: 'instruments',
     slug: 'surgical-instruments',
+    to: '/catalogue',
     nameKey: 'products.title_surgical_instruments',
     descKey: 'products.cat_instruments_desc',
     iconImg: '/icon_surgical_instruments.png',
     heroImg: '/hero_slide_surgical.png',
     className: 'instruments',
+    count: '3,150+',
+    staticCount: true,
   },
   {
     key: 'consumables',
     slug: 'medical-consumables',
+    to: '/products/medical-consumables',
     nameKey: 'products.title_medical_consumables',
     descKey: 'products.cat_consumables_desc',
     iconImg: '/icon_medical_consumables.png',
@@ -29,11 +33,36 @@ const CATEGORY_CONFIG = [
   {
     key: 'sets',
     slug: 'surgical-sets',
+    to: '/products/surgical-sets',
     nameKey: 'products.title_surgical_sets',
     descKey: 'products.cat_sets_desc',
     iconImg: '/icon_surgical_sets.png',
     heroImg: '/hero_slide_sets.png',
     className: 'surgical-sets',
+  },
+  {
+    key: 'ent',
+    slug: 'ent',
+    to: '/catalogue/ent',
+    nameKey: 'products.title_ent_diagnostics',
+    descKey: 'products.cat_ent_desc',
+    iconImg: '/icon_ent_diagnostics.jpg',
+    heroImg: '/hero_slide_ent.jpg',
+    className: 'ent-diagnostics',
+    count: '824+',
+    staticCount: true,
+  },
+  {
+    key: 'general-surgery',
+    slug: 'general-surgery',
+    to: '/catalogue/general-surgery',
+    nameKey: 'products.title_general_surgery',
+    descKey: 'products.cat_general_surgery_desc',
+    iconImg: '/icon_surgical_instruments.png',
+    heroImg: '/hero_slide_surgical.png',
+    className: 'instruments',
+    count: '723+',
+    staticCount: true,
   },
 ];
 
@@ -82,22 +111,44 @@ function Products() {
   /* ── Determine what to render ─────────────────────────────────────────── */
 
   // Use live categories when available, otherwise fall back to static config
+  // ENT category is always added from static config (not from API)
   const displayCategories =
     categories.length > 0
-      ? categories.map((cat) => {
-          const cfg = matchConfig(cat);
-          return {
-            ...cfg,
-            name: t(cfg.nameKey) || cat.name,
-            description: t(cfg.descKey) || cat.description || cfg.description,
-            count: cat._count?.products ?? 0,
-          };
-        })
+      ? [
+          ...categories.map((cat) => {
+            const cfg = matchConfig(cat);
+            return {
+              ...cfg,
+              name: t(cfg.nameKey) || cat.name,
+              description: t(cfg.descKey) || cat.description || cfg.description,
+              count: cat._count?.products ?? 0,
+            };
+          }),
+          // Always add ENT catalog at the end
+          {
+            ...CATEGORY_CONFIG[3],
+            to: '/catalogue/ent',
+            name: 'ENT, Laryngoscopes & Diagnostics',
+            description: 'Complete surgical ENT & diagnostic instruments catalog: Laryngoscopes, Otoscopes, Ophthalmoscopes, Dermatoscopes, Rhinology, and 20+ specialized categories.',
+            count: '824+',
+          },
+          {
+            ...CATEGORY_CONFIG[4],
+            to: '/catalogue/general-surgery',
+            name: t(CATEGORY_CONFIG[4].nameKey),
+            description: t(CATEGORY_CONFIG[4].descKey),
+            count: '723+',
+          },
+        ]
       : CATEGORY_CONFIG.map((cfg) => ({
           ...cfg,
-          name: t(cfg.nameKey),
-          description: t(cfg.descKey),
-          count: null,
+          name: cfg.key === 'ent'
+            ? t(cfg.nameKey, 'ENT, Laryngoscopes & Diagnostics')
+            : t(cfg.nameKey),
+          description: cfg.key === 'ent'
+            ? t(cfg.descKey, 'Complete surgical ENT & diagnostic instruments catalog: Laryngoscopes, Otoscopes, Ophthalmoscopes, Dermatoscopes, Rhinology, and 20+ specialized categories.')
+            : t(cfg.descKey),
+          count: cfg.staticCount ? cfg.count : null,
         }));
 
   /* ── Render ───────────────────────────────────────────────────────────── */
@@ -121,7 +172,7 @@ function Products() {
         {displayCategories.map((cat) => (
           <Link
             key={cat.slug}
-            to={`/products/${cat.slug}`}
+            to={cat.to || `/products/${cat.slug}`}
             className={`category-card ${cat.className}`}
           >
             {/* Hero image with gradient overlay */}
@@ -144,10 +195,10 @@ function Products() {
 
             <div className="card-footer">
               <span className="product-count">
-                {cat.count !== null ? `${cat.count} ${t('products.title_products')}` : t('products.view_catalogue')}
+                {cat.count !== null ? `${cat.count} ${cat.staticCount ? 'Models' : t('products.title_products')}` : t('products.view_catalogue')}
               </span>
               <span className="browse-btn">
-                {t('products.browse')}
+                {t('products.browse')} →
               </span>
             </div>
           </Link>
@@ -158,3 +209,4 @@ function Products() {
 }
 
 export default Products;
+

@@ -68,6 +68,8 @@ client/
     components/
       .gitkeep
       AdminRoute.jsx
+      CartPanel.css
+      CartPanel.jsx
       ForgotPasswordForm.css
       ForgotPasswordForm.jsx
       LoginForm.css
@@ -87,6 +89,7 @@ client/
       VerifyEmailCard.jsx
     context/
       AuthContext.jsx
+      CartContext.jsx
       ToastContext.jsx
     hooks/
       .gitkeep
@@ -345,6 +348,345 @@ const AdminRoute = ({ children }) => {
 export default AdminRoute;
 </file>
 
+<file path="client/src/components/CartPanel.css">
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.cart-panel {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cart-panel--rtl {
+  animation: slideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.cart-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.cart-close-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.cart-close-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.cart-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #64748b;
+  text-align: center;
+  gap: 1rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cart-item-info h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.cart-item-price {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #FF6600;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-qty-ctrl {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cart-qty-ctrl button {
+  background: #f8fafc;
+  border: none;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #475569;
+  transition: background 0.2s;
+}
+
+.cart-qty-ctrl button:hover {
+  background: #e2e8f0;
+}
+
+.cart-qty-ctrl span {
+  width: 32px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.cart-item-remove:hover {
+  background: #fef2f2;
+}
+
+.cart-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.cart-total-price {
+  font-size: 1.3rem;
+  color: #FF6600;
+}
+
+.cart-btn {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.cart-btn--primary {
+  background: #FF6600;
+  color: #fff;
+}
+
+.cart-btn--primary:hover {
+  background: #E65C00;
+}
+
+.cart-btn--secondary {
+  background: #e2e8f0;
+  color: #334155;
+  margin-top: 1rem;
+}
+
+.cart-btn--secondary:hover {
+  background: #cbd5e1;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .cart-panel { background: #1e293b; border-left: 1px solid #334155; }
+  .cart-header { border-color: #334155; }
+  .cart-header h2 { color: #f8fafc; }
+  .cart-close-btn:hover { background: #334155; color: #f8fafc; }
+  .cart-item { border-color: #334155; }
+  .cart-item-info h4 { color: #f8fafc; }
+  .cart-qty-ctrl { border-color: #334155; }
+  .cart-qty-ctrl button { background: #334155; color: #cbd5e1; }
+  .cart-qty-ctrl button:hover { background: #475569; }
+  .cart-qty-ctrl span { color: #f8fafc; }
+  .cart-item-remove:hover { background: rgba(239, 68, 68, 0.1); }
+  .cart-footer { background: #0f172a; border-color: #334155; }
+  .cart-summary { color: #f8fafc; }
+}
+</file>
+
+<file path="client/src/components/CartPanel.jsx">
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useCart } from '../context/CartContext';
+import './CartPanel.css';
+
+function CartPanel() {
+  const { t, i18n } = useTranslation();
+  const { isCartOpen, setIsCartOpen, cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
+
+  if (!isCartOpen) return null;
+
+  const isRTL = i18n.language.startsWith('ar');
+
+  return (
+    <div className="cart-overlay">
+      <div className="cart-backdrop" onClick={() => setIsCartOpen(false)} />
+      
+      <div className={`cart-panel ${isRTL ? 'cart-panel--rtl' : ''}`}>
+        <header className="cart-header">
+          <h2>{t('cart.title', 'Shopping Cart')}</h2>
+          <button className="cart-close-btn" onClick={() => setIsCartOpen(false)} aria-label="Close cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </header>
+
+        <div className="cart-content">
+          {cartItems.length === 0 ? (
+            <div className="cart-empty">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <p>{t('cart.empty', 'Your cart is empty.')}</p>
+              <button className="cart-btn cart-btn--secondary" onClick={() => setIsCartOpen(false)}>
+                {t('cart.continue_shopping', 'Continue Shopping')}
+              </button>
+            </div>
+          ) : (
+            <div className="cart-items">
+              {cartItems.map((item) => {
+                const price = item.price || (item.id * 37 + 85);
+                return (
+                  <div key={item.id} className="cart-item">
+                    <div className="cart-item-info">
+                      <h4>{item.name}</h4>
+                      <p className="cart-item-price">
+                        {price.toFixed(2)} {isRTL ? 'ر.س' : 'SAR'}
+                      </p>
+                    </div>
+                    
+                    <div className="cart-item-actions">
+                      <div className="cart-qty-ctrl">
+                        <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
+                        <span>{item.quantity}</span>
+                        <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+                      </div>
+                      <button className="cart-item-remove" onClick={() => removeFromCart(item.id)} aria-label="Remove item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {cartItems.length > 0 && (
+          <footer className="cart-footer">
+            <div className="cart-summary">
+              <span>{t('cart.total', 'Total')}:</span>
+              <span className="cart-total-price">
+                {cartTotal.toFixed(2)} {isRTL ? 'ر.س' : 'SAR'}
+              </span>
+            </div>
+            <button className="cart-btn cart-btn--primary" onClick={() => {
+              alert(t('cart.checkout_msg', 'Checkout functionality coming soon!'));
+              setIsCartOpen(false);
+            }}>
+              {t('cart.checkout', 'Proceed to Checkout')}
+            </button>
+          </footer>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default CartPanel;
+</file>
+
 <file path="client/src/components/ForgotPasswordForm.css">
 /* ─────────────────────────────────────────────
    ForgotPasswordForm Component Styles
@@ -398,7 +740,7 @@ export default AdminRoute;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #0ea5e9;
+  color: var(--primary-color);
   margin-bottom: 0.6rem;
 }
 
@@ -496,12 +838,12 @@ export default AdminRoute;
 }
 
 .fpf__input:focus {
-  border-color: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
 }
 
 .fpf__input-wrap:focus-within .fpf__input-icon {
-  color: #0ea5e9;
+  color: var(--primary-color);
 }
 
 .fpf__input--error {
@@ -528,20 +870,20 @@ export default AdminRoute;
   padding: 0.85rem 1.5rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   font-size: 0.975rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(10, 79, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
 }
 
 .fpf__submit:hover:not(:disabled) {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(10, 79, 163, 0.38);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
 }
 
 .fpf__submit:active:not(:disabled) {
@@ -580,8 +922,8 @@ export default AdminRoute;
 }
 
 .fpf__back-link:hover {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.06);
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.06);
 }
 
 /* ── Success state ── */
@@ -620,8 +962,8 @@ export default AdminRoute;
 .fpf__success-note {
   font-size: 0.8rem;
   color: var(--auth-form-muted, #94a3b8);
-  background: rgba(14, 165, 233, 0.05);
-  border: 1px solid rgba(14, 165, 233, 0.15);
+  background: rgba(255, 102, 0, 0.05);
+  border: 1px solid rgba(255, 102, 0, 0.15);
   border-radius: 10px;
   padding: 0.75rem 1rem;
   line-height: 1.6;
@@ -660,10 +1002,6 @@ function ForgotPasswordForm() {
     prevError.current = error;
   }, [error]);
 
-  /* ── Success state ─────────────────────────────────────────────────── */
-  if (isSubmitted) {
-    return (
-      <div className="fpf__success" id="forgot-password-success">
   /* ── Success state ─────────────────────────────────────────────────── */
   if (isSubmitted) {
     return (
@@ -860,7 +1198,7 @@ export default ForgotPasswordForm;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #0ea5e9;
+  color: var(--primary-color);
   margin-bottom: 0.6rem;
 }
 
@@ -993,13 +1331,13 @@ export default ForgotPasswordForm;
 }
 
 .lf__input:focus {
-  border-color: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
 }
 
 .lf__input:focus + .lf__input-icon,
 .lf__input-wrap:focus-within .lf__input-icon {
-  color: #0ea5e9;
+  color: var(--primary-color);
 }
 
 .lf__input--error {
@@ -1030,8 +1368,8 @@ export default ForgotPasswordForm;
 }
 
 .lf__toggle-btn:hover {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.08);
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.08);
 }
 
 .lf__field-error {
@@ -1053,13 +1391,13 @@ export default ForgotPasswordForm;
 .lf__forgot-link {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #0ea5e9;
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .lf__forgot-link:hover {
-  color: #0284c7;
+  color: var(--primary-dark);
   text-decoration: underline;
 }
 
@@ -1073,21 +1411,21 @@ export default ForgotPasswordForm;
   padding: 0.85rem 1.5rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   font-size: 0.975rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(10, 79, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
   margin-top: 0.25rem;
 }
 
 .lf__submit:hover:not(:disabled) {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(10, 79, 163, 0.38);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
 }
 
 .lf__submit:active:not(:disabled) {
@@ -1119,14 +1457,14 @@ export default ForgotPasswordForm;
 }
 
 .lf__footer a {
-  color: #0ea5e9;
+  color: var(--primary-color);
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .lf__footer a:hover {
-  color: #0284c7;
+  color: var(--primary-dark);
   text-decoration: underline;
 }
 
@@ -1508,7 +1846,7 @@ export default ProtectedRoute;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #0ea5e9;
+  color: var(--primary-color);
   margin-bottom: 0.6rem;
 }
 
@@ -1610,11 +1948,11 @@ export default ProtectedRoute;
 .rvf__input::placeholder { color: var(--auth-form-muted, #94a3b8); }
 
 .rvf__input:focus {
-  border-color: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
 }
 
-.rvf__input-wrap:focus-within .rvf__input-icon { color: #0ea5e9; }
+.rvf__input-wrap:focus-within .rvf__input-icon { color: var(--primary-color); }
 
 .rvf__input--error {
   border-color: #ef4444 !important;
@@ -1640,20 +1978,20 @@ export default ProtectedRoute;
   padding: 0.85rem 1.5rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   font-size: 0.975rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(10, 79, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
 }
 
 .rvf__submit:hover:not(:disabled) {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(10, 79, 163, 0.38);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
 }
 
 .rvf__submit:active:not(:disabled) { transform: translateY(0); }
@@ -1686,8 +2024,8 @@ export default ProtectedRoute;
 }
 
 .rvf__back-link:hover {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.06);
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.06);
 }
 
 /* ── Success state ── */
@@ -1935,7 +2273,7 @@ export default ResendVerificationForm;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #0ea5e9;
+  color: var(--primary-color);
   margin-bottom: 0.6rem;
 }
 
@@ -2061,11 +2399,11 @@ export default ResendVerificationForm;
 .rpf__input::placeholder { color: var(--auth-form-muted, #94a3b8); }
 
 .rpf__input:focus {
-  border-color: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
 }
 
-.rpf__input-wrap:focus-within .rpf__input-icon { color: #0ea5e9; }
+.rpf__input-wrap:focus-within .rpf__input-icon { color: var(--primary-color); }
 
 .rpf__input--error {
   border-color: #ef4444 !important;
@@ -2091,8 +2429,8 @@ export default ResendVerificationForm;
 }
 
 .rpf__toggle-btn:hover {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.08);
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.08);
 }
 
 .rpf__field-error {
@@ -2137,21 +2475,21 @@ export default ResendVerificationForm;
   padding: 0.85rem 1.5rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   font-size: 0.975rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(10, 79, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
   margin-top: 0.25rem;
 }
 
 .rpf__submit:hover:not(:disabled) {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(10, 79, 163, 0.38);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
 }
 
 .rpf__submit:active:not(:disabled) { transform: translateY(0); }
@@ -2175,7 +2513,7 @@ export default ResendVerificationForm;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   font-size: 0.95rem;
   font-weight: 700;
@@ -2184,13 +2522,13 @@ export default ResendVerificationForm;
   cursor: pointer;
   border: none;
   transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(10, 79, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
 }
 
 .rpf__cta:hover {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(10, 79, 163, 0.38);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
 }
 
 .rpf__back-link {
@@ -2209,8 +2547,8 @@ export default ResendVerificationForm;
 }
 
 .rpf__back-link:hover {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.06);
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.06);
 }
 
 /* ── Success state ── */
@@ -2577,7 +2915,7 @@ export default ResetPasswordForm;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #0ea5e9;
+  color: var(--primary-color);
   margin-bottom: 0.6rem;
 }
 
@@ -2677,12 +3015,12 @@ export default ResetPasswordForm;
 }
 
 .sf__input:focus {
-  border-color: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
 }
 
 .sf__input-wrap:focus-within .sf__input-icon {
-  color: #0ea5e9;
+  color: var(--primary-color);
 }
 
 .sf__input--error {
@@ -2711,8 +3049,8 @@ export default ResetPasswordForm;
 }
 
 .sf__toggle-btn:hover {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.08);
+  color: var(--primary-color);
+  background: rgba(255, 102, 0, 0.08);
 }
 
 .sf__field-error {
@@ -2773,8 +3111,8 @@ export default ResetPasswordForm;
 }
 
 .sf__checkbox:checked {
-  background: #0ea5e9;
-  border-color: #0ea5e9;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .sf__checkbox:checked::after {
@@ -2792,7 +3130,7 @@ export default ResetPasswordForm;
 
 .sf__checkbox:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.2);
 }
 
 .sf__terms-text {
@@ -2802,7 +3140,7 @@ export default ResetPasswordForm;
 }
 
 .sf__terms-text a {
-  color: #0ea5e9;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
 }
@@ -2827,21 +3165,21 @@ export default ResetPasswordForm;
   padding: 0.85rem 1.5rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   font-size: 0.975rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(10, 79, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
   margin-top: 0.25rem;
 }
 
 .sf__submit:hover:not(:disabled) {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(10, 79, 163, 0.38);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
 }
 
 .sf__submit:active:not(:disabled) {
@@ -2872,14 +3210,14 @@ export default ResetPasswordForm;
 }
 
 .sf__footer a {
-  color: #0ea5e9;
+  color: var(--primary-color);
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .sf__footer a:hover {
-  color: #0284c7;
+  color: var(--primary-dark);
   text-decoration: underline;
 }
 </file>
@@ -3530,8 +3868,8 @@ export default Toast;
 .vec__spinner {
   width: 48px;
   height: 48px;
-  border: 4px solid rgba(14, 165, 233, 0.15);
-  border-top-color: #0ea5e9;
+  border: 4px solid rgba(255, 102, 0, 0.15);
+  border-top-color: var(--primary-color);
   border-radius: 50%;
   animation: vec-spin 0.8s linear infinite;
 }
@@ -3598,7 +3936,7 @@ export default Toast;
   gap: 0.5rem;
   padding: 0.85rem 1.75rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   font-size: 0.975rem;
   font-weight: 700;
@@ -3607,14 +3945,14 @@ export default Toast;
   cursor: pointer;
   border: none;
   transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(10, 79, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
   margin-top: 0.5rem;
 }
 
 .vec__cta:hover {
   opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(10, 79, 163, 0.38);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
 }
 
 .vec__back-link {
@@ -3626,7 +3964,7 @@ export default Toast;
 }
 
 .vec__back-link:hover {
-  color: #0ea5e9;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 </file>
@@ -3800,6 +4138,89 @@ export function useAuthContext() {
     throw new Error('useAuthContext must be used within an AuthProvider');
   }
   return context;
+}
+</file>
+
+<file path="client/src/context/CartContext.jsx">
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+const CartContext = createContext();
+
+export function useCart() {
+  return useContext(CartContext);
+}
+
+export function CartProvider({ children }) {
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const stored = localStorage.getItem('medportal_cart');
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      return [];
+    }
+  });
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('medportal_cart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const addToCart = (product) => {
+    setCartItems((prev) => {
+      const existing = prev.find((item) => item.id === product.id);
+      if (existing) {
+        return prev.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      }
+      return [...prev, { ...product, quantity: 1 }];
+    });
+    setIsCartOpen(true);
+  };
+
+  const removeFromCart = (id) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const updateQuantity = (id, quantity) => {
+    if (quantity <= 0) {
+      removeFromCart(id);
+      return;
+    }
+    setCartItems((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, quantity } : item))
+    );
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
+  const cartTotal = cartItems.reduce((total, item) => {
+    const price = item.price || (item.id * 37 + 85);
+    return total + price * item.quantity;
+  }, 0);
+
+  const cartCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+
+  return (
+    <CartContext.Provider
+      value={{
+        cartItems,
+        isCartOpen,
+        setIsCartOpen,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        cartTotal,
+        cartCount,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 }
 </file>
 
@@ -4870,7 +5291,12 @@ function AuthLayout() {
               margin: '0.75rem 0',
             }}
           >
-            <span>🇸🇦</span>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
             <span>معتمد لدى الهيئة العامة للغذاء والدواء (SFDA)</span>
           </div>
 
@@ -4994,6 +5420,65 @@ export default AuthLayout;
   font-size: 0.95rem;
 }
 
+/* ── Nav Dropdown ────────────────────────────────────────────────────────── */
+
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-link-dropdown {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #fff;
+  min-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  border: 1px solid #e2e8f0;
+  z-index: 200;
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+html[dir="rtl"] .nav-dropdown-menu {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) translateY(10px);
+}
+html[dir="rtl"] .nav-dropdown-wrapper:hover .nav-dropdown-menu {
+  transform: translateX(50%) translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  color: #334155;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f8fafc;
+  color: #FF6600;
+}
+
 .nav-user-badge {
   font-size: 0.9rem;
   font-weight: 600;
@@ -5054,6 +5539,48 @@ export default AuthLayout;
 .lang-switcher:hover {
   background: #f8fafc;
   border-color: #94a3b8;
+}
+
+/* ── Cart Button ─────────────────────────────────────────────────────────── */
+
+.nav-cart-btn {
+  background: none;
+  border: none;
+  color: #334155;
+  cursor: pointer;
+  position: relative;
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.nav-cart-btn:hover {
+  color: #FF6600;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translate(25%, -25%);
+}
+
+html[dir="rtl"] .cart-badge {
+  right: auto;
+  left: 0;
+  transform: translate(-25%, -25%);
 }
 
 /* ── Hamburger Button (mobile only) ─────────────────────────────────────── */
@@ -5133,6 +5660,37 @@ export default AuthLayout;
   border-bottom: 1px solid #f1f5f9;
 }
 
+.mobile-nav-group {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.5rem;
+}
+.mobile-nav-group .nav-link {
+  border-bottom: none;
+}
+
+.mobile-nav-subitems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem 0;
+  border-left: 2px solid #e2e8f0;
+  margin-left: 0.5rem;
+}
+
+html[dir="rtl"] .mobile-nav-subitems {
+  border-left: none;
+  border-right: 2px solid #e2e8f0;
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.nav-sublink {
+  text-decoration: none;
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
 .mobile-nav-auth {
   display: flex;
   flex-direction: column;
@@ -5143,7 +5701,7 @@ export default AuthLayout;
 .mobile-user-badge {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #0a4fa3;
+  color: var(--primary-dark);
 }
 
 .mobile-logout-btn {
@@ -5160,7 +5718,7 @@ export default AuthLayout;
 
 .mobile-signin-btn {
   text-decoration: none;
-  background: linear-gradient(135deg, #0a4fa3 0%, #0ea5e9 100%);
+  background: var(--primary-gradient);
   color: #fff;
   padding: 0.75rem;
   border-radius: 8px;
@@ -5225,11 +5783,14 @@ import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuthContext } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
+import CartPanel from '../components/CartPanel';
 import './MainLayout.css';
 
 function MainLayout() {
   const { t, i18n } = useTranslation();
   const { isAuthenticated, user, logout } = useAuthContext();
+  const { cartCount, setIsCartOpen } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -5253,7 +5814,27 @@ function MainLayout() {
         <nav className="desktop-nav">
           <Link to="/" className="nav-link">{t('nav.home')}</Link>
           <Link to="/about" className="nav-link">{t('nav.about')}</Link>
-          <Link to="/products" className="nav-link">{t('nav.products')}</Link>
+          
+          <div className="nav-dropdown-wrapper">
+            <Link to="/products" className="nav-link nav-link-dropdown">
+              {t('nav.products')}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', verticalAlign: 'middle' }}>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </Link>
+            <div className="nav-dropdown-menu">
+              <Link to="/products/surgical-instruments" className="dropdown-item">
+                {t('products.title_surgical_instruments', 'Surgical Instruments')}
+              </Link>
+              <Link to="/products/medical-consumables" className="dropdown-item">
+                {t('products.title_medical_consumables', 'Medical Consumables')}
+              </Link>
+              <Link to="/products/surgical-sets" className="dropdown-item">
+                {t('products.title_surgical_sets', 'Surgical Sets')}
+              </Link>
+            </div>
+          </div>
+
           <Link to="/contact" className="nav-link">{t('nav.contact')}</Link>
           
           {user?.role === 'admin' && (
@@ -5262,6 +5843,15 @@ function MainLayout() {
 
           <button onClick={toggleLanguage} className="lang-switcher">
             {i18n.language.startsWith('en') ? 'العربية' : 'English'}
+          </button>
+
+          <button onClick={() => setIsCartOpen(true)} className="nav-cart-btn" aria-label="Open Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </button>
 
           {isAuthenticated ? (
@@ -5282,6 +5872,15 @@ function MainLayout() {
 
         {/* ── Hamburger Toggle (mobile) ──────────────────────────── */}
         <div className="mobile-header-controls">
+          <button onClick={() => setIsCartOpen(true)} className="nav-cart-btn mobile-cart-btn" aria-label="Open Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+          </button>
+
           <button onClick={toggleLanguage} className="lang-switcher mobile-lang">
             {i18n.language.startsWith('en') ? 'ع' : 'EN'}
           </button>
@@ -5302,7 +5901,22 @@ function MainLayout() {
         <nav className={`mobile-nav ${menuOpen ? 'open' : ''}`}>
           <Link to="/" className="nav-link" onClick={closeMenu}>{t('nav.home')}</Link>
           <Link to="/about" className="nav-link" onClick={closeMenu}>{t('nav.about')}</Link>
-          <Link to="/products" className="nav-link" onClick={closeMenu}>{t('nav.products')}</Link>
+          
+          <div className="mobile-nav-group">
+            <Link to="/products" className="nav-link" onClick={closeMenu}>{t('nav.products')}</Link>
+            <div className="mobile-nav-subitems">
+              <Link to="/products/surgical-instruments" className="nav-sublink" onClick={closeMenu}>
+                {t('products.title_surgical_instruments', 'Surgical Instruments')}
+              </Link>
+              <Link to="/products/medical-consumables" className="nav-sublink" onClick={closeMenu}>
+                {t('products.title_medical_consumables', 'Medical Consumables')}
+              </Link>
+              <Link to="/products/surgical-sets" className="nav-sublink" onClick={closeMenu}>
+                {t('products.title_surgical_sets', 'Surgical Sets')}
+              </Link>
+            </div>
+          </div>
+
           <Link to="/contact" className="nav-link" onClick={closeMenu}>{t('nav.contact')}</Link>
 
           {user?.role === 'admin' && (
@@ -5342,6 +5956,8 @@ function MainLayout() {
       <footer className="site-footer">
         {t('footer.rights_reserved', { year: new Date().getFullYear() })}
       </footer>
+
+      <CartPanel />
     </div>
   );
 }
@@ -5365,7 +5981,7 @@ export default MainLayout;
   },
   "home": {
     "hero_title": "مستلزمات جراحية وطبية متقدمة",
-    "hero_subtitle": "نزوّد الكوادر الصحية بأدوات دقيقة ومستهلكات طبية موثوقة.",
+    "hero_subtitle": "نوّزع الكوادر الصحية بأدوات دقيقة ومستهلكات طبية موثوقة.",
     "cta_products": "تصفح المنتجات",
     "cta_contact": "تواصل مع المبيعات",
     "slide1_title": "أدوات جراحية دقيقة",
@@ -5377,23 +5993,23 @@ export default MainLayout;
     "slide3_title": "أطقم جراحية متكاملة",
     "slide3_subtitle": "أطقم أدوات جراحية معقمة وجاهزة للاستخدام، مصممة لإجراءات جراحية محددة.",
     "slide3_cta": "تصفح الأطقم الجراحية ←",
-    "stat1_val": "+٥٠٠",
+    "stat1_val": "+500",
     "stat1_label": "منتج طبي",
     "stat2_val": "SFDA / ISO",
     "stat2_label": "معتمد ومرخّص",
     "stat3_val": "عموم المملكة",
     "stat3_label": "توصيل سريع",
-    "stat4_val": "١٠٠٪",
+    "stat4_val": "100%",
     "stat4_label": "جودة مضمونة",
     "featured_title": "المنتجات المميزة",
     "prod1": "ملقط جراحي",
-    "prod1_price": "١٩٩.٠٠ ر.س",
+    "prod1_price": "199.00 ر.س",
     "prod2": "مقص مايو الجراحي",
-    "prod2_price": "١٤٩.٠٠ ر.س",
-    "prod3": "حقن معقمة (١٠٠ قطعة)",
-    "prod3_price": "٨٩.٠٠ ر.س",
+    "prod2_price": "149.00 ر.س",
+    "prod3": "حقن معقمة (100 قطعة)",
+    "prod3_price": "89.00 ر.س",
     "prod4": "علبة قفازات جراحية",
-    "prod4_price": "٧٥.٠٠ ر.س",
+    "prod4_price": "75.00 ر.س",
     "trust1_title": "مسجل في هيئة الغذاء والدواء",
     "trust1_text": "جميع المنتجات مطابقة لمعايير الهيئة العامة للغذاء والدواء السعودية.",
     "trust2_title": "توصيل سريع بالمملكة",
@@ -5428,7 +6044,7 @@ export default MainLayout;
     "header_desc": "هل لديك أسئلة حول منتجاتنا أو تحتاج إلى عرض سعر مخصص؟ فريقنا هنا للمساعدة. تواصل معنا أدناه.",
     "form_title": "أرسل رسالة",
     "name_label": "الاسم الكامل",
-    "name_placeholder": "أحمد محمد",
+    "name_placeholder": "أدخل اسمك الكامل",
     "email_label": "البريد الإلكتروني",
     "email_placeholder": "ahmad@example.com",
     "message_label": "الرسالة",
@@ -5460,9 +6076,9 @@ export default MainLayout;
     "range_title": "مجموعة منتجاتنا",
     "range_subtitle": "استكشف فئات منتجاتنا المتخصصة — كل منها مصممة لتلبية متطلبات المرافق الصحية الحديثة.",
     "loading_categories": "جاري تحميل فئات المنتجات...",
-    "view_catalogue": "عرض الكتالوج",
+    "view_catalogue": "عرض قائمة المنتجات",
     "browse": "تصفح ←",
-    "cat_instruments_desc": "أدوات مصممة بدقة عالية ومصنوعة وفقاً لأعلى المعايير الطبية. تغطي مجموعتنا كل شيء بدءاً من الملاقط الأساسية وحتى الأدوات الجراحية المتخصصة المستخدة في غرف العمليات حول العالم.",
+    "cat_instruments_desc": "أدوات مصممة بدقة عالية ومصنوعة وفقاً لأعلى المعايير الطبية. تغطي مجموعتنا كل شيء بدءاً من الملاقط الأساسية وحتى الأدوات الجراحية المتخصصة المستخدمة في غرف العمليات حول العالم.",
     "cat_consumables_desc": "مستهلكات ذات استخدام واحد وقابلة لإعادة الاستخدام لجميع البيئات السريرية — قفازات معقمة، ضمادات، سرنجات، وأكثر من ذلك، وكلها مستوردة من مصنعين معتمدين من هيئة الغذاء والدواء.",
     "cat_sets_desc": "أطقم أدوات شاملة مغلفة ومعقمة وفقاً لمعايير الإجراءات الطبية. تم تصميم كل طقم لخدمة تخصصات جراحية معينة، مما يوفر الوقت ويقلل من مخاطر فقدان القطع.",
     "loading_detail": "جاري تحميل تفاصيل المنتج...",
@@ -5475,7 +6091,7 @@ export default MainLayout;
     "finish": "الطلاء / اللمسة النهائية",
     "sterilization": "التعقيم",
     "standard": "المعيار / المواصفة",
-    "tray_case": "الحافظة / الصينية المرفقة",
+    "tray_case": "الحافظة / الصينية المرافقة",
     "set_contents": "محتويات الطقم"
   },
   "auth": {
@@ -5500,9 +6116,9 @@ export default MainLayout;
     "create_account_free": "أنشئ حساباً مجاناً",
     "signup_eyebrow": "حساب جديد",
     "signup_title": "أنشئ حسابك",
-    "signup_subtitle": "انضم إلى MedPortal واحصل على كتالوج اللوازم الطبية الكامل.",
+    "signup_subtitle": "انضم إلى MedPortal للوصول إلى جميع اللوازم الطبية.",
     "name_label": "الاسم الكامل",
-    "name_placeholder": "د. أحمد محمد",
+    "name_placeholder": "أدخل اسمك الكامل",
     "terms_text": "أوافق على شروط الخدمة وسياسة الخصوصية.",
     "already_have_account": "لديك حساب بالفعل؟",
     "reset_invalid_title": "رابط إعادة تعيين غير صالح",
@@ -5541,11 +6157,20 @@ export default MainLayout;
   "auth_layout": {
     "brand_title": "شريكك الموثوق للمستلزمات الطبية في المملكة العربية السعودية",
     "brand_subtitle": "أدوات جراحية ومستهلكات طبية فاخرة معتمدة من الهيئة العامة للغذاء والدواء — توريد وتوصيل سريع للمستشفيات والعيادات.",
-    "stat_products": "+٥٠٠ منتج",
+    "stat_products": "+500 منتج",
     "stat_certified": "معتمد SFDA",
     "stat_delivery": "توصيل سريع بالمملكة",
     "back_to_home": "العودة للرئيسية",
     "powered_by": "مشغل بواسطة"
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "سلة التسوق فارغة.",
+    "continue_shopping": "متابعة التسوق",
+    "total": "الإجمالي",
+    "checkout": "إتمام الشراء",
+    "checkout_msg": "ميزة الدفع قادمة قريباً!",
+    "add": "أضف"
   }
 }
 </file>
@@ -5629,7 +6254,7 @@ export default MainLayout;
     "header_desc": "Have questions about our products or need a custom quote? Our team is here to help. Reach out to us below.",
     "form_title": "Send a Message",
     "name_label": "Full Name",
-    "name_placeholder": "John Doe",
+    "name_placeholder": "Enter your full name",
     "email_label": "Email Address",
     "email_placeholder": "john@example.com",
     "message_label": "Message",
@@ -5703,7 +6328,7 @@ export default MainLayout;
     "signup_title": "Create your account",
     "signup_subtitle": "Join MedPortal and access our full catalog of medical supplies.",
     "name_label": "Full Name",
-    "name_placeholder": "Dr. Sarah Al-Fahad",
+    "name_placeholder": "Enter your full name",
     "terms_text": "I agree to the Terms of Service and Privacy Policy.",
     "already_have_account": "Already have an account?",
     "reset_invalid_title": "Invalid reset link",
@@ -5747,231 +6372,513 @@ export default MainLayout;
     "stat_delivery": "Express KSA",
     "back_to_home": "Back to home",
     "powered_by": "Powered by"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty.",
+    "continue_shopping": "Continue Shopping",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "checkout_msg": "Checkout functionality coming soon!",
+    "add": "Add"
   }
 }
 </file>
 
 <file path="client/src/pages/About.css">
-.about-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  color: var(--text-color, #333);
+/* ══════════════════════════════════════════════════════════════════════════
+   About Page — Professional Redesign
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Loading ──────────────────────────────────────────────────────────────── */
+.about-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  gap: 1.25rem;
+  color: #64748b;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
-  animation: fadeIn 0.6s ease-out forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+.about-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #FF6600;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
 }
 
-/* Header Section */
-.about-header {
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Page Wrapper ─────────────────────────────────────────────────────────── */
+.about-page {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1e293b;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.about-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0c1a2e 100%);
+  padding: 7rem 2rem 8rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  text-align: center;
+  animation: heroIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 102, 0, 0.15);
+  border: 1px solid rgba(255, 102, 0, 0.3);
+  color: #FF8533;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 0 0 1.5rem;
+}
+
+.about-hero-lead {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  line-height: 1.8;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* Dot grid decoration */
+.about-hero-decor {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+.decor-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #FF6600;
+  margin: auto;
+}
+
+/* Orange accent line at the bottom of hero */
+.about-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #E65C00, #FF6600, #FF8533);
+  border-radius: 2px 2px 0 0;
+}
+
+/* ── Stats Strip ──────────────────────────────────────────────────────────── */
+.about-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  border-right: 1px solid #e2e8f0;
+  gap: 0.35rem;
+  transition: background 0.2s;
+}
+
+.about-stat:last-child { border-right: none; }
+
+.about-stat:hover { background: #fafafa; }
+
+.about-stat-val {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #E65C00, #FF6600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ── Generic Section Wrapper ──────────────────────────────────────────────── */
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.about-section-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.about-header h1 {
-  font-size: 3rem;
-  background: linear-gradient(135deg, #2563eb, #14b8a6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.5px;
-}
-
-.about-header p {
-  font-size: 1.25rem;
-  color: #64748b;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-/* Section Titles */
-.section-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: #1e293b;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #3b82f6;
-  margin: 1rem auto 0;
-  border-radius: 2px;
-}
-
-/* Cards Container (Grid) */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-bottom: 5rem;
-}
-
-/* Glassmorphism Card Style */
-.info-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.info-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
-.info-card h3 {
-  font-size: 1.5rem;
-  color: #0f172a;
+.about-section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF6600;
+  background: rgba(255, 102, 0, 0.08);
+  border: 1px solid rgba(255, 102, 0, 0.2);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
   margin-bottom: 1rem;
 }
 
-.info-card p {
-  color: #475569;
-  line-height: 1.6;
+.about-section-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  margin: 0 0 0.75rem;
+}
+
+.about-section-header p {
   font-size: 1.05rem;
+  color: #64748b;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
-/* Feature Specific Styling */
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: #10b981;
+/* ── Vision & Mission ─────────────────────────────────────────────────────── */
+.about-vm-section {
+  background: #f8fafc;
+  max-width: 100%;
+  padding: 6rem 2rem;
 }
 
-.vision-mission .feature-icon {
+.about-vm-section > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vm-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
+}
+
+.vm-card-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+.vm-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vm-card--vision .vm-card-icon {
+  background: rgba(99, 102, 241, 0.1);
   color: #6366f1;
 }
 
-/* Dark Mode Overrides */
-@media (prefers-color-scheme: dark) {
-  .about-container {
-    color: #f8fafc;
-  }
-  
-  .about-header p,
-  .info-card p {
-    color: #94a3b8;
-  }
-  
-  .section-title {
-    color: #f1f5f9;
-  }
-
-  .info-card {
-    background: rgba(30, 41, 59, 0.7);
-    border-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }
-  
-  .info-card h3 {
-    color: #f8fafc;
-  }
-  
-  .info-card:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  }
-
-  .legal-table td:first-child {
-    color: #94a3b8;
-  }
-
-  .legal-table td {
-    border-bottom-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .legal-card {
-    background: rgba(30, 41, 59, 0.7);
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .cert-badge {
-    background: rgba(59, 130, 246, 0.2);
-    color: #93c5fd;
-  }
+.vm-card--mission .vm-card-icon {
+  background: rgba(255, 102, 0, 0.1);
+  color: #FF6600;
 }
 
-/* ── Legal & Regulatory Section ────────────────────────────────────────────── */
-
-.legal-section {
-  margin-bottom: 5rem;
+.vm-card-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.75rem;
 }
 
-.legal-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.legal-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.legal-table tr:last-child td {
-  border-bottom: none;
-}
-
-.legal-table td {
-  padding: 1rem 0.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+.vm-card-content p {
   font-size: 1rem;
-  vertical-align: middle;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.legal-table td:first-child {
+/* ── Values Grid ──────────────────────────────────────────────────────────── */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.value-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border-color: #FF6600;
+}
+
+.value-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 102, 0, 0.08);
+  color: #FF6600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  margin-bottom: 1.25rem;
+  transition: background 0.2s;
+}
+
+.value-card:hover .value-card-icon {
+  background: rgba(255, 102, 0, 0.15);
+}
+
+.value-card-icon svg { width: 100%; height: 100%; }
+
+.value-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.6rem;
+}
+
+.value-card p {
+  font-size: 0.93rem;
   color: #64748b;
-  font-weight: 600;
-  width: 40%;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Legal Panel ──────────────────────────────────────────────────────────── */
+.about-legal-section {
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+  max-width: 100%;
+  padding: 6rem 2rem;
+}
+
+.about-legal-section .about-section-header { max-width: 1200px; margin: 0 auto 4rem; }
+.about-legal-section .about-section-tag {
+  background: rgba(255, 102, 0, 0.2);
+  color: #FF8533;
+  border-color: rgba(255, 102, 0, 0.35);
+}
+.about-legal-section .about-section-header h2 { color: #f8fafc; }
+.about-legal-section .about-section-header p  { color: #94a3b8; }
+
+.legal-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.legal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legal-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.legal-item-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.85rem;
+  color: #64748b;
 }
 
-.legal-table td:last-child {
-  font-weight: 500;
-  color: #1e293b;
+.legal-item-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f1f5f9;
 }
 
-/* Certification badges row */
+.legal-certs {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.legal-cert-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748b;
+  padding-top: 0.5rem;
+  flex-shrink: 0;
+}
+
 .cert-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .cert-badge {
-  display: inline-block;
-  padding: 0.35rem 0.85rem;
-  background: rgba(59, 130, 246, 0.1);
-  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  background: rgba(255, 102, 0, 0.15);
+  border: 1px solid rgba(255, 102, 0, 0.3);
+  color: #FF8533;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   transition: background 0.2s;
 }
 
 .cert-badge:hover {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(255, 102, 0, 0.25);
+}
+
+/* ── Dark Mode ────────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .about-page { color: #f8fafc; }
+
+  .about-stats-strip {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  .about-stat { border-color: #334155; }
+  .about-stat:hover { background: #273344; }
+  .about-stat-label { color: #94a3b8; }
+
+  .about-vm-section { background: #0f172a; }
+
+  .vm-card {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  .vm-card-content h3 { color: #f8fafc; }
+  .vm-card-content p  { color: #94a3b8; }
+
+  .value-card {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  .value-card:hover { border-color: #FF6600; }
+  .value-card h3 { color: #f8fafc; }
+  .value-card p  { color: #94a3b8; }
+
+  .about-section-header h2 { color: #f8fafc; }
+  .about-section-header p  { color: #94a3b8; }
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .legal-info-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .about-hero { padding: 5rem 1.5rem 6rem; }
+  .about-hero h1 { font-size: 2.2rem; }
+  .about-stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .about-stat:nth-child(2) { border-right: none; }
+  .about-stat:nth-child(3) { border-right: 1px solid #e2e8f0; border-top: 1px solid #e2e8f0; }
+  .about-stat:nth-child(4) { border-top: 1px solid #e2e8f0; }
+  .vm-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .legal-info-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .legal-panel { padding: 2rem 1.5rem; }
+  .about-section { padding: 4rem 1.5rem; }
+  .about-vm-section { padding: 4rem 1.5rem; }
+  .about-legal-section { padding: 4rem 1.5rem; }
+  .legal-certs { flex-direction: column; gap: 0.75rem; }
+}
+
+@media (max-width: 480px) {
+  .vm-card { flex-direction: column; gap: 1rem; }
+  .about-hero-decor { display: none; }
 }
 </file>
 
@@ -5979,6 +6886,93 @@ export default MainLayout;
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './About.css';
+
+/* ── SVG Icon set ─────────────────────────────────────────────────────────── */
+/* Telescope — Vision: looking ahead, seeing the future */
+const IconTelescope = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8" cy="12" r="3"/>
+    <path d="M2 12h3M11 12h10"/>
+    <path d="M5.5 9.5L3 6l14-4 2.5 4.5L5.5 9.5z"/>
+    <path d="M11 15l-2 5M13 15l2 5"/>
+  </svg>
+);
+/* Compass — Mission: direction, purpose, navigation */
+const IconCompass = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+  </svg>
+);
+const IconShield = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    <polyline points="9 12 11 14 15 10"/>
+  </svg>
+);
+const IconCertificate = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="8" r="6"/>
+    <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+  </svg>
+);
+const IconTruck = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="1" y="3" width="15" height="13" rx="1"/>
+    <path d="M16 8h4l3 5v3h-7V8z"/>
+    <circle cx="5.5" cy="18.5" r="2.5"/>
+    <circle cx="18.5" cy="18.5" r="2.5"/>
+  </svg>
+);
+const IconHeadset = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 18v-6a9 9 0 0118 0v6"/>
+    <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+  </svg>
+);
+const IconBuilding = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+);
+const IconPackage = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+    <line x1="12" y1="22.08" x2="12" y2="12"/>
+  </svg>
+);
+
+const STATS = [
+  { value: '500+', label: 'Medical Products' },
+  { value: '12+', label: 'Years of Excellence' },
+  { value: '200+', label: 'Healthcare Partners' },
+  { value: '100%', label: 'SFDA Compliant' },
+];
+
+const VALUES = [
+  {
+    Icon: IconShield,
+    title: 'Quality Assured',
+    text: 'Every product undergoes rigorous testing and quality control before reaching our clients. We adhere to the highest international standards without compromise.',
+  },
+  {
+    Icon: IconCertificate,
+    title: 'SFDA Registered',
+    text: 'Fully compliant and registered with the Saudi Food and Drug Authority (SFDA), ensuring safety and reliability in all medical supplies we distribute.',
+  },
+  {
+    Icon: IconTruck,
+    title: 'Express KSA Delivery',
+    text: 'Fast, reliable logistics to hospitals, clinics and pharmacies across Saudi Arabia — ensuring critical supplies arrive when and where they are needed.',
+  },
+  {
+    Icon: IconHeadset,
+    title: '24/7 Expert Support',
+    text: 'Our team of medical supply specialists is available around the clock to assist procurement teams, answer technical questions and resolve any issues.',
+  },
+];
 
 function About() {
   const { t, i18n } = useTranslation();
@@ -5991,9 +6985,7 @@ function About() {
       try {
         const baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
         const response = await fetch(`${baseURL}/api/company`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch company profile');
-        }
+        if (!response.ok) throw new Error('Failed to fetch company profile');
         const data = await response.json();
         setCompany(data.company);
       } catch (err) {
@@ -6003,124 +6995,148 @@ function About() {
         setLoading(false);
       }
     };
-
     fetchCompanyProfile();
   }, []);
 
   if (loading) {
     return (
-      <div className="about-container" style={{ textAlign: 'center' }}>
+      <div className="about-loading">
+        <div className="about-spinner" />
         <p>{t('about.loading')}</p>
       </div>
     );
   }
 
-  if (error || !company) {
-    return (
-      <div className="about-container" style={{ textAlign: 'center' }}>
-        <h1 style={{ color: '#ef4444' }}>{t('about.error_heading')}</h1>
-        <p>{error || t('about.error_text')}</p>
-      </div>
-    );
-  }
-
   const isArabic = i18n.language && i18n.language.startsWith('ar');
-
-  const displayAboutText = isArabic ? t('about.default_about_text') : (company.about_text || t('about.default_about_text'));
-  const displayVision = isArabic ? t('about.default_vision') : (company.vision || t('about.default_vision'));
-  const displayMission = isArabic ? t('about.default_mission') : (company.mission || t('about.default_mission'));
+  const displayAboutText = isArabic ? t('about.default_about_text') : (company?.about_text || t('about.default_about_text'));
+  const displayVision    = isArabic ? t('about.default_vision')    : (company?.vision    || t('about.default_vision'));
+  const displayMission   = isArabic ? t('about.default_mission')   : (company?.mission   || t('about.default_mission'));
 
   return (
-    <div className="about-container">
-      <section className="about-header">
-        <h1>{t('about.header_title')}</h1>
-        <p>{displayAboutText}</p>
+    <div className="about-page">
+
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      <section className="about-hero">
+        <div className="about-hero-inner">
+          <span className="about-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#FF6600" stroke="none"><circle cx="12" cy="12" r="12"/></svg>
+            About MedPortal
+          </span>
+          <h1>{t('about.header_title', 'Who We Are')}</h1>
+          <p className="about-hero-lead">{displayAboutText}</p>
+        </div>
+
+        {/* Decorative grid pattern */}
+        <div className="about-hero-decor" aria-hidden="true">
+          {Array.from({ length: 48 }).map((_, i) => (
+            <span key={i} className="decor-dot" />
+          ))}
+        </div>
       </section>
 
-      <section className="vision-mission">
-        <h2 className="section-title">{t('about.purpose_title')}</h2>
-        <div className="cards-grid">
-          <div className="info-card">
-            <div className="feature-icon">
-              <img src="/icon_vision.png" alt="Vision Icon" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
-            </div>
-            <h3>{t('about.vision_title')}</h3>
-            <p>{displayVision}</p>
+      {/* ── Stats Strip ───────────────────────────────────────────────────── */}
+      <section className="about-stats-strip">
+        {STATS.map((s, i) => (
+          <div key={i} className="about-stat">
+            <span className="about-stat-val">{s.value}</span>
+            <span className="about-stat-label">{s.label}</span>
           </div>
-          <div className="info-card">
-            <div className="feature-icon">
-              <img src="/icon_mission.png" alt="Mission Icon" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
+        ))}
+      </section>
+
+      {/* ── Vision & Mission ──────────────────────────────────────────────── */}
+      <section className="about-section about-vm-section">
+        <div className="about-section-header">
+          <span className="about-section-tag">Our Purpose</span>
+          <h2>{t('about.purpose_title', 'Vision & Mission')}</h2>
+          <p>The principles that guide everything we do.</p>
+        </div>
+
+        <div className="vm-grid">
+          <div className="vm-card vm-card--vision">
+            <div className="vm-card-icon">
+              <IconTelescope />
             </div>
-            <h3>{t('about.mission_title')}</h3>
-            <p>{displayMission}</p>
+            <div className="vm-card-content">
+              <h3>{t('about.vision_title', 'Our Vision')}</h3>
+              <p>{displayVision}</p>
+            </div>
+          </div>
+          <div className="vm-card vm-card--mission">
+            <div className="vm-card-icon">
+              <IconCompass />
+            </div>
+            <div className="vm-card-content">
+              <h3>{t('about.mission_title', 'Our Mission')}</h3>
+              <p>{displayMission}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="features">
-        <h2 className="section-title">{t('about.why_choose_us')}</h2>
-        <div className="cards-grid">
-          <div className="info-card">
-            <div className="feature-icon">
-              <img src="/icon_quality.png" alt="Quality Icon" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
+      {/* ── Why Choose Us ─────────────────────────────────────────────────── */}
+      <section className="about-section about-values-section">
+        <div className="about-section-header">
+          <span className="about-section-tag">Why Choose Us</span>
+          <h2>{t('about.why_choose_us', 'Our Commitment to Excellence')}</h2>
+          <p>Four pillars that define our service to the healthcare community.</p>
+        </div>
+
+        <div className="values-grid">
+          {VALUES.map(({ Icon, title, text }, i) => (
+            <div key={i} className="value-card">
+              <div className="value-card-icon">
+                <Icon />
+              </div>
+              <h3>{title}</h3>
+              <p>{text}</p>
             </div>
-            <h3>{t('about.quality_title')}</h3>
-            <p>
-              {t('about.quality_text')}
-            </p>
-          </div>
-          <div className="info-card">
-            <div className="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L4 5V11C4 16.55 7.4 21.74 12 23C16.6 21.74 20 16.55 20 11V5L12 2Z" fill="#0EA5E9" fillOpacity="0.15" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M9 12L11 14L15 10" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <h3>{t('about.sfda_title')}</h3>
-            <p>
-              {t('about.sfda_text')}
-            </p>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="legal-section">
-        <h2 className="section-title">{t('about.legal_title')}</h2>
-        <div className="legal-card">
-          <table className="legal-table">
-            <tbody>
-              <tr>
-                <td>{t('about.cr_number')}</td>
-                <td>{company.cr_number || '—'}</td>
-              </tr>
-              <tr>
-                <td>{t('about.vat_number')}</td>
-                <td>{company.vat_number || '—'}</td>
-              </tr>
-              <tr>
-                <td>{t('about.entity_type')}</td>
-                <td>{company.entity_type || '—'}</td>
-              </tr>
-              <tr>
-                <td>{t('about.certifications')}</td>
-                <td>
-                  <div className="cert-badges">
-                    {(company.certifications || '')
-                      .split(',')
-                      .map((cert) => cert.trim())
-                      .filter(Boolean)
-                      .map((cert) => (
-                        <span className="cert-badge" key={cert}>
-                          {cert}
-                        </span>
-                      ))}
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      {/* ── Legal & Regulatory ────────────────────────────────────────────── */}
+      {company && (
+        <section className="about-section about-legal-section">
+          <div className="about-section-header">
+            <span className="about-section-tag">Transparency</span>
+            <h2>{t('about.legal_title', 'Legal & Regulatory')}</h2>
+            <p>Our registration and certification details for healthcare procurement teams.</p>
+          </div>
+
+          <div className="legal-panel">
+            <div className="legal-info-grid">
+              {[
+                { label: t('about.cr_number', 'CR Number'), value: company.cr_number },
+                { label: t('about.vat_number', 'VAT Number'), value: company.vat_number },
+                { label: t('about.entity_type', 'Entity Type'), value: company.entity_type },
+              ].map(({ label, value }) => (
+                <div key={label} className="legal-item">
+                  <span className="legal-item-label">{label}</span>
+                  <span className="legal-item-value">{value || '—'}</span>
+                </div>
+              ))}
+            </div>
+
+            {(company.certifications || '').split(',').map(s => s.trim()).filter(Boolean).length > 0 && (
+              <div className="legal-certs">
+                <span className="legal-cert-label">{t('about.certifications', 'Certifications')}</span>
+                <div className="cert-badges">
+                  {company.certifications.split(',').map(cert => cert.trim()).filter(Boolean).map(cert => (
+                    <span key={cert} className="cert-badge">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0}}>
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
     </div>
   );
 }
@@ -6160,7 +7176,7 @@ export default About;
 }
 
 .add-btn {
-  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  background: var(--primary-gradient);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -6255,7 +7271,7 @@ export default About;
 }
 
 .edit-btn {
-  color: #0ea5e9;
+  color: var(--primary-color);
 }
 .edit-btn:hover {
   background: #e0f2fe;
@@ -6352,7 +7368,7 @@ export default About;
 .admin-form textarea:focus,
 .admin-form select:focus {
   outline: none;
-  border-color: #0ea5e9;
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
   background: #ffffff;
 }
@@ -6397,7 +7413,7 @@ export default About;
   padding: 1rem;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  background: var(--primary-gradient);
   color: white;
   font-size: 1.05rem;
   font-weight: 600;
@@ -6907,275 +7923,712 @@ export default CheckInbox;
 </file>
 
 <file path="client/src/pages/Contact.css">
-/* ── Contact Page ─────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════
+   Contact Page — Professional Redesign
+   ══════════════════════════════════════════════════════════════════════════ */
 
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem 6rem;
-  font-family: 'Inter', sans-serif;
-  animation: contactPageIn 0.5s ease-out forwards;
+.contact-page {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1e293b;
+  animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes contactPageIn {
+@keyframes pageFadeIn {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.contact-header {
+/* ── Hero Section ─────────────────────────────────────────────────────────── */
+.contact-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0c1a2e 100%);
+  padding: 6.5rem 2rem 7.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
   text-align: center;
-  margin-bottom: 4rem;
+  animation: heroSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.contact-header h1 {
-  font-size: 2.75rem;
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 102, 0, 0.15);
+  border: 1px solid rgba(255, 102, 0, 0.3);
+  color: #FF8533;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.contact-hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.5px;
-  margin: 0 0 1rem;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 0 0 1.25rem;
 }
 
-.contact-header p {
+.contact-hero-lead {
   font-size: 1.15rem;
-  color: #64748b;
-  max-width: 600px;
+  color: #94a3b8;
+  line-height: 1.8;
+  max-width: 640px;
   margin: 0 auto;
-  line-height: 1.6;
 }
 
-/* ── Content Layout ──────────────────────────────────────────────────────── */
-
-.contact-content {
+/* Dot grid background decoration */
+.contact-hero-decor {
+  position: absolute;
+  inset: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  pointer-events: none;
+  opacity: 0.16;
+}
+
+.decor-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #FF6600;
+  margin: auto;
+}
+
+.contact-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #E65C00, #FF6600, #FF8533);
+  border-radius: 2px 2px 0 0;
+}
+
+/* ── Contact Channels Strip (4-Card Grid) ─────────────────────────────────── */
+.contact-channels-strip {
+  max-width: 1200px;
+  margin: -3.5rem auto 4rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.channel-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.channel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(255, 102, 0, 0.1);
+  border-color: #FF6600;
+}
+
+.channel-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 102, 0, 0.08);
+  color: #FF6600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  flex-shrink: 0;
+}
+
+.channel-icon-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.channel-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.4rem;
+}
+
+.channel-body p,
+.channel-body a {
+  font-size: 0.93rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  text-decoration: none;
+  display: block;
+}
+
+.channel-body a:hover {
+  color: #FF6600;
+}
+
+.channel-subtext {
+  display: block;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+.channel-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+}
+
+/* ── Main Content Grid (Form + Sidebar) ──────────────────────────────────── */
+.contact-main-section {
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2.5rem;
   align-items: start;
 }
 
-/* ── Info Cards ──────────────────────────────────────────────────────────── */
+/* ── Form Card ────────────────────────────────────────────────────────────── */
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.04);
+}
 
-.contact-info {
+.form-card-header {
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1.5rem;
+}
+
+.form-card-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+  margin: 0 0 0.5rem;
+}
+
+.form-card-header p {
+  font-size: 0.98rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group label .req {
+  color: #ef4444;
+  margin-left: 0.2rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #FF6600;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.12);
+}
+
+.contact-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #E65C00 0%, #FF6600 100%);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 1.75rem;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.25);
+  margin-top: 0.5rem;
+}
+
+.contact-submit-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 102, 0, 0.35);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ── Sidebar Cards ────────────────────────────────────────────────────────── */
+.contact-sidebar {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.info-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 16px;
-  padding: 2rem;
+.sidebar-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-box--urgent {
+  background: linear-gradient(135deg, #fff7ed 0%, #fff 100%);
+  border-color: rgba(255, 102, 0, 0.25);
+}
+
+.sidebar-box--sfda {
+  background: linear-gradient(135deg, #f0fdf4 0%, #fff 100%);
+  border-color: rgba(22, 163, 74, 0.25);
+}
+
+.box-icon-head {
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
-  transition: transform 0.25s, box-shadow 0.25s;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(14, 165, 233, 0.08);
+.box-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-shrink: 0;
 }
 
-.info-icon {
-  font-size: 2.5rem;
-  line-height: 1;
-  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.sidebar-box--urgent .box-icon {
+  background: rgba(255, 102, 0, 0.12);
+  color: #FF6600;
 }
 
-.info-details h3 {
+.sidebar-box--sfda .box-icon {
+  background: rgba(22, 163, 74, 0.12);
+  color: #16a34a;
+}
+
+.box-icon svg { width: 100%; height: 100%; }
+
+.box-icon-head h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.box-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-top: 0.2rem;
+}
+
+.box-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.sidebar-box p {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+
+.box-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FF6600;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+
+.box-link:hover { text-decoration: underline; }
+
+/* Map Mockup Box */
+.sidebar-box--map {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #ffffff;
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-mockup-inner h4 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1e293b;
-  margin: 0 0 0.5rem;
+  margin: 0.75rem 0 0.35rem;
+  color: #ffffff;
 }
 
-.info-details p,
-.info-details a {
-  font-size: 1rem;
-  color: #475569;
-  margin: 0;
-  line-height: 1.5;
-  text-decoration: none;
-  transition: color 0.2s;
+.map-mockup-inner p {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin: 0 0 0.85rem;
 }
 
-.info-details a:hover {
-  color: #0ea5e9;
+.map-pin-pulse {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 102, 0, 0.2);
+  color: #FF8533;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 12px;
+  animation: pulsePin 2s infinite;
 }
 
-/* ── Contact Form ────────────────────────────────────────────────────────── */
+.map-pin-pulse svg { width: 100%; height: 100%; }
 
-.contact-form-wrapper {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-  border: 1px solid #f1f5f9;
+@keyframes pulsePin {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.4); }
+  70%  { box-shadow: 0 0 0 16px rgba(255, 102, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
 }
 
-.contact-form h2 {
-  font-size: 1.75rem;
+.map-coords {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #FF8533;
+  background: rgba(255, 102, 0, 0.15);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* ── FAQ Section ──────────────────────────────────────────────────────────── */
+.contact-faq-section {
+  max-width: 960px;
+  margin: 0 auto 6rem;
+  padding: 0 2rem;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FF6600;
+  background: rgba(255, 102, 0, 0.08);
+  border: 1px solid rgba(255, 102, 0, 0.2);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.faq-header h2 {
+  font-size: 2.2rem;
   font-weight: 800;
   color: #0f172a;
-  margin: 0 0 2rem;
+  letter-spacing: -0.5px;
+  margin: 0 0 0.6rem;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #475569;
-  margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.9rem 1.25rem;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
+.faq-header p {
   font-size: 1rem;
-  color: #1e293b;
-  background: #f8fafc;
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-  font-family: inherit;
-  box-sizing: border-box;
+  color: #64748b;
+  margin: 0;
 }
 
-.form-group textarea {
-  resize: vertical;
-  min-height: 150px;
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #0ea5e9;
+.faq-item {
   background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
-}
-
-.submit-btn {
-  width: 100%;
-  padding: 1rem;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
-  color: white;
-  font-size: 1.05rem;
-  font-weight: 600;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
 }
 
-.submit-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.25);
+.faq-item:hover {
+  border-color: #FF6600;
+  box-shadow: 0 8px 24px rgba(255, 102, 0, 0.08);
 }
 
-.submit-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.faq-item--open {
+  border-color: #FF6600;
+  background: #fffcf9;
 }
 
-/* ── Feedback Messages ───────────────────────────────────────────────────── */
-
-.form-message {
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.25rem;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  animation: messageIn 0.3s ease-out;
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-@keyframes messageIn {
-  from { opacity: 0; transform: translateY(-8px); }
+.faq-question h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.faq-toggle-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  padding: 6px;
+}
+
+.faq-toggle-icon svg { width: 100%; height: 100%; }
+
+.faq-item--open .faq-toggle-icon {
+  transform: rotate(180deg);
+  background: #FF6600;
+  color: #ffffff;
+}
+
+.faq-answer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+  animation: answerFadeIn 0.3s ease forwards;
+}
+
+@keyframes answerFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.form-message.success {
-  background: rgba(16, 185, 129, 0.1);
-  color: #047857;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+.faq-answer p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.form-message.error {
-  background: rgba(239, 68, 68, 0.1);
-  color: #b91c1c;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-}
-
-/* ── Dark Mode ───────────────────────────────────────────────────────────── */
-
+/* ── Dark Mode Support ────────────────────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
-  .contact-header h1 { color: #f8fafc; }
-  .contact-header p { color: #94a3b8; }
+  .contact-page { color: #f8fafc; }
 
-  .info-card {
-    background: rgba(30, 41, 59, 0.6);
-    border-color: rgba(255, 255, 255, 0.05);
+  .channel-card,
+  .contact-form-card,
+  .sidebar-box,
+  .faq-item {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
-  
-  .info-details h3 { color: #f8fafc; }
-  .info-details p,
-  .info-details a { color: #94a3b8; }
-  
-  .contact-form-wrapper {
-    background: rgba(30, 41, 59, 0.8);
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .contact-form h2 { color: #f8fafc; }
-  .form-group label { color: #cbd5e1; }
-  
-  .form-group input,
-  .form-group textarea {
-    background: rgba(15, 23, 42, 0.5);
-    border-color: rgba(255, 255, 255, 0.1);
+
+  .channel-body h3,
+  .form-card-header h2,
+  .box-icon-head h4,
+  .faq-header h2,
+  .faq-question h3 {
     color: #f8fafc;
   }
-  
+
+  .channel-body p,
+  .channel-body a,
+  .form-card-header p,
+  .sidebar-box p,
+  .faq-header p,
+  .faq-answer p {
+    color: #94a3b8;
+  }
+
+  .form-group label { color: #cbd5e1; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+  }
+
   .form-group input:focus,
+  .form-group select:focus,
   .form-group textarea:focus {
-    background: rgba(15, 23, 42, 0.8);
-    border-color: #3b82f6;
+    background: #1e293b;
+    border-color: #FF6600;
   }
-  
-  .form-message.success {
-    background: rgba(16, 185, 129, 0.15);
-    color: #34d399;
+
+  .sidebar-box--urgent {
+    background: linear-gradient(135deg, #1e293b 0%, #2a1b14 100%);
+    border-color: rgba(255, 102, 0, 0.4);
   }
-  
-  .form-message.error {
-    background: rgba(239, 68, 68, 0.15);
-    color: #f87171;
+
+  .sidebar-box--sfda {
+    background: linear-gradient(135deg, #1e293b 0%, #14281f 100%);
+    border-color: rgba(22, 163, 74, 0.4);
+  }
+
+  .faq-item--open {
+    background: #273344;
+    border-color: #FF6600;
+  }
+
+  .faq-toggle-icon {
+    background: #334155;
+    color: #cbd5e1;
+  }
+
+  .form-card-header,
+  .faq-answer {
+    border-color: #334155;
   }
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────────── */
-
-@media (max-width: 900px) {
-  .contact-content {
+/* ── Responsive Styles ────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-main-grid {
     grid-template-columns: 1fr;
   }
-  .contact-form-wrapper {
-    order: -1;
-  }
 }
 
-@media (max-width: 640px) {
-  .contact-header h1 { font-size: 2.2rem; }
-  .contact-form-wrapper { padding: 2rem 1.5rem; }
+@media (max-width: 768px) {
+  .contact-hero { padding: 4.5rem 1.5rem 6rem; }
+  .contact-channels-strip { margin-top: -3rem; padding: 0 1.5rem; }
+  .contact-main-section,
+  .contact-faq-section { padding: 0 1.5rem; }
+  .contact-form-card { padding: 2rem 1.5rem; }
+  .form-row-2 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 540px) {
+  .channels-grid { grid-template-columns: 1fr; }
+  .contact-hero-decor { display: none; }
 }
 </file>
 
@@ -7187,18 +8640,104 @@ import './Contact.css';
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
+/* ── SVG Icons ───────────────────────────────────────────────────────────── */
+const IconPhone = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+);
+const IconMail = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </svg>
+);
+const IconMapPin = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+);
+const IconClock = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="12 6 12 12 16 14"/>
+  </svg>
+);
+const IconShieldCheck = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    <polyline points="9 12 11 14 15 10"/>
+  </svg>
+);
+const IconTruckFast = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="1" y="3" width="15" height="13" rx="1"/>
+    <path d="M16 8h4l3 5v3h-7V8z"/>
+    <circle cx="5.5" cy="18.5" r="2.5"/>
+    <circle cx="18.5" cy="18.5" r="2.5"/>
+  </svg>
+);
+const IconSend = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="22" y1="2" x2="11" y2="13"/>
+    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+  </svg>
+);
+const IconChevronDown = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
+);
+
+const FAQS = [
+  {
+    qKey: 'contact.faq1_q',
+    qDefault: 'What is your standard delivery timeframe within Saudi Arabia?',
+    aKey: 'contact.faq1_a',
+    aDefault: 'We offer express delivery within 24 to 48 hours to major hubs including Riyadh, Jeddah, Dammam, Mecca, and Medina. Regional clinic shipments typically arrive within 2–3 business days.',
+  },
+  {
+    qKey: 'contact.faq2_q',
+    qDefault: 'Are all products certified and registered with the SFDA?',
+    aKey: 'contact.faq2_a',
+    aDefault: 'Yes. 100% of surgical instruments, sets, and medical consumables cataloged on MedPortal are registered with the Saudi Food & Drug Authority (SFDA) and comply with ISO standards.',
+  },
+  {
+    qKey: 'contact.faq3_q',
+    qDefault: 'Can hospitals and healthcare institutions request formal RFP quotes?',
+    aKey: 'contact.faq3_a',
+    aDefault: 'Absolutely. Our sales department handles volume pricing, formal quotation sheets, and credit terms for licensed hospitals, day-surgery centers, and medical chains.',
+  },
+  {
+    qKey: 'contact.faq4_q',
+    qDefault: 'What is your warranty and return policy for surgical instruments?',
+    aKey: 'contact.faq4_a',
+    aDefault: 'Our surgical grade instruments come with a lifetime material guarantee against manufacturing defects. If an item arrives compromised or fails inspection, we issue an immediate replacement.',
+  },
+];
+
 function Contact() {
   const { t } = useTranslation();
   const { addToast } = useToast();
   const [companyInfo, setCompanyInfo] = useState(null);
+  const [openFaq, setOpenFaq] = useState(null);
   
-  const [formData, setFormData] = useState({ name: '', email: '', message: '', website: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    facility: '',
+    department: 'sales',
+    message: '',
+    website: '',
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     fetch(`${BASE_URL}/api/company`)
       .then((res) => res.json())
-      .then((data) => setCompanyInfo(data.data))
+      .then((data) => setCompanyInfo(data.data || data.company))
       .catch((err) => console.error('Failed to load company info:', err));
   }, []);
 
@@ -7220,11 +8759,19 @@ function Contact() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.message || t('contact.error_generic'));
+        throw new Error(data.message || t('contact.error_generic', 'Something went wrong. Please try again.'));
       }
 
-      addToast(t('contact.success'), 'success');
-      setFormData({ name: '', email: '', message: '', website: '' });
+      addToast(t('contact.success', 'Thank you! Your message has been sent successfully.'), 'success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        facility: '',
+        department: 'sales',
+        message: '',
+        website: '',
+      });
     } catch (err) {
       addToast(err.message, 'error');
     } finally {
@@ -7232,126 +8779,285 @@ function Contact() {
     }
   };
 
+  const toggleFaq = (idx) => {
+    setOpenFaq(openFaq === idx ? null : idx);
+  };
+
   return (
-    <div className="contact-container">
-      <header className="contact-header">
-        <h1>{t('contact.header_title')}</h1>
-        <p>
-          {t('contact.header_desc')}
-        </p>
-      </header>
+    <div className="contact-page">
 
-      <div className="contact-content">
-        {/* Contact Form */}
-        <div className="contact-form-wrapper">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <h2>{t('contact.form_title')}</h2>
-
-            <div className="form-group">
-              <label htmlFor="name">{t('contact.name_label')}</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder={t('contact.name_placeholder')}
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="email">{t('contact.email_label')}</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder={t('contact.email_placeholder')}
-              />
-            </div>
-            
-            {/* Honeypot field (hidden from real users) */}
-            <div className="form-group" style={{ display: 'none' }} aria-hidden="true">
-              <label htmlFor="website">Website</label>
-              <input
-                type="text"
-                id="website"
-                name="website"
-                value={formData.website}
-                onChange={handleChange}
-                tabIndex="-1"
-                autoComplete="off"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="message">{t('contact.message_label')}</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder={t('contact.message_placeholder')}
-              ></textarea>
-            </div>
-
-            <button type="submit" className="submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? t('contact.sending') : t('contact.send_button')}
-            </button>
-          </form>
+      {/* ── Hero Section ─────────────────────────────────────────────────── */}
+      <section className="contact-hero">
+        <div className="contact-hero-inner">
+          <span className="contact-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#FF6600" stroke="none"><circle cx="12" cy="12" r="12"/></svg>
+            Contact MedPortal
+          </span>
+          <h1>{t('contact.header_title', 'Connect with Our Medical Specialists')}</h1>
+          <p className="contact-hero-lead">
+            {t('contact.header_desc', 'Whether you need formal sales quotes, SFDA compliance documentation, or urgent operating theatre supplies, our dedicated team is here to assist.')}
+          </p>
         </div>
 
-        {/* Info Cards */}
-        <div className="contact-info">
-          {companyInfo?.email && (
-            <div className="info-card">
-              <div className="info-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div className="info-details">
-                <h3>{t('contact.email')}</h3>
-                <a href={`mailto:${companyInfo.email}`}>{companyInfo.email}</a>
-              </div>
-            </div>
-          )}
-
-          {companyInfo?.phone && (
-            <div className="info-card">
-              <div className="info-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-              <div className="info-details">
-                <h3>{t('contact.phone')}</h3>
-                <a href={`tel:${companyInfo.phone}`}>{companyInfo.phone}</a>
-              </div>
-            </div>
-          )}
-
-          {companyInfo?.address && (
-            <div className="info-card">
-              <div className="info-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <div className="info-details">
-                <h3>{t('contact.office')}</h3>
-                <p>{companyInfo.address}</p>
-              </div>
-            </div>
-          )}
+        {/* Decorative Grid Pattern */}
+        <div className="contact-hero-decor" aria-hidden="true">
+          {Array.from({ length: 48 }).map((_, i) => (
+            <span key={i} className="decor-dot" />
+          ))}
         </div>
-      </div>
+      </section>
+
+      {/* ── Contact Channels Strip (4-Card Grid) ─────────────────────────── */}
+      <section className="contact-channels-strip">
+        <div className="channels-grid">
+          <div className="channel-card">
+            <div className="channel-icon-wrap">
+              <IconMapPin />
+            </div>
+            <div className="channel-body">
+              <h3>{t('contact.office', 'Headquarters')}</h3>
+              <p>{companyInfo?.address || 'King Fahd Road, Olaya District, Riyadh, Saudi Arabia'}</p>
+            </div>
+          </div>
+
+          <div className="channel-card">
+            <div className="channel-icon-wrap">
+              <IconPhone />
+            </div>
+            <div className="channel-body">
+              <h3>{t('contact.phone', 'Sales & Orders')}</h3>
+              <a href={`tel:${companyInfo?.phone || '+966112345678'}`}>
+                {companyInfo?.phone || '+966 (11) 234-5678'}
+              </a>
+              <span className="channel-subtext">Direct Procurement Line</span>
+            </div>
+          </div>
+
+          <div className="channel-card">
+            <div className="channel-icon-wrap">
+              <IconMail />
+            </div>
+            <div className="channel-body">
+              <h3>{t('contact.email', 'Customer Support')}</h3>
+              <a href={`mailto:${companyInfo?.email || 'support@medportal.sa'}`}>
+                {companyInfo?.email || 'support@medportal.sa'}
+              </a>
+              <span className="channel-subtext">24/7 Priority Response</span>
+            </div>
+          </div>
+
+          <div className="channel-card">
+            <div className="channel-icon-wrap">
+              <IconClock />
+            </div>
+            <div className="channel-body">
+              <h3>Operating Hours</h3>
+              <p>Sun – Thu: 8:00 AM – 5:00 PM AST</p>
+              <span className="channel-badge">Emergency Dispatch Active</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Main Content Grid (Form + Information Desk) ────────────────────── */}
+      <section className="contact-main-section">
+        <div className="contact-main-grid">
+
+          {/* Form Side */}
+          <div className="contact-form-card">
+            <div className="form-card-header">
+              <h2>{t('contact.form_title', 'Send a Message')}</h2>
+              <p>Fill out the details below and our team will get back to you within 2 business hours.</p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="contact-form">
+
+              <div className="form-row-2">
+                <div className="form-group">
+                  <label htmlFor="name">{t('contact.name_label', 'Full Name')} <span className="req">*</span></label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder={t('contact.name_placeholder', 'Enter your full name')}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">{t('contact.email_label', 'Institutional Email')} <span className="req">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder={t('contact.email_placeholder', 'sarah@hospital.med.sa')}
+                  />
+                </div>
+              </div>
+
+              <div className="form-row-2">
+                <div className="form-group">
+                  <label htmlFor="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+966 50 123 4567"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="facility">Hospital / Facility Name</label>
+                  <input
+                    type="text"
+                    id="facility"
+                    name="facility"
+                    value={formData.facility}
+                    onChange={handleChange}
+                    placeholder="King Faisal Specialist Hospital"
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="department">Inquiry Type / Department</label>
+                <select
+                  id="department"
+                  name="department"
+                  value={formData.department}
+                  onChange={handleChange}
+                >
+                  <option value="sales">Sales Quote & Volume Pricing</option>
+                  <option value="sfda">SFDA Compliance & Certifications</option>
+                  <option value="technical">Technical Product Specs</option>
+                  <option value="order">Order Tracking & Logistics</option>
+                  <option value="general">General Support</option>
+                </select>
+              </div>
+
+              {/* Honeypot field for bot protection */}
+              <div className="form-group" style={{ display: 'none' }} aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">{t('contact.message_label', 'Message')} <span className="req">*</span></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  placeholder={t('contact.message_placeholder', 'Please specify product quantities, required delivery timeline, or any specific SFDA certificate requests...')}
+                />
+              </div>
+
+              <button type="submit" className="contact-submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <span>{t('contact.sending', 'Sending...')}</span>
+                ) : (
+                  <>
+                    <span>{t('contact.send_button', 'Send Message')}</span>
+                    <IconSend />
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+
+          {/* Sidebar Side (Logistics, Express, HQ Map Card) */}
+          <div className="contact-sidebar">
+
+            {/* Fast Track Box */}
+            <div className="sidebar-box sidebar-box--urgent">
+              <div className="box-icon-head">
+                <div className="box-icon"><IconTruckFast /></div>
+                <div>
+                  <h4>Urgent Surgical Supply Line</h4>
+                  <span className="box-badge">24/7 Hospital Dispatch</span>
+                </div>
+              </div>
+              <p>For immediate emergency theatre supplies or urgent instrument replacements across KSA, call our direct logistics hot desk.</p>
+              <a href="tel:+966112345678" className="box-link">+966 11 234 5678 (Ext 1) →</a>
+            </div>
+
+            {/* SFDA Compliance Box */}
+            <div className="sidebar-box sidebar-box--sfda">
+              <div className="box-icon-head">
+                <div className="box-icon"><IconShieldCheck /></div>
+                <div>
+                  <h4>SFDA & Quality Regulatory Desk</h4>
+                  <span className="box-sub">Compliance Verification</span>
+                </div>
+              </div>
+              <p>Need batch analysis certificates, ISO documentation, or SFDA registration letters for procurement records?</p>
+              <a href="mailto:regulatory@medportal.sa" className="box-link">regulatory@medportal.sa →</a>
+            </div>
+
+            {/* Map / Location Mockup Box */}
+            <div className="sidebar-box sidebar-box--map">
+              <div className="map-mockup-inner">
+                <div className="map-pin-pulse">
+                  <IconMapPin />
+                </div>
+                <h4>MedPortal Central Hub</h4>
+                <p>Riyadh Logistics & Procurement Office</p>
+                <span className="map-coords">24.7136° N, 46.6753° E</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ Section ──────────────────────────────────────────────────── */}
+      <section className="contact-faq-section">
+        <div className="faq-header">
+          <span className="faq-tag">Frequently Asked Questions</span>
+          <h2>Quick Answers for Procurement Teams</h2>
+          <p>Common questions regarding ordering, SFDA certificates, and logistics across Saudi Arabia.</p>
+        </div>
+
+        <div className="faq-list">
+          {FAQS.map((faq, idx) => (
+            <div
+              key={idx}
+              className={`faq-item ${openFaq === idx ? 'faq-item--open' : ''}`}
+              onClick={() => toggleFaq(idx)}
+            >
+              <div className="faq-question">
+                <h3>{t(faq.qKey, faq.qDefault)}</h3>
+                <span className="faq-toggle-icon">
+                  <IconChevronDown />
+                </span>
+              </div>
+              {openFaq === idx && (
+                <div className="faq-answer">
+                  <p>{t(faq.aKey, faq.aDefault)}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }
@@ -7574,7 +9280,7 @@ export default ForgotPassword;
 .stats-bar {
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #062e6f, #0a4fa3);
+  background: linear-gradient(135deg, #062e6f, var(--primary-dark));
   padding: 0;
   flex-wrap: wrap;
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -7700,10 +9406,11 @@ export default ForgotPassword;
 .home-cat-img-overlay {
   position: absolute;
   inset: 0;
-  opacity: 0.65;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
-.home-cat-card:hover .home-cat-img-overlay { opacity: 0.75; }
+.home-cat-card:hover .home-cat-img-overlay { opacity: 0.9; }
 
 .home-cat-icon-img {
   width: 72px;
@@ -7711,7 +9418,7 @@ export default ForgotPassword;
   object-fit: contain;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(10);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
   transition: transform 0.3s ease;
 }
 .home-cat-card:hover .home-cat-icon-img {
@@ -7968,6 +9675,7 @@ export default ForgotPassword;
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useCart } from '../context/CartContext';
 import './Home.css';
 
 /* ── Professional SVG icon components ────────────────────── */
@@ -8056,6 +9764,7 @@ const TRUST = [
 
 function Home() {
   const { t } = useTranslation();
+  const { addToCart } = useCart();
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -8185,7 +9894,7 @@ function Home() {
                 className="home-cat-img"
                 style={{ backgroundImage: `url(${cat.img})` }}
               >
-                <div className="home-cat-img-overlay" style={{ background: `${cat.accent}bb` }} />
+                <div className="home-cat-img-overlay" />
                 <img src={cat.iconImg} alt="" className="home-cat-icon-img" />
               </div>
               <div className="home-cat-body">
@@ -8223,7 +9932,32 @@ function Home() {
               </div>
               <div className="home-prod-info">
                 <h4>{t(p.nameKey)}</h4>
-                <div className="home-prod-price">{t(p.priceKey)}</div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.5rem' }}>
+                  <div className="home-prod-price">{t(p.priceKey)}</div>
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      addToCart({
+                        id: i + 1000, // mock ID for featured
+                        name: t(p.nameKey),
+                        price: parseFloat(t(p.priceKey).replace(/[^\d.]/g, '') || 99.00),
+                        image: p.img
+                      });
+                    }}
+                    style={{
+                      background: '#FF6600',
+                      color: 'white',
+                      border: 'none',
+                      padding: '0.3rem 0.6rem',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '0.8rem',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    {t('cart.add', 'Add')}
+                  </button>
+                </div>
               </div>
             </Link>
           ))}
@@ -8336,7 +10070,7 @@ export default NotFound;
 }
 
 .breadcrumb a {
-  color: #3b82f6;
+  color: var(--primary-light);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
@@ -8792,7 +10526,7 @@ export default ProductDetail;
 }
 
 .breadcrumb a {
-  color: #3b82f6;
+  color: var(--primary-light);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
@@ -9170,6 +10904,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ProductCardSkeleton } from '../components/Skeleton';
+import { useCart } from '../context/CartContext';
 import './ProductListing.css';
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
@@ -9204,6 +10939,7 @@ const PAGE_SIZE = 9;
 function ProductListing() {
   const { category: slug } = useParams();
   const { t, i18n } = useTranslation();
+  const { addToCart } = useCart();
 
   const meta = SLUG_META[slug] || { keySuffix: 'products', heroImg: '/icon_surgical_instruments.png', accentClass: 'instruments' };
   const localizedLabel = t(`products.title_${meta.keySuffix}`);
@@ -9366,12 +11102,33 @@ function ProductListing() {
                 )}
 
                 <div className="product-card-footer" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span className="product-price" style={{ fontWeight: '700', color: '#0ea5e9', fontSize: '1.1rem' }}>
+                  <span className="product-price" style={{ fontWeight: '700', color: '#FF6600', fontSize: '1.1rem' }}>
                     {product.price
                       ? `${product.price} ${i18n.language.startsWith('ar') ? 'ر.س' : 'SAR'}`
                       : `${(product.id * 37 + 85).toFixed(2)} ${i18n.language.startsWith('ar') ? 'ر.س' : 'SAR'}`}
                   </span>
-                  <span className="view-details-btn">{t('products.view_details')}</span>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <span className="view-details-btn">{t('products.view_details', 'View')}</span>
+                    <button 
+                      className="add-to-cart-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        addToCart(product);
+                      }}
+                      style={{
+                        background: '#FF6600',
+                        color: 'white',
+                        border: 'none',
+                        padding: '0.4rem 0.8rem',
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        fontWeight: '600',
+                        fontSize: '0.9rem'
+                      }}
+                    >
+                      {t('cart.add', 'Add')}
+                    </button>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -9517,7 +11274,7 @@ export default ProductListing;
   object-fit: contain;
   position: relative;
   z-index: 1;
-  filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
   transition: transform 0.35s ease;
 }
 
@@ -9989,6 +11746,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 import MainLayout from './layouts/MainLayout';
 import AuthLayout from './layouts/AuthLayout';
 import Home from './pages/Home';
@@ -10020,41 +11778,43 @@ function App() {
 
   return (
     <AuthProvider>
-      <ToastProvider>
-      <BrowserRouter>
-        <Routes>
-          {/* ── Public site routes ──────────────────────────── */}
-          <Route path="/" element={<MainLayout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="products" element={<Products />} />
-            <Route path="products/:category" element={<ProductListing />} />
-            <Route path="products/:category/:id" element={<ProductDetail />} />
-            
-            {/* ── Admin route ───────────────────────────────────────── */}
-            <Route path="admin" element={
-              <AdminRoute>
-                <AdminDashboard />
-              </AdminRoute>
-            } />
-            
-            <Route path="*" element={<NotFound />} />
-          </Route>
+      <CartProvider>
+        <ToastProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* ── Public site routes ──────────────────────────── */}
+            <Route path="/" element={<MainLayout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="products" element={<ProductListing />} />
+              <Route path="products/:category" element={<ProductListing />} />
+              <Route path="products/:category/:id" element={<ProductDetail />} />
+              
+              {/* ── Admin route ───────────────────────────────────────── */}
+              <Route path="admin" element={
+                <AdminRoute>
+                  <AdminDashboard />
+                </AdminRoute>
+              } />
+              
+              <Route path="*" element={<NotFound />} />
+            </Route>
 
-          {/* ── Auth routes (split-screen layout) ───────────── */}
-          <Route path="/auth" element={<AuthLayout />}>
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="check-inbox" element={<CheckInbox />} />
-            <Route path="forgot-password" element={<ForgotPassword />} />
-            <Route path="reset-password" element={<ResetPassword />} />
-            <Route path="resend-verification" element={<ResendVerification />} />
-            <Route path="verify-email" element={<VerifyEmail />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      </ToastProvider>
+            {/* ── Auth routes (split-screen layout) ───────────── */}
+            <Route path="/auth" element={<AuthLayout />}>
+              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="check-inbox" element={<CheckInbox />} />
+              <Route path="forgot-password" element={<ForgotPassword />} />
+              <Route path="reset-password" element={<ResetPassword />} />
+              <Route path="resend-verification" element={<ResendVerification />} />
+              <Route path="verify-email" element={<VerifyEmail />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+        </ToastProvider>
+      </CartProvider>
     </AuthProvider>
   );
 }
@@ -10080,16 +11840,19 @@ const resources = {
 };
 
 i18n
-  // Detects user language
   .use(LanguageDetector)
-  // Passes i18n down to react-i18next
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'ar',
     fallbackLng: 'en',
-    
+    supportedLngs: ['ar', 'en'],
+    detection: {
+      order: ['localStorage'],
+      caches: ['localStorage'],
+    },
     interpolation: {
-      escapeValue: false, // React already safe from xss
+      escapeValue: false,
     },
   });
 
@@ -10246,7 +12009,7 @@ dist-ssr
 
 <file path="client/index.html">
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

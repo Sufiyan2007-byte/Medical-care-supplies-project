@@ -4,12 +4,14 @@ import {
   getCategoryById,
   getProducts,
   getProductById,
+  getLowStockProducts,
+  getProductSpecSheet,
   getSurgicalSets,
   createProduct,
   updateProduct,
   deleteProduct,
 } from '../controllers/productController.js';
-import { authenticateToken, requireRole } from '../middleware/auth.js';
+import { authenticateToken, requireStaff } from '../middleware/auth.js';
 
 const router = express.Router();
 
@@ -19,12 +21,15 @@ router.get('/categories/:id', getCategoryById);
 
 // Products (Public read)
 router.get('/products', getProducts);
+// Must be registered before '/products/:id' or Express would treat "low-stock" as an :id.
+router.get('/products/low-stock', authenticateToken, requireStaff, getLowStockProducts);
 router.get('/products/:id', getProductById);
+router.get('/products/:id/spec-sheet.pdf', getProductSpecSheet);
 
 // Products (Admin write)
-router.post('/products', authenticateToken, requireRole('admin'), createProduct);
-router.put('/products/:id', authenticateToken, requireRole('admin'), updateProduct);
-router.delete('/products/:id', authenticateToken, requireRole('admin'), deleteProduct);
+router.post('/products', authenticateToken, requireStaff, createProduct);
+router.put('/products/:id', authenticateToken, requireStaff, updateProduct);
+router.delete('/products/:id', authenticateToken, requireStaff, deleteProduct);
 
 // Surgical Sets
 router.get('/sets', getSurgicalSets);

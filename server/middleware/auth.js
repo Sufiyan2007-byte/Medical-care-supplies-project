@@ -1,6 +1,10 @@
 import jwt from 'jsonwebtoken';
 import prisma from '../lib/prisma.js';
 
+/** Roles that may use the staff panel. */
+export const STAFF_ROLES = ['admin', 'developer'];
+export const ALL_ROLES = ['user', 'admin', 'developer'];
+
 /**
  * Middleware to authenticate requests using a JWT Bearer token.
  * Attaches the decoded user payload ({ id, email, name, role, jti }) to req.user.
@@ -49,6 +53,22 @@ export async function authenticateToken(req, res, next) {
     }
   }
 
+  // Always use the CURRENT role from the database, not the one baked into the token,
+  // so promoting or demoting someone takes effect immediately.
+  try {
+    const account = await prisma.user.findUnique({
+      where: { id: decoded.id },
+      select: { role: true },
+    });
+    if (!account) {
+      return res.status(401).json({ error: 'Unauthorized', message: 'Account no longer exists.' });
+    }
+    decoded.role = account.role;
+  } catch (dbErr) {
+    console.error('[authenticateToken] Role lookup failed:', dbErr.message);
+    // keep the token's role on DB errors
+  }
+
   req.user = decoded;
   next();
 }
@@ -76,3 +96,6 @@ export function requireRole(...allowedRoles) {
     next();
   };
 }
+
+/** Shortcut: admin or developer. */
+export const requireStaff = requireRole(...STAFF_ROLES);

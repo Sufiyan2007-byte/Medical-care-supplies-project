@@ -1,0 +1,253 @@
+/* ═══════════════════════════════════════════════════════
+   XelpovSpecialties.css — Medical specialties overview
+   ═══════════════════════════════════════════════════════ */
+
+.xsp-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+/* Header */
+.xsp-header {
+  text-align: center;
+  padding: 2.5rem 0 3rem;
+}
+.xsp-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin: 0 0 1rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #1a1a2e 0%, #334 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="dark"] .xsp-title {
+  background: linear-gradient(135deg, #e8ecf8 0%, #aabbee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.xsp-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted, #666);
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  line-height: 1.65;
+}
+
+/* Toolbar: search + sort */
+.xsp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.xsp-search {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1;
+  min-width: 220px;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border, #e0e0e0);
+  background: var(--color-surface, #fff);
+  color: var(--color-text-muted, #888);
+}
+.xsp-search:focus-within {
+  border-color: var(--c-accent);
+  color: var(--color-text, #333);
+}
+.xsp-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--color-text, #333);
+  flex: 1;
+  min-width: 0;
+}
+.xsp-sort {
+  display: flex;
+  gap: 0.4rem;
+  background: var(--color-bg, #f3f4f6);
+  padding: 0.3rem;
+  border-radius: 999px;
+}
+.xsp-sort button {
+  border: none;
+  background: transparent;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #888);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.xsp-sort button.active {
+  background: var(--c-accent);
+  color: #fff;
+}
+
+.xsp-empty {
+  text-align: center;
+  color: var(--color-text-muted, #888);
+  padding: 3rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* Grid */
+.xsp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card */
+.xsp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1.5px solid var(--color-border, #e8e8e8);
+  background: var(--color-surface, #fff);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.xsp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.xsp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.12);
+  border-color: var(--c-accent);
+}
+.xsp-card:hover::before { transform: scaleX(1); }
+
+.xsp-popular-badge {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  background: var(--c-accent);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.6rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px -4px rgba(0,0,0,.3);
+}
+[dir="rtl"] .xsp-popular-badge { right: auto; left: 0.85rem; }
+
+/* Real catalogue photo shown as a proper banner at the top of the card,
+   instead of squeezed into a tiny icon circle — sized so the picture is
+   actually visible. */
+.xsp-card-img {
+  position: relative;
+  margin: -1.5rem -1.5rem 0.6rem;
+  aspect-ratio: 16 / 11;
+  background: color-mix(in srgb, var(--c-accent) 8%, var(--color-bg, #f5f7fa));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.xsp-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+.xsp-card:hover .xsp-card-img img { transform: scale(1.05); }
+.xsp-icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--c-accent) 14%, transparent);
+  color: var(--c-accent);
+}
+.xsp-count-badge {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  background: color-mix(in srgb, var(--color-surface, #fff) 88%, transparent);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+[dir="rtl"] .xsp-count-badge { left: auto; right: 0.6rem; }
+
+.xsp-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--color-text, #1a1a2e);
+  line-height: 1.2;
+}
+[data-theme="dark"] .xsp-name { color: #e8ecf8; }
+
+.xsp-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted, #888);
+  margin: 0;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.xsp-arrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  margin-top: 0.25rem;
+  transition: gap 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.xsp-card:hover .xsp-arrow span { transform: translateX(4px); display: inline-block; transition: transform 0.2s; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .xsp-grid { grid-template-columns: 1fr; }
+  .xsp-card { padding: 1.25rem; }
+}
+
+/* RTL */
+[dir="rtl"] .xsp-arrow { flex-direction: row-reverse; }
+[dir="rtl"] .xsp-card::before { transform-origin: right; }
+[dir="rtl"] .xsp-card:hover .xsp-arrow span { transform: translateX(-4px); }

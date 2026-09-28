@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSignup } from '../hooks/useSignup';
 import './SignupForm.css';
+import { logoSrc } from '../utils/themes';
 
 /**
  * SignupForm — Full registration form.
@@ -52,14 +53,27 @@ function SignupForm() {
 
   return (
     <div className={`sf ${isShaking ? 'sf--shake' : ''}`} id="signup-form-root">
+      {/* ── Brand Logo Badge (Mobile only) ──────────────────────── */}
+      <div className="auth-mobile-logo">
+        <Link to="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
+          <div className="auth-highlight-logo">
+            <img 
+              src={logoSrc()} 
+              alt="Medical Care Supplies Logo" 
+              className="auth-highlight-logo-img" 
+            />
+          </div>
+        </Link>
+      </div>
+
       {/* ── Header ─────────────────────────────────────────── */}
       <div className="sf__header">
-        <p className="sf__eyebrow">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#FF6600', marginEnd: '0.3rem', verticalAlign: 'middle' }}>
+        <div className="sf__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/>
           </svg>
-          {t('auth.signup_eyebrow')}
-        </p>
+          <span>{t('auth.signup_eyebrow')}</span>
+        </div>
         <h1 className="sf__title">{t('auth.signup_title')}</h1>
         <p className="sf__subtitle">
           {t('auth.signup_subtitle')}
@@ -263,6 +277,14 @@ function SignupForm() {
               {errors.confirmPassword}
             </span>
           )}
+          {!errors.confirmPassword && formData.confirmPassword && formData.confirmPassword === formData.password && (
+            <span className="sf__field-match" role="status">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.5" style={{ marginEnd: '0.25rem' }}>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              {t('auth.passwords_match', 'Passwords match')}
+            </span>
+          )}
         </div>
 
         {/* Terms checkbox */}
@@ -280,13 +302,13 @@ function SignupForm() {
               disabled={isLoading}
             />
             <span className="sf__terms-text">
-              I agree to the{' '}
+              {t('auth.terms_text_prefix', 'I agree to the')}{' '}
               <a href="/terms" target="_blank" rel="noopener noreferrer">
-                Terms of Service
+                {t('auth.terms_service', 'Terms of Service')}
               </a>{' '}
-              and{' '}
+              {t('auth.and', 'and')}{' '}
               <a href="/privacy" target="_blank" rel="noopener noreferrer">
-                Privacy Policy
+                {t('auth.privacy_policy', 'Privacy Policy')}
               </a>
             </span>
           </label>
@@ -308,10 +330,15 @@ function SignupForm() {
           {isLoading ? (
             <>
               <span className="sf__spinner" aria-hidden="true" />
-              {t('auth.creating_account')}
+              <span>{t('auth.creating_account')}</span>
             </>
           ) : (
-            t('auth.create_account')
+            <>
+              <span>{t('auth.create_account')}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="sf__submit-arrow">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </>
           )}
         </button>
       </form>
@@ -328,3 +355,4 @@ function SignupForm() {
 }
 
 export default SignupForm;
+

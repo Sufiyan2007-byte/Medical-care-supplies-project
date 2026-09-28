@@ -11,8 +11,8 @@ const DEFAULT_COMPANY = {
   entity_type: 'Single-Person LLC',
   certifications: 'SFDA & MDMA, CE/ISO 13485',
   address: 'Medical City, Health Blvd, Riyadh, Saudi Arabia',
-  email: 'contact@medportal.com',
-  phone: '+966 11 123 4567',
+  email: 'Info@medicaresupplies.net',
+  phone: '+966 55 928 6613',
 };
 
 /**

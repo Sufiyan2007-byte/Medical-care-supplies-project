@@ -1,0 +1,21 @@
+PORT=5000
+NODE_ENV=development
+DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/medical_website?schema=public"
+
+# ---------------------------------
+# Brevo (SendInBlue) Email Service
+# ---------------------------------
+# TODO: paste your Brevo API key here once you have one (Settings > SMTP & API > API Keys
+# on brevo.com) — order/contact emails silently do nothing until this is set.
+BREVO_API_KEY=
+
+# Sender email and display name for outgoing emails
+EMAIL_FROM=Info@medicaresupplies.net
+EMAIL_FROM_NAME=Medical Care Supplies
+
+# ---------------------------------
+# Orders / contact notifications
+# ---------------------------------
+# Where contact-form messages and new-order alerts are sent (the shop owner's email)
+ADMIN_EMAIL=Info@medicaresupplies.net
+ORDER_NOTIFY_EMAIL=Info@medicaresupplies.net

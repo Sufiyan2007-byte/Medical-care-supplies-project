@@ -22,6 +22,19 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Mobile Logo Badge (hidden on desktop) ── */
+.auth-mobile-logo {
+  display: none;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .auth-mobile-logo {
+    display: block;
+  }
+}
+
 /* ── Root ── */
 .lf {
   width: 100%;
@@ -33,34 +46,39 @@
 
 /* ── Header ── */
 .lf__header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .lf__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
+  gap: 0.45rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: var(--primary-color);
-  margin-bottom: 0.6rem;
+  color: var(--brand-teal);
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
 }
 
 .lf__title {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  color: var(--auth-form-text, #1e293b);
-  margin: 0 0 0.4rem;
-  line-height: 1.2;
+  color: var(--auth-form-text, var(--dark-card));
+  margin: 0 0 0.35rem;
+  line-height: 1.25;
 }
 
 .lf__subtitle {
   font-size: 0.9rem;
-  color: var(--auth-form-muted, #64748b);
+  color: var(--auth-form-muted, var(--muted-text));
   margin: 0;
+  line-height: 1.5;
 }
 
 /* ── Server Error / Warning Banner ── */
@@ -90,7 +108,7 @@
 
 @media (prefers-color-scheme: dark) {
   .lf__banner--error  { color: #fca5a5; }
-  .lf__banner--warning { color: #fcd34d; }
+  .lf__banner--warning { color: color-mix(in srgb, #d97706 62%, var(--c-strong)); }
 }
 
 .lf__banner-icon {
@@ -137,7 +155,7 @@
 .lf__label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--auth-form-text, #1e293b);
+  color: var(--auth-form-text, var(--dark-card));
   letter-spacing: 0.2px;
 }
 
@@ -150,10 +168,10 @@
 
 .lf__input-icon {
   position: absolute;
-  left: 0.9rem;
+  inset-inline-start: 0.9rem;
   font-size: 1rem;
   pointer-events: none;
-  color: var(--auth-form-muted, #94a3b8);
+  color: var(--auth-form-muted, var(--muted-text));
   transition: color 0.2s;
   line-height: 1;
 }
@@ -161,11 +179,11 @@
 .lf__input {
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 2.75rem;
-  border: 1.5px solid var(--auth-border, #e2e8f0);
+  border: 1.5px solid var(--auth-border, var(--muted-text));
   border-radius: 10px;
   font-size: 0.95rem;
   font-family: inherit;
-  color: var(--auth-form-text, #1e293b);
+  color: var(--auth-form-text, var(--dark-card));
   background: transparent;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -173,12 +191,12 @@
 }
 
 .lf__input::placeholder {
-  color: var(--auth-form-muted, #94a3b8);
+  color: var(--auth-form-muted, var(--muted-text));
 }
 
 .lf__input:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25) ;
 }
 
 .lf__input:focus + .lf__input-icon,
@@ -193,17 +211,17 @@
 
 /* Password has extra right padding for the toggle button */
 .lf__input--password {
-  padding-right: 3rem;
+  padding-inline-end: 3rem;
 }
 
 .lf__toggle-btn {
   position: absolute;
-  right: 0.75rem;
+  inset-inline-end: 0.75rem;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.25rem;
-  color: var(--auth-form-muted, #94a3b8);
+  color: var(--auth-form-muted, var(--muted-text));
   font-size: 1.05rem;
   line-height: 1;
   border-radius: 6px;
@@ -215,7 +233,7 @@
 
 .lf__toggle-btn:hover {
   color: var(--primary-color);
-  background: rgba(255, 102, 0, 0.08);
+  background: rgba(var(--accent-rgb), 0.12) ;
 }
 
 .lf__field-error {
@@ -243,7 +261,7 @@
 }
 
 .lf__forgot-link:hover {
-  color: var(--primary-dark);
+  color: var(--c-ink-2);
   text-decoration: underline;
 }
 
@@ -252,43 +270,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   width: 100%;
-  padding: 0.85rem 1.5rem;
+  padding: 0.85rem 1.6rem;
   border: none;
-  border-radius: 10px;
-  background: var(--primary-gradient);
-  color: #fff;
-  font-size: 0.975rem;
-  font-weight: 700;
+  border-radius: 12px;
+  background: var(--card-gradient);
+  color: var(--on-accent);
+  font-size: 1rem;
+  font-weight: 800;
   font-family: inherit;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3);
-  margin-top: 0.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.38), inset 0 1px 0 rgba(var(--fg-rgb), 0.25);
+  margin-top: 0.4rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .lf__submit:hover:not(:disabled) {
-  opacity: 0.92;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.38);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(var(--accent-rgb), 0.55), inset 0 1px 0 rgba(var(--fg-rgb), 0.35);
+  filter: brightness(1.04);
+}
+
+.lf__submit:hover:not(:disabled) .lf__submit-arrow {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .lf__submit:hover:not(:disabled) .lf__submit-arrow {
+  transform: translateX(4px);
+}
+
+.lf__submit-arrow {
+  transition: transform 0.25s ease;
 }
 
 .lf__submit:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
 }
 
 .lf__submit:disabled {
   cursor: not-allowed;
   opacity: 0.65;
+  filter: grayscale(0.2);
 }
 
 /* Spinner inside button */
 .lf__spinner {
   width: 18px;
   height: 18px;
-  border: 2.5px solid rgba(255, 255, 255, 0.4);
-  border-top-color: #fff;
+  border: 2.5px solid rgba(var(--fg-rgb), 0.4);
+  border-top-color: var(--on-accent);
   border-radius: 50%;
   animation: lf-spin 0.7s linear infinite;
   flex-shrink: 0;
@@ -299,7 +333,7 @@
   text-align: center;
   margin-top: 1.5rem;
   font-size: 0.875rem;
-  color: var(--auth-form-muted, #64748b);
+  color: var(--auth-form-muted, var(--muted-text));
 }
 
 .lf__footer a {
@@ -310,7 +344,7 @@
 }
 
 .lf__footer a:hover {
-  color: var(--primary-dark);
+  color: var(--c-ink-2);
   text-decoration: underline;
 }
 
@@ -320,7 +354,7 @@
   align-items: center;
   gap: 0.75rem;
   margin: 0.5rem 0;
-  color: var(--auth-form-muted, #94a3b8);
+  color: var(--auth-form-muted, var(--muted-text));
   font-size: 0.78rem;
 }
 
@@ -329,5 +363,86 @@
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--auth-border, #e2e8f0);
+  background: var(--auth-border, var(--muted-text));
 }
+
+
+
+
+
+/* ═════════════════════════════════════════════════════════════════════════
+   Polish: form fields on the dark panel (overrides only)
+═════════════════════════════════════════════════════════════════════════ */
+
+/* Mobile logo (brand panel is hidden on small screens) */
+.auth-highlight-logo { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.auth-highlight-logo-img {
+  width: min(260px, 80vw);
+  height: auto;
+  aspect-ratio: 784 / 178;
+  object-fit: cover;
+  object-position: top;
+  filter: drop-shadow(0 0 18px rgba(var(--accent-rgb), 0.4));
+}
+.auth-highlight-logo .auth-logo-name { width: min(260px, 80vw); }
+
+.lf__title { color: var(--c-strong); }
+
+.lf__eyebrow {
+  color: var(--c-accent-text);
+  background: rgba(var(--accent-rgb), 0.12);
+  border-color: rgba(var(--accent-rgb), 0.35);
+}
+
+.lf__label { color: var(--c-silver-2); font-size: 0.82rem; }
+
+.lf__input {
+  height: 48px;
+  padding-block: 0;
+  padding-inline: 2.9rem 1rem;
+  background: var(--c-input);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  border-radius: 10px;
+  color: var(--c-text);
+}
+
+.lf__input--password { padding-inline-end: 3rem; }
+
+.lf__input::placeholder { color: var(--c-placeholder); }
+
+.lf__input:hover { border-color: rgba(var(--fg-rgb), 0.2); }
+
+.lf__input:focus {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.3);
+}
+
+.lf__input-icon { inset-inline-start: 1rem; color: var(--c-faint); }
+
+.lf__input:-webkit-autofill {
+  -webkit-text-fill-color: var(--c-text);
+  box-shadow: 0 0 0 100px var(--c-input) inset;
+  caret-color: var(--c-text);
+}
+
+.lf__forgot-link,
+.lf__footer a { color: var(--c-accent-text); }
+
+.lf__forgot-link:hover,
+.lf__footer a:hover { color: var(--c-strong); }
+
+.lf__submit {
+  height: 48px;
+  padding-block: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--c-accent) 0%, var(--c-accent-2) 100%);
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.35), inset 0 1px 0 rgba(var(--fg-rgb), 0.2);
+}
+
+.lf__submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(var(--accent-rgb), 0.55), inset 0 1px 0 rgba(var(--fg-rgb), 0.3);
+}
+
+.lf__banner--error { color: color-mix(in srgb, #dc2626 62%, var(--c-strong)); }
+.lf__banner--warning { color: color-mix(in srgb, #d97706 62%, var(--c-strong)); }

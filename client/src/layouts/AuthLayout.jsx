@@ -1,6 +1,7 @@
 import { Outlet, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './AuthLayout.css';
+import { logoSrc } from '../utils/themes';
 
 /**
  * AuthLayout — Split-screen wrapper for all authentication pages.
@@ -9,32 +10,30 @@ import './AuthLayout.css';
  * Right panel : Form panel that renders child routes via <Outlet />.
  */
 function AuthLayout() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language.startsWith('ar');
+
+  const toggleLanguage = () => {
+    const nextLang = isAr ? 'en' : 'ar';
+    i18n.changeLanguage(nextLang);
+  };
 
   return (
-    <div className="auth-layout">
+    <div className="auth-layout" dir={isAr ? 'rtl' : 'ltr'}>
       {/* ── Left: Brand Panel ──────────────────────────────────── */}
       <aside className="auth-layout__brand">
-        {/* Logo */}
-        <Link to="/" className="auth-layout__logo" aria-label="MedPortal home">
-          <div className="auth-layout__logo-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#fff' }}>
-              <path d="M12 2v20M2 12h20"/>
-            </svg>
-          </div>
-          <span className="auth-layout__logo-name">MedPortal</span>
-        </Link>
+        <div className="auth-layout__brand-glow" aria-hidden="true" />
 
         {/* Hero + headline */}
         <div className="auth-layout__brand-body">
           <div className="auth-layout__hero">
-            <div className="auth-layout__hero-circle">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#38bdf8' }}>
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M12 8v8M8 12h8"/>
-              </svg>
-              <div className="auth-layout__hero-orbit" aria-hidden="true" />
-            </div>
+            <div className="auth-layout__hero-ring" aria-hidden="true" />
+            <img
+              src={logoSrc()}
+              alt="Medical Care Supplies"
+              className="auth-layout__hero-logo"
+            />
+            <span className="auth-logo-name">Medical Care Supplies</span>
           </div>
 
           <div className="auth-layout__headline">
@@ -46,59 +45,35 @@ function AuthLayout() {
             </p>
           </div>
 
-          {/* SFDA & Saudi Medical Store Feature Badge */}
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.6rem',
-              background: 'rgba(255, 255, 255, 0.12)',
-              backdropFilter: 'blur(8px)',
-              padding: '0.5rem 1rem',
-              borderRadius: '30px',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              color: '#fff',
-              fontSize: '0.85rem',
-              fontWeight: '600',
-              margin: '0.75rem 0',
-            }}
-          >
-            <span style={{ display: 'flex', alignItems: 'center' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-            </span>
-            <span>معتمد لدى الهيئة العامة للغذاء والدواء (SFDA)</span>
+          {/* SFDA & Medical Certification Pill */}
+          <div className="auth-sfda-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span>{isAr ? 'معتمد ومسجل لدى الهيئة العامة للغذاء والدواء (SFDA)' : 'SFDA Registered & CE Medical Certified'}</span>
           </div>
 
           {/* Glassmorphism stat badges */}
-          <div className="auth-layout__stats" role="list" aria-label="Company highlights">
+          <div className="auth-layout__stats" role="list" aria-label="Highlights">
             <div className="auth-layout__stat" role="listitem">
-              <span className="auth-layout__stat-value">{t('auth_layout.stat_products')}</span>
-              <span className="auth-layout__stat-label">المستلزمات الطبية</span>
+              <span className="auth-layout__stat-value">+500</span>
+              <span className="auth-layout__stat-label">{isAr ? 'صنف جراحي وطبي' : 'Medical Products'}</span>
             </div>
             <div className="auth-layout__stat" role="listitem">
-              <span className="auth-layout__stat-value">{t('auth_layout.stat_certified')}</span>
-              <span className="auth-layout__stat-label">جودة معتمدة</span>
+              <span className="auth-layout__stat-value">ISO 13485</span>
+              <span className="auth-layout__stat-label">{isAr ? 'جودة المستشفيات' : 'Hospital Grade'}</span>
             </div>
             <div className="auth-layout__stat" role="listitem">
-              <span className="auth-layout__stat-value">{t('auth_layout.stat_delivery')}</span>
-              <span className="auth-layout__stat-label">تجهيز المستشفيات</span>
+              <span className="auth-layout__stat-value">24/48h</span>
+              <span className="auth-layout__stat-label">{isAr ? 'توريد سريع بالمملكة' : 'Fast KSA Delivery'}</span>
             </div>
           </div>
         </div>
 
         {/* Footer credit */}
-        <p
-          style={{
-            fontSize: '0.75rem',
-            color: 'rgba(255,255,255,0.6)',
-            margin: 0,
-            zIndex: 1,
-          }}
-        >
-          © {new Date().getFullYear()} MedPortal. جميع الحقوق محفوظة.
+        <p className="auth-brand-footer">
+          © {new Date().getFullYear()} Medical Care Supplies. {isAr ? 'جميع الحقوق محفوظة.' : 'All rights reserved.'}
         </p>
       </aside>
 
@@ -107,12 +82,41 @@ function AuthLayout() {
         {/* Top bar */}
         <div className="auth-layout__topbar">
           <Link to="/" className="auth-layout__back-link" aria-label="Back to homepage">
-            <span className="auth-layout__back-arrow">←</span>
-            {t('auth_layout.back_to_home')}
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="auth-layout__back-arrow"
+            >
+              {isAr ? (
+                <polyline points="9 18 15 12 9 6" />
+              ) : (
+                <polyline points="15 18 9 12 15 6" />
+              )}
+            </svg>
+            <span>{t('auth_layout.back_to_home')}</span>
           </Link>
-          <span className="auth-layout__topbar-brand">
-            {t('auth_layout.powered_by')} <span>MedPortal</span>
-          </span>
+
+          <div className="auth-topbar-actions">
+            <button
+              type="button"
+              className="auth-lang-btn"
+              onClick={toggleLanguage}
+              title={isAr ? 'Switch to English' : 'التحويل إلى العربية'}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span>{isAr ? 'English' : 'عربي'}</span>
+            </button>
+          </div>
         </div>
 
         {/* Child route renders here */}
@@ -127,3 +131,5 @@ function AuthLayout() {
 }
 
 export default AuthLayout;
+
+

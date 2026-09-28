@@ -25,14 +25,20 @@ function CheckInbox() {
       {/* Animated envelope */}
       <div
         style={{
-          fontSize: '5rem',
-          lineHeight: 1,
-          animation: 'auth-float 3s ease-in-out infinite',
-          filter: 'drop-shadow(0 8px 16px rgba(14,165,233,0.25))',
+          width: 80,
+          height: 80,
+          borderRadius: '50%',
+          background: 'rgba(var(--accent-rgb), 0.14)',
+          border: '2px solid rgba(var(--accent-rgb), 0.4)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          animation: 'auth-float 3.5s ease-in-out infinite',
+          boxShadow: '0 8px 24px rgba(var(--accent-rgb), 0.25)',
         }}
         aria-hidden="true"
       >
-        ✉️
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
 
       {/* Heading */}
@@ -46,7 +52,7 @@ function CheckInbox() {
             fontWeight: 700,
             letterSpacing: '1px',
             textTransform: 'uppercase',
-            color: '#0ea5e9',
+            color: 'var(--accent-color)',
             marginBottom: '0.6rem',
           }}
         >
@@ -57,7 +63,7 @@ function CheckInbox() {
             fontSize: '1.75rem',
             fontWeight: 800,
             letterSpacing: '-0.5px',
-            color: 'var(--auth-form-text, #1e293b)',
+            color: 'var(--auth-form-text, var(--dark-card))',
             margin: '0 0 0.5rem',
             lineHeight: 1.2,
           }}
@@ -67,7 +73,7 @@ function CheckInbox() {
         <p
           style={{
             fontSize: '0.925rem',
-            color: 'var(--auth-form-muted, #64748b)',
+            color: 'var(--auth-form-muted, var(--muted-text))',
             lineHeight: 1.6,
             margin: 0,
             maxWidth: '36ch',
@@ -85,24 +91,24 @@ function CheckInbox() {
           borderRadius: '12px',
           padding: '1rem 1.25rem',
           fontSize: '0.85rem',
-          color: 'var(--auth-form-muted, #64748b)',
+          color: 'var(--auth-form-muted, var(--muted-text))',
           lineHeight: 1.6,
-          textAlign: 'left',
+          textAlign: 'start',
           width: '100%',
         }}
         role="note"
       >
-        <strong style={{ color: 'var(--auth-form-text, #1e293b)' }}>
+        <strong style={{ color: 'var(--auth-form-text, var(--dark-card))' }}>
           💡 Didn't receive the email?
         </strong>
-        <ul style={{ margin: '0.5rem 0 0', paddingLeft: '1.25rem' }}>
+        <ul style={{ margin: '0.5rem 0 0', paddingInlineStart: '1.25rem' }}>
           <li>Check your spam or junk folder.</li>
           <li>Make sure you entered the right email address.</li>
           <li>
             <Link
               to="/auth/resend-verification"
               id="check-inbox-resend-link"
-              style={{ color: '#0ea5e9', fontWeight: 600, textDecoration: 'none' }}
+              style={{ color: 'var(--accent-color)', fontWeight: 600, textDecoration: 'none' }}
             >
               Resend the verification email →
             </Link>
@@ -120,18 +126,18 @@ function CheckInbox() {
           gap: '0.4rem',
           fontSize: '0.875rem',
           fontWeight: 600,
-          color: 'var(--auth-form-muted, #64748b)',
+          color: 'var(--auth-form-muted, var(--muted-text))',
           textDecoration: 'none',
           padding: '0.5rem 1rem',
           borderRadius: '8px',
           transition: 'color 0.2s, background 0.2s',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.color = '#0ea5e9';
+          e.currentTarget.style.color = 'var(--accent-color)';
           e.currentTarget.style.background = 'rgba(14,165,233,0.06)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.color = 'var(--auth-form-muted, #64748b)';
+          e.currentTarget.style.color = 'var(--auth-form-muted, var(--muted-text))';
           e.currentTarget.style.background = 'transparent';
         }}
       >
@@ -142,3 +148,4 @@ function CheckInbox() {
 }
 
 export default CheckInbox;
+

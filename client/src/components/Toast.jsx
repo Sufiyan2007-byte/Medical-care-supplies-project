@@ -51,3 +51,4 @@ function Toast({ toasts, onRemove }) {
 }
 
 export default Toast;
+

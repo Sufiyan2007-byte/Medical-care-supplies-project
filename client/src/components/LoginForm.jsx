@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import './LoginForm.css';
+import { logoSrc } from '../utils/themes';
 
 /**
  * LoginForm — Fully functional login form component.
@@ -48,15 +49,29 @@ function LoginForm() {
 
   return (
     <div className={`lf ${isShaking ? 'lf--shake' : ''}`} id="login-form-root">
+      {/* ── Brand Logo Badge (Shown on Mobile screens where sidebar is hidden) ── */}
+      <div className="auth-mobile-logo">
+        <Link to="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
+          <div className="auth-highlight-logo">
+            <img 
+              src={logoSrc()} 
+              alt="Medical Care Supplies Logo" 
+              className="auth-highlight-logo-img" 
+            />
+            <span className="auth-logo-name">Medical Care Supplies</span>
+          </div>
+        </Link>
+      </div>
+
       {/* ── Header ─────────────────────────────────────────── */}
       <div className="lf__header">
-        <p className="lf__eyebrow">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#FF6600', marginEnd: '0.3rem', verticalAlign: 'middle' }}>
+        <div className="lf__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
           </svg>
-          {t('auth.login_eyebrow')}
-        </p>
+          <span>{t('auth.login_eyebrow')}</span>
+        </div>
         <h1 className="lf__title">{t('auth.login_title')}</h1>
         <p className="lf__subtitle">
           {t('auth.login_subtitle')}
@@ -210,10 +225,15 @@ function LoginForm() {
           {isLoading ? (
             <>
               <span className="lf__spinner" aria-hidden="true" />
-              {t('auth.signing_in')}
+              <span>{t('auth.signing_in')}</span>
             </>
           ) : (
-            t('auth.sign_in')
+            <>
+              <span>{t('auth.sign_in')}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lf__submit-arrow">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </>
           )}
         </button>
       </form>
@@ -230,3 +250,4 @@ function LoginForm() {
 }
 
 export default LoginForm;
+

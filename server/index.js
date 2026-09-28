@@ -11,6 +11,10 @@ import authRouter from './routes/auth.js';
 import productRouter from './routes/product.js';
 import companyRouter from './routes/company.js';
 import contactRouter from './routes/contact.js';
+import ordersRouter from './routes/orders.js';
+import staffRouter from './routes/staff.js';
+import accountRouter from './routes/account.js';
+import xelpovRouter from './routes/xelpov.js';
 
 // Load environment variables
 dotenv.config();
@@ -30,6 +34,10 @@ app.use('/api/auth', authRouter);
 app.use('/api', productRouter);
 app.use('/api/company', companyRouter);
 app.use('/api/contact', contactRouter);
+app.use('/api/orders', ordersRouter);
+app.use('/api/account', accountRouter);
+app.use('/api/staff', staffRouter);
+app.use('/api/xelpov', xelpovRouter);
 
 // Basic health check route
 app.get('/api/health', async (req, res) => {

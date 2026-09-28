@@ -21,7 +21,7 @@ export function ProtectedRoute({ allowedRoles, children }) {
           justifyContent: 'center',
           minHeight: '50vh',
           fontFamily: 'system-ui, sans-serif',
-          color: '#64748b',
+          color: 'var(--muted-text)',
         }}
       >
         <div style={{ textAlign: 'center' }}>
@@ -30,7 +30,7 @@ export function ProtectedRoute({ allowedRoles, children }) {
               width: '36px',
               height: '36px',
               border: '3px solid rgba(14,165,233,0.2)',
-              borderTopColor: '#0ea5e9',
+              borderTopColor: 'var(--accent-color)',
               borderRadius: '50%',
               animation: 'spin 0.8s linear infinite',
               margin: '0 auto 0.75rem',
@@ -62,7 +62,7 @@ export function ProtectedRoute({ allowedRoles, children }) {
       >
         <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🚫</div>
         <h2 style={{ color: '#b91c1c', margin: '0 0 0.5rem' }}>Access Denied</h2>
-        <p style={{ color: '#64748b', margin: 0 }}>
+        <p style={{ color: 'var(--muted-text)', margin: 0 }}>
           You do not have permission to view this page. Required role: {allowedRoles.join(', ')}.
         </p>
       </div>
@@ -73,3 +73,4 @@ export function ProtectedRoute({ allowedRoles, children }) {
 }
 
 export default ProtectedRoute;
+

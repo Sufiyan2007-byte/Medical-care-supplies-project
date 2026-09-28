@@ -1,0 +1,13 @@
+/* Order status pills — used by the customer "My orders" page and the staff panel */
+.status-pill {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .22rem .7rem; border-radius: 999px; font-size: .78rem; font-weight: 600;
+  border: 1px solid currentColor; background: color-mix(in srgb, currentColor 12%, transparent);
+  text-transform: none; letter-spacing: normal; white-space: nowrap;
+}
+.status-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.status-pill--pending   { color: #F5B84B; }
+.status-pill--confirmed { color: var(--c-accent-2); }
+.status-pill--shipped   { color: #A08BFF; }
+.status-pill--delivered { color: var(--c-silver); }
+.status-pill--cancelled { color: #ff7b8a; }

@@ -1,0 +1,263 @@
+import PDFDocument from 'pdfkit';
+import { fileURLToPath } from 'url';
+import { createArabicLineDrawer } from './arabicPdfText.js';
+
+const BRAND_NAME = process.env.EMAIL_FROM_NAME || 'MedPortal';
+const ACCENT = '#1d4ed8';
+const MUTED = '#6b7280';
+const DARK = '#111827';
+const BORDER = '#e5e7eb';
+
+const ARABIC_FONT_PATH = fileURLToPath(new URL('../assets/fonts/Amiri-Regular-Arabic.woff', import.meta.url));
+
+const DEFAULT_COMPANY = {
+  address: 'Medical City, Health Blvd, Riyadh, Saudi Arabia',
+  email: 'Info@medicaresupplies.net',
+  phone: '+966 55 928 6613',
+  certifications: 'SFDA & MDMA, CE/ISO 13485',
+};
+
+function fmtPrice(price) {
+  if (price == null) return 'Price on request';
+  return `${Number(price).toFixed(2)} SAR`;
+}
+
+function fmtPriceArabic(price) {
+  if (price == null) return 'السعر عند الطلب';
+  return `${Number(price).toFixed(2)} ر.س`;
+}
+
+/**
+ * Streams a one-page English product specification / certification sheet as a
+ * PDF directly to the given writable stream (an Express response).
+ */
+export function streamProductSpecSheet(res, product, companyInfo) {
+  const company = companyInfo || DEFAULT_COMPANY;
+  const doc = new PDFDocument({ size: 'A4', margin: 50 });
+  doc.pipe(res);
+
+  // ── Header band ──────────────────────────────────────────────────────────
+  doc.rect(0, 0, doc.page.width, 90).fill(ACCENT);
+  doc.fillColor('#ffffff').fontSize(20).font('Helvetica-Bold').text(BRAND_NAME, 50, 30);
+  doc.fontSize(9).font('Helvetica').fillColor('#dbeafe').text(
+    [company.address, company.email, company.phone].filter(Boolean).join('   •   '),
+    50, 58
+  );
+  doc.y = 110;
+
+  // ── Title ────────────────────────────────────────────────────────────────
+  doc.fillColor(DARK).fontSize(16).font('Helvetica-Bold').text('Product Specification Sheet');
+  doc.moveDown(0.3);
+  doc.strokeColor(BORDER).lineWidth(1).moveTo(50, doc.y).lineTo(doc.page.width - 50, doc.y).stroke();
+  doc.moveDown(0.8);
+
+  // ── Product identity ─────────────────────────────────────────────────────
+  doc.fillColor(DARK).fontSize(15).font('Helvetica-Bold').text(product.name);
+  doc.moveDown(0.2);
+  const refLine = [
+    product.sku ? `REF: ${product.sku}` : null,
+    product.category?.name ? `Category: ${product.category.name}` : null,
+  ].filter(Boolean).join('     ');
+  if (refLine) {
+    doc.fillColor(MUTED).fontSize(10).font('Helvetica').text(refLine);
+  }
+  doc.moveDown(0.6);
+
+  doc.fillColor(DARK).fontSize(12).font('Helvetica-Bold').text(fmtPrice(product.price));
+  doc.moveDown(0.6);
+
+  if (product.description) {
+    doc.fillColor(DARK).fontSize(10).font('Helvetica').text(product.description, { align: 'left' });
+    doc.moveDown(0.8);
+  }
+
+  // ── Certifications ────────────────────────────────────────────────────────
+  doc.fillColor(DARK).fontSize(11).font('Helvetica-Bold').text('Certifications & Compliance');
+  doc.moveDown(0.3);
+  const certLines = [
+    'SFDA Approved (Saudi Food & Drug Authority)',
+    'ISO 13485 Certified Manufacturing',
+    company.certifications ? `Company certifications: ${company.certifications}` : null,
+  ].filter(Boolean);
+  doc.fontSize(10).font('Helvetica').fillColor(DARK);
+  certLines.forEach((line) => {
+    doc.text(`•  ${line}`);
+  });
+  doc.moveDown(0.8);
+
+  // ── Surgical set specifications, if applicable ───────────────────────────
+  const set = product.surgical_set;
+  if (set) {
+    doc.fillColor(DARK).fontSize(11).font('Helvetica-Bold').text('Set Specifications');
+    doc.moveDown(0.3);
+    const rows = [
+      ['Piece count', set.piece_count],
+      ['Material', set.material],
+      ['Finish', set.finish],
+      ['Sterilization', set.sterilization],
+      ['Standard', set.standard],
+      ['Tray / case', set.tray_case],
+    ].filter(([, v]) => v != null && v !== '');
+    doc.fontSize(10).font('Helvetica');
+    rows.forEach(([label, value]) => {
+      const startY = doc.y;
+      doc.fillColor(MUTED).text(label, 50, startY, { width: 140, continued: false });
+      doc.fillColor(DARK).text(String(value), 200, startY);
+      doc.moveDown(0.15);
+    });
+    doc.moveDown(0.6);
+
+    const items = product.set_items || [];
+    if (items.length) {
+      doc.fillColor(DARK).fontSize(11).font('Helvetica-Bold').text('Set Contents');
+      doc.moveDown(0.3);
+      doc.fontSize(10).font('Helvetica');
+      items.forEach((it) => {
+        const name = it.product?.name || it.name || '';
+        const sku = it.product?.sku ? ` (${it.product.sku})` : '';
+        doc.fillColor(DARK).text(`•  ${it.quantity}× ${name}${sku}`);
+      });
+      doc.moveDown(0.6);
+    }
+  }
+
+  // ── Footer ───────────────────────────────────────────────────────────────
+  const footerY = doc.page.height - 60;
+  doc.strokeColor(BORDER).lineWidth(1).moveTo(50, footerY).lineTo(doc.page.width - 50, footerY).stroke();
+  doc.fontSize(8).fillColor(MUTED).font('Helvetica').text(
+    `Generated by ${BRAND_NAME} on ${new Date().toISOString().slice(0, 10)}. Specifications subject to change without notice.`,
+    50, footerY + 8
+  );
+
+  doc.end();
+}
+
+/**
+ * Streams a one-page ARABIC product specification / certification sheet.
+ *
+ * pdfkit has no built-in Arabic shaping or right-to-left support, so this uses
+ * `arabicPdfText.js` (reshaping + a narrow bidi pass + an embedded Arabic font)
+ * to render it correctly. Labels and headings are in Arabic; the product's own
+ * name/description stay in whatever language they're stored in (English, for
+ * every product in this catalog today) — mixed Arabic/Latin lines are exactly
+ * what the shaping helper was built and verified against.
+ */
+export function streamProductSpecSheetArabic(res, product, companyInfo) {
+  const company = companyInfo || DEFAULT_COMPANY;
+  const doc = new PDFDocument({ size: 'A4', margin: 50 });
+  doc.pipe(res);
+
+  doc.registerFont('AR', ARABIC_FONT_PATH);
+  const RIGHT_EDGE = doc.page.width - 50;
+  const LEFT_EDGE = 50;
+  const drawer = createArabicLineDrawer(doc, { arabicFont: 'AR', latinFont: 'Helvetica', rightEdge: RIGHT_EDGE });
+  const drawerBold = createArabicLineDrawer(doc, { arabicFont: 'AR', latinFont: 'Helvetica-Bold', rightEdge: RIGHT_EDGE });
+
+  // ── Header band ──────────────────────────────────────────────────────────
+  doc.rect(0, 0, doc.page.width, 90).fill(ACCENT);
+  doc.fillColor('#ffffff');
+  drawerBold.drawLine(BRAND_NAME, 25, 20);
+  doc.fillColor('#dbeafe');
+  const contactLine = [company.address, company.email, company.phone].filter(Boolean).join('   •   ');
+  drawer.drawLine(contactLine, 55, 9);
+
+  let y = 110;
+
+  // ── Title ────────────────────────────────────────────────────────────────
+  doc.fillColor(DARK);
+  y = drawerBold.drawLine('بطاقة مواصفات المنتج', y, 16);
+  y += 6;
+  doc.strokeColor(BORDER).lineWidth(1).moveTo(LEFT_EDGE, y).lineTo(RIGHT_EDGE, y).stroke();
+  y += 16;
+
+  // ── Product identity ─────────────────────────────────────────────────────
+  doc.fillColor(DARK);
+  y = drawerBold.drawLine(product.name, y, 15);
+  y += 4;
+  const refLine = [
+    product.sku ? `REF: ${product.sku}` : null,
+    product.category?.name ? `الفئة: ${product.category.name}` : null,
+  ].filter(Boolean).join('     ');
+  if (refLine) {
+    doc.fillColor(MUTED);
+    y = drawer.drawLine(refLine, y, 10);
+  }
+  y += 10;
+
+  doc.fillColor(DARK);
+  y = drawerBold.drawLine(fmtPriceArabic(product.price), y, 12);
+  y += 10;
+
+  if (product.description) {
+    doc.fillColor(DARK);
+    y = drawer.drawWrapped(product.description, y, 10, RIGHT_EDGE - LEFT_EDGE, 5);
+    y += 8;
+  }
+
+  // ── Certifications ────────────────────────────────────────────────────────
+  doc.fillColor(DARK);
+  y = drawerBold.drawLine('الشهادات والمطابقة', y, 11);
+  y += 6;
+  const certLines = [
+    'معتمد من الهيئة العامة للغذاء والدواء (SFDA)',
+    'معتمد وفق آيزو ISO 13485',
+    company.certifications ? `شهادات الشركة: ${company.certifications}` : null,
+  ].filter(Boolean);
+  doc.fillColor(DARK);
+  certLines.forEach((line) => {
+    y = drawer.drawLine(`•  ${line}`, y, 10) + 3;
+  });
+  y += 8;
+
+  // ── Surgical set specifications, if applicable ───────────────────────────
+  const set = product.surgical_set;
+  if (set) {
+    doc.fillColor(DARK);
+    y = drawerBold.drawLine('مواصفات الطقم', y, 11);
+    y += 6;
+    const rows = [
+      ['عدد القطع', set.piece_count],
+      ['المادة', set.material],
+      ['التشطيب', set.finish],
+      ['التعقيم', set.sterilization],
+      ['المعيار', set.standard],
+      ['الصينية / الحقيبة', set.tray_case],
+    ].filter(([, v]) => v != null && v !== '');
+    const valueDrawer = createArabicLineDrawer(doc, { arabicFont: 'AR', latinFont: 'Helvetica', rightEdge: RIGHT_EDGE - 150 });
+    rows.forEach(([label, value]) => {
+      const rowTop = y;
+      doc.fillColor(MUTED);
+      drawer.drawLine(label, rowTop, 10);
+      doc.fillColor(DARK);
+      y = Math.max(y, valueDrawer.drawLine(String(value), rowTop, 10));
+      y += 3;
+    });
+    y += 8;
+
+    const items = product.set_items || [];
+    if (items.length) {
+      doc.fillColor(DARK);
+      y = drawerBold.drawLine('محتويات الطقم', y, 11);
+      y += 6;
+      doc.fillColor(DARK);
+      items.forEach((it) => {
+        const name = it.product?.name || it.name || '';
+        const sku = it.product?.sku ? ` (${it.product.sku})` : '';
+        y = drawer.drawLine(`•  ${it.quantity}× ${name}${sku}`, y, 10) + 3;
+      });
+      y += 6;
+    }
+  }
+
+  // ── Footer ───────────────────────────────────────────────────────────────
+  const footerY = doc.page.height - 60;
+  doc.strokeColor(BORDER).lineWidth(1).moveTo(LEFT_EDGE, footerY).lineTo(RIGHT_EDGE, footerY).stroke();
+  doc.fillColor(MUTED);
+  const todayStr = new Date().toISOString().slice(0, 10);
+  drawer.drawWrapped(
+    `تم إنشاء هذه البطاقة بواسطة ${BRAND_NAME} بتاريخ ${todayStr}. المواصفات قابلة للتغيير دون إشعار مسبق.`,
+    footerY + 8, 8, RIGHT_EDGE - LEFT_EDGE, 3
+  );
+
+  doc.end();
+}

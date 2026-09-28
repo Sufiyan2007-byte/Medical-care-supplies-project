@@ -1,6 +1,7 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
-import { submitContactForm } from '../controllers/contactController.js';
+import { submitContactForm, listContactMessages } from '../controllers/contactController.js';
+import { authenticateToken, requireStaff } from '../middleware/auth.js';
 
 const router = express.Router();
 
@@ -16,5 +17,6 @@ const contactLimiter = rateLimit({
 });
 
 router.post('/', contactLimiter, submitContactForm);
+router.get('/messages', authenticateToken, requireStaff, listContactMessages);
 
 export default router;

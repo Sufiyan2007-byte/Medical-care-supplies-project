@@ -3,9 +3,9 @@
 .skeleton {
   background: linear-gradient(
     90deg,
-    #e2e8f0 25%,
-    #f1f5f9 50%,
-    #e2e8f0 75%
+    var(--muted-text) 25%,
+    var(--light-card) 50%,
+    var(--muted-text) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.6s infinite;
@@ -21,7 +21,7 @@
 /* ── Product Card Skeleton ───────────────────────────────────────────────── */
 
 .product-card-skeleton {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(var(--fg-rgb), 0.7);
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
@@ -36,15 +36,17 @@
   .skeleton {
     background: linear-gradient(
       90deg,
-      #1e293b 25%,
+      var(--dark-card) 25%,
       #334155 50%,
-      #1e293b 75%
+      var(--dark-card) 75%
     );
     background-size: 200% 100%;
   }
 
   .product-card-skeleton {
     background: rgba(30, 41, 59, 0.6);
-    border-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(var(--fg-rgb), 0.04);
   }
 }
+
+

@@ -72,6 +72,12 @@ export function AuthProvider({ children }) {
     setUser(null);
   }, []);
 
+  /** Update the cached user (e.g. after editing the profile). */
+  const updateUser = useCallback((nextUser) => {
+    localStorage.setItem('auth_user', JSON.stringify(nextUser));
+    setUser(nextUser);
+  }, []);
+
   const value = {
     token,
     user,
@@ -79,6 +85,7 @@ export function AuthProvider({ children }) {
     isLoading,
     login,
     logout,
+    updateUser,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
@@ -94,3 +101,4 @@ export function useAuthContext() {
   }
   return context;
 }
+

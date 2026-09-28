@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useForgotPassword } from '../hooks/useForgotPassword';
 import './ForgotPasswordForm.css';
+import { logoSrc } from '../utils/themes';
 
 /**
  * ForgotPasswordForm — Two-state component:
@@ -27,12 +28,14 @@ function ForgotPasswordForm() {
     prevError.current = error;
   }, [error]);
 
+  const isAr = (t('auth.forgot_title') || '').includes('نسيت') || true;
+
   /* ── Success state ─────────────────────────────────────────────────── */
   if (isSubmitted) {
     return (
       <div className="fpf__success" id="forgot-password-success">
         <span className="fpf__success-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
         </span>
 
         <div>
@@ -43,14 +46,11 @@ function ForgotPasswordForm() {
         </div>
 
         <div className="fpf__success-note" role="note">
-          <strong>Didn&apos;t receive an email?</strong>
-          <ul style={{ margin: '0.4rem 0 0', paddingLeft: '1.25rem' }}>
-            <li>Double-check the email address you entered.</li>
-            <li>Check your spam or junk folder.</li>
-            <li>
-              The link expires in <strong>1 hour</strong> — request a new one
-              if needed.
-            </li>
+          <strong>{t('auth.didnt_receive_email', 'لم يصلك البريد الإلكتروني؟')}</strong>
+          <ul style={{ margin: '0.4rem 0 0', paddingInlineStart: '1.25rem', textAlign: 'start' }}>
+            <li>{t('auth.check_email_typed', 'تأكد من كتابة عنوان البريد الإلكتروني بشكل صحيح.')}</li>
+            <li>{t('auth.check_spam_folder', 'تحقق من مجلد الرسائل غير المرغوب فيها (Spam / Junk).')}</li>
+            <li>{t('auth.link_expires_hint', 'تنتهي صلاحية الرابط خلال ساعة واحدة.')}</li>
           </ul>
         </div>
 
@@ -71,12 +71,28 @@ function ForgotPasswordForm() {
       className={`fpf ${isShaking ? 'fpf--shake' : ''}`}
       id="forgot-password-form-root"
     >
+      {/* ── Brand Logo Badge (Mobile only) ── */}
+      <div className="auth-mobile-logo">
+        <Link to="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
+          <div className="auth-highlight-logo">
+            <img 
+              src={logoSrc()} 
+              alt="Medical Care Supplies Logo" 
+              className="auth-highlight-logo-img" 
+            />
+          </div>
+        </Link>
+      </div>
+
       {/* Header */}
       <div className="fpf__header">
-        <p className="fpf__eyebrow">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#FF6600', marginEnd: '0.3rem', verticalAlign: 'middle' }}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          {t('auth.forgot_eyebrow')}
-        </p>
+        <div className="fpf__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span>{t('auth.forgot_eyebrow')}</span>
+        </div>
         <h1 className="fpf__title">{t('auth.forgot_title')}</h1>
         <p className="fpf__subtitle">
           {t('auth.forgot_subtitle')}
@@ -153,10 +169,15 @@ function ForgotPasswordForm() {
           {isLoading ? (
             <>
               <span className="fpf__spinner" aria-hidden="true" />
-              {t('auth.forgot_sending')}
+              <span>{t('auth.forgot_sending')}</span>
             </>
           ) : (
-            t('auth.forgot_btn')
+            <>
+              <span>{t('auth.forgot_btn')}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="fpf__submit-arrow">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </>
           )}
         </button>
 
@@ -174,3 +195,4 @@ function ForgotPasswordForm() {
 }
 
 export default ForgotPasswordForm;
+

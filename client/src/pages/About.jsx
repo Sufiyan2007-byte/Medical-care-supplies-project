@@ -59,33 +59,35 @@ const IconPackage = () => (
   </svg>
 );
 
+/* Stat/value CONTENT lives in translation.json (about.stat*_label, about.value*_title/text) —
+   these arrays just pair each slot with its icon and translation-key prefix. */
 const STATS = [
-  { value: '500+', label: 'Medical Products' },
-  { value: '12+', label: 'Years of Excellence' },
-  { value: '200+', label: 'Healthcare Partners' },
-  { value: '100%', label: 'SFDA Compliant' },
+  { value: '1942', labelKey: 'about.stat1_label', labelDefault: 'Manufacturing Heritage' },
+  { value: 'ISO 7376', labelKey: 'about.stat2_label', labelDefault: 'Laryngoscope Standard' },
+  { valueKey: 'about.stat3_value', valueDefault: '4 Countries', labelKey: 'about.stat3_label', labelDefault: 'German, French & Japanese Alloys' },
+  { value: '100%', labelKey: 'about.stat4_label', labelDefault: 'SFDA & CE Registered' },
 ];
 
 const VALUES = [
   {
     Icon: IconShield,
-    title: 'Quality Assured',
-    text: 'Every product undergoes rigorous testing and quality control before reaching our clients. We adhere to the highest international standards without compromise.',
+    titleKey: 'about.value1_title', titleDefault: 'Heritage & Craft Since 1942',
+    textKey: 'about.value1_text', textDefault: 'Founded by the Mehr family in 1942, our manufacturing lineage spans three generations of precision surgical craft, exporting worldwide with an unblemished reputation.',
+  },
+  {
+    Icon: IconPackage,
+    titleKey: 'about.value2_title', titleDefault: 'Premium Surgical Raw Materials',
+    textKey: 'about.value2_text', textDefault: 'Our specialized production units exclusively employ the highest quality medical-grade stainless steel and optical components imported from Germany, France, Japan, and Pakistan.',
   },
   {
     Icon: IconCertificate,
-    title: 'SFDA Registered',
-    text: 'Fully compliant and registered with the Saudi Food and Drug Authority (SFDA), ensuring safety and reliability in all medical supplies we distribute.',
+    titleKey: 'about.value3_title', titleDefault: 'Certified ISO 7376 & SFDA',
+    textKey: 'about.value3_text', textDefault: 'Certified under ISO 9001:2008, ISO 13485:2003, ISO 7376 Green Spec, CE Certificate, cGMP, and fully registered with the Saudi Food and Drug Authority (SFDA).',
   },
   {
     Icon: IconTruck,
-    title: 'Express KSA Delivery',
-    text: 'Fast, reliable logistics to hospitals, clinics and pharmacies across Saudi Arabia — ensuring critical supplies arrive when and where they are needed.',
-  },
-  {
-    Icon: IconHeadset,
-    title: '24/7 Expert Support',
-    text: 'Our team of medical supply specialists is available around the clock to assist procurement teams, answer technical questions and resolve any issues.',
+    titleKey: 'about.value4_title', titleDefault: 'Direct KSA Supply & Support',
+    textKey: 'about.value4_text', textDefault: 'Direct distribution across Saudi Arabia (+966 55 928 6613) providing hospitals, day surgery centers, and clinics with express fulfillment and specialist support.',
   },
 ];
 
@@ -134,8 +136,8 @@ function About() {
       <section className="about-hero">
         <div className="about-hero-inner">
           <span className="about-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#FF6600" stroke="none"><circle cx="12" cy="12" r="12"/></svg>
-            About MedPortal
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent-color)" stroke="none"><circle cx="12" cy="12" r="12"/></svg>
+            {t('about.eyebrow', 'About MedPortal')}
           </span>
           <h1>{t('about.header_title', 'Who We Are')}</h1>
           <p className="about-hero-lead">{displayAboutText}</p>
@@ -153,8 +155,8 @@ function About() {
       <section className="about-stats-strip">
         {STATS.map((s, i) => (
           <div key={i} className="about-stat">
-            <span className="about-stat-val">{s.value}</span>
-            <span className="about-stat-label">{s.label}</span>
+            <span className="about-stat-val">{s.valueKey ? t(s.valueKey, s.valueDefault) : s.value}</span>
+            <span className="about-stat-label">{t(s.labelKey, s.labelDefault)}</span>
           </div>
         ))}
       </section>
@@ -162,9 +164,9 @@ function About() {
       {/* ── Vision & Mission ──────────────────────────────────────────────── */}
       <section className="about-section about-vm-section">
         <div className="about-section-header">
-          <span className="about-section-tag">Our Purpose</span>
-          <h2>{t('about.purpose_title', 'Vision & Mission')}</h2>
-          <p>The principles that guide everything we do.</p>
+          <span className="about-section-tag">{t('about.purpose_tag', 'Our Purpose')}</span>
+          <h2>{t('about.vision_mission_title', 'Vision & Mission')}</h2>
+          <p>{t('about.purpose_subtitle', 'The principles that guide everything we do.')}</p>
         </div>
 
         <div className="vm-grid">
@@ -192,19 +194,19 @@ function About() {
       {/* ── Why Choose Us ─────────────────────────────────────────────────── */}
       <section className="about-section about-values-section">
         <div className="about-section-header">
-          <span className="about-section-tag">Why Choose Us</span>
-          <h2>{t('about.why_choose_us', 'Our Commitment to Excellence')}</h2>
-          <p>Four pillars that define our service to the healthcare community.</p>
+          <span className="about-section-tag">{t('about.why_choose_us_tag', 'Why Choose Us')}</span>
+          <h2>{t('about.commitment_title', 'Our Commitment to Excellence')}</h2>
+          <p>{t('about.why_choose_us_subtitle', 'Four pillars that define our service to the healthcare community.')}</p>
         </div>
 
         <div className="values-grid">
-          {VALUES.map(({ Icon, title, text }, i) => (
+          {VALUES.map(({ Icon, titleKey, titleDefault, textKey, textDefault }, i) => (
             <div key={i} className="value-card">
               <div className="value-card-icon">
                 <Icon />
               </div>
-              <h3>{title}</h3>
-              <p>{text}</p>
+              <h3>{t(titleKey, titleDefault)}</h3>
+              <p>{t(textKey, textDefault)}</p>
             </div>
           ))}
         </div>
@@ -214,9 +216,9 @@ function About() {
       {company && (
         <section className="about-section about-legal-section">
           <div className="about-section-header">
-            <span className="about-section-tag">Transparency</span>
+            <span className="about-section-tag">{t('about.legal_tag', 'Transparency')}</span>
             <h2>{t('about.legal_title', 'Legal & Regulatory')}</h2>
-            <p>Our registration and certification details for healthcare procurement teams.</p>
+            <p>{t('about.legal_subtitle', 'Our registration and certification details for healthcare procurement teams.')}</p>
           </div>
 
           <div className="legal-panel">
@@ -257,3 +259,4 @@ function About() {
 }
 
 export default About;
+

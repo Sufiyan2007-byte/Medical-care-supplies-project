@@ -1,17 +1,14 @@
-import * as Brevo from '@getbrevo/brevo';
+import { BrevoClient } from '@getbrevo/brevo';
 import { getVerifyEmailHtml } from './templates/verifyEmailTemplate.js';
 import { getResetPasswordHtml } from './templates/resetPasswordTemplate.js';
 
-let apiInstance = null;
+let clientInstance = null;
 
-function getApiInstance() {
-  if (!apiInstance) {
-    const client = Brevo.ApiClient.instance;
-    const apiKey = client.authentications['api-key'];
-    apiKey.apiKey = process.env.BREVO_API_KEY;
-    apiInstance = new Brevo.TransactionalEmailsApi();
+function getBrevoClient() {
+  if (!clientInstance) {
+    clientInstance = new BrevoClient({ apiKey: process.env.BREVO_API_KEY });
   }
-  return apiInstance;
+  return clientInstance;
 }
 
 /**
@@ -33,15 +30,14 @@ export async function sendEmail(to, subject, html) {
   const senderEmail = process.env.EMAIL_FROM || 'noreply@medportal.com';
   const senderName = process.env.EMAIL_FROM_NAME || 'MedPortal';
 
-  const sendSmtpEmail = new Brevo.SendSmtpEmail();
-  sendSmtpEmail.subject = subject;
-  sendSmtpEmail.htmlContent = html;
-  sendSmtpEmail.sender = { name: senderName, email: senderEmail };
-  sendSmtpEmail.to = [{ email: to }];
-
   try {
-    const api = getApiInstance();
-    await api.sendTransacEmail(sendSmtpEmail);
+    const client = getBrevoClient();
+    await client.transactionalEmails.sendTransacEmail({
+      subject,
+      htmlContent: html,
+      sender: { name: senderName, email: senderEmail },
+      to: [{ email: to }],
+    });
     console.log(`[emailService] Email sent to ${to} — subject: "${subject}"`);
   } catch (err) {
     console.error(

@@ -1,0 +1,15 @@
+# Add these lines to the end of server/.env
+
+# ---------------------------------
+# Brevo (SendInBlue) Email Service
+# ---------------------------------
+BREVO_API_KEY=
+
+EMAIL_FROM=Info@medicaresupplies.net
+EMAIL_FROM_NAME=Medical Care Supplies
+
+# ---------------------------------
+# Orders / contact notifications
+# ---------------------------------
+ADMIN_EMAIL=Info@medicaresupplies.net
+ORDER_NOTIFY_EMAIL=Info@medicaresupplies.net
