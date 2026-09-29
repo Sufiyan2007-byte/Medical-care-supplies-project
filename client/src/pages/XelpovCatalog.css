@@ -145,9 +145,7 @@
   gap: 2rem;
   align-items: start;
 }
-@media (max-width: 900px) {
-  .xcat-layout { grid-template-columns: 1fr; }
-}
+
 
 /* Sidebar */
 .xcat-sidebar {
@@ -563,3 +561,14 @@
 [dir="rtl"] .xcat-card:hover .xcat-arrow { transform: scaleX(-1) translateX(4px); }
 [dir="rtl"] .xcat-filter-btn { text-align: right; }
 [dir="rtl"] .xcat-breadcrumb-sep { transform: scaleX(-1); display: inline-block; }
+
+/* ── Responsive overrides (must come AFTER all base rules to win the cascade) */
+@media (max-width: 900px) {
+  .xcat-layout { grid-template-columns: 1fr; }
+  /* Remove sticky positioning when sidebar stacks above the grid in a single
+     column — without this, the sidebar floats over scrolling product cards. */
+  .xcat-sidebar {
+    position: static;
+    top: auto;
+  }
+}
