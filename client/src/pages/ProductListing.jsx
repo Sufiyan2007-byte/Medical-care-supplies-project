@@ -38,6 +38,106 @@ function getProductImage(name = '') {
   return '/icon_surgical_instruments.png';
 }
 
+/**
+ * Categories from xelpov_products.json that represent reusable surgical instruments/tools.
+ * These must NEVER be classified as medical consumables, even if words like "dressing"
+ * or "gauze" appear in their name or subcategory (e.g., Dressing Forceps, Gauze Packers).
+ */
+const REUSABLE_INSTRUMENT_MAIN_CATEGORIES = new Set([
+  'Forceps',
+  'Scissors',
+  'Retractors',
+  'Hooks & Spatulas',
+  'Haemostats & Clamps',
+  'Needle Holders & Passers',
+  'Dissectors',
+  'Elevators & Levers',
+  'Dissectors, Elevators & Levers',
+  'Knives',
+  'Knives, Needles & Picks',
+  'Needles & Picks',
+  'Osteotomes',
+  'Chisels & Gouges',
+  'Rongeurs',
+  'Punches & Cutters',
+  'Pliers & Wire Cutters',
+  'Files',
+  'Saws & Rasps',
+  'Files, Saws & Rasps',
+  'Cannulas & Trocars',
+  'Suction Tubes',
+  'Curettes & Adenotomes',
+  'Impactors',
+  'Manipulators',
+  'Probes & Dilators',
+  'Speculums',
+  'Electrosurgical Instruments',
+  'Lightening & Visualization',
+  'Bougies & Sounds',
+  'Dental Scalers',
+  'Excavators',
+  'Pluggers & Burnishers',
+  'Scalers',
+  'Hospital Receptacles',
+  'Indicators & Measurement',
+  'Syringes',
+]);
+
+/**
+ * Reusable surgical instrument keyword terms to block in product names and subcategories.
+ * Prevents tools under general categories (like "Ancillary Products and Accessories")
+ * from being misidentified as consumables due to words like "dressing", "gauze", or "sponge".
+ */
+const REUSABLE_INSTRUMENT_TERMS = [
+  'forceps',
+  'scissors',
+  'clamp',
+  'retractor',
+  'needle holder',
+  'scalpel',
+  'knife',
+  'curette',
+  'rongeur',
+  'packer',
+  'elevator',
+  'dissector',
+  'chisel',
+  'osteotome',
+  'punch',
+  'plier',
+  'cutter',
+  'speculum',
+  'dilator',
+  'probe',
+  'spatula',
+  'hook',
+  'trocar',
+  'cannula',
+  'applicator',
+  'extractor',
+  'snare',
+  'chopper',
+  'rotator',
+  'splitter',
+  'carrier',
+  'jar',
+  'tray',
+  'box',
+  'handle',
+];
+
+function isReusableInstrumentProduct(inst) {
+  const mainCategories = inst.mainCategory || [];
+  if (mainCategories.some((cat) => REUSABLE_INSTRUMENT_MAIN_CATEGORIES.has(cat))) {
+    return true;
+  }
+  const subList = (inst.subCategory || []).join(' ').toLowerCase();
+  const name = (inst.name || '').toLowerCase();
+  return REUSABLE_INSTRUMENT_TERMS.some(
+    (term) => subList.includes(term) || name.includes(term),
+  );
+}
+
 const PAGE_SIZE = 9;
 const CONSUMABLES_FETCH_LIMIT = 100;
 
@@ -108,8 +208,33 @@ function ProductListing() {
             if (!name.includes(q) && !catList.includes(q) && !specList.includes(q)) return false;
           }
           if (isSets) return catList.includes('set') || name.includes('set');
-          if (slug === 'surgical-instruments') return !catList.includes('consumable') && !isSets;
-          if (slug === 'medical-consumables') return catList.includes('consumable') || catList.includes('disposable') || catList.includes('dressing') || catList.includes('gauze');
+
+          const isInstrument = isReusableInstrumentProduct(inst);
+
+          if (slug === 'medical-consumables') {
+            // Reusable surgical tools must never be treated as consumables
+            if (isInstrument) return false;
+
+            const nameAndCats = `${name} ${catList}`;
+            return (
+              nameAndCats.includes('single use') ||
+              nameAndCats.includes('single-use') ||
+              (nameAndCats.includes('disposable') && !nameAndCats.includes('reusable')) ||
+              (nameAndCats.includes('consumable') && !nameAndCats.includes('reusable'))
+            );
+          }
+
+          if (slug === 'surgical-instruments') {
+            if (isInstrument) return true;
+            const nameAndCats = `${name} ${catList}`;
+            const isConsumable =
+              nameAndCats.includes('single use') ||
+              nameAndCats.includes('single-use') ||
+              nameAndCats.includes('disposable') ||
+              nameAndCats.includes('consumable');
+            return !isConsumable;
+          }
+
           return true;
         }).map((inst, idx) => ({
           id: inst.slug || idx + 100,
