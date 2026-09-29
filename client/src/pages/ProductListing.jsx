@@ -431,7 +431,6 @@ function ProductListing() {
                       />
                     </div>
                   )}
-                  <span className="product-card-sfda-badge">SFDA ✓</span>
                   {isOutOfStock && (
                     <span className="product-card-stock-badge product-card-stock-badge--out">
                       {i18n.language.startsWith('ar') ? 'نفدت الكمية' : 'Out of Stock'}

@@ -297,23 +297,6 @@
   opacity: 1;
 }
 
-/* SFDA trust badge */
-.product-card-sfda-badge {
-  position: absolute;
-  top: 10px;
-  inset-inline-end: 10px;
-  background: rgba(var(--dark-rgb), 0.8);
-  border: 1px solid rgba(var(--accent-rgb), 0.3);
-  backdrop-filter: blur(6px);
-  color: var(--c-accent-text);
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 6px;
-  z-index: 2;
-  letter-spacing: 0.3px;
-}
-
 /* ── Stock availability badge ────────────────────────────────────────────── */
 .product-card-stock-badge {
   position: absolute;
@@ -717,11 +700,6 @@
   object-fit: contain;
   opacity: 0.8;
   margin: auto;
-}
-
-.products-grid .product-card-sfda-badge {
-  background: rgba(var(--dark-rgb), 0.92);
-  border-color: rgba(var(--accent-rgb), 0.25);
 }
 
 .products-grid .product-card-footer {

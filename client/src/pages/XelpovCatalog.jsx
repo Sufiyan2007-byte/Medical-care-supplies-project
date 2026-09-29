@@ -35,6 +35,7 @@ function XelpovCatalog() {
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [imgErrors, setImgErrors] = useState({});
+  const [categoriesExpanded, setCategoriesExpanded] = useState(false);
 
   const currentPage = parseInt(searchParams.get('page') || '1', 10);
   const searchQuery = searchParams.get('q') || '';
@@ -224,25 +225,48 @@ function XelpovCatalog() {
 
           {/* Category filter */}
           {availableCategories.length > 1 && (
-            <div className="xcat-filter-group">
-              <h3 className="xcat-filter-title">{t('products.specifications')}</h3>
+            <div className={`xcat-filter-group ${categoriesExpanded ? 'is-expanded' : ''}`}>
               <button
-                className={`xcat-filter-btn ${!selectedCategory ? 'active' : ''}`}
-                onClick={() => setCat('')}
-                style={!selectedCategory ? { '--accent': accentColor } : {}}
+                type="button"
+                className="xcat-filter-toggle-btn"
+                onClick={() => setCategoriesExpanded(prev => !prev)}
+                aria-expanded={categoriesExpanded}
               >
-                All Categories
-              </button>
-              {availableCategories.map(cat => (
-                <button
-                  key={cat}
-                  className={`xcat-filter-btn ${selectedCategory === cat ? 'active' : ''}`}
-                  onClick={() => setCat(cat === selectedCategory ? '' : cat)}
-                  style={selectedCategory === cat ? { '--accent': accentColor } : {}}
+                <span>{isAr ? 'الفئات' : 'Categories'}</span>
+                <svg
+                  className="xcat-filter-toggle-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  {cat}
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div className="xcat-filter-list">
+                <h3 className="xcat-filter-title">{t('products.specifications')}</h3>
+                <button
+                  className={`xcat-filter-btn ${!selectedCategory ? 'active' : ''}`}
+                  onClick={() => setCat('')}
+                  style={!selectedCategory ? { '--accent': accentColor } : {}}
+                >
+                  All Categories
                 </button>
-              ))}
+                {availableCategories.map(cat => (
+                  <button
+                    key={cat}
+                    className={`xcat-filter-btn ${selectedCategory === cat ? 'active' : ''}`}
+                    onClick={() => setCat(cat === selectedCategory ? '' : cat)}
+                    style={selectedCategory === cat ? { '--accent': accentColor } : {}}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
         </aside>

@@ -203,6 +203,12 @@
   overflow-y: auto;
   box-shadow: 0 1px 3px rgba(0,0,0,.04);
 }
+.xcat-filter-toggle-btn {
+  display: none;
+}
+.xcat-filter-list {
+  display: block;
+}
 .xcat-filter-title {
   font-size: 0.74rem;
   font-weight: 700;
@@ -571,4 +577,61 @@
     position: static;
     top: auto;
   }
+
+  /* Collapsible category filter on mobile */
+  .xcat-filter-group {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .xcat-filter-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.8rem 1.1rem;
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--color-text, #1a1a2e);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .xcat-filter-toggle-btn:hover {
+    border-color: var(--accent, #2196F3);
+  }
+
+  .xcat-filter-toggle-icon {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--color-text-muted, #888);
+  }
+
+  .xcat-filter-group.is-expanded .xcat-filter-toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .xcat-filter-list {
+    display: none;
+  }
+
+  .xcat-filter-group.is-expanded .xcat-filter-list {
+    display: block;
+    margin-top: 0.65rem;
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 14px;
+    padding: 1.15rem;
+    max-height: 55vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  }
 }
+
