@@ -244,6 +244,9 @@
 .mobile-drawer-subnav {
   display: flex;
   flex-direction: column;
+  max-height: 280px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   margin-block: 2px;
   margin-inline-start: 0;
   margin-inline-end: calc(20px + 0.75rem + 0.75rem);
