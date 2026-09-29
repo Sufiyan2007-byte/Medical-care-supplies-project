@@ -313,6 +313,18 @@ function MainLayout() {
     return () => document.removeEventListener('mousedown', onDown);
   }, [accountOpen]);
 
+  // Lock body scroll when mobile navigation drawer is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
   /* ── Search ────────────────────────────────────────────────────────────── */
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
