@@ -748,7 +748,7 @@ function MainLayout() {
                 </div>
               </Link>
               <p className="footer-address">
-                {companyInfo?.address || t('contact.address_default', 'Medical City, Health Blvd, Riyadh, Saudi Arabia')}
+                {companyInfo?.address || t('contact.address_default', '2435 Khurais Road, 7737, Riyadh 14241, Saudi Arabia')}
               </p>
             </div>
             <div className="footer-nav">

@@ -181,7 +181,7 @@ function Contact() {
             </div>
             <div className="channel-body">
               <h3>{t('contact.headquarters', 'Headquarters')}</h3>
-              <p>{companyInfo?.address || t('contact.address_default', 'King Fahd Road, Olaya District, Riyadh, Saudi Arabia')}</p>
+              <p>{companyInfo?.address || t('contact.address_default', '2435 Khurais Road, 7737, Riyadh 14241, Saudi Arabia')}</p>
             </div>
           </div>
 
