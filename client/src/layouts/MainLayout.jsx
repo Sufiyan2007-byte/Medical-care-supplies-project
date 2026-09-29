@@ -454,7 +454,7 @@ function MainLayout() {
                           className={({ isActive }) => `mobile-drawer-sublink${isActive ? ' active' : ''}`}
                           onClick={closeAll}
                         >
-                          {t(child.labelKey, child.fallback)}
+                          {child.labelKey ? t(child.labelKey, child.fallback) : child.fallback}
                         </NavLink>
                       ))}
                     </div>
