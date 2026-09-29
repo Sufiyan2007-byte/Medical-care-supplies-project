@@ -628,9 +628,10 @@
     background: var(--color-surface, #fff);
     border: 1px solid var(--color-border, #e0e0e0);
     border-radius: 14px;
-    padding: 1.15rem;
-    max-height: 55vh;
+    padding: 1rem 1.15rem;
+    max-height: 320px;
     overflow-y: auto;
+    overscroll-behavior: contain;
     box-shadow: 0 4px 14px rgba(0,0,0,.06);
   }
 }
