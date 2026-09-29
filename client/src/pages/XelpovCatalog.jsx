@@ -35,7 +35,7 @@ function XelpovCatalog() {
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [imgErrors, setImgErrors] = useState({});
-  const [categoriesExpanded, setCategoriesExpanded] = useState(false);
+  const [categoriesExpanded, setCategoriesExpanded] = useState(true);
 
   const currentPage = parseInt(searchParams.get('page') || '1', 10);
   const searchQuery = searchParams.get('q') || '';
@@ -224,7 +224,7 @@ function XelpovCatalog() {
           </div>
 
           {/* Category filter */}
-          {availableCategories.length > 1 && (
+          {availableCategories.length > 0 && (
             <div className={`xcat-filter-group ${categoriesExpanded ? 'is-expanded' : ''}`}>
               <button
                 type="button"
