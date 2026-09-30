@@ -58,7 +58,7 @@ export async function sendEmail(to, subject, html) {
  */
 export async function sendVerificationEmail(userEmail, userName, token) {
   const baseUrl = process.env.CLIENT_URL || 'http://localhost:5173';
-  const verificationUrl = `${baseUrl}/verify-email?token=${token}`;
+  const verificationUrl = `${baseUrl}/auth/verify-email?token=${token}`;
   const html = getVerifyEmailHtml(userName, verificationUrl);
 
   console.log(
@@ -77,7 +77,7 @@ export async function sendVerificationEmail(userEmail, userName, token) {
  */
 export async function sendPasswordResetEmail(userEmail, userName, token) {
   const baseUrl = process.env.CLIENT_URL || 'http://localhost:5173';
-  const resetUrl = `${baseUrl}/reset-password?token=${token}`;
+  const resetUrl = `${baseUrl}/auth/reset-password?token=${token}`;
   const html = getResetPasswordHtml(userName, resetUrl);
 
   console.log(

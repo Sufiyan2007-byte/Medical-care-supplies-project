@@ -1,13 +1,17 @@
-# Use official Node.js LTS image
-FROM node:20-alpine AS builder
+# Use official Node.js LTS image (Debian-based "slim" — has proper OpenSSL,
+# unlike node:20-alpine which breaks Prisma's engine on newer Alpine releases)
+FROM node:20-slim AS builder
 
 WORKDIR /app
+
+# Prisma's engine needs OpenSSL at build time
+RUN apt-get update -y && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # Copy package files and install dependencies
 COPY package*.json ./
 COPY prisma ./prisma/
 
-RUN npm ci
+RUN npm install
 
 # Generate Prisma Client
 RUN npx prisma generate
@@ -16,9 +20,12 @@ RUN npx prisma generate
 COPY . .
 
 # Production runner stage
-FROM node:20-alpine AS runner
+FROM node:20-slim AS runner
 
 WORKDIR /app
+
+# Prisma's engine also needs OpenSSL at runtime
+RUN apt-get update -y && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
 ENV PORT=5000

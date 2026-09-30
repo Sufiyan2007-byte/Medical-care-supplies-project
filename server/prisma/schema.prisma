@@ -34,6 +34,7 @@ model EmailToken {
   user_id    Int       @map("user_id")
   token      String
   type       String    // 'verify' or 'reset'
+  created_at DateTime  @default(now()) @map("created_at")
   expires_at DateTime  @map("expires_at")
   used_at    DateTime? @map("used_at")
 
