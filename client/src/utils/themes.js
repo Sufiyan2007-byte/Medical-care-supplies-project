@@ -1,7 +1,8 @@
 // Site colour themes. The actual colours live in src/index.css (search "THEMES").
 // Add a theme: 1) add a [data-theme="id"] block in index.css  2) list it here.
 //
-// Default theme: mist-navy (previous default: steel-soft, use ?theme=steel-soft). Preview others without a switcher:  any page + ?theme=midnight (or graphite-gold, etc.)
+// Default theme: mist-navy, styled as Lumen Teal (previous look was a flat mist blue).
+// Preview others without a switcher: any page + ?theme=midnight (or graphite-gold, etc.)
 // The choice is remembered in this browser (localStorage). Use ?theme=default to reset.
 
 export const THEMES = [
@@ -19,7 +20,7 @@ export const THEMES = [
   { id: 'sky-steel', name: 'Sky & Steel Blue (light)' },
   { id: 'lavender-plum', name: 'Lavender Mist & Plum (light)' },
   { id: 'powder-indigo', name: 'Powder Blue & Indigo (light)' },
-  { id: 'mist-navy', name: 'Mist Blue & Navy (light)' },
+  { id: 'mist-navy', name: 'Lumen Teal (light)' },
   { id: 'greige-bronze', name: 'Greige & Bronze (light)' },
   { id: 'peach-cocoa', name: 'Peach & Cocoa (light)' },
   { id: 'lilac-violet', name: 'Lilac & Deep Violet (light)' },
@@ -28,7 +29,7 @@ export const THEMES = [
 ];
 
 export const DEFAULT_THEME = 'mist-navy';
-const KEY = 'medportal_theme';
+const KEY = 'medportal_theme_v2';
 
 export function applyTheme(id) {
   const ok = THEMES.some((t) => t.id === id) ? id : DEFAULT_THEME;

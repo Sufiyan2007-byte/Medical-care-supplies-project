@@ -13,11 +13,11 @@
 
 .home-hero {
   position: relative;
-  background: var(--bg-gradient);
+  background: var(--hero-gradient, var(--bg-gradient));
   padding: clamp(3.5rem, 8vw, 5.5rem) 2rem;
   overflow: hidden;
   border-radius: 0 0 28px 28px;
-  box-shadow: 0 16px 48px rgba(var(--dark-rgb), 0.22);
+  box-shadow: 0 18px 48px rgba(4, 46, 52, 0.18);
 }
 
 .home-hero__glow {
@@ -63,7 +63,7 @@
 .home-hero__title {
   font-size: clamp(1.85rem, 4.5vw, 2.75rem);
   font-weight: 800;
-  color: var(--c-strong);
+  color: var(--hero-fg, var(--c-strong));
   line-height: 1.2;
   letter-spacing: -0.5px;
   margin: 0 0 1rem;
@@ -71,7 +71,7 @@
 
 .home-hero__subtitle {
   font-size: 1.05rem;
-  color: rgba(var(--fg-rgb), 0.82);
+  color: color-mix(in srgb, var(--hero-fg, var(--c-strong)) 84%, transparent);
   line-height: 1.75;
   margin: 0 auto 2rem;
   max-width: 52ch;
@@ -109,13 +109,13 @@
 
 .home-hero__btn--ghost {
   background: transparent;
-  color: var(--c-strong);
-  border: 1.5px solid rgba(var(--fg-rgb), 0.45);
+  color: var(--hero-fg, var(--c-strong));
+  border: 1.5px solid color-mix(in srgb, var(--hero-fg, var(--c-strong)) 42%, transparent);
 }
 
 .home-hero__btn--ghost:hover {
-  background: rgba(var(--fg-rgb), 0.12);
-  border-color: rgba(var(--fg-rgb), 0.75);
+  background: color-mix(in srgb, var(--hero-fg, var(--c-strong)) 14%, transparent);
+  border-color: color-mix(in srgb, var(--hero-fg, var(--c-strong)) 72%, transparent);
 }
 
 /* ── Section Headings ────────────────────────────────────────── */
@@ -475,7 +475,7 @@
 }
 
 .ent-promo-inner {
-  background: var(--bg-gradient);
+  background: var(--hero-gradient, var(--bg-gradient));
   border-radius: 20px;
   padding: 3rem 3.5rem;
   display: flex;
@@ -520,7 +520,7 @@
 }
 
 .ent-promo-text h2 {
-  color: var(--c-strong);
+  color: var(--hero-fg, var(--c-strong));
   font-size: 2rem;
   font-weight: 800;
   line-height: 1.25;
@@ -529,7 +529,7 @@
 }
 
 .ent-promo-text p {
-  color: rgba(var(--fg-rgb), 0.8);
+  color: color-mix(in srgb, var(--hero-fg, var(--c-strong)) 84%, transparent);
   font-size: 1rem;
   line-height: 1.65;
   margin-bottom: 2rem;
@@ -541,7 +541,7 @@
   align-items: center;
   gap: 0.6rem;
   background: var(--card-gradient);
-  color: var(--c-ink-2);
+  color: var(--on-accent);
   font-weight: 800;
   font-size: 0.95rem;
   padding: 0.85rem 1.8rem;
@@ -555,7 +555,7 @@
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(var(--accent-rgb), 0.6);
   background: var(--card-gradient);
-  color: var(--c-ink-2);
+  color: var(--on-accent);
 }
 
 .ent-promo-img-wrap {

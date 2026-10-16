@@ -483,8 +483,8 @@
 }
 
 .add-to-cart-btn:hover {
-  background: #4880ff;
-  box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.6);
+  background: var(--c-accent-2);
+  box-shadow: 0 10px 26px rgba(var(--accent-rgb), 0.45);
 }
 
 .add-to-cart-btn:active {
