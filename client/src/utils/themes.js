@@ -20,7 +20,7 @@ export const THEMES = [
   { id: 'sky-steel', name: 'Sky & Steel Blue (light)' },
   { id: 'lavender-plum', name: 'Lavender Mist & Plum (light)' },
   { id: 'powder-indigo', name: 'Powder Blue & Indigo (light)' },
-  { id: 'mist-navy', name: 'Lumen Teal (light)' },
+  { id: 'mist-navy', name: 'Aether Cyan (light)' },
   { id: 'greige-bronze', name: 'Greige & Bronze (light)' },
   { id: 'peach-cocoa', name: 'Peach & Cocoa (light)' },
   { id: 'lilac-violet', name: 'Lilac & Deep Violet (light)' },
