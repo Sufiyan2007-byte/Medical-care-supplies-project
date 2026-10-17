@@ -6,6 +6,7 @@ import { SpecialtyIcon } from '../components/SpecialtyIcons';
 import './Home.css';
 import { priceOnRequest } from '../utils/pricing';
 import { loadXelpovProducts } from '../utils/xelpovData';
+import TypingText from '../components/TypingText';
 
 const IconCatalogue = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -135,6 +136,7 @@ function Home() {
             {t('home.stat2_val')} · {t('home.stat2_label')}
           </span>
           <h1 className="home-hero__title">{t('home.hero_title')}</h1>
+          <TypingText phrases={t('home.typing_phrases', { returnObjects: true })} />
           <p className="home-hero__subtitle">{t('home.hero_subtitle')}</p>
           <div className="home-hero__ctas">
             <Link to="/catalogue" className="home-hero__btn home-hero__btn--primary">

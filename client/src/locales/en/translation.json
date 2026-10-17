@@ -35,6 +35,13 @@
   },
   "home": {
     "hero_title": "Advanced Surgical & Medical Supplies",
+    "typing_phrases": [
+      "Surgical Instruments",
+      "Forceps & Clamps",
+      "Needle Holders",
+      "Vascular Scissors",
+      "Complete Surgical Sets"
+    ],
     "hero_subtitle": "Equipping healthcare professionals with precision instruments and reliable consumables.",
     "cta_products": "Browse Products",
     "cta_contact": "Contact Sales",
