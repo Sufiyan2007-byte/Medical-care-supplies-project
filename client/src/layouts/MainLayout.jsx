@@ -170,9 +170,9 @@ const TRUST_BADGES = [
 // product data) instead of linking to a fixed specialty route.
 const NAV_ITEMS = [
   { key: 'home',    to: '/',        labelKey: 'nav.home',     icon: 'home',     exact: true },
-  { key: 'about',   to: '/about',   labelKey: 'nav.about',    icon: 'about'   },
-  { key: 'consumables', to: '/products/medical-consumables', labelKey: 'nav.consumables', icon: 'products' },
-  { key: 'instruments', to: '/catalogue/all', label: 'Shop by Instruments', labelAr: 'تسوق حسب الأداة', icon: 'products',
+  { key: 'about',   to: '/about',   labelKey: 'nav.about',    icon: 'about', short: 'About', shortAr: 'من نحن' },
+  { key: 'consumables', to: '/products/medical-consumables', labelKey: 'nav.consumables', icon: 'products', short: 'Consumables', shortAr: 'المستهلكات' },
+  { key: 'instruments', to: '/catalogue/all', label: 'Shop by Instruments', labelAr: 'تسوق حسب الأداة', short: 'Instruments', shortAr: 'الأدوات', icon: 'products',
     // Mirrors xelpovsurgical.com's own "SHOP BY INSTRUMENTS" menu exactly. A few of its groups
     // combine several of our raw mainCategory tags (cats: [...] triggers an OR match); "Speculums"
     // is left out for now — we don't have any products tagged that way yet.
@@ -203,7 +203,7 @@ const NAV_ITEMS = [
       { q: 'Liposuction',                   fallback: 'Liposuction Cannulas & Accessories' },
     ],
   },
-  { key: 'procedure', to: '/catalogue', label: 'Shop by Procedure', labelAr: 'تسوق حسب التخصص', icon: 'products',
+  { key: 'procedure', to: '/catalogue', label: 'Shop by Procedure', labelAr: 'تسوق حسب التخصص', short: 'Specialties', shortAr: 'التخصصات', icon: 'products',
     // Mirrors xelpovsurgical.com's "SHOP BY PROCEDURE" menu — our 20 specialty pages plus
     // "Liposuction" (our data has those products but hasn't tagged them with a specialty yet,
     // so it's a keyword search into the full catalogue instead of a dedicated route).
@@ -232,7 +232,7 @@ const NAV_ITEMS = [
       { q: 'Liposuction',                         fallback: 'Liposuction'               },
     ],
   },
-  { key: 'sets', to: '/catalogue/all', label: 'Suggested Sets & Trays', labelAr: 'أطقم وصواني مقترحة', icon: 'products',
+  { key: 'sets', to: '/catalogue/all', label: 'Suggested Sets & Trays', labelAr: 'أطقم وصواني مقترحة', short: 'Sets & Trays', shortAr: 'الأطقم والصواني', icon: 'products',
     // Mirrors xelpovsurgical.com's "SUGGESTED SETS & TRAYS" menu, grouped by specialty the same
     // way. Our per-product specialty tags don't reliably cover these kit/set listings, so each
     // entry is a keyword search (pipe = OR) instead of the specialty route. "Dental Instrument
@@ -404,6 +404,15 @@ function MainLayout() {
   const isRTL = i18n.language.startsWith('ar');
   const isStaff = user?.role === 'admin' || user?.role === 'developer';
   const navLabel = (item) => item.labelKey ? t(item.labelKey) : (isRTL ? (item.labelAr || item.label) : item.label);
+  const navShort = (item) => (isRTL ? item.shortAr : item.short) || navLabel(item);
+  const markCurrent = (key) => {
+    const path = location.pathname;
+    if (key === 'procedure' && path === '/catalogue') return ' is-current';
+    if (key === 'instruments' && path.startsWith('/catalogue/')) return ' is-current';
+    if (key === 'consumables' && path.startsWith('/products')) return ' is-current';
+    if (key === 'about' && path.startsWith('/about')) return ' is-current';
+    return '';
+  };
 
   return (
     <div className="site-wrapper">
@@ -615,7 +624,8 @@ function MainLayout() {
             </button>
 
             <Link to="/contact" className="site-topbar-contact" data-tip="quote">
-              {isRTL ? 'اطلب عرض سعر' : 'Request a quote'}
+              <span className="nav-label nav-label--full">{isRTL ? 'اطلب عرض سعر' : 'Request a quote'}</span>
+              <span className="nav-label nav-label--short">{isRTL ? 'اطلب عرض سعر' : 'Request a price quote'}</span>
             </Link>
 
             <button
@@ -729,9 +739,11 @@ function MainLayout() {
                     key={item.key}
                     to={item.to}
                     end={item.exact}
-                    className={({ isActive }) => navLinkClass(isActive, item.key)}
+                    data-nav={item.key}
+                    className={({ isActive }) => navLinkClass(isActive, item.key) + markCurrent(item.key)}
                   >
-                    {navLabel(item)}
+                    <span className="nav-label nav-label--full">{navLabel(item)}</span>
+                    <span className="nav-label nav-label--short">{navShort(item)}</span>
                   </NavLink>
                 );
               }
@@ -740,18 +752,20 @@ function MainLayout() {
                 <div
                   key={item.key}
                   className="site-navbar-item-mega"
+                  data-nav={item.key}
                   onMouseEnter={() => openMega(item.key)}
                   onMouseLeave={scheduleCloseMega}
                 >
                   <button
                     type="button"
-                    className={`site-navbar-link site-navbar-link--mega${isOpen ? ' open' : ''}`}
+                    className={`site-navbar-link site-navbar-link--mega${isOpen ? ' open' : ''}${markCurrent(item.key)}`}
                     aria-haspopup="true"
                     aria-expanded={isOpen}
                     onClick={() => setMegaOpen(v => v === item.key ? '' : item.key)}
                   >
                     <span className={`nav-sub-arrow${isOpen ? ' open' : ''}`}>{Icon.chevronDown}</span>
-                    {navLabel(item)}
+                    <span className="nav-label nav-label--full">{navLabel(item)}</span>
+                    <span className="nav-label nav-label--short">{navShort(item)}</span>
                   </button>
 
                   {isOpen && (

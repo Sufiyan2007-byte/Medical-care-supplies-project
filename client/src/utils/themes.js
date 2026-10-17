@@ -26,10 +26,11 @@ export const THEMES = [
   { id: 'lilac-violet', name: 'Lilac & Deep Violet (light)' },
   { id: 'stone-slate', name: 'Stone & Slate Blue (light)' },
   { id: 'gold-charcoal', name: 'Soft Gold & Charcoal (light)' },
+  { id: 'brand-night', name: 'Brand Night' },
 ];
 
-export const DEFAULT_THEME = 'mist-navy';
-const KEY = 'medportal_theme_v2';
+export const DEFAULT_THEME = 'brand-night';
+const KEY = 'medportal_theme_v3';
 
 export function applyTheme(id) {
   const ok = THEMES.some((t) => t.id === id) ? id : DEFAULT_THEME;

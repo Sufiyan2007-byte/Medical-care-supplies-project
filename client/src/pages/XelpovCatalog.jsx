@@ -3,6 +3,7 @@ import { Link, useParams, useSearchParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import { useWishlist } from '../context/WishlistContext';
 import { useQuoteCart } from '../context/QuoteCartContext';
+import BrandNightHero from '../components/BrandNightHero';
 import { loadXelpovProducts } from '../utils/xelpovData';
 import './XelpovCatalog.css';
 
@@ -197,6 +198,8 @@ function XelpovCatalog() {
   const specialtyLabel = meta
     ? (isAr ? meta.labelAr : meta.label)
     : t('products.title_products');
+  const brandNight = document.documentElement.getAttribute('data-theme') === 'brand-night';
+  const heroLabel = meta ? specialtyLabel : (isAr ? 'الجراحة' : 'Surgical');
 
   // Use the site's live theme accent everywhere instead of a different hardcoded
   // hex per specialty, so colors stay consistent across the whole site.
@@ -212,7 +215,17 @@ function XelpovCatalog() {
   }
 
   return (
-    <div className="xcat-container">
+    <div className={`xcat-container${brandNight ? ' xcat-container--brand' : ''}`}>
+      {brandNight && (
+        <BrandNightHero
+          specialtyLabel={heroLabel}
+          products={specialtyProducts}
+          selectedCategory={selectedCategory}
+          searchQuery={searchQuery}
+          onSearch={setSearch}
+          onPick={setCat}
+        />
+      )}
       {/* ── Hero header ── */}
       <header className="xcat-header" style={{ '--accent': accentColor }}>
         <nav className="xcat-breadcrumb">

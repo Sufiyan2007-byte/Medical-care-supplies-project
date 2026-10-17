@@ -348,6 +348,19 @@
     "continue": "Continue shopping",
     "need_help": "Need help?"
   },
+  "brandNight": {
+    "browse": "Browse:",
+    "search_placeholder": "Instrument name or item number…",
+    "search": "Search",
+    "instruments": "Instruments",
+    "types": "Instrument types",
+    "bilingual": "Bilingual support",
+    "shop": "Shop by instrument",
+    "common": "The most common types in {{specialty}} surgery",
+    "largest": "The largest range in {{specialty}}",
+    "count": "{{count}} instruments",
+    "blurb": "Forceps, clamps, scissors and needle holders for {{specialty}}, each with its catalogue reference and specifications, ready to quote for your hospital."
+  },
   "quoteList": {
     "add": "Add to quote",
     "decrease": "Decrease quantity",
