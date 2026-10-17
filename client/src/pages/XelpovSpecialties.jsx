@@ -330,11 +330,12 @@ function XelpovSpecialties() {
         <p className="xsp-empty">{isAr ? 'لا توجد تخصصات مطابقة.' : 'No specialties match your search.'}</p>
       ) : (
         <div className="xsp-grid" data-tip="categories" data-tip-scroll="categories">
-          {visibleSpecialties.map(sp => (
+          {visibleSpecialties.map((sp, index) => (
             <Link
               key={sp.slug}
               to={`/catalogue/${sp.slug}`}
-              className="xsp-card"
+              className="xsp-card reveal"
+              style={{ '--reveal-delay': `${(index % 4) * 40}ms` }}
             >
               {sp.slug === topSlug && (
                 <span className="xsp-popular-badge">{isAr ? 'الأكثر طلباً' : 'Most Popular'}</span>

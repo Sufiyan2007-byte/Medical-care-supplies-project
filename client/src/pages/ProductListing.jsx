@@ -400,14 +400,15 @@ function ProductListing() {
       ) : (
         <>
           <div className="products-grid">
-            {displayProducts.map((product) => {
+            {displayProducts.map((product, index) => {
               const isOutOfStock = product.stock === 0;
               const isTrackedInStock = product.stock != null && product.stock > 0;
               return (
               <Link
                 key={product.id}
                 to={`/products/${slug}/${product.id}`}
-                className={`product-card ${isSets ? 'set-card' : ''}${isOutOfStock ? ' product-card--oos' : ''}`}
+                className={`product-card reveal ${isSets ? 'set-card' : ''}${isOutOfStock ? ' product-card--oos' : ''}`}
+                style={{ '--reveal-delay': `${(index % 6) * 40}ms` }}
               >
                 <div className="product-card-img-wrap">
                   {product.image || product.imageUrl ? (

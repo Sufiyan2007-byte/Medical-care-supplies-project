@@ -85,13 +85,14 @@
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   white-space: nowrap;
 }
 .xcat-crosslink-chip:hover {
   border-color: var(--c-accent);
   background: color-mix(in srgb, var(--c-accent) 10%, var(--color-surface, #fff));
   box-shadow: 0 4px 12px -6px color-mix(in srgb, var(--c-accent) 50%, transparent);
+  transform: translateY(-2px);
 }
 .xcat-crosslink-chip.active {
   background: var(--c-accent);
@@ -228,11 +229,12 @@
   font-size: 0.85rem;
   cursor: pointer;
   color: inherit;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
   margin-bottom: 0.25rem;
 }
 .xcat-filter-btn:hover {
   background: color-mix(in srgb, var(--accent, #2196F3) 8%, transparent);
+  transform: translateY(-1px);
 }
 .xcat-filter-btn.active {
   background: color-mix(in srgb, var(--accent, #2196F3) 15%, transparent);

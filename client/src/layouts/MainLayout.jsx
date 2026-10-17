@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Outlet, Link, NavLink, useNavigate } from 'react-router-dom';
+import { Outlet, Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FaInstagram, FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
 import { useAuthContext } from '../context/AuthContext';
@@ -329,6 +329,7 @@ function MainLayout() {
 
   /* ── Search ────────────────────────────────────────────────────────────── */
   const navigate = useNavigate();
+  const location = useLocation();
   const [query, setQuery] = useState('');
   const searchRef = useRef(null);
 
@@ -339,6 +340,35 @@ function MainLayout() {
     navigate(`/catalogue?q=${encodeURIComponent(q)}`);
     closeAll();
   };
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        entry.target.addEventListener('animationend', () => {
+          entry.target.classList.add('reveal-done');
+        }, { once: true });
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+
+    const scan = () => {
+      document.querySelectorAll('.reveal:not(.is-in)').forEach((el) => {
+        if (reduced) el.classList.add('is-in', 'reveal-done');
+        else io.observe(el);
+      });
+    };
+    scan();
+    const root = document.querySelector('.site-main');
+    const mo = new MutationObserver(scan);
+    if (root) mo.observe(root, { childList: true, subtree: true });
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
+  }, [location.pathname, location.search]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);

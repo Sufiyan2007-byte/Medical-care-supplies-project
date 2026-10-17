@@ -153,7 +153,7 @@ function Home() {
       </section>
 
       {/* ── Trust numbers (remove this block to go back to the old look) ── */}
-      <section className="home-stats" aria-label={t('home.stat2_label')}>
+      <section className="home-stats reveal" aria-label={t('home.stat2_label')}>
         {[1, 2, 3, 4].map((n) => (
           <div className="home-stats__item" key={n}>
             <strong>{t(`home.stat${n}_val`)}</strong>
@@ -163,14 +163,14 @@ function Home() {
       </section>
 
       {/* ── 3 category cards ──────────────────────────────────── */}
-      <section className="home-categories" id="home-categories" data-tip="categories" data-tip-scroll="categories">
+      <section className="home-categories reveal" id="home-categories" data-tip="categories" data-tip-scroll="categories">
         <div className="home-section-header">
           <h2 className="home-section-title">{t('products.range_title')}</h2>
           <p className="home-section-sub">{t('products.range_subtitle')}</p>
         </div>
         <div className="home-cat-grid home-cat-grid--three">
-          {CATEGORIES.map((cat) => (
-            <Link key={cat.slug} to={`/products/${cat.slug}`} className="home-cat-card">
+          {CATEGORIES.map((cat, index) => (
+            <Link key={cat.slug} to={`/products/${cat.slug}`} className="home-cat-card reveal" style={{ '--reveal-delay': `${index * 50}ms` }}>
               <div className="home-cat-img" style={{ backgroundImage: `url(${cat.img})` }}>
                 <div className="home-cat-img-overlay" />
               </div>
@@ -192,7 +192,7 @@ function Home() {
 
       {/* ── Shop by Instrument Type (data-driven from the real catalogue) ── */}
       {instrumentTiles.length > 0 && (
-        <section className="home-instruments-section">
+        <section className="home-instruments-section reveal">
           <div className="home-section-header">
             <h2 className="home-section-title">{isAr ? 'تسوق حسب نوع الأداة' : 'Shop by Instrument Type'}</h2>
             <p className="home-section-sub">
@@ -202,11 +202,12 @@ function Home() {
             </p>
           </div>
           <div className="home-instruments-grid">
-            {instrumentTiles.map(tile => (
+            {instrumentTiles.map((tile, index) => (
               <Link
                 key={tile.label}
                 to={`/catalogue/all?cat=${encodeURIComponent(tile.cats.join(','))}`}
-                className="home-instrument-tile"
+                className="home-instrument-tile reveal"
+                style={{ '--reveal-delay': `${(index % 4) * 45}ms` }}
               >
                 <div className="home-instrument-img">
                   {tile.image ? (
@@ -232,7 +233,7 @@ function Home() {
       )}
 
       {/* ── Surgical Specialties Showcase ───────────────────────── */}
-      <section className="home-specialties-section">
+      <section className="home-specialties-section reveal">
         <div className="home-section-header">
           <div className="home-specialties-badge">
             <IconCatalogue /> {t('xelpov.specialties_title', 'Surgical Specialties')}
@@ -243,12 +244,12 @@ function Home() {
           </p>
         </div>
         <div className="home-specialties-grid">
-          {HOME_SPECIALTIES.map(sp => (
+          {HOME_SPECIALTIES.map((sp, index) => (
             <Link
               key={sp.slug}
               to={`/catalogue/${sp.slug}`}
-              className="home-specialty-card"
-              style={{ '--sp-accent': 'var(--c-accent)' }}
+              className="home-specialty-card reveal"
+              style={{ '--sp-accent': 'var(--c-accent)', '--reveal-delay': `${(index % 4) * 45}ms` }}
             >
               <div className="home-sp-icon"><SpecialtyIcon slug={sp.slug} size={24} /></div>
               <div className="home-sp-content">

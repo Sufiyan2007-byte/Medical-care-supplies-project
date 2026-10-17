@@ -333,12 +333,12 @@ function XelpovCatalog() {
           ) : (
             <>
               <div className="xcat-grid">
-                {pageProducts.map(product => (
+                {pageProducts.map((product, index) => (
                   <Link
                     key={product.slug}
                     to={`/catalogue/${specialty || 'all'}/${product.slug}`}
-                    className="xcat-card"
-                    style={{ '--accent': accentColor }}
+                    className="xcat-card reveal"
+                    style={{ '--accent': accentColor, '--reveal-delay': `${(index % 6) * 40}ms` }}
                     data-tip="product"
                     data-tip-scroll="product"
                   >

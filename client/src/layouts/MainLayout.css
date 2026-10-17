@@ -1168,8 +1168,14 @@
   animation: logoShimmer 0.9s ease;
 }
 
-.site-topbar.is-scrolled { height: 66px; }
+.site-topbar.is-scrolled {
+  height: 66px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
 .site-topbar.is-scrolled .site-topbar-logo { height: 32px; }
+.mobile-topbar.is-scrolled {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
 
 .mobile-topbar-logo img {
   transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
