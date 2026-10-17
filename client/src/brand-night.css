@@ -476,10 +476,14 @@
   background: radial-gradient(circle at 50% 45%, rgba(62, 224, 197, 0.08), #0c1c28 70%);
 }
 
+:root[data-theme="brand-night"] .xcat-quote-qty,
+:root[data-theme="brand-night"] .xcat-quote-qty button,
+:root[data-theme="brand-night"] .xcat-quote-qty span {
+  background: #f4fbff;
+  color: #102433;
+}
 :root[data-theme="brand-night"] .xcat-quote-qty {
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
-  color: #f4fbff;
+  border-color: transparent;
 }
 :root[data-theme="brand-night"] .xcat-quote-btn {
   background: #1fa86a;

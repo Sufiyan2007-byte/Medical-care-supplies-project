@@ -243,8 +243,16 @@ function XelpovProductDetail() {
     }
   };
 
+  const backTo = specialty ? `/catalogue/${specialty}` : '/catalogue';
+
   return (
     <div className="xpd-container" style={{ '--accent': accentColor }}>
+      <Link to={backTo} className="xpd-back-btn no-print">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        {isAr ? 'العودة إلى المنتجات' : 'Back to products'}
+      </Link>
       {/* Breadcrumb + spec-sheet download (hidden when printing) */}
       <nav className="xpd-breadcrumb no-print">
         <Link to="/products">{t('products.title_products')}</Link>
@@ -579,8 +587,8 @@ function XelpovProductDetail() {
 
       {/* ── Back link ── */}
       <div className="xpd-back no-print">
-        <Link to={specialty ? `/catalogue/${specialty}` : '/catalogue'} className="xpd-back-link">
-          ← {t('products.back_to_products')}
+        <Link to={backTo} className="xpd-back-link">
+          {isAr ? 'العودة إلى المنتجات' : 'Back to products'}
         </Link>
       </div>
     </div>

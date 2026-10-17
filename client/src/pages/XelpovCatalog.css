@@ -367,49 +367,57 @@
 }
 .xcat-quote-row {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   gap: 0.45rem;
   width: 100%;
-  margin-top: 0.35rem;
+  margin-top: 0.45rem;
 }
 .xcat-quote-qty {
   display: inline-flex;
   align-items: center;
-  flex-shrink: 0;
-  border: 1px solid var(--color-border, #d7dee6);
+  align-self: center;
+  direction: ltr;
+  border: 1px solid #d7dee6;
   border-radius: 999px;
   overflow: hidden;
-  background: var(--color-surface, #fff);
+  background: #fff;
+  color: #102433;
 }
 .xcat-quote-qty button {
   width: 32px;
-  height: 34px;
+  height: 32px;
   border: 0;
   background: transparent;
-  color: inherit;
+  color: #102433;
   font: inherit;
   font-size: 1rem;
+  line-height: 1;
   cursor: pointer;
 }
-.xcat-quote-qty button:hover { background: color-mix(in srgb, var(--c-accent, #1fa86a) 12%, transparent); }
+.xcat-quote-qty button:hover { background: rgba(31, 168, 106, 0.12); }
 .xcat-quote-qty span {
-  min-width: 1.5rem;
+  min-width: 1.4rem;
   text-align: center;
   font-size: 0.85rem;
   font-weight: 700;
+  color: #102433;
 }
 .xcat-quote-btn {
-  flex: 1 1 auto;
-  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 36px;
   border: 0;
   border-radius: 999px;
-  padding: 0.4rem 0.85rem;
-  background: var(--c-accent, #1fa86a);
-  color: var(--on-accent, #fff);
+  padding: 0.45rem 0.9rem;
+  background: #1fa86a;
+  color: #fff;
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
 }
