@@ -155,7 +155,7 @@ function getLocalizedName(instName, isAr) {
 
 function getLocalizedDescription(catName, isAr) {
   if (!isAr) {
-    return `Premium grade ${catName} designed for clinical and surgical operating room use. SFDA and CE registered.`;
+    return `Premium grade ${catName} designed for clinical and surgical operating room use.`;
   }
   return `أداة جراحية فائقة الدقة مخصصة لاستخدامات جراحة الأنف والأذن والحنجرة وغرف العمليات. مسجلة ومعتمدة من هيئة الغذاء والدواء وحاصلة على شهادة الجودة الأوروبية.`;
 }
@@ -771,7 +771,7 @@ function ProductDetailModal({ instrument, initialVariant, onClose, isAr, cfg }) 
                   <path d="m9 12 2 2 4-4"/>
                 </svg>
                 <div>
-                  <strong>{isAr ? 'شهادات CE و ISO 13485' : 'CE & ISO 13485 Certified'}</strong>
+                  <strong>{isAr ? 'معتمد ISO 13485' : 'ISO 13485 Certified'}</strong>
                   <span>{isAr ? 'مطابق لأعلى معايير الجودة الطبية الجراحية' : 'Full Operating Room Medical Grade'}</span>
                 </div>
               </div>

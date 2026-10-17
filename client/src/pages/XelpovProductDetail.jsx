@@ -40,7 +40,6 @@ const SPEC_LABELS = {
   shaftLength: 'Shaft Length',
   finish: 'Finish',
   material: 'Material',
-  ceMarking: 'CE Marking',
   reusable: 'Reusable',
   jointType: 'Joint Type',
   ratchetLock: 'Ratchet Lock',
@@ -57,12 +56,31 @@ function formatSpecValue(key, value) {
   return String(value);
 }
 
+function stripCe(text) {
+  if (!text) return '';
+  return text
+    .replace(/\bCE[- ]marked and reusable\b/gi, 'reusable')
+    .replace(/,?\s*and carries CE marking for regulatory compliance/gi, '')
+    .replace(/\bCE[- ]marked\b/gi, '')
+    .replace(/\bCE marking\b/gi, '')
+    .replace(/\bCE certified\b/gi, '')
+    .replace(/\bCE certificate\b/gi, '')
+    .replace(/\bCE\b/g, '')
+    .replace(/\s+,/g, ',')
+    .replace(/,\s*,/g, ',')
+    .replace(/,\s*\./g, '.')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
 function XelpovProductDetail() {
   const { specialty, slug } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { addToast } = useToast();
   const { addToQuote, isInQuote } = useQuoteCart();
+  const [quoteQty, setQuoteQty] = useState(1);
+  const [quoteAdded, setQuoteAdded] = useState(false);
   const { toggleWishlist, isSaved } = useWishlist();
   const isAr = i18n.language.startsWith('ar');
 
@@ -150,7 +168,7 @@ function XelpovProductDetail() {
       : [];
 
   const visibleSpecs = Object.entries(product.specs || {})
-    .filter(([, v]) => v !== null && v !== undefined && v !== '')
+    .filter(([key, v]) => key !== 'ceMarking' && v !== null && v !== undefined && v !== '')
     .map(([key, val]) => ({
       key,
       label: SPEC_LABELS[key] || key.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase()),
@@ -161,7 +179,7 @@ function XelpovProductDetail() {
   // so every product reads as a proper detailed description even when the scraped
   // description text alone is short.
   const detailParagraphs = [];
-  if (product.description) detailParagraphs.push(product.description);
+  if (product.description) detailParagraphs.push(stripCe(product.description));
   const categoryBits = [
     product.mainCategory?.length ? `Category: ${product.mainCategory.join(', ')}` : null,
     product.subCategory?.length ? `Sub-category: ${product.subCategory.join(', ')}` : null,
@@ -175,7 +193,7 @@ function XelpovProductDetail() {
   if (product.specs?.workingEndDetails) specBits.push(`a working end profile of ${product.specs.workingEndDetails}`);
   if (specBits.length) {
     detailParagraphs.push(
-      `This instrument is ${specBits.join(', ')}${product.specs?.reusable ? ', designed for repeated sterilization and reuse' : ''}${product.specs?.ceMarking ? ', and carries CE marking for regulatory compliance' : ''}.`
+      `This instrument is ${specBits.join(', ')}${product.specs?.reusable ? ', designed for repeated sterilization and reuse' : ''}.`
     );
   }
   if (product.sourceUrl) {
@@ -310,15 +328,6 @@ function XelpovProductDetail() {
 
           {/* Badges */}
           <div className="xpd-badges">
-            {product.specs?.ceMarking === true && (
-              <div className="xpd-badge xpd-badge-ce">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <polyline points="9 12 11 14 15 10"/>
-                </svg>
-                CE Marked
-              </div>
-            )}
             {product.specs?.reusable === true && (
               <div className="xpd-badge xpd-badge-reusable">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -366,20 +375,46 @@ function XelpovProductDetail() {
               <span className="xpd-price-label">Price on Request</span>
             )}
             <div className="xpd-price-actions no-print">
-              <button
-                type="button"
-                className="xpd-quote-btn"
-                style={{ borderColor: accentColor, color: isInQuote(product.slug) ? '#fff' : accentColor, background: isInQuote(product.slug) ? accentColor : 'transparent' }}
-                onClick={() => addToQuote({
-                  slug: product.slug,
-                  name: product.name,
-                  image: product.image,
-                  mainCategory: product.mainCategory,
-                  specialty: specialty || 'all',
-                })}
-              >
-                {isInQuote(product.slug) ? '✓ Added to Quote List' : '+ Add to Quote List'}
-              </button>
+              <div className="xpd-quote-row">
+                <div className="xpd-quote-qty">
+                  <button
+                    type="button"
+                    aria-label={t('quoteList.decrease', 'Decrease quantity')}
+                    onClick={() => setQuoteQty((n) => Math.max(1, n - 1))}
+                  >
+                    −
+                  </button>
+                  <span>{quoteQty}</span>
+                  <button
+                    type="button"
+                    aria-label={t('quoteList.increase', 'Increase quantity')}
+                    onClick={() => setQuoteQty((n) => Math.min(999, n + 1))}
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  className={`xpd-quote-btn${quoteAdded || isInQuote(product.slug) ? ' is-in' : ''}`}
+                  onClick={() => {
+                    addToQuote({
+                      slug: product.slug,
+                      name: product.name,
+                      image: product.image,
+                      mainCategory: product.mainCategory,
+                      specialty: specialty || 'all',
+                    }, quoteQty);
+                    setQuoteAdded(true);
+                    window.setTimeout(() => setQuoteAdded(false), 1400);
+                  }}
+                >
+                  {quoteAdded
+                    ? t('quoteList.added', 'Added')
+                    : isInQuote(product.slug)
+                      ? t('quoteList.add_more', 'Add more')
+                      : t('quoteList.add', 'Add to quote')}
+                </button>
+              </div>
               <button
                 type="button"
                 className="xpd-enquire-btn"

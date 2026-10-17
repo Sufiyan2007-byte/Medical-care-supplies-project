@@ -28,12 +28,19 @@ const PAGE_SIZE = 24;
 
 function QuoteAdder({ product, specialty }) {
   const { t } = useTranslation();
-  const { addToQuote } = useQuoteCart();
+  const { addToQuote, isInQuote } = useQuoteCart();
   const [qty, setQty] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
   const stop = (event) => {
     event.preventDefault();
     event.stopPropagation();
   };
+
+  const label = justAdded
+    ? t('quoteList.added', 'Added')
+    : isInQuote(product.slug)
+      ? t('quoteList.add_more', 'Add more')
+      : t('quoteList.add', 'Add to quote');
 
   return (
     <div className="xcat-quote-row">
@@ -56,7 +63,7 @@ function QuoteAdder({ product, specialty }) {
       </div>
       <button
         type="button"
-        className="xcat-quote-btn"
+        className={`xcat-quote-btn${justAdded || isInQuote(product.slug) ? ' is-in' : ''}`}
         onClick={(event) => {
           stop(event);
           addToQuote({
@@ -66,9 +73,11 @@ function QuoteAdder({ product, specialty }) {
             mainCategory: product.mainCategory,
             specialty: specialty || 'all',
           }, qty);
+          setJustAdded(true);
+          window.setTimeout(() => setJustAdded(false), 1400);
         }}
       >
-        {t('quoteList.add', 'Add to quote')}
+        {label}
       </button>
     </div>
   );
@@ -372,8 +381,7 @@ function XelpovCatalog() {
                         </div>
                       )}
                       <div className="xcat-card-badges">
-                        {product.specs?.ceMarking === true && <span className="xcat-badge xcat-badge-ce">CE</span>}
-                        {product.specs?.reusable === true && <span className="xcat-badge xcat-badge-reusable">Reusable</span>}
+                        {product.specs?.reusable === true && <span className="xcat-badge xcat-badge-reusable">{isAr ? 'قابل لإعادة الاستخدام' : 'Reusable'}</span>}
                       </div>
                       <button
                         type="button"

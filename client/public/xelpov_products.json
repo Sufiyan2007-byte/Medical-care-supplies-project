@@ -99,9 +99,8 @@
       "reusable": true
     },
     "description": "A breast retractor with a square, toothed blade tip for firm tissue retraction during mammaplasty and plastic surgery procedures. Hollow handle with a dual satin-and-mirror finish and gold-plated rings. Stainless steel, CE marked and reusable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://xelpovsurgical.com/product/tebbetts-breast-retractor/",
-    "note": "No clean unbranded photo found online — needs a professional photo taken.",
     "price": {
       "amount": null,
       "currency": "USD",
@@ -2245,14 +2244,13 @@
       "reusable": true
     },
     "description": "Alexander Bone Chisel used for cutting, carving and reshaping bone surfaces during fracture repair and osteotomy; atraumatic sharp cutting edge, elongated outline, solid handle. Dual Satin & Mirror-finished stainless steel, CE marked and reusable.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/bone-chisel.jpg",
     "sourceUrl": "https://xelpovsurgical.com/product/alexander-bone-chisel/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "alexander-bone-gouge",
@@ -3387,14 +3385,13 @@
       "reusable": true
     },
     "description": "Rectal Scissors used for precision cutting and dissection during rectal surgery; blunt tips protect soft tissue, curved profile for tight corners, thick blades for control. Satin-finished stainless steel, CE marked and reusable.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/bowel-dissecting-scissor.jpg",
     "sourceUrl": "https://xelpovsurgical.com/product/rectal-scissors/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "skull-breaker-chisel",
@@ -4795,14 +4792,13 @@
       "reusable": true
     },
     "description": "Caspar Exploration Hook used for probing and exploring the lumen of a diseased blood vessel to dilate it or remove a blood clot; 45 and 90 degree tip angles for deep vessel exploration, multiple tip sizes, ergonomic solid handle. Satin-finished stainless steel, CE marked and reusable.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/landolt-micro-hook.jpg",
     "sourceUrl": "https://xelpovsurgical.com/product/caspar-exploration-hook/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "caspar-micro-dissector",
@@ -5851,14 +5847,13 @@
       "reusable": true
     },
     "description": "Gerl Suture Tying Forceps used for grasping, holding and manipulating suture needles and threads to stitch incisions or traumatic wounds in the eye; curved jaws for deep reach, 6.0mm long tying platform, ergonomic spring handle. Satin finish, CE marked and reusable.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/bishop-harmon-dressing-forceps.jpg",
     "sourceUrl": "https://xelpovsurgical.com/product/gerl-suture-tying-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gillies-dissecting-forceps",
@@ -7577,14 +7572,13 @@
       "reusable": true
     },
     "description": "Lester Fixation Forceps used for grasping, holding and mobilizing fragile tissue and surgical materials such as dressings and IOLs during cataract or glaucoma procedures; 1x2 delicate teeth, 0.4mm working end, ergonomic spring handle. Satin-finished stainless steel, CE marked and reusable.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/bishop-harmon-dressing-forceps.jpg",
     "sourceUrl": "https://xelpovsurgical.com/product/lester-fixation-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "logan-wound-spreader",
@@ -9068,15 +9062,14 @@
       "reusable": true
     },
     "description": "A 11 cm – 4 ¼&#8221; micro forceps designed for Microsurgery and Ophthalmic procedures, which features 1 x 2 teeth and a spring handle for controlled manipulation. Moody Fixation Forceps is a specialized device that ophthalmic surgeons use to grasp, hold and retract fragile tissues of the eye, such as the conjunctiva, in order to perform glaucoma, cataract and other ocular procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/bishop-harmon-dressing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/moody-fixation-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "mueller-micro-scissor",
@@ -10301,15 +10294,14 @@
       "reusable": true
     },
     "description": "A 16 cm – 6 ¼&#8221; ear knives designed for ENT and Microsurgery procedures, which a solid handle for controlled manipulation. Sexton Tympanum Knife is an otolaryngology instrument that ear surgeons can use for cutting and dissecting mucosal flaps, soft tissues and tendons within the middle ear, in order to perform myringotomy, tympanoplasty and other procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/plester-flap-knife.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/sexton-tympanum-knife/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "shambaugh-micro-ear-needle",
@@ -11983,15 +11975,14 @@
       "reusable": true
     },
     "description": "A 13.5 cm &#8211; 5 ½&#8221; tympanum needles designed for ENT and Microsurgery procedures, which a spatula handle for controlled manipulation. Designed to make incisions in the tympanic membrane in the treatment of some middle ear pathologies, such as serous otitis media. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/ent/lucae-tympanum-needle.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/zoellner-tympanum-needle/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "miller-laryngoscope-2",
@@ -12630,15 +12621,14 @@
       "reusable": true
     },
     "description": "A professional-grade surgical instrument designed for Dressing Instruments and Orthopedic procedures. Manufactured from stainless steel satin finish; reusable after standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/podiatry/baka-nail-file.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/xelpovs-oscipower-oscillating-plaster-saw/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "adson-dissecting-forceps",
@@ -12750,15 +12740,14 @@
       "reusable": true
     },
     "description": "A 12 cm – 4 ¾” hand held retractors designed for Plastic Surgery procedures, which features 5 sharp prongs and a solid handle for controlled manipulation. Anderson Claw Retractor is a surgical tool that can be used during plastic surgeries to pull back slices of skin without the risk of trauma, haemorraghe or other surgical complications. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/anderson-claw-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "aston-supercut-facelift-scissor-17-cm-6-three-quarter",
@@ -13941,15 +13930,14 @@
       "reusable": true
     },
     "description": "A 16 cm – 6 ¼” bone osteotomes designed for ENT and Oral & Maxillofacial procedures, which a solid handle for controlled manipulation. Dautrey-Munro Osteotome is a specialized surgical tool that surgeons commonly use to cut and divide the delicate cortical hard bone, especially during certain maxillofacial surgeries. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/bone-osteotome.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/dautrey-munro-osteotome/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "deaver-operating-scissor",
@@ -14024,15 +14012,14 @@
       "reusable": true
     },
     "description": "A professional-grade suction tubes designed for Cardiovascular and ENT procedures, which a handle with finger cut off for controlled manipulation. DeBakey Suction Tube with Finger Cut Off is a specialized device that surgeons in multiple areas use to remove foreign bodies, particles, blood and secretions during surgical procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/plastic-surgery/adson-suction-tube.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/debakey-suction-tube-with-finger-cut-off/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "derf-needle-holder",
@@ -14350,15 +14337,14 @@
       "reusable": true
     },
     "description": "A 11 cm – 4 ¼” forceps designed for General Surgery and Ophthalmic procedures, which features 1 x 2 teeth and a spring handle for controlled manipulation. Elschnig Fixation Forceps is a specialized ophthalmic tool, which surgeons can use to grasp, hold, and manipulate the soft tissues of the eye, such as the conjunctiva and episclera, and also surgical materials, including small sponges. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/elschnig-fixation-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "epker-osteotome",
@@ -15011,15 +14997,14 @@
       "reusable": true
     },
     "description": "A 14 cm – 5 ½” bone osteotomes designed for ENT and Oral & Maxillofacial procedures, which a solid handle for controlled manipulation. Gillies Bone Osteotome is a specialized maxillofacial tool that surgeons can use to cut, reshape and divide the pterygomaxillary bone tissue from the delicate maxillary and temporal bones. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/bone-osteotome.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/gillies-bone-osteotome/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gillies-needle-holder",
@@ -16850,15 +16835,14 @@
       "reusable": true
     },
     "description": "A 16 cm – 6 ¼” hand held retractors designed for Cardiovascular and ENT procedures, which a round handle for controlled manipulation. Designed to pull back tendons and other soft tissues to expose their underlying anatomical spaces. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/mannerfelt-modified-tendon-hook/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "martel-rees-face-lift-forceps",
@@ -17223,15 +17207,14 @@
       "reusable": true
     },
     "description": "A 11.5 cm – 4 ½” dissecting scissors designed for Cardiovascular and ENT procedures, which features blunt / blunt and a ring handle for controlled manipulation. The Metzenbaum-Baby Dissecting Scissor is a multipurpose instrument with unique design ideal for dissecting delicate and tough tissues during multiple surgeries. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/mayo-dissecting-scissor.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/metzenbaum-baby-dissecting-scissor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "metzenbaum-baby-supercut-dissecting-scissor",
@@ -17942,15 +17925,14 @@
       "reusable": true
     },
     "description": "A 23.5 cm – 9 ¼” bone osteotomes designed for ENT and Oral & Maxillofacial procedures, which a curved profile and a solid handle for controlled manipulation. Obwegeser Pterygoid Osteotome is a specialized instrument that plastic surgeons can use for cutting through the delicate pterygoid plate, in order to separate the maxillary and temporal bones during certain maxillofacial surgeries. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/bone-osteotome.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/obwegeser-pterygoid-osteotome/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "obwegeser-septonasal-osteotome",
@@ -18057,15 +18039,14 @@
       "reusable": true
     },
     "description": "A 22 cm – 8 ¾” bone osteotomes designed for ENT and Oral & Maxillofacial procedures, which a solid ferrozell handle for controlled manipulation. Obwegeser Wedge Osteotome is a specialized surgical tool that maxillofacial surgeons can use for cutting and dividing the lower jawbone, in order to perform reconstructive plastic surgeries. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/bone-osteotome.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/obwegeser-wedge-osteotome/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "oehler-dissecting-forceps",
@@ -18140,15 +18121,14 @@
       "reusable": true
     },
     "description": "A 23 cm – 9″ hand held retractors designed for Cardiovascular and ENT procedures, which a ring handle for controlled manipulation. Ollier Retractor is a multipurpose surgical tool that surgeons use for pulling back heavy tissues in narrow spaces, such as the intestines during appendicectomy procedures. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/ollier-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "olsen-hegar-needle-holder",
@@ -20276,15 +20256,14 @@
       "workingEndSize": "⌀ 2.0 mm , 4.8 mm"
     },
     "description": "A 31 cm – 12 1/4″ suction tubes designed for Cardiovascular and ENT procedures. Yankauer Suction Tube is a specialized device that surgeons in multiple areas use to aspire fluids, debris and blood from multiple cavities, in order to achieve a greater view of the operating field. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/plastic-surgery/adson-suction-tube.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/yankauer-suction-tube/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "abdominal-spatula",
@@ -20401,15 +20380,14 @@
       "reusable": true
     },
     "description": "A 18 cm – 7″ needle holders designed for Cardiovascular and Dental procedures, which features serrated jaws – one jaw with fenestration and a ring handle for controlled manipulation. Adson Needle Holders are used by surgeons to hold and insert needles during suturing procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/arruga-micro-needle-holder.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/adson-needle-holder/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "adson-baby-dissecting-and-ligature-forceps",
@@ -20561,15 +20539,14 @@
       "reusable": true
     },
     "description": "A professional-grade tissue grasping forceps designed for Cardiovascular and General Surgery procedures, which a ring handle for controlled manipulation. The Allis Intestinal and Tissue Grasping Forceps also called a hemostat is commonly used in multiple surgeries to grasp tissues for manipulation and clamp blood vessels. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/allis-baby-intestinal-and-tissue-grasping-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/allis-intestinal-and-tissue-grasping-forceps-2/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "allis-adair-intestinal-and-tissue-grasping-forceps",
@@ -20677,15 +20654,14 @@
       "reusable": true
     },
     "description": "A 32 cm – 12 ½” gall duct dilators designed for Stomach, Intestine & Rectum and Urology procedures, which features probe shaped and a solid handle for controlled manipulation. Bakes Gall Duct Dilators are specialized devices that gastroenterology and general surgeons can use to access the common bile duct and therefore probe its lumen, in order to explore and check for retained stones. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/podiatry/nail-probe.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/bakes-gall-duct-dilators/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "bakes-gall-stone-forceps",
@@ -23222,15 +23198,14 @@
       "reusable": true
     },
     "description": "A 19 cm – 7 ½” ligature passers designed for Cardiovascular and Dental procedures, which a solid ferrozell handle for controlled manipulation. Ferrozell Ligature Conductors assist surgeons to perform deep wound closures and hemostasis by guiding surgical ligatures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/ferrozell-ligature-conductor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "ferrozell-ligature-conductor-2",
@@ -25661,15 +25636,14 @@
       "reusable": true
     },
     "description": "A 23 cm – 9″ hand held retractors designed for Cardiovascular and ENT procedures, which a solid handle for controlled manipulation. Designed to manipulate soft tissues and wound edges, pulling them apart from the operating site and thereby enlarging the surgical view. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/lane-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "lane-towel-clamp",
@@ -26041,15 +26015,14 @@
       "reusable": true
     },
     "description": "A 20.5 cm – 8″ ligature passers designed for Cardiovascular and Dental procedures, which features tip with hole and a hollow handle for controlled manipulation. Ligature Needles are instruments that surgeons use to pass ligatures into deep surgical sites. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/ligature-needle/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "ligature-needle-2",
@@ -27517,15 +27490,14 @@
       "reusable": true
     },
     "description": "A professional-grade dissecting and ligature forceps designed for Urology procedures, which a ring handle for controlled manipulation. Millin Capsule Grasping Forceps is a specialized device that urology surgeons use to grasp, hold and manipulate soft tissues during a variety of surgical procedures involving the urogenital system. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dressing-instruments/atraumatic-uro-tangential-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/millin-capsule-grasping-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "millin-ligature-holding-forcep",
@@ -27642,15 +27614,14 @@
       "reusable": true
     },
     "description": "A professional-grade dissecting and ligature forceps designed for Cardiovascular and General Surgery procedures, which features serrated jaws and a right angled profile and a ring handle for controlled manipulation. Mini-Gemini Dissecting and Ligature Forceps is a specialized device that surgeons in different areas use to locally block the blood flow, grasp tissues and perform blunt dissection during ligature procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dressing-instruments/atraumatic-uro-tangential-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/mini-gemini-dissecting-and-ligature-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "mixter-dissecting-and-ligature-forceps",
@@ -27799,15 +27770,14 @@
       "reusable": true
     },
     "description": "A 18.5 cm – 7″ dissecting and ligature forceps designed for Cardiovascular and General Surgery procedures, which features serrated jaws and a ring handle for controlled manipulation. Mixter-O’Shaugnessy Dissecting and Ligature Forceps is a specialized device that surgeons use to grasp and retract tissues, perform blunt dissection and clamp blood vessels. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dressing-instruments/atraumatic-uro-tangential-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/mixter-oshaugnessy-dissecting-and-ligature-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "modell-wien-ligature-catcher",
@@ -28084,15 +28054,14 @@
       "reusable": true
     },
     "description": "A professional-grade dissecting and ligature forceps designed for Cardiovascular and General Surgery procedures, which features serrated jaws and a ring handle for controlled manipulation. O’Shaugnessy Dissecting and Ligature Forceps is a specialized device that surgeons can use to grasp and statically hold soft tissues, perform blunt dissection and clamp blood vessels if necessary. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dressing-instruments/atraumatic-uro-tangential-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/oshaugnessy-dissecting-and-ligature-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "ochsner-dressing-forceps",
@@ -29359,15 +29328,14 @@
       "reusable": true
     },
     "description": "A professional-grade hand held retractors designed for Cardiovascular and General Surgery procedures, which a ring handle for controlled manipulation. Designed to retract intra-abdominal tissues with the highest possible precision, using a screw mechanism, a frame, and a fixable retractor. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/rochard-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "rochester-pean-artery-forceps",
@@ -30271,15 +30239,14 @@
       "reusable": true
     },
     "description": "A 23 cm – 9″ kidney clamps designed for Stomach, Intestine & Rectum and Urology procedures, which features serrated jaws with grooves and a curved profile and a ring handle for controlled manipulation. Stille Kidney Pedicle Clamp is a specialized device that surgeons commonly use to grasp, hold and mobilize the renal pedicle, in other to occlude the fluid flow and allow for performing transplantation or other procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/urology/guyon-atrauma-kidney-pedicle-clamp.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/stille-kidney-pedicle-clamp/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "stockman-penis-clamp",
@@ -30554,15 +30521,14 @@
       "reusable": true
     },
     "description": "A 14 cm – 5 ½” suture clip applying & removing forcep designed for Cardiovascular and Dental procedures, which a grip handle for controlled manipulation. Three Jaw Clip Removing Forceps is a surgical instrument that surgeons in multiple specialities commonly use for removing incorrectly placed suture clips from blood vessels and hollow organs, in order to place a new clip or to open the diameter of a vessel/organ. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/plastic-surgery/ligature-clip-applier.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/three-jaw-clip-removing-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "toennis-dissecting-scissor",
@@ -31821,15 +31787,14 @@
       "reusable": true
     },
     "description": "A 10 cm – 4″ indicators & measurement designed for Ophthalmic procedures, which a solid handle for controlled manipulation. Anis Radial Marker is a specialized ophthalmic device that surgeons use to perform delicate marks over the corneal and scleral tissues, in order to locate incision points during keratotomy and other procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/diagnostic/iwanson-caliper.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/anis-radial-marker/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "anis-suture-placement-marker",
@@ -32098,15 +32063,14 @@
       "reusable": true
     },
     "description": "A 12 cm – 4 ¾” ancillary products and accessories designed for Ophthalmic procedures, which features bulbour tip and a solid round handle for controlled manipulation. Barrett Nucleus Expressor is a specialized surgical device that ophthalmic surgeons can use to expose the lens nucleus, looking towards its further examination or positioning. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/barrett-nucleus-expressor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "bechert-lens-holding-forceps",
@@ -32539,15 +32503,14 @@
       "reusable": true
     },
     "description": "A professional-grade indicators & measurement designed for Ophthalmic procedures, which a solid handle for controlled manipulation. Braunstein Caliper is a specialized ophthalmic tool that surgeons commonly use to measure the cornea and mark surgical points during sclerotomy procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/diagnostic/iwanson-caliper.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/braunstein-caliper/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "brierley-nucleus-splitter",
@@ -34401,15 +34364,14 @@
       "reusable": true
     },
     "description": "A 13.5 cm – 5 ¼” artery forceps designed for Ophthalmic procedures, which a ring handle for controlled manipulation. Eye Enucleation Forceps is a specialized surgical tool that ophthalmic surgeons can use to clamp the blood vessels behind the eyeball or the optic nerve, looking towards to set the optimal conditions for the further surgical removal of the ocular globe. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/micro-mosquito-artery-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/eye-enucleation-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "faulkner-lens-holding-forceps",
@@ -38012,15 +37974,14 @@
       "reusable": true
     },
     "description": "A 10 cm – 4″ micro forceps designed for Ophthalmic procedures, which features 1 x 2 teeth and a flat handle with spring action for controlled manipulation. Lister Conjunctival Forceps is a multipurpose surgical device that surgeons can use to grasp and manipulate the conjunctival tissue, and also to remove foreign bodies from the surgical field. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/bishop-harmon-dressing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/lister-conjunctival-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "littler-dissecting-scissors",
@@ -40894,15 +40855,14 @@
       "reusable": true
     },
     "description": "A 12 cm – 4 ¾” eye needles designed for Ophthalmic procedures, which a solid handle for controlled manipulation. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/ophthalmic/wright-fascia-needle.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/walter-cataract-needle/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "walton-conjunctiva-retractor",
@@ -44165,15 +44125,14 @@
       "reusable": true
     },
     "description": "A professional-grade intestinal clamps designed for Stomach, Intestine & Rectum procedures, which features 2 x 3 atraumatic serrations and a ring handle for controlled manipulation. The Scudder Atrauma Intestinal Clamp is a multipurpose instrument often used for grasping deep delicate tissues during surgeries. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/stomach-intestine-rectum/allen-intestinal-clamp.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/scudder-atrauma-intestinal-clamp/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "scudder-intestinal-clamp",
@@ -44199,15 +44158,14 @@
       "reusable": true
     },
     "description": "A professional-grade intestinal clamps designed for Stomach, Intestine & Rectum procedures, which features smooth jaws and a ring handle for controlled manipulation. The Scudder Intestinal Clamp is a specialized instrument used for clamping blood vessels in deep tissues. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/stomach-intestine-rectum/allen-intestinal-clamp.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/scudder-intestinal-clamp/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "selman-dissecting-forceps",
@@ -44963,15 +44921,14 @@
       "reusable": true
     },
     "description": "A 20 cm – 8″ bone rongeurs designed for Neurosurgery / Spine and Orthopedic procedures, which a grip handle for controlled manipulation. Adson Cranial Rongeur is a specialized surgical tool that neurosurgeons use for debulking skull bone surfaces and its adnexa, in order to gain access into the brain and perform intracranial procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/neurosurgery-spine/bacon-cranial-rongeur.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/adson-cranial-rongeur/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "adson-drill-guide-and-dura-protector",
@@ -44995,15 +44952,14 @@
       "reusable": true
     },
     "description": "A 15 cm – 6″ impactors designed for Neurosurgery / Spine procedures, which features serrated jaws with hole and a ring handle for controlled manipulation. Adson Drill Guide and Dura Protector is a specialized surgical tool that surgeons can use for guiding the drill in an optimal trajectory, in order to avoid local damage during craniotomy and other procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/diagnostic/babinsky-percussion-hammer.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/adson-drill-guide-and-dura-protector/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "adson-dura-hook",
@@ -48146,15 +48102,14 @@
       "reusable": true
     },
     "description": "A 16 cm – 6 ½” dura dissectors designed for Neurosurgery / Spine procedures, which a hollow handle for controlled manipulation. Love-Adson Dura Dissector is a specialized device that neurosurgeons commonly use to access the intracranial space and sever the cranial dura membrane, in order to separate from the skull and gain access to the brain. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/neurosurgery-spine/davis-dura-dissector.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/love-adson-dura-dissector/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "love-gruenwald-laminectomy-rongeur",
@@ -49258,15 +49213,14 @@
       "reusable": true
     },
     "description": "A 23 cm – 9″ tumor knives designed for Neurosurgery / Spine procedures, which a solid round handle for controlled manipulation. Samii Tumor Knife is a specialized device that surgeons commonly use to cut and dissect tumours in different regions of the brain, especially during surgeries that involve cerebellar tumours. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/plester-flap-knife.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/samii-tumor-knife/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "satinsky-thoracic-scissor",
@@ -49366,15 +49320,14 @@
       "reusable": true
     },
     "description": "A 14 cm – 5 ½” self-retaining retractors designed for Neurosurgery / Spine procedures, which a grip handle for controlled manipulation. The Scaphoid Spreader is a specialized surgical instrument commonly used for retracting delicate tissues for surgical manipulation. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/allport-wound-spreader.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/scaphoid-spreader/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "schede-bone-curette",
@@ -50812,15 +50765,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. Designed to pull the obstetric forceps, easing baby delivery. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/bills-traction-handle/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "blake-uterine-curette",
@@ -51862,15 +51814,14 @@
       "reusable": true
     },
     "description": "A 21.5 cm – 8 ½” hysterectomy forceps designed for Gynecology & Obstetrics procedures, which features longitudinally serrated jaws and a ring handle for controlled manipulation. Heaney-Ballentine Hysterectomy Forceps is a specialized device that gynaecology and obstetric surgeons use to grasp and statically hold heavy tissues, such as the uterus ligaments, to excise the uterus from the pelvic cavity. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/gynecology-obstetrics/berkeley-bonney-hysterectomy-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/heaney-ballentine-hysterectomy-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "heaney-rezek-hysterectomy-forceps",
@@ -53406,15 +53357,14 @@
       "reusable": true
     },
     "description": "A 24 cm – 9 ½” hysterectomy forceps designed for Gynecology & Obstetrics procedures, which features serrated jaws and a ring handle for controlled manipulation. Segond-Landau Hysterectomy Forceps is a specialized device that gynaecology and obstetric surgeons use to grasp, mobilize and clamp the adnexal tissues that attach the uterus to the pelvic cavity. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/gynecology-obstetrics/berkeley-bonney-hysterectomy-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/segond-landau-hysterectomy-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "simon-fistula-hook",
@@ -54159,15 +54109,14 @@
       "reusable": true
     },
     "description": "A professional-grade hysterectomy forceps designed for Gynecology & Obstetrics procedures, which a curved profile and a ring handle for controlled manipulation. Wertheim Hysterectomy Forceps is a specialized device that gynaecology and obstetric surgeons frequently use to manipulate uterus ligaments and blood vessels, in order to permit their dissection. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/gynecology-obstetrics/berkeley-bonney-hysterectomy-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/wertheim-hysterectomy-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "wertheim-hysterectomy-forceps-2",
@@ -54409,15 +54358,14 @@
       "reusable": true
     },
     "description": "A professional-grade needle holders designed for Dental and General Surgery procedures, which features cross serrated jaws and a grip handle for controlled manipulation. Zweifel Needle Holders assist surgeons to control needle manipulations during suturing procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/arruga-micro-needle-holder.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/zweifel-needle-holder/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "adams-napkin-holder",
@@ -55397,15 +55345,14 @@
       "reusable": true
     },
     "description": "A professional-grade hand held retractors designed for Dental and ENT procedures, which features with fiber optic light carrier and suction tube and a hollow handle for controlled manipulation. Attwood Retractor is one of the most complete instruments that oral surgeons and dentists use during oral procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/attwood-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "awty-osteotomy-retractor",
@@ -56118,15 +56065,14 @@
       "reusable": true
     },
     "description": "A 14 cm – 6 ¾” cleft palate elevators designed for Oral & Maxillofacial procedures. Cleft Palate Elevator is a specialized device that maxillofacial surgeons commonly use to dissect and lift the periosteum membrane from its bone attachments, especially from the surfaces of the maxilla. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/oral-maxillofacial/jaboma-cleft-palate-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/cleft-palate-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "collin-tongue-holding-forceps",
@@ -57126,15 +57072,14 @@
       "reusable": true
     },
     "description": "A 15.5 cm – 6″ periosteal elevators designed for Oral & Maxillofacial procedures, which a hollow handle for controlled manipulation. Dunn-Dautrey Elevator is a specialized surgical device that maxillofacial surgeons can use to separate the periosteum from its attachment to bones, especially during facial reconstructive procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/dunn-dautrey-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "english-pattern-tooth-extraction-forceps-fig-1",
@@ -57777,15 +57722,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/english-pattern-tooth-extraction-forceps-fig-3/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "english-pattern-tooth-extraction-forceps-fig-30",
@@ -58646,15 +58590,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Gibb’s English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/gibbs-english-pattern-tooth-extraction-forceps-fig-147/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gillies-zygoma-elevator",
@@ -58853,15 +58796,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Guy’s English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/guys-english-pattern-tooth-extraction-forceps-fig-136/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "guys-english-pattern-tooth-extraction-forceps-fig-137",
@@ -58875,15 +58817,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Guy’s English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/guys-english-pattern-tooth-extraction-forceps-fig-137/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hammerhead-tie-back-plier",
@@ -59082,15 +59023,14 @@
       "reusable": true
     },
     "description": "A 23 cm – 9″ periosteal elevators designed for Oral & Maxillofacial procedures, which a hollow handle for controlled manipulation. Hargis Periosteal Elevator is a specialized tool that maxillofacial specialists can use to detach and elevate the periosteal flaps, in order to expose the mandibular bone and allow surgeons to perform osteotomies. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hargis-periosteal-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hargis-piriform-rim-retractor",
@@ -59206,15 +59146,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Hawk’s Bill English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hawks-bill-english-pattern-tooth-extraction-forceps-fig-160/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hawks-bill-english-pattern-tooth-extraction-forceps-fig-161",
@@ -59228,15 +59167,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Hawk’s Bill English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hawks-bill-english-pattern-tooth-extraction-forceps-fig-161/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hawks-bill-english-pattern-tooth-extraction-forceps-fig-22",
@@ -59250,15 +59188,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Hawk’s Bill English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hawks-bill-english-pattern-tooth-extraction-forceps-fig-22/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hawks-bill-english-pattern-tooth-extraction-forceps-fig-73",
@@ -59272,15 +59209,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Hawk’s Bill English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hawks-bill-english-pattern-tooth-extraction-forceps-fig-73/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hawks-bill-english-pattern-tooth-extraction-forceps-fig-73s",
@@ -59294,15 +59230,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Hawk’s Bill English Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hawks-bill-english-pattern-tooth-extraction-forceps-fig-73s/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hayton-williams-forward-traction-and-reduction-maxillary-fracture-forcep",
@@ -59386,15 +59321,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Henahan’s American Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/henahans-american-pattern-tooth-extraction-forceps-fig-1a/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hirschfield-periosteal-raspatory-elevator-fig-20",
@@ -60145,15 +60079,14 @@
       "reusable": true
     },
     "description": "A 13.5 cm – 5 ¼” tongue depressors designed for Dental and ENT procedures, which features fenestrated blade and a solid handle for controlled manipulation. Kilner-Doughty Tongue Depressor is a specialized tool that dentists, ENT and maxillofacial surgeons can use to protect the tongue and depress the lower dental arch, in order to gain maximum exposure of the oral cavity and the throat. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/oral-maxillofacial/andrew-tongue-depressor.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/kilner-doughty-tongue-depressor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "klein-pattern-tooth-extraction-forceps-fig-137",
@@ -62086,15 +62019,14 @@
       "reusable": true
     },
     "description": "A professional-grade bone holding & repositioning forceps designed for Oral & Maxillofacial and Orthopedic procedures, which features serrated jaws with shield and a ring handle for controlled manipulation. Obwegeser Ramus Clamp is a specialized device that maxillofacial surgeons can use to clamp the ramus of the mandible, in order to fixate it after osteotomy or to permit its division. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/oral-maxillofacial/dolwick-type-tmj-disc-clamp.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/obwegeser-ramus-clamp/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "obwegeser-ramus-retractor-3",
@@ -62653,15 +62585,14 @@
       "reusable": true
     },
     "description": "A professional-grade periosteal elevators designed for Dental and ENT procedures, which a solid hexagonal handle for controlled manipulation. The Periosteal Raspatory / Elevator Fig. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/periosteal-raspatory-elevator-fig-149/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "periosteal-raspatory-elevator-fig-24g",
@@ -63187,15 +63118,14 @@
       "reusable": true
     },
     "description": "A 18 cm – 7″ dissectors designed for Dental and ENT procedures, which a solid round handle for controlled manipulation. Salyer Cleft Palate Dissector is a specialized tool that ENT and maxillofacial surgeons can use to cut, sever and separate nasal or lip adnexal tissues from their abnormal bone attachments. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/rhoton-micro-dissector.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/salyer-cleft-palate-dissector/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "salyer-cleft-palate-elevator",
@@ -63220,15 +63150,14 @@
       "reusable": true
     },
     "description": "A 18 cm – 7″ cleft palate elevators designed for Oral & Maxillofacial procedures, which a solid round handle for controlled manipulation. Salyer Cleft Palate Elevator is a specialized device that surgeons can use to separate periosteum from its bone attachment, lift soft tissues and mobilize muscles to improve surgical sightlines. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/oral-maxillofacial/jaboma-cleft-palate-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/salyer-cleft-palate-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "salyer-cleft-palate-retractor",
@@ -63255,15 +63184,14 @@
       "reusable": true
     },
     "description": "A 18 cm – 7″ hand held retractors designed for Dental and ENT procedures, which a solid round handle for controlled manipulation. Salyer Cleft Palate Retractor is a specialized surgical tool that ENT and maxillofacial surgeons can use to grasp, pull back and hold soft tissues away from the surgical field, especially during unilateral cleft lip repair procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/salyer-cleft-palate-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "salyer-cleft-palate-scissor",
@@ -63750,15 +63678,14 @@
       "reusable": true
     },
     "description": "A 15 cm – 6″ hand held retractors designed for Dental and ENT procedures, which features serrated tips and a hollow handle for controlled manipulation. Tessier Mobilizing Retractor is a specialized tool that ENT and maxillofacial surgeons can use to push forward the maxillary bone, in order to reposition it or to gain access to other structures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/kocher-langenbeck-retractor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/tessier-mobilizing-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "three-jaw-plier",
@@ -64446,15 +64373,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Woodward’s American Pattern Tooth Extraction Forceps Fig. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/woodwards-american-pattern-tooth-extraction-forceps-fig-3fs/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "young-loop-forming-plier",
@@ -66380,15 +66306,14 @@
       "reusable": true
     },
     "description": "A 27 cm – 10 ¾” aortic clamps designed for Cardiovascular procedures, which a ring handle for controlled manipulation. DeBakey Atrauma Aortic Clamps are hemostatic instruments that allow surgeons to clamp the aorta artery during cardiothoracic surgical procedures for diverting the blood flow and prevent hypovolemia. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/cardiovascular/cooley-atrauma-aorta-clamps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/debakey-atrauma-aortic-clamps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "debakey-atrauma-aortic-clamps-2",
@@ -66670,15 +66595,14 @@
       "reusable": true
     },
     "description": "A professional-grade atraumatic clamps designed for Cardiovascular procedures, which features 1 x 2 atraumatic serrations and a ring handle for controlled manipulation. DeBakey Atrauma Peripheral Vascular Clamps are hemostatic instruments that ensure the partial and temporal occlusion of specific blood vessels for preventing hypovolemia and maintaining a clear surgical field. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/urology/millin-atrauma-capsule-grasping-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/debakey-atrauma-peripheral-vascular-clamps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "debakey-atrauma-vascular-clamps",
@@ -67933,15 +67857,14 @@
       "reusable": true
     },
     "description": "A professional-grade rib spreaders designed for Cardiovascular procedures, which features 3 blades. The French Pattern I.M.A Sternal Retractor for Ministernotomy is a specialized surgical instrument commonly used during a variety of surgical procedures. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/cardiovascular/bugge-takedown-i-m-a-mammaria-retractor.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/french-pattern-i-m-a-sternal-retractor-for-ministernotomy/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "front-and-side-pin-and-wire-cutters",
@@ -67967,15 +67890,14 @@
       "reusable": true
     },
     "description": "A 17.5 cm – 7″ wire cutting forceps designed for Cardiovascular and Orthopedic procedures, which a grip handle for controlled manipulation. The Front and Side Pin and Wire Cutters are used in the trimming and removal of orthopedic wires and pins. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/oral-maxillofacial/mini-wire-ligature-cutter.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/front-and-side-pin-and-wire-cutters/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "front-cutting-action-pin-and-wire-cutters",
@@ -70251,15 +70173,14 @@
       "reusable": true
     },
     "description": "A 24.5 cm – 9 ¾” bronchus clamps designed for Cardiovascular procedures, which features jaws with eye for sutures and a ring handle for controlled manipulation. Semb Bronchus Clamps are scissor-like surgical instruments that allow surgeons to occlude the airflow in mainstem bronchus or the blood flow in major blood vessels, especially during cardiothoracic surgery. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/cardiovascular/lees-atrauma-bronchus-clamps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/semb-bronchus-clamps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "semb-periosteal-elevator",
@@ -70669,15 +70590,14 @@
       "reusable": true
     },
     "description": "A 50 cm – 19 ¾” strippers designed for Cardiovascular procedures. Vollmar Ring Stripper is a specialized cardiovascular tool that surgeons can use to access the lumen of diseased arteries or veins, in order to remove stenotic segments of intima or atheromatous plaques. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/vollmar-ring-stripper/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "vollmar-vessel-irrigation-cannula",
@@ -71709,15 +71629,14 @@
       "reusable": true
     },
     "description": "A professional-grade hospital receptacles designed for General Surgery procedures. Kickabout Stand With Bowl is a specialized device that surgeons in every area can use to securely hold sterile or used instruments, swabs and waste materials during surgery. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general-surgery/denture-cup.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/kickabout-stand-with-bowl/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "kickabout-stand-with-bucket",
@@ -71737,15 +71656,14 @@
       "reusable": true
     },
     "description": "A professional-grade hospital receptacles designed for General Surgery procedures. Kickabout Stand With Bucket is a specialized device that surgeons in every area can use to securely hold sterile or used instruments, swabs and waste materials during surgery. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general-surgery/denture-cup.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/kickabout-stand-with-bucket/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "kidney-dish",
@@ -74668,15 +74586,14 @@
       "reusable": true
     },
     "description": "A professional-grade nasal punches designed for ENT procedures, which features through cutting jaws and a ring handle for controlled manipulation. Circular Cutting Punch is a specialized instrument that ENT surgeons can use for cutting and removing tissue growths, mucosal flaps or polyps, especially during surgical procedures involving the maxillary sinus and its antrum. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/ent/blakesley-nasal-punch.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/circular-cutting-punch/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "citelli-mastoid-rongeur",
@@ -75114,15 +75031,14 @@
       "reusable": true
     },
     "description": "A professional-grade needle holders designed for ENT procedures, which a ring handle for controlled manipulation. Cottle Masing Needle Holder is a specialized device that ENT and plastic surgeons use to manipulate small suture needles, especially to perform reconstructive and aesthetic procedures, such as rhytidectomies. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/arruga-micro-needle-holder.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/cottle-masing-needle-holder/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cottle-nasal-alar-hook",
@@ -75218,15 +75134,14 @@
       "reusable": true
     },
     "description": "A professional-grade periosteal elevators designed for ENT procedures, which features sharp / blunt and a solid handle for controlled manipulation. Cottle Periosteal Elevator is a specialized rhinology instrument that ENT surgeons frequently use for lifting, retracting and dissecting the hard periosteal tissue attached to the delicate nasal bones. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/cottle-periosteal-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cottle-rhinoplastic-knife",
@@ -75384,15 +75299,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. The Cottle-Walsham Septum Straightning Forceps assist surgeons to straighten septal tissues during rhinology surgeries. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/xelpovs-cottle-walsham-septum-straightning-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "craig-septum-forceps",
@@ -75487,15 +75401,14 @@
       "reusable": true
     },
     "description": "A professional-grade nasal forceps designed for ENT procedures, which features cup shaped jaws and a ring handle for controlled manipulation. Cup Shaped Biopsy Forceps assists otolaryngologists to punch soft tissues and take biopsies from suspected tissues in nasal surgical procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/ent/adson-ear-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/cup-shaped-biopsy-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "day-ear-hook",
@@ -76301,15 +76214,14 @@
       "reusable": true
     },
     "description": "A 13 cm – 5″ nasal punches designed for ENT procedures, which a grip handle for controlled manipulation. Frontal Sinus Punch is a specialized instrument that ENT surgeons can use for nipping away small bone and cartilage pieces, especially during frontal sinusotomy and other surgeries involving the frontal sinus. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/ent/blakesley-nasal-punch.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/frontal-sinus-punch/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gallaher-antrum-rasp",
@@ -79525,15 +79437,14 @@
       "reusable": true
     },
     "description": "A professional-grade nasal punches designed for ENT procedures, which features through cutting jaws and a ring handle for controlled manipulation. is a specialized ENT device that surgeons commonly use for removing cartilage, bone, mucosa and other tissues within the nasal cavity, in order to perform reconstructive procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/ent/blakesley-nasal-punch.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/nasal-punch/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "nasal-tampon-forceps",
@@ -80414,15 +80325,14 @@
       "reusable": true
     },
     "description": "A 19 cm – 7 ½” haemostats & clamps designed for ENT procedures, which a ring handle for controlled manipulation. Sheehy Fascia Presses are used by otolaryngologists to level out the autologous tympanic membrane grafts that close ear drum perforations. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/backhaus-towel-clamp.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/sheehy-fascia-press/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "sluder-ballenger-tonsillectome",
@@ -80476,15 +80386,14 @@
       "reusable": true
     },
     "description": "A professional-grade tonsil snares designed for ENT procedures. Snare Wire is a specialized ENT spare part that surgeons attach to a surgical snare, in order to address and encircle polyps, small tumours, and other tissue growths for their subsequent excision. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/gynecology-obstetrics/doyen-myoma-screw.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/snare-wire/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "snare-wire-2",
@@ -80764,15 +80673,14 @@
       "reusable": true
     },
     "description": "A 20 cm – 7″ bone shears designed for ENT and Orthopedic procedures, which a grip handle for controlled manipulation. ’s Thyroidectomy Shear, measuring 20 cm – 7″, is expertly crafted from high-quality stainless steel with a satin finish. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/plastic-surgery/caplan-septum-scicaplan-septum-scissor-compound-action-joint-20-cm-8ssor.png",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/thyroidectomy-shear/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "tilley-ear-polypus-forceps",
@@ -81313,15 +81221,14 @@
       "reusable": true
     },
     "description": "A professional-grade tonsil snares designed for ENT procedures. Wire Loop for Tonsil Snare is a specialized surgical spare part that ENT surgeons use for encircling the diseased tonsil, in order to cleanly dissect the tissue from the tonsillar fossa. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/gynecology-obstetrics/doyen-myoma-screw.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/wire-loop-for-tonsil-snare/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "zaufal-foreign-body-lever",
@@ -82287,15 +82194,14 @@
       "reusable": true
     },
     "description": "A professional-grade indicators & measurement designed for Dental procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/diagnostic/iwanson-caliper.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/bracket-positioning-gauge/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "bradley-root-elevator-fig-44c",
@@ -82962,15 +82868,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental carvers designed for Dental procedures, which a round hollow handle for controlled manipulation. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/andrew-carver-fig-1.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/clappison-carver-fig-4/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cogswell-root-elevator-fig-a",
@@ -83708,15 +83613,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental root elevators designed for Dental procedures, which a hollow handle for controlled manipulation. No Data Available. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/apexo-root-elevator-fig-301.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/cryer-root-elevator-fig-a30/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cryer-root-elevator-fig-a31",
@@ -83740,15 +83644,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental root elevators designed for Dental procedures, which a hollow handle for controlled manipulation. No Data Available. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/apexo-root-elevator-fig-301.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/cryer-root-elevator-fig-a31/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "curette-fig-411-412",
@@ -88741,15 +88644,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental root elevators designed for Dental procedures, which a hollow handle for controlled manipulation. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/apexo-root-elevator-fig-301.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/howard-root-elevator-fig-3/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "howard-root-elevator-fig-4",
@@ -88870,15 +88772,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental root elevators designed for Dental procedures, which a round hollow handle for controlled manipulation. No Data Available. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/apexo-root-elevator-fig-301.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hybrid-luxating-root-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "indiana-university-curette-fig-iu13-14",
@@ -91246,15 +91147,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental measuring probes designed for Dental procedures, which a round hollow handle for controlled manipulation. The Measuring ProbeFig. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/explorer-measuring-probe-fig-23-cp-11.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/measuring-probe-fig-cp-18/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "measuring-probe-fig-cp-2",
@@ -91730,15 +91630,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental curettes designed for Dental procedures, which a round hollow handle for controlled manipulation. No Data Available. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/barnhart-curette-fig-1-2.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/miller-dental-curette-fig-0/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "miller-dental-curette-fig-10",
@@ -91917,15 +91816,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/mitchell-margin-trimmer-fig-4-16-5-cm-6-1-2%e2%80%b3/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "molt-bone-curette",
@@ -91950,15 +91848,14 @@
       "reusable": true
     },
     "description": "A 17 cm – 6 ¾” bone curettes designed for Dental and Orthopedic procedures, which a hollow handle for controlled manipulation. Molt Bone Curette is an orthopedic surgical tool that surgeons commonly use for scraping bony tissue from bone surfaces or to remove diseased and fibrous tissue from bone structures in order to clean the surgical field. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/urology/volkmann-bone-curette.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/molt-bone-curette/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "molt-dental-curette-fig-2-4",
@@ -93896,15 +93793,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental mixing instruments designed for Dental procedures, which a rubber for controlled manipulation. Manufactured from Rubber satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/cement-mixing-slab.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/rubber-bowl/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "rubber-dam-clamp-forcep-fig-4",
@@ -95277,15 +95173,14 @@
       "reusable": true
     },
     "description": "A professional-grade dental amalgam retainers designed for Dental procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/dental/ivory-amalgam-matrix-retainer.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/tofflemire-amalgam-matrix-retainer/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "trico-plastic-filling-instrument-fig-1-2",
@@ -98710,15 +98605,14 @@
       "reusable": true
     },
     "description": "A professional-grade periosteal elevators designed for Orthopedic procedures, which a solid ferrozell handle for controlled manipulation. No Data Available. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/ferrozell-handle-periosteal-elevator-for-femoral-head-dislocation/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "finger-ring-saw",
@@ -99164,15 +99058,14 @@
       "reusable": true
     },
     "description": "A 25 cm – 10″ screw drivers designed for Orthopedic procedures, which a solid ferrozell handle for controlled manipulation. The Hexagonal Screw Driver assists surgeons to fix orthopedic plates in order to repair bone fractures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/orthopedic/caspar-screwdriver.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/hexagonal-screw-driver/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hey-groves-bone-holding-forceps",
@@ -99439,15 +99332,14 @@
       "reusable": true
     },
     "description": "A 12 cm – 4 ¾” wire benders designed for Orthopedic procedures. Designed to hold and reshape K wires in deep orthopedic planes. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/k-wire-bender/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "k-wire-repositioning-forceps",
@@ -100045,15 +99937,14 @@
       "reusable": true
     },
     "description": "A professional-grade bone levers designed for Orthopedic procedures, which features wide tip with groove and a fenestrated handle for controlled manipulation. Lange-Hohmann Modified Bone Lever (Retractor) is a specialized orthopedic device that surgeons can use for pulling back the edges of large wounds, in order to expose the surgical field. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/orthopedic/bennett-bone-lever-retractor.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/lange-hohmann-modified-bone-lever-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "langenbeck-amputation-saw",
@@ -100732,15 +100623,14 @@
       "reusable": true
     },
     "description": "A 17 cm – 6 ¾” periosteal elevators designed for Orthopedic procedures, which a hollow handle for controlled manipulation. McGlamry Periosteal Elevator is a specialized surgical tool that orthopedic surgeons commonly use for elevating, retracting and dissecting periosteum and other plantar tissue, in order to expose the metatarsal bone during certain surgeries. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/mcglamry-periosteal-elevator-2/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "mckissock-periosteal-raspatory",
@@ -100937,15 +100827,14 @@
       "reusable": true
     },
     "description": "A professional-grade bone retractors designed for Orthopedic procedures, which a ring handle for controlled manipulation. MIOS Hip Retractor is a specialized surgical tool that orthopedic surgeons can use for exposing the surgical field during hip surgeries. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/orthopedic/blount-knee-retractor.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/mios-hip-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "moore-hand-drill-with-twist-drills",
@@ -101074,15 +100963,14 @@
       "reusable": true
     },
     "description": "A 22 cm – 8 ¾” periosteal elevators designed for Orthopedic procedures, which a solid handle for controlled manipulation. O’Connell Periosteal Elevator is a specialized orthopedic tool that surgeons commonly use to lift and dissect periosteum and other hard tissues surrounding the bone, in order to expose the surgical field. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/oconnell-periosteal-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "ombredanne-bone-mallet",
@@ -101344,15 +101232,14 @@
       "reusable": true
     },
     "description": "A 16.5 cm – 6 ½” periosteal elevators designed for Orthopedic procedures, which a solid handle for controlled manipulation. Pennybaker Periosteal Elevator is a specialized surgical tool that orthopedic surgeons commonly use for lifting, retracting and cutting the hard periosteum tissue, in order to expose its small and medium-sized underlying bones. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/pennybaker-periosteal-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "pennybaker-periosteal-elevator-2",
@@ -101444,15 +101331,14 @@
       "reusable": true
     },
     "description": "A 17 cm – 6 ¾” periosteal elevators designed for Orthopedic procedures, which a hollow handle for controlled manipulation. Periosteal Elevator is a specialized orthopedic tool that surgeons frequently use for lifting, retracting and dissecting the hard periosteum tissue, in order to expose its underlying bone. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/periosteal-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "perthes-bone-reamer",
@@ -101608,15 +101494,14 @@
       "reusable": true
     },
     "description": "A 14 cm – 5 ½” plate benders designed for Orthopedic procedures, which a solid handle for controlled manipulation. The Plate Benders are used by orthopedic surgeons to remodel and bend fixation plates in fracture repairs. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/plate-bender/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "plate-bending-contouring-device",
@@ -101637,15 +101522,14 @@
       "reusable": true
     },
     "description": "A professional-grade plate benders designed for Orthopedic procedures. The Plate Bending & Contouring Devices are used to remodel and bend orthopedic plates in bone fixation procedures. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/plate-bending-contouring-device/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "putti-bone-rasp",
@@ -102047,15 +101931,14 @@
       "reusable": true
     },
     "description": "A 16 cm – 6 ¼” periosteal elevators designed for Orthopedic procedures, which a solid handle for controlled manipulation. Sayre Periosteal Elevator is a specialized surgical tool that orthopedic specialists can use for elevating, retracting and carefully cutting the periosteum tissue and other bone adnexa. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/beales-elevator.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/sayre-periosteal-elevator/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "schumacher-bone-lever-retractor",
@@ -102457,15 +102340,14 @@
       "reusable": true
     },
     "description": "A 28.5 cm – 11 ¼” tendon instruments designed for Orthopedic procedures, which a ring handle for controlled manipulation. Slotted Ring Pattern Tendon Stripper is a specialized surgical device that orthopedic surgeons commonly use for removing and stripping down tendons from their junctures, in order to repair tendon injuries. Manufactured from Stainless Steel with a satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/orthopedic/bunnell-tendon-passer.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/slotted-ring-pattern-tendon-stripper/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "small-bone-lever-retractor",
@@ -104153,15 +104035,14 @@
       "reusable": true
     },
     "description": "A ⌀ 50 x 290 mm sterilization & containers designed for surgical procedures. Martin Forceps Holding Jar & Forceps is a specialized surgical device that helps in containing sterilizing forceps, in order to protect and hold the device during surgery. Manufactured from Stainless Steel with a dual satin & mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/martin-forceps-holding-jar-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "martin-waste-forceps",
@@ -104237,15 +104118,14 @@
       "reusable": true
     },
     "description": "A 150 x 90 x 13 mm sterilization & containers designed for surgical procedures. Rectangular Needle Case is a specialized sterilization device that the operator uses for efficiently position used surgical needles, in order to eliminate and deactivate dangerous biological agents. Manufactured from Stainless Steel with a mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/rectangular-needle-case/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "round-needle-case",
@@ -104451,15 +104331,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Laundry Basket is a specialized device that the medical staff uses for holding and conveyance of surgical laundry that requires sterilization. Manufactured from Stainless Steel with a mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-laundry-basket/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-paper-labels",
@@ -104474,15 +104353,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Paper Labels are sterilization accessory devices that the medical staff fills with information and places inside a small window, in order to indicate several aspects of the autoclaving procedure. Manufactured from stainless steel satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-paper-labels/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-security-seal",
@@ -104522,15 +104400,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Silicone Adhesive is a specialized material that the medical staff applies on the lid’s inner border, in order to securely affix silicone gaskets and ensure a strong sealing action. Manufactured from stainless steel satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-silicone-adhesive/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-silicone-gaskets",
@@ -104545,15 +104422,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Silicone Gaskets are specialized accessories that the medical staff places within the lid’s border, with the purpose of sealing the container and prevent undesired air intake. Manufactured from stainless steel satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-silicone-gaskets/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-silicone-liner",
@@ -104568,15 +104444,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Silicone Liner is a specialized device that the medical staff places at the bottom of the wire mesh or perforated instrument baskets, in order to absorb condensation and prevent wet packs. Manufactured from stainless steel satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-silicone-liner/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-silicone-mats",
@@ -104591,15 +104466,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Silicone Mats are specialized sterilization devices that the medical staff places in the bottom of Surticon plastic containers, in order to organize instruments and enhance steam flow. Manufactured from stainless steel satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-silicone-mats/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-single-use-paper-filters",
@@ -104638,15 +104512,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Teflon Filters are specialized devices that the medical staff places within the lid and body of certain retainers, in order to maximize steam penetration. Manufactured from stainless steel satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-teflon-filters/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-wire-mesh-base",
@@ -104664,15 +104537,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Wire Mesh Base is an accessory sterilization device that the medical staff uses to accommodate single instruments with precision, permitting the use of different types of fixators. Manufactured from Stainless Steel with a mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-wire-mesh-base/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-wire-mesh-baskets",
@@ -105192,15 +105064,14 @@
       "instrumentType": "Liposuction Cannulas & Accessories"
     },
     "description": "A professional-grade surgical instrument designed for surgical procedures. ’s Blunt Tip Micro Hole Cannula is uniquely designed with one smaller round port for precise delivery of micro fat & nanomized fat. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/plastic-surgery/adson-suction-tube.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/micro-hole-injector-blunt-tip/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "infiltration-cannula-angled",
@@ -105646,15 +105517,14 @@
       "instrumentType": "Liposuction Cannulas & Accessories"
     },
     "description": "A professional-grade surgical instrument designed for surgical procedures. ’s Twist Lock For BD Syringes are manufactured from aerospace grade aluminum which makes these very durable yet lighter in weight. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/plastic-surgery/adson-suction-tube.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/twist-lock-for-bd-syringes/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "xelpov-syringe-stand",
@@ -107166,15 +107036,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. ’s Tonsillectomy & Adenoidectomy Set is meticulously crafted with the surgeon’s needs in mind. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/tonsillectomy-adenoidectomy/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "tympanoplasty-stapedectomy-set",
@@ -107910,15 +107779,14 @@
     "subCategory": [],
     "specs": {},
     "description": "A professional-grade surgical instrument designed for surgical procedures. ’ s Dental Examination Kit is meticulously crafted with the surgeon’s needs in mind. Manufactured from stainless steel satin finish.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/dental-examination-kit/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "stomach-surgery-set",
@@ -108074,15 +107942,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Identification Labels are versatile sterilization accessories that display different names and colours, which help to locate specific types of instruments before and after autoclaving. Manufactured from Aluminium satin finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-identification-labels/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-fixation-clamp",
@@ -108099,15 +107966,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Fixation Clamp is an accessory sterilization device that the medical staff applies to the borders of wire mesh baskets to place dressings or wrapping paper. Manufactured from Stainless Steel with a mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-fixation-clamp/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-filter-retainers",
@@ -108124,15 +107990,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Filter Retainers are specialized accessory devices that the medical staff places within the container’s lid, in order to securely hold Teflon or paper filters during sterilization. Manufactured from Stainless Steel with a mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-filter-retainers/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-filter-dispenser",
@@ -108149,15 +108014,14 @@
       "reusable": true
     },
     "description": "A professional-grade sterilization & containers designed for surgical procedures. Surticon Filter Dispenser is an accessory device that the medical staff uses to pile up paper or Teflon filters, in order to provide them without the risk of damaging the filter’s surface. Manufactured from Stainless Steel with a mirror finish; CE marked and fully reusable following standard sterilization.",
-    "image": null,
+    "image": "/xelpov_images/general/cheattle-sterilizing-forceps.jpg",
     "images": [],
     "sourceUrl": "https://xelpovsurgical.com/product/surticon-filter-dispenser/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "surticon-drape-retainers",
@@ -110046,14 +109910,13 @@
       "reusable": true
     },
     "description": "Reynolds Transaxillary Breast Dissector 15-3/4″ (40cm), 37mm Wide for use in Dissectors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/rhoton-micro-dissector.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/reynolds-transaxillary-breast-dissector/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "endoforehead-suction-coagulator-7-18cm-10-french-insulated",
@@ -110072,14 +109935,13 @@
       "reusable": true
     },
     "description": "EndoForehead Suction Coagulator, 7″ (18cm), 10 French, Insulated for use in Endoscopic Plastic Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/endoforehead-suction-coagulator-10french-insulated/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "crile-wood-onyx-needle-holder-6-15cm-4000-jaw-left-handed",
@@ -110099,14 +109961,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Crile-Wood Onyx Needle Holder, 6″ (15cm), 4000 Jaw, Left-Handed for use in Left-Handed Needle Holders procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/crile-wood-onyx-needle-holder-6-in-15cm-4000-jaw-left-handed/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "mayo-hegar-onyx-needle-holder-2500-jaw-left-handed",
@@ -110126,14 +109987,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Mayo Hegar Onyx Needle Holder, 2500 Jaw, Left-Handed for use in Left-Handed Needle Holders procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/mayo-hegar-onyx-needle-holder-2500-jaw-left-handed/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "webster-onyx-needle-holder-4-1-2-11-5cm-smooth-jaw-left-handed",
@@ -110153,14 +110013,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Webster Onyx Needle Holder, 4-1/2″ (11.5cm), Smooth Jaw, Left-Handed for use in Left-Handed Needle Holders procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/webster-onyx-needle-holder-4-1-2in-11-5cm-smooth-jaw-left-handed/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "halsey-needle-holder-5-13cm-4000-jaw-left-handed",
@@ -110180,14 +110039,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Halsey Needle Holder, 5″ (13cm), 4000 Jaw, Left-Handed for use in Left-Handed Needle Holders procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/halsey-needle-holder-5%e2%80%b3-13cm-4000-jaw-left-handed/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "rasp-blade-removal-tool",
@@ -110206,14 +110064,13 @@
       "reusable": true
     },
     "description": "Rasp Blade Removal Tool for use in Rasps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/podiatry/baka-nail-file.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/rasp-blade-removal-tool/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "interchangeable-fomon-rasp-handle-double-ended-8-20cm",
@@ -110233,14 +110090,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Interchangeable Fomon Rasp Handle, Double-Ended, 8″ (20cm) for use in Rasps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/podiatry/baka-nail-file.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/interchangeable-rasp-handle/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "frojo-2-prong-facelift-retractor-3-1-4-8-2cm-20mm-tip",
@@ -110260,14 +110116,13 @@
       "length": "20 mm"
     },
     "description": "Frojo 2-Prong Facelift Retractor, 3-1/4″ (8.2cm), 20mm Tip for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Working length approximately 20 mm. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/frojo-2-prong-facelift-retractor/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "preservation-rongeur-5-1-2-14cm-2mm-jaw",
@@ -110286,14 +110141,13 @@
       "reusable": true
     },
     "description": "Preservation Rongeur, 5-1/2″ (14cm), 2mm Jaw for use in Rongeurs procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/dermal-punch.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/preservation-rongeur/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gerald-onyx-forceps-7-17-5cm-7000-jaw-1-2-teeth",
@@ -110315,14 +110169,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Gerald Onyx Forceps, 7″ (17.5cm), 7000 Jaw, 1×2 Teeth for use in Onyx (TC) Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/gerald-insulated-onyx-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cushing-insulated-onyx-forceps-7-18cm-4000-jaw",
@@ -110344,14 +110197,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Cushing Insulated Onyx Forceps, 7″ (18cm), 4000 Jaw for use in Insulated Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/cushing-insulated-onyx-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "hunter-splinter-forceps-4-1-2-10-5cm-serrated-straight",
@@ -110372,14 +110224,13 @@
       "reusable": true
     },
     "description": "Hunter Splinter Forceps, 4-1/2″ (10.5cm), Serrated, Straight for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/hunter-splinter-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-forceps-pierse",
@@ -110399,14 +110250,13 @@
       "reusable": true
     },
     "description": "Micro Forceps, Pierse for use in Micro Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-forceps-pierse/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-scissors-dissecting-curved-flat-handle",
@@ -110452,14 +110302,13 @@
       "reusable": true
     },
     "description": "Micro Scissors Adventitia, Straight, Flat Handle for use in Micro Scissors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-scissors-adventita-flat-handle/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-approximator-clamps-w-o-frame",
@@ -110479,14 +110328,13 @@
       "reusable": true
     },
     "description": "Micro Approximator Clamps w/o Frame for use in Micro Clamps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-approximator-clamps-without-frame/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-single-clamps",
@@ -110506,14 +110354,13 @@
       "reusable": true
     },
     "description": "Micro Single Clamps for use in Micro Clamps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-single-clamps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "debakey-x-lite-onyx-needle-holder-7000-jaw",
@@ -110533,14 +110380,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Debakey X-Lite Onyx Needle Holder, 7000 Jaw for use in Needle Holders procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/debakey-xlite-onyx-needle-holder-7000-jaw/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "tissue-forceps-5-12-5cm-serrated-jaws",
@@ -110561,14 +110407,13 @@
       "reusable": true
     },
     "description": "Tissue Forceps, 5″ (12.5cm), Serrated Jaws for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/tissue-forceps-serrated-jaws/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "emory-endoscopic-electrosurgical-dissector",
@@ -110587,14 +110432,13 @@
       "reusable": true
     },
     "description": "Emory Endoscopic Electrosurgical Dissector for use in Electrosurgical procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/icon_medical_consumables.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/emory-endoscopic-electrosurgical-dissector/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "adson-insulated-monopolar-forceps-7-1-4-18-5cm-curved",
@@ -110615,14 +110459,13 @@
       "reusable": true
     },
     "description": "Adson Insulated Monopolar Forceps, 7-1/4″ (18.5cm), Curved for use in Ring Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/adson-insulated-monopolar-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "tissue-forceps-1-x-2-teeth",
@@ -110670,14 +110513,13 @@
       "reusable": true
     },
     "description": "Semken Tissue Forceps, 6″ (15.0cm), 1×2 Teeth, Straight for use in Plastic Surgery Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/forceps-b60209/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "peng-rib-retractor-6-1-4-15-8cm-blunt",
@@ -110696,14 +110538,13 @@
       "reusable": true
     },
     "description": "Peng Rib Retractor, 6-1/4″ (15.8cm), Blunt for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/peng-rib-retractor-6-1-4-in-15-8cm-blunt/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "peng-double-ended-retractor-6-15cm",
@@ -110722,14 +110563,13 @@
       "reusable": true
     },
     "description": "Peng Double-Ended Retractor, 6″ (15cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/peng-double-ended-retractor-6-in-15cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "brown-adson-forceps-4-3-4-12cm-brown-teeth",
@@ -110750,14 +110590,13 @@
       "reusable": true
     },
     "description": "Brown-Adson Forceps, 4-3/4″ (12cm), Brown Teeth for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/brown-adson-forceps-4-3412cm-brown-teeth/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "dressing-forceps-serrated-jaw",
@@ -110778,14 +110617,13 @@
       "reusable": true
     },
     "description": "Dressing Forceps, Serrated Jaw for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/dressing-forceps-serrated-jaw/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "ruler-stainless-steel",
@@ -110806,14 +110644,13 @@
       "reusable": true
     },
     "description": "Ruler, Stainless Steel for use in Measuring procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/rulers-stainless-steel/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "schnidt-tonsil-forceps-7-1-2-19cm-closed-rings",
@@ -110834,14 +110671,13 @@
       "reusable": true
     },
     "description": "Schnidt Tonsil Forceps, 7-1/2″ (19cm), Closed Rings for use in Ring Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/schnidt-tonsil-forceps-19cm-closed-rings/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "weitlaner-retractor-3-4-prongs",
@@ -110860,14 +110696,13 @@
       "reusable": true
     },
     "description": "Weitlaner Retractor, 3×4 Prongs for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/weitlaner-retractors-3x4-prongs/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "biggs-stainless-steel-retractor",
@@ -110886,14 +110721,13 @@
       "reusable": true
     },
     "description": "Biggs Stainless Steel Retractor for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/biggs-retractors/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "anderson-bear-claw-retractor-4-3-4-12cm",
@@ -110912,14 +110746,13 @@
       "reusable": true
     },
     "description": "Anderson Bear Claw Retractor, 4-3/4″ (12cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/anderson-bear-claw-retractors-4-34in-12cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "freeman-flap-retractor-8-20cm",
@@ -110938,14 +110771,13 @@
       "reusable": true
     },
     "description": "Freeman Flap Retractor, 8″ (20cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/freeman-flap-retractors/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "freeman-rake-retractor-7-18cm",
@@ -110964,14 +110796,13 @@
       "reusable": true
     },
     "description": "Freeman Rake Retractor, 7″ (18cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/freeman-rake-retractor-718cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "maxwell-flap-retractor-4-1-2-14-4cm",
@@ -110990,14 +110821,13 @@
       "reusable": true
     },
     "description": "Maxwell Flap Retractor, 4-1/2″ (14.4cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/maxwell-flap-retractors-4-5in-14cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "senn-retractor-6-1-4-15-8cm",
@@ -111016,14 +110846,13 @@
       "reusable": true
     },
     "description": "Senn Retractor, 6-1/4″ (15.8cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/senn-retractors-6-14in-15-8cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "weitlaner-retractor-2-3-prongs-4-1-2-11-5cm",
@@ -111042,14 +110871,13 @@
       "reusable": true
     },
     "description": "Weitlaner Retractor, 2×3 Prongs, 4-1/2″ (11.5cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/weitlaner-retractors-4-12in-11-5cm-2x3-prongs/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "desmarres-lid-retractor-5-1-2-14cm",
@@ -111068,14 +110896,13 @@
       "reusable": true
     },
     "description": "DesMarres Lid Retractor, 5-1/2″ (14cm) for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/desmarres-lid-retractors-5-12in-14cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-vessel-dilator-flat-handle-straight",
@@ -111095,14 +110922,13 @@
       "reusable": true
     },
     "description": "Micro Vessel Dilator, Flat Handle, Straight for use in Micro Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-vessel-dilators-flat-handle-straight/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "b-b-tip-retractor",
@@ -111121,14 +110947,13 @@
       "reusable": true
     },
     "description": "B&B Tip Retractor for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/bb-tip-retractor-8mm-10mm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cushing-insulated-tissue-forceps",
@@ -111150,14 +110975,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Cushing Insulated Tissue Forceps for use in Insulated Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/cushing-insulated-tissue-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "b-b-ribbon-stitch-scissors-curved",
@@ -111202,14 +111026,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Aston Facelift Serrated Onyx Scissors, Curved for use in Onyx-Line™ (TC) Scissors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/aston-facelift-onyx-scs/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "russian-tissue-forceps-6-15cm",
@@ -111230,14 +111053,13 @@
       "reusable": true
     },
     "description": "Russian Tissue Forceps, 6″ (15cm) for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/russian-tissue-forceps-6in15cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "peng-rib-elevator-7-1-2-19cm-large",
@@ -111256,14 +111078,13 @@
       "reusable": true
     },
     "description": "Peng Rib Elevator, 7-1/2″ (19cm), Large for use in Elevators procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/rhoton-micro-dissector.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/peng-rib-elevator-7-1-219cm-large/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "brown-tissue-forceps",
@@ -111284,14 +111105,13 @@
       "reusable": true
     },
     "description": "Brown Tissue Forceps for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/brown-tissue-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "fox-dermal-curette",
@@ -111310,14 +111130,13 @@
       "reusable": true
     },
     "description": "Fox Dermal Curette for use in Specialty Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/fox-dermal-curette/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "b-b-e-p-electrosurgical-dissectors-14-1-2-36-5cm",
@@ -111363,14 +111182,13 @@
       "length": "0.3 mm"
     },
     "description": "Micro Forceps, Flat Handle 9mm Wide, 0.3mm Tip for use in Micro Forceps procedures. Manufactured from stainless steel with a satin finish. Working length approximately 0.3 mm. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-forceps-9mm-flat-handle-0-3mmtip/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-forceps-8mm-round-handle",
@@ -111390,14 +111208,13 @@
       "reusable": true
     },
     "description": "Micro Forceps, 8mm Round Handle for use in Micro Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-forceps-8mm-round-handle/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-debakey-forceps-straight",
@@ -111417,14 +111234,13 @@
       "reusable": true
     },
     "description": "Micro Debakey Forceps Straight for use in Micro Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-debakey-forceps-straight/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gorney-freeman-facelift-serrated-onyx-scissors",
@@ -111444,14 +111260,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Gorney-Freeman Facelift Serrated Onyx Scissors for use in Onyx-Line™ (TC) Scissors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/gorney-freeman-facelift-serrated-onyx-scissors/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "peck-joseph-serrated-supercut-scissors-5-3-4-14-5cm",
@@ -111470,14 +111285,13 @@
       "reusable": true
     },
     "description": "Peck-Joseph Serrated Supercut Scissors, 5-3/4″ (14.5cm) for use in Plastic Surgery Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/peck-joseph-serrated-supercut-scissors/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "joseph-saw-7-1-4-18-5cm",
@@ -111496,14 +111310,13 @@
       "reusable": true
     },
     "description": "Joseph Saw, 7-1/4″ (18.5cm) for use in Specialty Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/joseph-saws/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gruber-cartilage-block-and-sizers",
@@ -111524,14 +111337,13 @@
       "reusable": true
     },
     "description": "Gruber Cartilage Block and Sizers for use in Measuring procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/gruber-cartilage-block-and-sizers/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "guyuron-nasal-tip-cartilage-punches",
@@ -111550,14 +111362,13 @@
       "reusable": true
     },
     "description": "Guyuron Nasal Tip Cartilage Punches for use in Markers procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/guyuron-nasal-tip-cartilage-punches/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "debakey-insulated-vascular-forceps",
@@ -111578,14 +111389,13 @@
       "reusable": true
     },
     "description": "Debakey Insulated Vascular Forceps for use in Insulated Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/debakey-insulated-vascular-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gonzalez-type-gluteal-dissector-10-1-4-26cm",
@@ -111604,14 +111414,13 @@
       "reusable": true
     },
     "description": "Gonzalez Type Gluteal Dissector, 10-1/4″ (26cm) for use in Dissectors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/rhoton-micro-dissector.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/gonzalez-type-gluteal-dissector-63720/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "b-b-double-bevel-blade-scissors-4-1-2-11-5-cm",
@@ -111630,14 +111439,13 @@
       "reusable": true
     },
     "description": "B&B Double Bevel Blade Scissors; 4-1/2″ (11.5 cm) for use in Stainless Steel Scissors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/bb-double-bevel-blade-scissors-66131/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "pennington-elevator-8-1-2-22cm-double-ended-4mm-and-4-5mm-wide-blades",
@@ -111656,14 +111464,13 @@
       "reusable": true
     },
     "description": "Pennington Elevator, 8-1/2″ (22cm), Double-Ended, 4mm And 4.5mm Wide Blades for use in Elevators procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/microsurgery/rhoton-micro-dissector.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/elevator-b63895/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "nahai-brown-forceps-6-15cm-9-9-brown-teeth",
@@ -111684,14 +111491,13 @@
       "reusable": true
     },
     "description": "Nahai Brown Forceps, 6″ (15cm), 9×9 Brown Teeth for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/nahai-brown-forceps-615cm-9x9-brown-teeth/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "nahai-rake-retractor-7-18cm-2-prong-3-4-19mm-wide",
@@ -111710,14 +111516,13 @@
       "reusable": true
     },
     "description": "Nahai Rake Retractor, 7″ (18cm), 2-Prong, 3/4″ (19mm) Wide for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/nahai-rake-retractor-b61065/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-vessel-dilator-flat-handle-4-1-4-11cm-angled-10d",
@@ -111737,14 +111542,13 @@
       "reusable": true
     },
     "description": "Micro Vessel Dilator, Flat Handle, 4-1/4″ (11cm), Angled 10D for use in Micro Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-vessel-dilators/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-clamp-applying-forceps-5-3-4-14cm",
@@ -111764,14 +111568,13 @@
       "reusable": true
     },
     "description": "Micro Clamp Applying Forceps, 5-3/4″ (14cm) for use in Micro Clamps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-clamp-applying-forceps/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "4-knife-handle-5-1-4-13-5cm-holds-blades-20-thru-25",
@@ -111815,14 +111618,13 @@
       "reusable": true
     },
     "description": "Markmann Drain Inserter for use in Accessories procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/markmann-drain-inserter/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cushing-tissue-forceps-scraper-end",
@@ -111843,14 +111645,13 @@
       "reusable": true
     },
     "description": "Cushing Tissue Forceps, Scraper End for use in Plastic Surgery Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/cushing-tissue-forceps-scraper-end/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "tessier-facelift-onyx-scissors-6-1-2-16-5cm-straight",
@@ -111870,14 +111671,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Tessier Facelift Onyx Scissors, 6-1/2″ (16.5cm), Straight for use in Onyx-Line™ (TC) Scissors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/scissors-b54984/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "kelly-retractor-loop-handle-10-25cm-1-1-2-x-2-deep-3-8cm-x-5-1cm-blade",
@@ -111896,14 +111696,13 @@
       "reusable": true
     },
     "description": "Kelly Retractor Loop-Handle, 10″ (25cm), 1-1/2 x 2″ Deep, 3.8cm x 5.1cm Blade for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/retractor-b61355/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "micro-needle-holder-round-handle-0-4mm-tip-w-o-lock",
@@ -111924,14 +111723,13 @@
       "length": "0.4 mm"
     },
     "description": "Micro Needle Holder, Round Handle, 0.4mm Tip, w/o Lock for use in Micro Needle Holders procedures. Manufactured from stainless steel with a satin finish. Working length approximately 0.4 mm. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/dermatology/ligature-adjuster.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/micro-needle-holders/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "crile-delicate-forceps-5-1-2-14cm-curved",
@@ -111952,14 +111750,13 @@
       "reusable": true
     },
     "description": "Crile Delicate Forceps, 5-1/2″ (14cm), Curved for use in Ring Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/crile-delicate-forceps-b60318/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "gerald-dressing-forceps-7-17-8cm-straight",
@@ -111980,14 +111777,13 @@
       "reusable": true
     },
     "description": "Gerald Dressing Forceps, 7″ (17.8cm), Straight for use in Stainless Steel Thumb Forceps procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/gerald-dressing-forceps-7-in-17-8cm-straight/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "westcott-tenotomy-scissors-fine-blunt-tips-4-1-2-11-5cm",
@@ -112007,14 +111803,13 @@
       "length": "18 mm"
     },
     "description": "Westcott Tenotomy Scissors, Fine Blunt Tips, 4-1/2″ (11.5cm) for use in Stainless Steel Scissors procedures. Manufactured from stainless steel with a satin finish. Working length approximately 18 mm. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/westcott-tenotomy-scissors/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cinelli-guarded-osteotome-6-1-4-16cm-10mm-curved",
@@ -112033,14 +111828,13 @@
       "reusable": true
     },
     "description": "Cinelli Guarded Osteotome, 6-1/4″ (16cm), 10mm, Curved for use in Osteotomes procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/post-mortem/alexander-bone-gouge.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/cinelli-guarded-osteotome-6-1416cm-10mm-curved/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "trepsat-facelift-serrated-supercut-marking-scissors-6-3-4-17cm-straight",
@@ -112059,14 +111853,13 @@
       "reusable": true
     },
     "description": "Trepsat Facelift Serrated Supercut Marking Scissors, 6-3/4″ (17cm), Straight for use in Plastic Surgery Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/trepsat-facelift-serrated-supercut-marking-scissors-6-3417cm-straight/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "cottle-onyx-scissors-6-1-4-16cm-angled",
@@ -112086,14 +111879,13 @@
       "workingEndDetails": "Tungsten carbide inserts"
     },
     "description": "Cottle Onyx Scissors, 6-1/4″ (16cm), Angled for use in Onyx-Line™ (TC) Scissors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/good-tonsil-scissor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/cottle-onyx-scissors-angled/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "softouch-endoscopic-needle-holder-6-15cm-shaft-straight-malleable",
@@ -112113,14 +111905,13 @@
       "length": "15 cm"
     },
     "description": "SofTouch™ Endoscopic Needle Holder, 6″(15cm), Shaft Straight, Malleable for use in Endoscopic Plastic Instruments procedures. Manufactured from stainless steel with a satin finish. Working length approximately 15 cm. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/ergo-handle-endoforehead-fascia-needle-holder-615cm-shaft-straight-malleable/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "pitanguy-abdominal-flap-demarcator-12-1-2-32cm",
@@ -112139,14 +111930,13 @@
       "reusable": true
     },
     "description": "Pitanguy Abdominal Flap Demarcator, 12-1/2″ (32cm) for use in Markers procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/pitanguy-abdominal-flap-demarcator-12-1232cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "epstein-deaver-retractor-8-20cm-1-2-5cm-blade",
@@ -112165,14 +111955,13 @@
       "reusable": true
     },
     "description": "Epstein-Deaver Retractor, 8″ (20cm), 1″ (2.5cm) Blade for use in Retractors procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/mammaplasty/ferreira-breast-retractor.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/epstein-deaver-retractor-820cm-12-5cm-blade/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "thorpe-caliper-4-3-4-12cm-angled",
@@ -112194,14 +111983,13 @@
       "length": "0 mm"
     },
     "description": "Thorpe Caliper, 4-3/4″ (12cm), Angled for use in Measuring procedures. Manufactured from stainless steel with a satin finish. Working length approximately 0 mm. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/thorpe-caliper-4-3412cm-angled/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "jameson-caliper-3-3-4-9-5cm",
@@ -112223,14 +112011,13 @@
       "length": "0 mm"
     },
     "description": "Jameson Caliper, 3-3/4″ (9.5cm) for use in Measuring procedures. Manufactured from stainless steel with a satin finish. Working length approximately 0 mm. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/product_img_forceps.png",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/jameson-caliper-3-34e11209-5cm/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   },
   {
     "slug": "suction-cup-for-removal-of-corneal-eye-shields-non-sterile-2-per-pack",
@@ -112249,13 +112036,12 @@
       "reusable": true
     },
     "description": "Suction Cup For Removal Of Corneal Eye Shields, Non-Sterile (2 Per Pack) for use in Specialty Instruments procedures. Manufactured from stainless steel with a satin finish. Reusable after standard cleaning and sterilization; CE marked where applicable.",
-    "image": null,
+    "image": "/xelpov_images/anaesthesia/magill-catheter-introducing-forceps.jpg",
     "sourceUrl": "https://www.blackandblacksurgical.com/product/suction-cup-b67569/",
     "price": {
       "amount": null,
       "currency": "USD",
       "onRequest": true
-    },
-    "note": "No clean unbranded photo found online — needs a professional photo taken."
+    }
   }
 ]
