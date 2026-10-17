@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link, useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useWishlist } from '../context/WishlistContext';
+import { useQuoteCart } from '../context/QuoteCartContext';
 import { loadXelpovProducts } from '../utils/xelpovData';
 import './XelpovCatalog.css';
 
@@ -23,6 +24,54 @@ const SPECIALTY_META = {
 };
 
 const PAGE_SIZE = 24;
+
+function QuoteAdder({ product, specialty }) {
+  const { t } = useTranslation();
+  const { addToQuote } = useQuoteCart();
+  const [qty, setQty] = useState(1);
+  const stop = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  };
+
+  return (
+    <div className="xcat-quote-row">
+      <div className="xcat-quote-qty">
+        <button
+          type="button"
+          aria-label={t('quoteList.decrease', 'Decrease quantity')}
+          onClick={(event) => { stop(event); setQty((n) => Math.max(1, n - 1)); }}
+        >
+          −
+        </button>
+        <span>{qty}</span>
+        <button
+          type="button"
+          aria-label={t('quoteList.increase', 'Increase quantity')}
+          onClick={(event) => { stop(event); setQty((n) => Math.min(999, n + 1)); }}
+        >
+          +
+        </button>
+      </div>
+      <button
+        type="button"
+        className="xcat-quote-btn"
+        onClick={(event) => {
+          stop(event);
+          addToQuote({
+            slug: product.slug,
+            name: product.name,
+            image: product.image,
+            mainCategory: product.mainCategory,
+            specialty: specialty || 'all',
+          }, qty);
+        }}
+      >
+        {t('quoteList.add', 'Add to quote')}
+      </button>
+    </div>
+  );
+}
 
 function XelpovCatalog() {
   const { specialty } = useParams();
@@ -341,6 +390,7 @@ function XelpovCatalog() {
                         the product page and appears once the card is clicked. */}
                     <div className="xcat-card-body xcat-card-body--minimal">
                       <h2 className="xcat-card-name">{product.name}</h2>
+                      <QuoteAdder product={product} specialty={specialty || 'all'} />
                     </div>
                   </Link>
                 ))}

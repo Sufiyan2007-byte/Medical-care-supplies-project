@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuoteCart } from '../context/QuoteCartContext';
 import { useToast } from '../context/ToastContext';
+import { downloadQuotePdf, whatsAppQuoteUrl } from '../utils/quoteExport';
 import './QuoteCartPanel.css';
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
@@ -13,8 +14,16 @@ function QuoteCartPanel() {
 
   const {
     isQuoteOpen, setIsQuoteOpen,
-    quoteItems, removeFromQuote, updateQuoteQuantity, clearQuote,
+    quoteItems, quoteNotes, updateQuoteNotes, removeFromQuote, updateQuoteQuantity, clearQuote,
   } = useQuoteCart();
+
+  const [salesPhone, setSalesPhone] = useState('');
+  useEffect(() => {
+    fetch(`${BASE_URL}/api/company`)
+      .then((r) => r.json())
+      .then((data) => setSalesPhone((data.company || data.data)?.phone || ''))
+      .catch(() => {});
+  }, []);
 
   const [showForm, setShowForm] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -44,6 +53,9 @@ function QuoteCartPanel() {
         .join('\n');
       const composedMessage =
         `Bulk quote request for ${quoteItems.length} product${quoteItems.length > 1 ? 's' : ''}:\n\n${itemLines}` +
+        (quoteNotes.facility ? `\nHospital / clinic: ${quoteNotes.facility}` : '') +
+        (quoteNotes.city ? `\nCity: ${quoteNotes.city}` : '') +
+        (quoteNotes.deadline ? `\nDeadline: ${quoteNotes.deadline}` : '') +
         (form.message ? `\n\nAdditional notes: ${form.message}` : '');
 
       const res = await fetch(`${BASE_URL}/api/contact`, {
@@ -182,6 +194,7 @@ function QuoteCartPanel() {
                       </button>
                     </div>
                     {item.mainCategory?.[0] && <p className="qcart-item-cat">{item.mainCategory[0]}</p>}
+                    <p className="qcart-item-cat" dir="ltr">{t('quoteList.ref', 'Ref')}: {item.slug}</p>
                     <div className="qcart-qty-ctrl">
                       <button onClick={() => updateQuoteQuantity(item.slug, item.quantity - 1)} aria-label="Decrease quantity">−</button>
                       <span>{item.quantity}</span>
@@ -199,9 +212,68 @@ function QuoteCartPanel() {
             <p className="qcart-footer-note">
               {isAr(isRTL, 'سيتم تجميع كل هذه المنتجات في طلب عرض سعر واحد.', 'All these products will be bundled into one quote request.')}
             </p>
+            <div className="qcart-notes">
+              <label>
+                <span>{t('quoteList.facility', 'Hospital / clinic name')}</span>
+                <input
+                  type="text"
+                  value={quoteNotes.facility}
+                  onChange={(e) => updateQuoteNotes({ facility: e.target.value })}
+                  autoComplete="organization"
+                />
+              </label>
+              <label>
+                <span>{t('quoteList.city', 'City')}</span>
+                <input
+                  type="text"
+                  value={quoteNotes.city}
+                  onChange={(e) => updateQuoteNotes({ city: e.target.value })}
+                  autoComplete="address-level2"
+                />
+              </label>
+              <label>
+                <span>{t('quoteList.deadline', 'Deadline')}</span>
+                <input
+                  type="text"
+                  value={quoteNotes.deadline}
+                  onChange={(e) => updateQuoteNotes({ deadline: e.target.value })}
+                  placeholder={isRTL ? 'مثال: ١٥ نوفمبر' : 'e.g. 15 November'}
+                />
+              </label>
+              <p className="qcart-footer-note">{t('quoteList.notes_hint')}</p>
+            </div>
             <button className="qcart-btn qcart-btn--primary" onClick={() => setShowForm(true)}>
-              {isAr(isRTL, 'طلب عرض سعر لـ', 'Request Quote for')} {quoteItems.length} {isAr(isRTL, 'منتج', 'item' + (quoteItems.length > 1 ? 's' : ''))}
+              {t('quoteList.request', 'Request price quote')}
             </button>
+            <div className="qcart-extra">
+              <button
+                type="button"
+                className="qcart-btn qcart-btn--secondary"
+                onClick={() => {
+                  const opened = downloadQuotePdf({
+                    items: quoteItems,
+                    notes: quoteNotes,
+                    lang: isRTL ? 'ar' : 'en',
+                  });
+                  if (!opened) addToast(t('quoteList.pdf_blocked'), 'error');
+                }}
+              >
+                {t('quoteList.download_pdf', 'Download list as PDF')}
+              </button>
+              <a
+                className="qcart-btn qcart-btn--secondary qcart-btn--link"
+                href={whatsAppQuoteUrl({
+                  items: quoteItems,
+                  notes: quoteNotes,
+                  lang: isRTL ? 'ar' : 'en',
+                  phone: salesPhone,
+                })}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('quoteList.whatsapp', 'Send on WhatsApp')}
+              </a>
+            </div>
           </footer>
         )}
       </div>

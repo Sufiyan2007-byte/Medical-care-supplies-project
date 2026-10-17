@@ -8,6 +8,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const QuoteCartContext = createContext();
 
 const STORAGE_KEY = 'medportal_quote_cart';
+const NOTES_KEY = 'medportal_quote_notes';
+const EMPTY_NOTES = { facility: '', city: '', deadline: '' };
 
 export function useQuoteCart() {
   return useContext(QuoteCartContext);
@@ -24,6 +26,14 @@ export function QuoteCartProvider({ children }) {
   });
 
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const [quoteNotes, setQuoteNotes] = useState(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem(NOTES_KEY) || '{}');
+      return { ...EMPTY_NOTES, ...stored };
+    } catch {
+      return { ...EMPTY_NOTES };
+    }
+  });
 
   useEffect(() => {
     try {
@@ -33,18 +43,31 @@ export function QuoteCartProvider({ children }) {
     }
   }, [quoteItems]);
 
+  useEffect(() => {
+    try {
+      localStorage.setItem(NOTES_KEY, JSON.stringify(quoteNotes));
+    } catch {
+      /* ignore storage errors */
+    }
+  }, [quoteNotes]);
+
   /** product: { slug, name, image, mainCategory, specialty } */
-  const addToQuote = (product) => {
+  const addToQuote = (product, quantity = 1) => {
+    const amount = Math.max(1, Math.min(999, Number(quantity) || 1));
     setQuoteItems((prev) => {
       const existing = prev.find((item) => item.slug === product.slug);
       if (existing) {
         return prev.map((item) =>
-          item.slug === product.slug ? { ...item, quantity: item.quantity + 1 } : item
+          item.slug === product.slug ? { ...item, quantity: item.quantity + amount } : item
         );
       }
-      return [...prev, { ...product, quantity: 1 }];
+      return [...prev, { ...product, quantity: amount }];
     });
     setIsQuoteOpen(true);
+  };
+
+  const updateQuoteNotes = (patch) => {
+    setQuoteNotes((prev) => ({ ...prev, ...patch }));
   };
 
   const removeFromQuote = (slug) => {
@@ -74,6 +97,8 @@ export function QuoteCartProvider({ children }) {
         isQuoteOpen,
         setIsQuoteOpen,
         addToQuote,
+        quoteNotes,
+        updateQuoteNotes,
         removeFromQuote,
         updateQuoteQuantity,
         clearQuote,

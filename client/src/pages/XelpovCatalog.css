@@ -363,6 +363,56 @@
 .xcat-card-body--minimal .xcat-card-name {
   text-align: center;
 }
+.xcat-quote-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin-top: 0.15rem;
+}
+.xcat-quote-qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border, #ebebeb);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--color-surface, #fff);
+}
+.xcat-quote-qty button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.xcat-quote-qty button:hover { background: color-mix(in srgb, var(--c-accent, #2196F3) 12%, transparent); }
+.xcat-quote-qty span {
+  min-width: 1.4rem;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.xcat-quote-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.38rem 0.75rem;
+  background: var(--c-accent, #2196F3);
+  color: var(--on-accent, #fff);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.xcat-quote-btn:hover { filter: brightness(1.06); }
+.xcat-quote-btn:focus-visible,
+.xcat-quote-qty button:focus-visible {
+  outline: 2px solid var(--c-accent, #2196F3);
+  outline-offset: 2px;
+}
 .xcat-card-name {
   font-family: 'Merriweather', 'Tajawal', serif;
   font-size: 1rem;

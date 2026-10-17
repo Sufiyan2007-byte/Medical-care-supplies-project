@@ -231,6 +231,37 @@
   color: var(--c-accent-text);
 }
 .qcart-btn--secondary:hover { background: rgba(var(--accent-rgb), 0.1); }
+.qcart-btn--link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.qcart-extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.qcart-extra .qcart-btn { font-size: 0.82rem; padding: 0.7rem 0.5rem; }
+.qcart-notes { display: flex; flex-direction: column; gap: 0.55rem; }
+.qcart-notes label { display: flex; flex-direction: column; gap: 0.28rem; font-size: 0.78rem; font-weight: 600; color: var(--c-silver-2); }
+.qcart-notes input {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border-radius: 9px;
+  border: 1px solid var(--c-border-strong);
+  background: var(--c-input);
+  color: var(--c-strong);
+}
+.qcart-notes input:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.18);
+}
+@media (max-width: 420px) {
+  .qcart-extra { grid-template-columns: 1fr; }
+}
 
 /* ── Form ── */
 .qcart-form { display: flex; flex-direction: column; gap: 0.9rem; }

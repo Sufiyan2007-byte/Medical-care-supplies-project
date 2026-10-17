@@ -347,5 +347,19 @@
     "quote_note": "Some items are priced on request. Our team will confirm the final price with you.",
     "continue": "Continue shopping",
     "need_help": "Need help?"
+  },
+  "quoteList": {
+    "add": "Add to quote",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "request": "Request price quote",
+    "download_pdf": "Download list as PDF",
+    "whatsapp": "Send on WhatsApp",
+    "facility": "Hospital / clinic name",
+    "city": "City",
+    "deadline": "Deadline",
+    "notes_hint": "Saved in this browser and included with the quote request.",
+    "pdf_blocked": "Allow pop-ups to download the quote list.",
+    "ref": "Ref"
   }
 }
