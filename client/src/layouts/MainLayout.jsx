@@ -276,6 +276,7 @@ function MainLayout() {
   const { wishlistCount, setIsWishlistOpen } = useWishlist();
 
   const [mobileOpen, setMobileOpen]     = useState(false);   // mobile drawer open
+  const [scrolled, setScrolled]         = useState(false);
   const [openMenu, setOpenMenu]         = useState('');       // which mobile submenu is open
   const [megaOpen, setMegaOpen]         = useState('');       // key of the desktop mega menu that's open (if any)
   const [accountOpen, setAccountOpen]   = useState(false);    // desktop account dropdown
@@ -338,6 +339,13 @@ function MainLayout() {
     closeAll();
   };
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   // Press "/" anywhere to jump to the search box
   useEffect(() => {
     const onKey = (e) => {
@@ -370,9 +378,12 @@ function MainLayout() {
     <div className="site-wrapper">
 
       {/* ══ MOBILE TOP BAR ═════════════════════════════════════════════════ */}
-      <header className="mobile-topbar">
+      <header className={`mobile-topbar${scrolled ? ' is-scrolled' : ''}`}>
         <Link to="/" className="mobile-topbar-logo" onClick={closeAll}>
-          <img src={logoSrc()} alt="Logo" />
+          <span className="brand-logo-frame">
+            <img src={logoSrc()} alt="Logo" className="brand-logo" />
+            <span className="brand-logo-shimmer" aria-hidden="true" />
+          </span>
         </Link>
 
         <div className="mobile-topbar-actions">
@@ -517,9 +528,12 @@ function MainLayout() {
 
       {/* ══ DESKTOP TOP BAR (logo | search | actions) ═════════════════════ */}
       <div className="site-body">
-        <header className="site-topbar">
+        <header className={`site-topbar${scrolled ? ' is-scrolled' : ''}`}>
           <Link to="/" className="site-topbar-brand" onClick={closeAll}>
-            <img src={logoSrc()} alt="Medical Care Supplies" className="site-topbar-logo" />
+            <span className="brand-logo-frame">
+              <img src={logoSrc()} alt="Medical Care Supplies" className="site-topbar-logo brand-logo" />
+              <span className="brand-logo-shimmer" aria-hidden="true" />
+            </span>
             <span className="site-topbar-name">Medical Care Supplies</span>
           </Link>
 

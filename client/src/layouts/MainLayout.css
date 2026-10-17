@@ -1129,6 +1129,71 @@
   text-shadow: 0 0 16px rgba(var(--accent-text-rgb), 0.6);
 }
 
+/* Logo motion: reveal once, shimmer on hover, shrink after scroll.
+   The artwork itself is unchanged — only the existing image moves. */
+.site-topbar {
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-logo-frame {
+  position: relative;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.brand-logo {
+  animation: logoReveal 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.site-topbar-logo {
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s;
+}
+
+.brand-logo-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 32%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+  pointer-events: none;
+}
+
+.site-topbar-brand:hover .brand-logo-shimmer,
+.mobile-topbar-logo:hover .brand-logo-shimmer {
+  animation: logoShimmer 0.9s ease;
+}
+
+.site-topbar.is-scrolled { height: 66px; }
+.site-topbar.is-scrolled .site-topbar-logo { height: 32px; }
+
+.mobile-topbar-logo img {
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-topbar.is-scrolled .mobile-topbar-logo img { height: 26px; }
+
+@keyframes logoReveal {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes logoShimmer {
+  from { transform: translateX(-130%); }
+  to { transform: translateX(130%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo { animation: none; }
+  .brand-logo-shimmer { display: none; }
+  .site-topbar,
+  .site-topbar-logo,
+  .mobile-topbar-logo img { transition: none; }
+}
+
 
 /* ═════════════════════════════════════════════════════════════════════════
    Top bar: logo always at the top-left (also in Arabic / RTL)
