@@ -40,6 +40,7 @@ import StaffMessages from './staff/pages/Messages';
 import StaffUsers from './staff/pages/Users';
 import StaffSystem from './staff/pages/System';
 import { ToastProvider } from './context/ToastContext';
+import GlassSidebarDemo from './pages/GlassSidebarDemo';
 
 function App() {
   const { i18n } = useTranslation();
@@ -58,6 +59,7 @@ function App() {
         <ToastProvider>
         <BrowserRouter>
           <Routes>
+            <Route path="/glass-sidebar" element={<GlassSidebarDemo />} />
             {/* ── Public site routes ──────────────────────────── */}
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Home />} />
