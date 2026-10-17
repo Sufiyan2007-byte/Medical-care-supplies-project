@@ -539,6 +539,7 @@
   font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  color: #102433;
   transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
 .xcat-page-btn:hover:not(:disabled) {

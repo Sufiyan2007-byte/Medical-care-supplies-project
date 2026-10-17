@@ -6,17 +6,17 @@ function prefersReducedMotion() {
 }
 
 /**
- * Types each phrase, pauses, deletes it, then types the next.
- * Screen readers hear the full list once — the animated line is hidden from them.
+ * Shows each phrase in full, then fades to the next.
+ * Phrases are never deleted character by character — that breaks Arabic.
+ * Screen readers hear the full list once; the animated line is hidden from them.
  */
-export default function TypingText({ phrases = [], typeMs = 70, deleteMs = 35, pauseMs = 2000 }) {
+export default function TypingText({ phrases = [], pauseMs = 2600 }) {
   const list = Array.isArray(phrases) ? phrases.filter(Boolean) : [];
   const phraseKey = list.join('\u0001');
   const listRef = useRef(list);
   listRef.current = list;
   const [index, setIndex] = useState(0);
-  const [text, setText] = useState('');
-  const [deleting, setDeleting] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
@@ -25,40 +25,34 @@ export default function TypingText({ phrases = [], typeMs = 70, deleteMs = 35, p
 
   useEffect(() => {
     setIndex(0);
-    setText('');
-    setDeleting(false);
+    setVisible(true);
   }, [phraseKey]);
 
   useEffect(() => {
     const currentList = listRef.current;
-    if (!currentList.length || reduced) return undefined;
-    const current = currentList[index % currentList.length];
-    let timer;
-
-    if (!deleting && text === current) {
-      timer = setTimeout(() => setDeleting(true), pauseMs);
-    } else if (deleting && text === '') {
-      setDeleting(false);
-      setIndex((i) => (i + 1) % currentList.length);
-    } else {
-      const next = deleting
-        ? current.slice(0, Math.max(0, text.length - 1))
-        : current.slice(0, text.length + 1);
-      timer = setTimeout(() => setText(next), deleting ? deleteMs : typeMs);
-    }
-
+    if (reduced || currentList.length < 2) return undefined;
+    const timer = setTimeout(() => setVisible(false), pauseMs);
     return () => clearTimeout(timer);
-  }, [text, deleting, index, phraseKey, typeMs, deleteMs, pauseMs, reduced]);
+  }, [index, phraseKey, pauseMs, reduced]);
+
+  useEffect(() => {
+    if (visible || reduced) return undefined;
+    const timer = setTimeout(() => {
+      const currentList = listRef.current;
+      setIndex((i) => (i + 1) % currentList.length);
+      setVisible(true);
+    }, 280);
+    return () => clearTimeout(timer);
+  }, [visible, reduced]);
 
   if (!list.length) return null;
 
-  const shown = reduced ? list[0] : text;
+  const shown = reduced ? list[0] : list[index % list.length];
 
   return (
     <p className="typing-text">
       <span className="typing-text__line" aria-hidden="true">
-        <span className="typing-text__value">{shown}</span>
-        <span className="typing-text__caret" />
+        <span className={`typing-text__value${visible ? '' : ' is-out'}`}>{shown}</span>
       </span>
       <span className="typing-text__sr">{list.join('. ')}</span>
     </p>

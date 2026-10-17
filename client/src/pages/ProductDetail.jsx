@@ -52,15 +52,29 @@ function ProductDetail() {
       setError('');
       setImgError(false);
       try {
-        const res = await fetch(`${BASE_URL}/api/products/${id}`);
-        if (!res.ok) {
-          if (res.status === 404) throw new Error('Product not found');
-          throw new Error('Failed to load product details');
+        let product = null;
+        try {
+          const res = await fetch(`${BASE_URL}/api/products/${id}`);
+          if (res.ok) {
+            const data = await res.json();
+            product = data.product;
+          }
+        } catch {
+          product = null;
         }
-        const data = await res.json();
-        setProduct(data.product);
-        if (data.product?.variants?.length > 0) {
-          setSelectedVariant(data.product.variants[0]);
+        if (!product && category === 'medical-consumables') {
+          const res = await fetch('/consumables.json');
+          if (res.ok) {
+            const rows = await res.json();
+            product = (Array.isArray(rows) ? rows : []).find(
+              (item) => String(item.id) === String(id) || String(item.sku) === String(id),
+            ) || null;
+          }
+        }
+        if (!product) throw new Error('Product not found');
+        setProduct(product);
+        if (product.variants?.length > 0) {
+          setSelectedVariant(product.variants[0]);
         }
       } catch (err) {
         setError(err.message);
@@ -69,7 +83,7 @@ function ProductDetail() {
       }
     };
     fetchProduct();
-  }, [id]);
+  }, [id, category]);
 
   // Reset the quantity stepper to 1 whenever we land on a new product,
   // and never let it exceed a tracked stock count.

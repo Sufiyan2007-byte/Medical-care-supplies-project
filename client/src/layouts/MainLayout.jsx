@@ -346,17 +346,14 @@ function MainLayout() {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
-        entry.target.addEventListener('animationend', () => {
-          entry.target.classList.add('reveal-done');
-        }, { once: true });
+        entry.target.dataset.seen = '1';
         io.unobserve(entry.target);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
 
     const scan = () => {
-      document.querySelectorAll('.reveal:not(.is-in)').forEach((el) => {
-        if (reduced) el.classList.add('is-in', 'reveal-done');
+      document.querySelectorAll('.reveal:not([data-seen])').forEach((el) => {
+        if (reduced) el.dataset.seen = '1';
         else io.observe(el);
       });
     };
@@ -680,8 +677,9 @@ function MainLayout() {
                     {(user?.name || user?.email || '?').trim().charAt(0).toUpperCase()}
                   </span>
                 ) : (
-                  <span className="site-topbar-account-avatar site-topbar-account-avatar--guest" aria-hidden="true">
+                  <span className="site-topbar-signin">
                     {Icon.user}
+                    <span>{t('nav.sign_in')}</span>
                   </span>
                 )}
               </button>

@@ -1,15 +1,11 @@
-/* Subtle entrance for sections and cards. Hover lifts stay on the cards themselves. */
-.reveal {
+/* Subtle entrance. data-seen is set once in view and is not part of the
+   React className, so a later render cannot hide the section again. */
+.reveal:not([data-seen]) {
   opacity: 0;
 }
 
-.reveal.is-in {
+.reveal[data-seen] {
   animation: revealUp 0.55s ease var(--reveal-delay, 0ms) both;
-}
-
-.reveal.reveal-done {
-  animation: none;
-  opacity: 1;
 }
 
 @keyframes revealUp {
@@ -19,8 +15,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .reveal.is-in,
-  .reveal.reveal-done {
+  .reveal:not([data-seen]),
+  .reveal[data-seen] {
     animation: none;
     opacity: 1;
     transform: none;

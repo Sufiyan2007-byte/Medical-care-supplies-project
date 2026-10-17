@@ -141,6 +141,13 @@ function isReusableInstrumentProduct(inst) {
 const PAGE_SIZE = 9;
 const CONSUMABLES_FETCH_LIMIT = 100;
 
+async function loadConsumablesCatalog() {
+  const res = await fetch('/consumables.json');
+  if (!res.ok) throw new Error('Failed to load consumables');
+  const rows = await res.json();
+  return Array.isArray(rows) ? rows : [];
+}
+
 function ProductListing() {
   const { category: slug } = useParams();
   const { t, i18n } = useTranslation();
@@ -172,6 +179,29 @@ function ProductListing() {
     setLoading(true);
     setError('');
     try {
+      if (isConsumablesSlug) {
+        let rows = [];
+        try {
+          const params = new URLSearchParams({
+            page: '1',
+            limit: String(CONSUMABLES_FETCH_LIMIT),
+            category: slug,
+          });
+          const res = await fetch(`${BASE_URL}/api/products?${params}`);
+          if (res.ok) {
+            const data = await res.json();
+            rows = data.products || [];
+          }
+        } catch {
+          rows = [];
+        }
+        if (!rows.length) rows = await loadConsumablesCatalog();
+        setProducts(rows);
+        setTotal(rows.length);
+        setTotalPages(Math.ceil(rows.length / PAGE_SIZE) || 1);
+        return;
+      }
+
       const isSets = slug === 'surgical-sets';
       const endpoint = isSets ? '/api/sets' : '/api/products';
       const params = new URLSearchParams({
@@ -211,18 +241,7 @@ function ProductListing() {
 
           const isInstrument = isReusableInstrumentProduct(inst);
 
-          if (slug === 'medical-consumables') {
-            // Reusable surgical tools must never be treated as consumables
-            if (isInstrument) return false;
-
-            const nameAndCats = `${name} ${catList}`;
-            return (
-              nameAndCats.includes('single use') ||
-              nameAndCats.includes('single-use') ||
-              (nameAndCats.includes('disposable') && !nameAndCats.includes('reusable')) ||
-              (nameAndCats.includes('consumable') && !nameAndCats.includes('reusable'))
-            );
-          }
+          if (slug === 'medical-consumables') return false;
 
           if (slug === 'surgical-instruments') {
             if (isInstrument) return true;
@@ -407,7 +426,7 @@ function ProductListing() {
               <Link
                 key={product.id}
                 to={`/products/${slug}/${product.id}`}
-                className={`product-card reveal ${isSets ? 'set-card' : ''}${isOutOfStock ? ' product-card--oos' : ''}`}
+                className={`product-card ${isSets ? 'set-card' : ''}${isOutOfStock ? ' product-card--oos' : ''}`}
                 style={{ '--reveal-delay': `${(index % 6) * 40}ms` }}
               >
                 <div className="product-card-img-wrap">
