@@ -184,7 +184,7 @@ function XelpovCatalog() {
 
       {/* ── Cross-link: most common instrument types in this specialty ── */}
       {topCategoriesInSpecialty.length > 1 && (
-        <div className="xcat-crosslinks">
+        <div className="xcat-crosslinks" data-tip="categories" data-tip-scroll="categories">
           <span className="xcat-crosslinks-label">
             {isAr ? 'الأنواع الأكثر شيوعاً هنا:' : 'Popular in this specialty:'}
           </span>
@@ -225,7 +225,7 @@ function XelpovCatalog() {
 
           {/* Category filter */}
           {availableCategories.length > 0 && (
-            <div className={`xcat-filter-group ${categoriesExpanded ? 'is-expanded' : ''}`}>
+            <div className={`xcat-filter-group ${categoriesExpanded ? 'is-expanded' : ''}`} data-tip="filters" data-tip-scroll="filters">
               <button
                 type="button"
                 className="xcat-filter-toggle-btn"
@@ -290,6 +290,8 @@ function XelpovCatalog() {
                     to={`/catalogue/${specialty || 'all'}/${product.slug}`}
                     className="xcat-card"
                     style={{ '--accent': accentColor }}
+                    data-tip="product"
+                    data-tip-scroll="product"
                   >
                     <div className="xcat-card-img-wrap">
                       {product.image && !imgErrors[product.slug] ? (

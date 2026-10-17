@@ -298,7 +298,7 @@ function XelpovSpecialties() {
         </p>
 
         <div className="xsp-toolbar">
-          <div className="xsp-search">
+          <div className="xsp-search" data-tip="search">
             <IconSearch />
             <input
               type="text"
@@ -329,7 +329,7 @@ function XelpovSpecialties() {
       {visibleSpecialties.length === 0 ? (
         <p className="xsp-empty">{isAr ? 'لا توجد تخصصات مطابقة.' : 'No specialties match your search.'}</p>
       ) : (
-        <div className="xsp-grid">
+        <div className="xsp-grid" data-tip="categories" data-tip-scroll="categories">
           {visibleSpecialties.map(sp => (
             <Link
               key={sp.slug}

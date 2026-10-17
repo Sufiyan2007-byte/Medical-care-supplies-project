@@ -163,7 +163,7 @@ function Home() {
       </section>
 
       {/* ── 3 category cards ──────────────────────────────────── */}
-      <section className="home-categories">
+      <section className="home-categories" id="home-categories" data-tip="categories" data-tip-scroll="categories">
         <div className="home-section-header">
           <h2 className="home-section-title">{t('products.range_title')}</h2>
           <p className="home-section-sub">{t('products.range_subtitle')}</p>

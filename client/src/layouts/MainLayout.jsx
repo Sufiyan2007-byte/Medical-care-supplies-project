@@ -9,6 +9,7 @@ import { useWishlist } from '../context/WishlistContext';
 import CartPanel from '../components/CartPanel';
 import QuoteCartPanel from '../components/QuoteCartPanel';
 import WishlistPanel from '../components/WishlistPanel';
+import MedBot from '../components/MedBot';
 import './MainLayout.css';
 import { logoSrc } from '../utils/themes';
 
@@ -391,6 +392,8 @@ function MainLayout() {
             className="mobile-icon-btn"
             onClick={() => setIsCartOpen(true)}
             aria-label="Open cart"
+            data-tip="cart"
+            data-medbot="cart"
           >
             <span className="nav-icon--cart" style={{ position: 'relative', display: 'inline-flex' }}>
               {Icon.cart}
@@ -402,6 +405,8 @@ function MainLayout() {
             className="mobile-icon-btn"
             onClick={() => setIsQuoteOpen(true)}
             aria-label="Open quote list"
+            data-tip="quote"
+            data-medbot="quote"
           >
             <span className="nav-icon--cart" style={{ position: 'relative', display: 'inline-flex' }}>
               {Icon.quote}
@@ -413,6 +418,8 @@ function MainLayout() {
             className="mobile-icon-btn"
             onClick={() => setIsWishlistOpen(true)}
             aria-label="Open saved items"
+            data-tip="wishlist"
+            data-medbot="wishlist"
           >
             <span className="nav-icon--cart" style={{ position: 'relative', display: 'inline-flex' }}>
               {Icon.heart}
@@ -420,7 +427,7 @@ function MainLayout() {
             </span>
           </button>
 
-          <button className="mobile-icon-btn" onClick={toggleLanguage} aria-label="Switch language">
+          <button className="mobile-icon-btn" onClick={toggleLanguage} aria-label="Switch language" data-tip="language">
             {i18n.language.startsWith('en') ? 'ع' : 'EN'}
           </button>
 
@@ -537,7 +544,7 @@ function MainLayout() {
             <span className="site-topbar-name">Medical Care Supplies</span>
           </Link>
 
-          <form className="site-topbar-search" role="search" onSubmit={handleSearch}>
+          <form className="site-topbar-search" id="site-search" role="search" onSubmit={handleSearch} data-tip="search">
             <span className="site-topbar-search-icon" aria-hidden="true">{Icon.search}</span>
             <input
               ref={searchRef}
@@ -557,6 +564,7 @@ function MainLayout() {
               onClick={toggleLanguage}
               aria-label="Switch language"
               title={i18n.language.startsWith('en') ? 'العربية' : 'English'}
+              data-tip="language"
             >
               {Icon.lang}
               <span className="site-topbar-lang-text">
@@ -576,7 +584,7 @@ function MainLayout() {
               </span>
             </button>
 
-            <Link to="/contact" className="site-topbar-contact">
+            <Link to="/contact" className="site-topbar-contact" data-tip="quote">
               {isRTL ? 'اطلب عرض سعر' : 'Request a quote'}
             </Link>
 
@@ -584,6 +592,8 @@ function MainLayout() {
               type="button"
               className="site-topbar-cart"
               onClick={() => setIsQuoteOpen(true)}
+              data-tip="quote"
+              data-medbot="quote"
               aria-label={isRTL ? 'قائمة عروض الأسعار' : 'Quote list'}
               title={isRTL ? 'قائمة عروض الأسعار' : 'Quote list'}
             >
@@ -595,6 +605,8 @@ function MainLayout() {
               type="button"
               className="site-topbar-cart"
               onClick={() => setIsWishlistOpen(true)}
+              data-tip="wishlist"
+              data-medbot="wishlist"
               aria-label={isRTL ? 'المفضلة' : 'Saved items'}
               title={isRTL ? 'المفضلة' : 'Saved items'}
             >
@@ -606,6 +618,8 @@ function MainLayout() {
               type="button"
               className="site-topbar-cart"
               onClick={() => setIsCartOpen(true)}
+              data-tip="cart"
+              data-medbot="cart"
               aria-label={t('cart.title', 'Cart')}
             >
               {Icon.cart}
@@ -675,7 +689,7 @@ function MainLayout() {
         </header>
 
         {/* ══ MAIN NAV BAR (Home / About / Shop by Instruments ▾ / Shop by Procedure ▾ / Contact) ═══════════ */}
-        <nav className="site-navbar" aria-label="Main">
+        <nav className="site-navbar" aria-label="Main" data-tip="categories">
           <div className="site-navbar-inner">
             {NAV_ITEMS.map(item => {
               const hasChildren = item.children?.length > 0;
@@ -771,7 +785,7 @@ function MainLayout() {
               <Link to="/products">{t('nav.products')}</Link>
               <Link to="/contact">{t('nav.contact')}</Link>
             </div>
-            <div className="footer-contact">
+            <div className="footer-contact" id="site-contact">
               <div className="footer-socials">
                 <a href={`mailto:${companyInfo?.email || 'Info@medicaresupplies.net'}`} className="social-icon email-link">
                   {companyInfo?.email || 'Info@medicaresupplies.net'}
@@ -805,6 +819,7 @@ function MainLayout() {
       <CartPanel />
       <QuoteCartPanel />
       <WishlistPanel />
+      <MedBot company={companyInfo} />
     </div>
   );
 }
