@@ -30,10 +30,10 @@ export const THEMES = [
   { id: 'brand-light', name: 'Brand Light' },
 ];
 
-export const DEFAULT_THEME = 'brand-night';
+export const DEFAULT_THEME = 'brand-light';
 export const LIGHT_THEME = 'brand-light';
 export const DARK_THEME = 'brand-night';
-const KEY = 'medportal_theme_v3';
+const KEY = 'medportal_theme_v4';
 const BRAND_THEMES = new Set([DARK_THEME, LIGHT_THEME]);
 
 export function isLightTheme(id) {

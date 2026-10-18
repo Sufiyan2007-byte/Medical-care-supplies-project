@@ -815,7 +815,8 @@
   --c-ink: #122028;
   --c-ink-2: #24343c;
   --c-ink-3: #4d635c;
-  --ink-gradient: linear-gradient(180deg, #f7fbfa 0%, #e7f2ee 100%);
+  --ink-gradient: linear-gradient(135deg, #102018 0%, #0f7a48 100%);
+  --accent: #0f7a48;
   --hero-gradient: radial-gradient(900px 480px at 70% 20%, rgba(31, 168, 106, 0.16), transparent 60%), linear-gradient(180deg, #f7fbfa 0%, #e5f3ee 100%);
   --hero-fg: #102018;
   --card-gradient: linear-gradient(135deg, #1fa86a 0%, #178a56 100%);

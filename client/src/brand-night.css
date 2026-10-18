@@ -561,10 +561,6 @@
   box-shadow: 0 1px 0 rgba(18, 32, 40, 0.06);
 }
 
-:root[data-theme="brand-light"] .site-navbar-link,
-:root[data-theme="brand-light"] .site-navbar-link.active,
-:root[data-theme="brand-light"] .site-navbar-link:active,
-:root[data-theme="brand-light"] .site-navbar-link--mega.open,
 :root[data-theme="brand-light"] .site-topbar-lang-btn,
 :root[data-theme="brand-light"] .site-topbar-cart,
 :root[data-theme="brand-light"] .site-topbar-icon-btn,
@@ -574,9 +570,32 @@
   border-color: rgba(18, 32, 40, 0.14);
 }
 
+:root[data-theme="brand-light"] .site-navbar-link,
 :root[data-theme="brand-light"] .site-navbar-link:hover,
+:root[data-theme="brand-light"] .site-navbar-link:active,
+:root[data-theme="brand-light"] .site-navbar-link--mega.open {
+  color: #1c3330;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+:root[data-theme="brand-light"] .site-navbar-link:hover {
+  color: #0c1a16;
+}
+
 :root[data-theme="brand-light"] .site-navbar-link.is-current,
-:root[data-theme="brand-light"] .site-navbar-link.active,
+:root[data-theme="brand-light"] .site-navbar-link.active {
+  color: #0c1a16;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #178a56;
+  box-shadow: none;
+}
+
 :root[data-theme="brand-light"] .mega-menu-link:hover {
   color: #0c1a16;
 }
@@ -591,6 +610,15 @@
   background: #e7f1ee;
   border-top-color: rgba(18, 32, 40, 0.08);
   color: #1c3330;
+}
+
+:root[data-theme="brand-light"] .footer-bottom,
+:root[data-theme="brand-light"] .footer-tagline,
+:root[data-theme="brand-light"] .footer-nav a,
+:root[data-theme="brand-light"] .email-link,
+:root[data-theme="brand-light"] .phone-link,
+:root[data-theme="brand-light"] .social-icon {
+  color: #24343c;
 }
 
 :root[data-theme="brand-light"] .mega-menu-grid {
@@ -649,6 +677,11 @@
 }
 
 :root[data-theme="brand-light"] .bn-card-icon { color: rgba(18, 80, 60, 0.45); }
+
+:root[data-theme="brand-light"] .bn-browse button,
+:root[data-theme="brand-light"] .bn-card-count {
+  color: #0f7a48;
+}
 
 :root[data-theme="brand-light"] .xcat-card,
 :root[data-theme="brand-light"] .xcat-card-name,

@@ -706,5 +706,66 @@
   .contact-hero-decor { display: none; }
 }
 
+/* Light theme wins over the OS dark-mode sheet, which otherwise
+   paints these cards from white into a dark wash and hides the text. */
+:root[data-theme="brand-light"] .channel-card,
+:root[data-theme="brand-light"] .contact-form-card,
+:root[data-theme="brand-light"] .sidebar-box,
+:root[data-theme="brand-light"] .faq-item {
+  background: #ffffff;
+  border-color: rgba(18, 32, 40, 0.12);
+  box-shadow: 0 8px 24px rgba(18, 32, 40, 0.06);
+}
+
+:root[data-theme="brand-light"] .sidebar-box--urgent {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 70%);
+  border-color: rgba(31, 168, 106, 0.28);
+}
+
+:root[data-theme="brand-light"] .sidebar-box--sfda {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 70%);
+  border-color: rgba(22, 163, 74, 0.28);
+}
+
+:root[data-theme="brand-light"] .channel-body h3,
+:root[data-theme="brand-light"] .form-card-header h2,
+:root[data-theme="brand-light"] .box-icon-head h4,
+:root[data-theme="brand-light"] .faq-header h2,
+:root[data-theme="brand-light"] .faq-question h3,
+:root[data-theme="brand-light"] .form-group label {
+  color: #122028;
+}
+
+:root[data-theme="brand-light"] .channel-body p,
+:root[data-theme="brand-light"] .channel-body a,
+:root[data-theme="brand-light"] .form-card-header p,
+:root[data-theme="brand-light"] .sidebar-box p,
+:root[data-theme="brand-light"] .faq-header p,
+:root[data-theme="brand-light"] .faq-answer p {
+  color: #24343c;
+}
+
+:root[data-theme="brand-light"] .box-link {
+  color: #0f7a48;
+}
+
+:root[data-theme="brand-light"] .form-group input,
+:root[data-theme="brand-light"] .form-group select,
+:root[data-theme="brand-light"] .form-group textarea {
+  background: #ffffff;
+  border-color: rgba(18, 32, 40, 0.16);
+  color: #122028;
+}
+
+:root[data-theme="brand-light"] .faq-item--open {
+  background: #f3fbf7;
+  border-color: #1fa86a;
+}
+
+:root[data-theme="brand-light"] .faq-toggle-icon {
+  background: #e7f6ef;
+  color: #0f7a48;
+}
+
 
 
