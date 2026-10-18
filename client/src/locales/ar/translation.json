@@ -8,7 +8,9 @@
     "contact": "اتصل بنا",
     "admin_dashboard": "لوحة الإدارة",
     "logout": "تسجيل الخروج",
-    "sign_in": "تسجيل الدخول"
+    "sign_in": "تسجيل الدخول",
+    "theme_light": "التبديل إلى الوضع الفاتح",
+    "theme_dark": "التبديل إلى الوضع الداكن"
   },
   "footer": {
     "rights_reserved": "© {{year}} MedPortal. جميع الحقوق محفوظة.",

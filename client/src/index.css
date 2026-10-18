@@ -785,6 +785,49 @@
   --bn-green: #1fa86a;
 }
 
+/* Theme "brand-light" — same green brand, light surfaces. */
+:root[data-theme="brand-light"] {
+  color-scheme: light;
+  --logo-filter: none;
+  --c-deep: #e7f0ee;
+  --c-bg: #f4f8f7;
+  --c-side: #ffffff;
+  --c-surface: #ffffff;
+  --c-card: #ffffff;
+  --c-input: #f7fbfa;
+  --c-mid: #e3eeeb;
+  --c-muted: #4d635c;
+  --c-text: #122028;
+  --c-silver: #24343c;
+  --c-accent: #1fa86a;
+  --c-accent-2: #178a56;
+  --c-accent-text: #0f7a48;
+  --on-accent: #ffffff;
+  --c-silver-2: #3d554c;
+  --c-placeholder: #7b948c;
+  --c-faint: #6a847c;
+  --c-border-strong: #d5e4df;
+  --c-hover: #e7f6ef;
+  --c-hero-end: #e8f3ef;
+  --c-strong: #0c1a16;
+  --fg-rgb: 18, 32, 40;
+  --ft-rgb: 18, 32, 40;
+  --c-ink: #122028;
+  --c-ink-2: #24343c;
+  --c-ink-3: #4d635c;
+  --ink-gradient: linear-gradient(180deg, #f7fbfa 0%, #e7f2ee 100%);
+  --hero-gradient: radial-gradient(900px 480px at 70% 20%, rgba(31, 168, 106, 0.16), transparent 60%), linear-gradient(180deg, #f7fbfa 0%, #e5f3ee 100%);
+  --hero-fg: #102018;
+  --card-gradient: linear-gradient(135deg, #1fa86a 0%, #178a56 100%);
+  --accent-rgb: 31, 168, 106;
+  --accent-text-rgb: 15, 122, 72;
+  --dark-rgb: 244, 248, 247;
+  --black-rgb: 255, 255, 255;
+  --primary-border: rgba(18, 32, 40, 0.12);
+  --bn-cyan: #0f8f72;
+  --bn-green: #1fa86a;
+}
+
 :root {
   font-family: 'Inter', 'Tajawal', system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -11,7 +11,7 @@ import QuoteCartPanel from '../components/QuoteCartPanel';
 import WishlistPanel from '../components/WishlistPanel';
 import MedBot from '../components/MedBot';
 import './MainLayout.css';
-import { logoSrc } from '../utils/themes';
+import { isLightTheme, logoSrc, toggleColorMode } from '../utils/themes';
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
@@ -114,6 +114,17 @@ const Icon = {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="11" cy="11" r="8"/>
       <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+  ),
+  sun: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+    </svg>
+  ),
+  moon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
     </svg>
   ),
   menu: (
@@ -393,6 +404,10 @@ function MainLayout() {
     document.documentElement.lang = newLang;
   };
 
+  const [lightMode, setLightMode] = useState(() => isLightTheme());
+  const toggleTheme = () => setLightMode(isLightTheme(toggleColorMode()));
+  const themeLabel = lightMode ? t('nav.theme_dark') : t('nav.theme_light');
+
   useEffect(() => {
     document.documentElement.dir = i18n.language.startsWith('ar') ? 'rtl' : 'ltr';
     document.documentElement.lang = i18n.language;
@@ -465,6 +480,16 @@ function MainLayout() {
 
           <button className="mobile-icon-btn" onClick={toggleLanguage} aria-label="Switch language" data-tip="language">
             {i18n.language.startsWith('en') ? 'ع' : 'EN'}
+          </button>
+
+          <button
+            type="button"
+            className="mobile-icon-btn"
+            onClick={toggleTheme}
+            aria-label={themeLabel}
+            title={themeLabel}
+          >
+            {lightMode ? Icon.moon : Icon.sun}
           </button>
 
           <button
@@ -595,6 +620,16 @@ function MainLayout() {
           </form>
 
           <div className="site-topbar-actions">
+            <button
+              type="button"
+              className="site-topbar-icon-btn"
+              onClick={toggleTheme}
+              aria-label={themeLabel}
+              title={themeLabel}
+            >
+              {lightMode ? Icon.moon : Icon.sun}
+            </button>
+
             <button
               className="site-topbar-icon-btn site-topbar-lang-btn"
               onClick={toggleLanguage}

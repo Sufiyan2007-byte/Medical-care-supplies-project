@@ -8,7 +8,9 @@
     "contact": "Contact",
     "admin_dashboard": "Admin Dashboard",
     "logout": "Logout",
-    "sign_in": "Sign in"
+    "sign_in": "Sign in",
+    "theme_light": "Switch to light mode",
+    "theme_dark": "Switch to dark mode"
   },
   "footer": {
     "rights_reserved": "© {{year}} MedPortal. All rights reserved.",

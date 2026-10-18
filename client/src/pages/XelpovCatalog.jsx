@@ -207,7 +207,7 @@ function XelpovCatalog() {
   const specialtyLabel = meta
     ? (isAr ? meta.labelAr : meta.label)
     : t('products.title_products');
-  const brandNight = document.documentElement.getAttribute('data-theme') === 'brand-night';
+  const brandNight = document.documentElement.getAttribute('data-brand') === '1';
   const heroLabel = meta ? specialtyLabel : (isAr ? 'الجراحة' : 'Surgical');
 
   // Use the site's live theme accent everywhere instead of a different hardcoded

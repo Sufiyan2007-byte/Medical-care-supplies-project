@@ -838,7 +838,7 @@
 
 .site-topbar-signin svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-:root[data-theme="brand-night"] .site-topbar-signin {
+:root[data-brand="1"] .site-topbar-signin {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.2);
   color: #f4fbff;

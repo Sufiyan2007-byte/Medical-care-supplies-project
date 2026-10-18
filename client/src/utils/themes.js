@@ -27,16 +27,33 @@ export const THEMES = [
   { id: 'stone-slate', name: 'Stone & Slate Blue (light)' },
   { id: 'gold-charcoal', name: 'Soft Gold & Charcoal (light)' },
   { id: 'brand-night', name: 'Brand Night' },
+  { id: 'brand-light', name: 'Brand Light' },
 ];
 
 export const DEFAULT_THEME = 'brand-night';
+export const LIGHT_THEME = 'brand-light';
+export const DARK_THEME = 'brand-night';
 const KEY = 'medportal_theme_v3';
+const BRAND_THEMES = new Set([DARK_THEME, LIGHT_THEME]);
+
+export function isLightTheme(id) {
+  const theme = id || document.documentElement.getAttribute('data-theme') || DEFAULT_THEME;
+  return theme === LIGHT_THEME;
+}
 
 export function applyTheme(id) {
   const ok = THEMES.some((t) => t.id === id) ? id : DEFAULT_THEME;
   document.documentElement.setAttribute('data-theme', ok);
+  if (BRAND_THEMES.has(ok)) document.documentElement.setAttribute('data-brand', '1');
+  else document.documentElement.removeAttribute('data-brand');
   document.documentElement.setAttribute('data-logo', logoIsThemed(ok) ? 'steel' : 'original');
   return ok;
+}
+
+export function toggleColorMode() {
+  const next = isLightTheme() ? DARK_THEME : LIGHT_THEME;
+  try { localStorage.setItem(KEY, next); } catch { /* storage blocked */ }
+  return applyTheme(next);
 }
 
 export function initTheme() {
