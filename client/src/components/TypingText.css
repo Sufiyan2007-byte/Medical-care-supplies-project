@@ -18,11 +18,14 @@
 .typing-text__value {
   display: inline-block;
   min-height: 1.2em;
-  transition: opacity 0.28s ease;
 }
 
-.typing-text__value.is-out {
-  opacity: 0;
+.typing-text__caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  background: currentColor;
+  animation: typingCaret 1s steps(1) infinite;
 }
 
 .typing-text__sr {
@@ -37,6 +40,11 @@
   border: 0;
 }
 
+@keyframes typingCaret {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .typing-text__value { transition: none; }
+  .typing-text__caret { animation: none; opacity: 1; }
 }

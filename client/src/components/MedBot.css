@@ -310,6 +310,13 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@media (max-width: 640px) {
+  .medbot-bubble { display: none; }
+  .medbot-status { display: none; }
+  .medbot-launcher { padding: 6px; }
+  .medbot { inset-inline-end: 12px; bottom: 12px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .medbot-svg,
   .medbot-eyes,

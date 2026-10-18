@@ -615,6 +615,7 @@
 /* ── Responsive overrides (must come AFTER all base rules to win the cascade) */
 @media (max-width: 900px) {
   .xcat-layout { grid-template-columns: 1fr; }
+  .xcat-grid { grid-template-columns: 1fr; }
   /* Remove sticky positioning when sidebar stacks above the grid in a single
      column — without this, the sidebar floats over scrolling product cards. */
   .xcat-sidebar {

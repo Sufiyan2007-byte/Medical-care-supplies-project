@@ -519,8 +519,21 @@
   .site-footer { padding: 2rem 1rem 1rem; }
 }
 
+@media (max-width: 640px) {
+  .site-body { padding-bottom: 84px; }
+  .footer-top { flex-direction: column; align-items: flex-start; }
+  .footer-address { max-width: none; }
+  .footer-brand,
+  .footer-nav,
+  .footer-contact { min-width: 0; width: 100%; }
+}
+
 @media (max-width: 480px) {
   .site-main { padding: 1rem 0.75rem; }
+  .mobile-topbar { padding-inline: 0.65rem; }
+  .mobile-topbar-actions { gap: 0.3rem; }
+  .mobile-icon-btn { width: 34px; height: 34px; }
+  .mobile-topbar-logo img { height: 28px; max-width: 132px; }
 }
 
 /* ══ RTL support ════════════════════════════════════════════════════════════ */

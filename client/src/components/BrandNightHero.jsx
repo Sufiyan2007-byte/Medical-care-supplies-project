@@ -159,7 +159,7 @@ export default function BrandNightHero({
               <span>{t('brandNight.types', 'Instrument types')}</span>
             </li>
             <li>
-              <strong>EN · ع</strong>
+              <strong className="bn-stat-bidi">EN · ع</strong>
               <span>{t('brandNight.bilingual', 'Bilingual support')}</span>
             </li>
           </ul>

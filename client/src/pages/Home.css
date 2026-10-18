@@ -717,8 +717,16 @@
   .home-trust-strip { margin-inline: 1rem; }
 }
 @media (max-width: 480px) {
-  .home-featured { padding-inline: 1rem; }
-  .home-featured-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .home-hero__ctas { flex-direction: column; align-items: stretch; }
+  .home-hero__btn { width: 100%; box-sizing: border-box; }
+  .home-stats { padding-inline: 0; gap: 0.65rem; }
+  .home-stats__item { padding: 0.8rem 0.5rem; }
+  .home-stats__item strong { font-size: 1.05rem; }
+  .home-categories,
+  .home-instruments-section,
+  .home-specialties-section { padding-inline: 0; }
+  .home-featured { padding-inline: 0; }
+  .home-featured-grid { grid-template-columns: 1fr; gap: 0.75rem; }
 }
 
 /* ── Shop by Instrument Type ──────────────────────────────── */
