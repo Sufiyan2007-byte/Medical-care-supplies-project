@@ -52,24 +52,55 @@ function ProductDetail() {
       setError('');
       setImgError(false);
       try {
-        let product = null;
-        try {
-          const res = await fetch(`${BASE_URL}/api/products/${id}`);
-          if (res.ok) {
-            const data = await res.json();
-            product = data.product;
+        let catalog = [];
+        if (category === 'medical-consumables') {
+          try {
+            const catalogRes = await fetch('/consumables.json');
+            if (catalogRes.ok) {
+              const rows = await catalogRes.json();
+              catalog = Array.isArray(rows) ? rows : [];
+            }
+          } catch {
+            catalog = [];
           }
-        } catch {
-          product = null;
         }
-        if (!product && category === 'medical-consumables') {
-          const res = await fetch('/consumables.json');
-          if (res.ok) {
-            const rows = await res.json();
-            product = (Array.isArray(rows) ? rows : []).find(
-              (item) => String(item.id) === String(id) || String(item.sku) === String(id),
-            ) || null;
+
+        let apiProduct = null;
+        if (/^\d+$/.test(String(id))) {
+          try {
+            const res = await fetch(`${BASE_URL}/api/products/${id}`);
+            if (res.ok) {
+              const data = await res.json();
+              apiProduct = data.product;
+            }
+          } catch {
+            apiProduct = null;
           }
+        }
+
+        const catalogHit = catalog.find((item) => (
+          String(item.id) === String(id)
+          || String(item.sku) === String(id)
+          || (apiProduct?.sku && String(item.sku) === String(apiProduct.sku))
+        )) || null;
+
+        let product = null;
+        if (apiProduct && catalogHit) {
+          product = {
+            ...apiProduct,
+            name: catalogHit.name || apiProduct.name,
+            description: catalogHit.description || apiProduct.description,
+            image: catalogHit.image || apiProduct.image,
+            section: catalogHit.section,
+            sizes: catalogHit.sizes,
+            unit: catalogHit.unit,
+            variants: catalogHit.variants?.length ? catalogHit.variants : apiProduct.variants,
+            catalogueNo: catalogHit.catalogueNo,
+            price: apiProduct.price != null ? apiProduct.price : catalogHit.price,
+            stock: apiProduct.stock,
+          };
+        } else {
+          product = apiProduct || catalogHit;
         }
         if (!product) throw new Error('Product not found');
         setProduct(product);
@@ -248,6 +279,7 @@ function ProductDetail() {
           </div>
 
           {/* Downloadable spec / certification sheet */}
+          {/^\d+$/.test(String(product.id)) && (
           <a
             className="detail-spec-sheet-link"
             href={`${BASE_URL}/api/products/${product.id}/spec-sheet.pdf${isAr ? '?lang=ar' : ''}`}
@@ -262,6 +294,7 @@ function ProductDetail() {
             </svg>
             {isAr ? 'تحميل بطاقة المواصفات (PDF)' : 'Download Spec Sheet (PDF)'}
           </a>
+          )}
         </div>
 
         {/* ── Right: Product Info Panel ─────────────────── */}
@@ -290,16 +323,25 @@ function ProductDetail() {
           </div>
 
           {product.description && (
-            <p className="detail-description">{product.description}</p>
+            <p className="detail-description">
+              {(product.sizes || product.unit)
+                ? product.description
+                  .replace(/\s*Sizes \/ variants:.*?(?=Unit:|$)/, '')
+                  .replace(/\s*Unit:.*$/, '')
+                  .trim()
+                : product.description}
+            </p>
           )}
 
           {/* Variant Selector */}
           {variants.length > 0 && (
             <div className="detail-variants-block">
               <h3 className="detail-variants-title">
-                {isAr
-                  ? 'اختر المقاس أو المتغير (تتغير الصورة تلقائياً):'
-                  : 'Select Size / Variant — Image Updates Live:'}
+                {variants.some((v) => v.image)
+                  ? (isAr
+                    ? 'اختر المقاس أو المتغير (تتغير الصورة تلقائياً):'
+                    : 'Select Size / Variant — Image Updates Live:')
+                  : (isAr ? 'اختر المقاس:' : 'Select size:')}
               </h3>
               <div className="detail-variant-chips">
                 {variants.map((v, i) => (
@@ -310,8 +352,14 @@ function ProductDetail() {
                     }`}
                     onClick={() => { setSelectedVariant(v); setImgError(false); }}
                   >
-                    <span className="chip-code">{v.code || v.size || `#${i + 1}`}</span>
-                    {v.size && v.size !== v.code && <span className="chip-size">{v.size}</span>}
+                    <span className="chip-code">
+                      {String(v.code || '').startsWith('MSC-')
+                        ? (v.size || v.code)
+                        : (v.code || v.size || `#${i + 1}`)}
+                    </span>
+                    {v.size && v.size !== v.code && !String(v.code || '').startsWith('MSC-') && (
+                      <span className="chip-size">{v.size}</span>
+                    )}
                     {priceOf(v.price) && <span className="chip-price">{v.price} {isAr ? 'ر.س' : 'SAR'}</span>}
                   </button>
                 ))}
@@ -400,6 +448,34 @@ function ProductDetail() {
           </div>
         </div>
       </div>
+
+      {(product.catalogueNo || product.sizes || product.unit) && (
+        <section className="detail-section">
+          <h2 className="detail-section-title">{t('products.specifications')}</h2>
+          <table className="specs-table">
+            <tbody>
+              {product.catalogueNo && (
+                <tr>
+                  <th>{t('products.catalogue_no')}</th>
+                  <td>{product.catalogueNo}</td>
+                </tr>
+              )}
+              {product.sizes && (
+                <tr>
+                  <th>{t('products.sizes')}</th>
+                  <td>{product.sizes}</td>
+                </tr>
+              )}
+              {product.unit && (
+                <tr>
+                  <th>{t('products.unit')}</th>
+                  <td>{product.unit}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </section>
+      )}
 
       {/* Specifications (Sets only) */}
       {isSet && (

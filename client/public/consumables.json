@@ -1,1 +1,2431 @@
-[{"id":"MC-GLV-LTX-PF","sku":"MC-GLV-LTX-PF","name":"Latex Examination Gloves, Powder-Free","description":"Disposable latex examination gloves, powder-free. Available in Small, Medium and Large. Priced from SAR 56 per box depending on size.","price":56,"image":"/consumables_images/latex-examination-gloves-powder-free.jpg","category":{"name":"Medical Consumables"}},{"id":"10001217","sku":"10001217","name":"Sterile Surgical Gloves, Powder-Free, Size 7.0","description":"Sterile powder-free surgical gloves, size 7.0, packed per pair for operating-room use.","price":100,"image":"/consumables_images/sterile-surgical-gloves-powder-free-size-7.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-GLV-VNL-PF","sku":"MC-GLV-VNL-PF","name":"Vinyl Examination Gloves, Powder-Free","description":"Disposable vinyl examination gloves, powder-free. Available in Small, Medium, Large and X-Large. Priced from SAR 29 per box depending on size.","price":29,"image":"/consumables_images/vinyl-examination-gloves-powder-free.jpg","category":{"name":"Medical Consumables"}},{"id":"10001200","sku":"10001200","name":"Face Mask, Ear-Loop, 3-Ply (Box of 50)","description":"Three-layer disposable ear-loop face mask for general clinical and patient use. Box of 50.","price":590,"image":"/consumables_images/face-mask-ear-loop-3-ply.jpg","category":{"name":"Medical Consumables"}},{"id":"10001187","sku":"10001187","name":"Avant Gauze (Tracheostomy Gauze)","description":"Pre-slit gauze dressing sized for use around a tracheostomy stoma.","price":85,"image":"/consumables_images/avant-gauze-tracheostomy.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-TAPE-3M-5CM","sku":"MC-TAPE-3M-5CM","name":"3M Micropore Paper Tape, 5cm x 9.1m (Box of 6)","description":"Hypoallergenic paper surgical tape, 5cm width, for securing dressings and tubing. Box of 6 rolls.","price":null,"image":"/consumables_images/3m-micropore-paper-tape-5cm.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-SWAB-ALC-200","sku":"MC-SWAB-ALC-200","name":"Alcohol Prep Swabs (Box of 200)","description":"Individually wrapped 70% isopropyl alcohol prep swabs for skin cleansing before injections or minor procedures. Box of 200.","price":null,"image":"/consumables_images/alcohol-prep-swabs-box-200.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-GAUZE-SWAB-4X4","sku":"MC-GAUZE-SWAB-4X4","name":"Sterile Gauze Swabs, 4x4in, 12-Ply (Box of 100)","description":"Sterile 12-ply woven gauze swabs, 4x4 inch, for wound dressing and general clinical use. Box of 5 packs of 100.","price":null,"image":"/consumables_images/sterile-gauze-swabs-4x4-12ply.jpg","category":{"name":"Medical Consumables"}},{"id":"10001201","sku":"10001201","name":"Cotton-Tipped Applicators (Pack of 100)","description":"Sterile cotton-tipped wooden applicators for wound cleaning and topical application. Pack of 100.","price":25,"image":"/consumables_images/cotton-tipped-applicators-pack.jpg","category":{"name":"Medical Consumables"}},{"id":"10001208","sku":"10001208","name":"Iodine Swab Sticks (Box of 100)","description":"Single-use povidone-iodine swab sticks for skin antisepsis. Box of 100.","price":1,"image":"/consumables_images/iodine-swab-sticks-box-100.jpg","category":{"name":"Medical Consumables"}},{"id":"10001202","sku":"10001202","name":"3M Micropore Paper Tape, 2.5cm x 9.1m (Box of 12)","description":"Hypoallergenic paper surgical tape, 2.5cm (1 inch) width, for securing dressings and tubing. Box of 12 rolls.","price":1,"image":"/consumables_images/3m-micropore-paper-tape-2-5cm.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-TAPE-FIX","sku":"MC-TAPE-FIX","name":"Mefix Self-Adhesive Fixation Tape","description":"Non-woven self-adhesive fixation tape for securing dressings, available in a range of roll widths and lengths. Priced from SAR 8.8 depending on size.","price":8.8,"image":"/consumables_images/mefix-self-adhesive-fixation-tape.jpg","category":{"name":"Medical Consumables"}},{"id":"M23FT","sku":"M23FT","name":"Mepitac Silicone Fixation Tape, 2cm x 3m","description":"Soft silicone adhesive fixation tape for sensitive or fragile skin, 2cm x 3m roll.","price":763.4,"image":"/consumables_images/mepitac-silicone-fixation-tape-2cm.jpg","category":{"name":"Medical Consumables"}},{"id":"M415FT","sku":"M415FT","name":"Mepitac Silicone Fixation Tape, 4cm x 1.5m","description":"Soft silicone adhesive fixation tape for sensitive or fragile skin, 4cm x 1.5m roll.","price":441.3,"image":"/consumables_images/mepitac-silicone-fixation-tape-4cm.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-ALGINATE","sku":"MC-DRSG-ALGINATE","name":"Melgisorb Plus Alginate Wound Dressing","description":"Highly absorbent calcium-alginate dressing for moderately to heavily exuding wounds. Available in multiple sizes, priced from SAR 128.2.","price":128.2,"image":"/consumables_images/melgisorb-plus-alginate-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-SILICONE","sku":"MC-DRSG-SILICONE","name":"Mepiform Soft Silicone Scar Dressing","description":"Self-adherent soft silicone sheet for scar management and post-surgical scarring. Available in multiple sizes, priced from SAR 264.2.","price":264.2,"image":"/consumables_images/mepiform-soft-silicone-scar-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-CONTACTMESH","sku":"MC-DRSG-CONTACTMESH","name":"Mepitel Silicone Wound Contact Layer","description":"Flexible, non-adherent silicone mesh wound contact layer, placed under secondary dressings. Available in multiple sizes, priced from SAR 202.4.","price":202.4,"image":"/consumables_images/mepitel-silicone-wound-contact-layer.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-CONTACTFILM","sku":"MC-DRSG-CONTACTFILM","name":"Mepitel Film Silicone Wound Contact Film","description":"Transparent, waterproof silicone-adhesive film for securing wounds or as a protective barrier. Available in multiple sizes, priced from SAR 320.4.","price":320.4,"image":"/consumables_images/mepitel-film-silicone-contact-film.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-CONTACTONE","sku":"MC-DRSG-CONTACTONE","name":"Mepitel One Silicone Wound Contact Layer","description":"One-piece atraumatic silicone wound contact layer with an absorbent core. Available in multiple sizes, priced from SAR 241.7.","price":241.7,"image":"/consumables_images/mepitel-one-silicone-contact-layer.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-FILM","sku":"MC-DRSG-FILM","name":"Mepore Adhesive Absorbent Dressing","description":"Self-adhesive absorbent dressing with a soft, breathable backing for low-to-moderately exuding wounds. Available in multiple sizes, priced from SAR 49.9.","price":49.9,"image":"/consumables_images/mepore-adhesive-absorbent-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-WPFILM","sku":"MC-DRSG-WPFILM","name":"Mepore Film Waterproof Dressing","description":"Transparent, waterproof adhesive film dressing that lets patients shower without exposing the wound. Available in multiple sizes, priced from SAR 313.7.","price":313.7,"image":"/consumables_images/mepore-film-waterproof-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-POSTOP","sku":"MC-DRSG-POSTOP","name":"Mepore Pro Post-Operative Dressing","description":"Absorbent, waterproof post-operative dressing designed to stay in place through showering. Available in multiple sizes, priced from SAR 81.0.","price":81,"image":"/consumables_images/mepore-pro-post-operative-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-NACLGAUZE","sku":"MC-DRSG-NACLGAUZE","name":"Mesalt Sodium Chloride-Impregnated Gauze","description":"Hypertonic sodium-chloride-impregnated gauze dressing for exuding and sloughy wounds. Available in multiple sizes, priced from SAR 138.3.","price":138.3,"image":"/consumables_images/mesalt-sodium-chloride-impregnated-gauze.jpg","category":{"name":"Medical Consumables"}},{"id":"285280","sku":"285280","name":"Mesalt Sodium Chloride Gauze Ribbon, 2cm x 100cm","description":"Hypertonic sodium-chloride-impregnated gauze ribbon for packing deep or cavity wounds, 2cm x 100cm.","price":253,"image":"/consumables_images/mesalt-sodium-chloride-gauze-ribbon.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-AGFOAM","sku":"MC-DRSG-AGFOAM","name":"Mepilex Ag Antimicrobial Silver Foam Dressing","description":"Soft silicone foam dressing with an antimicrobial silver layer for exuding or infected wounds. Available in multiple sizes, priced from SAR 258.6.","price":258.6,"image":"/consumables_images/mepilex-ag-antimicrobial-silver-foam.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-BORDER","sku":"MC-DRSG-BORDER","name":"Mepilex Border Silicone Foam Dressing","description":"Self-adherent silicone foam dressing with an absorbent border for moderately exuding wounds. Available in multiple sizes, priced from SAR 154.6.","price":154.6,"image":"/consumables_images/mepilex-border-silicone-foam-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-BORDERAG","sku":"MC-DRSG-BORDERAG","name":"Mepilex Border Ag Antimicrobial Foam Dressing","description":"Silicone foam border dressing with antimicrobial silver for infected or at-risk exuding wounds. Available in multiple sizes, priced from SAR 435.7.","price":435.7,"image":"/consumables_images/mepilex-border-ag-antimicrobial-foam.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-BORDERFLEX","sku":"MC-DRSG-BORDERFLEX","name":"Mepilex Border Flex Silicone Foam Dressing","description":"Flexible silicone foam border dressing shaped to move with the body on joints and curved areas. Available in multiple sizes, priced from SAR 449.7.","price":449.7,"image":"/consumables_images/mepilex-border-flex-silicone-foam.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-BORDERLITE","sku":"MC-DRSG-BORDERLITE","name":"Mepilex Border Lite Silicone Foam Dressing","description":"Thin, flexible silicone foam border dressing for low-to-moderately exuding wounds. Available in multiple sizes, priced from SAR 149.0.","price":149,"image":"/consumables_images/mepilex-border-lite-silicone-foam.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-POSTOPBORDER","sku":"MC-DRSG-POSTOPBORDER","name":"Mepilex Border Post-Op Silicone Foam Dressing","description":"Elongated silicone foam dressing shaped for surgical incision lines. Available in multiple sizes, priced from SAR 422.7.","price":422.7,"image":"/consumables_images/mepilex-border-post-op-silicone-foam.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-POSTOPBORDERAG","sku":"MC-DRSG-POSTOPBORDERAG","name":"Mepilex Border Post-Op Ag Antimicrobial Dressing","description":"Post-operative silicone foam dressing with antimicrobial silver for at-risk incision lines. Available in multiple sizes, priced from SAR 505.9.","price":505.9,"image":"/consumables_images/mepilex-border-post-op-ag-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-SACRUM","sku":"MC-DRSG-SACRUM","name":"Mepilex Border Sacrum Silicone Foam Dressing","description":"Butterfly-shaped silicone foam dressing contoured for the sacral area, for pressure-injury prevention and management. Available in multiple sizes, priced from SAR 514.4.","price":514.4,"image":"/consumables_images/mepilex-border-sacrum-silicone-foam.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-SACRUMAG","sku":"MC-DRSG-SACRUMAG","name":"Mepilex Border Sacrum Ag Antimicrobial Dressing","description":"Sacrum-shaped silicone foam dressing with antimicrobial silver for infected or at-risk pressure injuries. Available in multiple sizes, priced from SAR 860.1.","price":860.1,"image":"/consumables_images/mepilex-border-sacrum-ag-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-HEEL","sku":"MC-DRSG-HEEL","name":"Mepilex Heel Silicone Foam Dressing","description":"Boot-shaped silicone foam dressing contoured to the heel, for pressure-injury prevention and management. Available in multiple sizes, priced from SAR 354.1.","price":354.1,"image":"/consumables_images/mepilex-heel-silicone-foam-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-HEELAG","sku":"MC-DRSG-HEELAG","name":"Mepilex Heel Ag Antimicrobial Dressing","description":"Heel-shaped silicone foam dressing with antimicrobial silver for infected or at-risk heel wounds. Available in multiple sizes, priced from SAR 1,118.6.","price":1118.6,"image":"/consumables_images/mepilex-heel-ag-antimicrobial-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-LITE","sku":"MC-DRSG-LITE","name":"Mepilex Lite Silicone Foam Dressing","description":"Thin, flexible silicone foam dressing for lightly exuding wounds. Available in multiple sizes, priced from SAR 188.3.","price":188.3,"image":"/consumables_images/mepilex-lite-silicone-foam-dressing.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-TRANSFER","sku":"MC-DRSG-TRANSFER","name":"Mepilex Transfer Silicone Wound Contact Dressing","description":"Thin silicone dressing that transfers exudate into a secondary absorbent dressing while staying atraumatic on removal. Available in multiple sizes, priced from SAR 1,101.8.","price":1101.8,"image":"/consumables_images/mepilex-transfer-silicone-contact.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-DRSG-TRANSFERAG","sku":"MC-DRSG-TRANSFERAG","name":"Mepilex Transfer Ag Antimicrobial Dressing","description":"Silicone wound contact dressing with antimicrobial silver that transfers exudate into a secondary dressing. Available in multiple sizes, priced from SAR 579.6.","price":579.6,"image":"/consumables_images/mepilex-transfer-ag-antimicrobial.jpg","category":{"name":"Medical Consumables"}},{"id":"10001223","sku":"10001223","name":"Foley Catheter, 18FR","description":"2-way Foley urinary catheter, 18FR, for short- or long-term bladder drainage.","price":14,"image":"/consumables_images/foley-catheter-18fr.jpg","category":{"name":"Medical Consumables"}},{"id":"10001221","sku":"10001221","name":"Flexi-Trak Catheter Anchoring Device","description":"Adhesive anchoring device that secures a urinary catheter to the skin to reduce tension and accidental dislodgement.","price":14,"image":"/consumables_images/flexi-trak-catheter-anchoring-device.jpg","category":{"name":"Medical Consumables"}},{"id":"10001222","sku":"10001222","name":"Urine Drainage Bag with Hanger, 2000ml","description":"2000ml urinary drainage bag with a bed/chair hanger, for use with an indwelling catheter.","price":12,"image":"/consumables_images/urine-drainage-bag-2000ml.jpg","category":{"name":"Medical Consumables"}},{"id":"10001218","sku":"10001218","name":"Sterile Urine Specimen Container, 120ml","description":"Sterile 120ml container for urine sample collection.","price":0.3,"image":"/consumables_images/sterile-urine-specimen-container-120ml.jpg","category":{"name":"Medical Consumables"}},{"id":"10001219","sku":"10001219","name":"Isopropyl Alcohol 70% Disinfectant, 5L","description":"70% isopropyl alcohol solution in a 5-litre container, for surface and skin disinfection in clinical settings.","price":100,"image":"/consumables_images/isopropyl-alcohol-70-disinfectant-5l.jpg","category":{"name":"Medical Consumables"}},{"id":"10001184","sku":"10001184","name":"Disposable Underpad, 60 x 90cm","description":"Absorbent disposable underpad for bed and incontinence protection, 60 x 90cm.","price":20,"image":"/consumables_images/disposable-underpad-60x90.jpg","category":{"name":"Medical Consumables"}},{"id":"10001185","sku":"10001185","name":"Disposable Wash Cloths (Pack)","description":"Soft disposable wash cloths for patient hygiene and bed baths.","price":65,"image":"/consumables_images/disposable-wash-cloths-pack.jpg","category":{"name":"Medical Consumables"}},{"id":"10001186","sku":"10001186","name":"Dentips Oral Care Swabs","description":"Foam-tipped oral care swabs for cleaning and moistening the mouth of patients unable to brush normally.","price":0.7,"image":"/consumables_images/dentips-oral-care-swabs.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-STOPCOCK","sku":"MC-STOPCOCK","name":"3-Way Stop Cock","description":"Single-use 3-way stopcock for IV line fluid/medication administration and sampling.","price":25,"image":"/consumables_images/3-way-stopcock.jpg","category":{"name":"Medical Consumables"}},{"id":"10001147","sku":"10001147","name":"Enteral Feeding Set (JP2-2-001)","description":"Gravity enteral feeding administration set for tube-fed patients.","price":30,"image":"/consumables_images/enteral-feeding-set-jp2-001.jpg","category":{"name":"Medical Consumables"}},{"id":"10001148","sku":"10001148","name":"Enteral Feeding Set (JP2-2-101)","description":"Gravity enteral feeding administration set for tube-fed patients.","price":30,"image":"/consumables_images/enteral-feeding-set-jp2-101.jpg","category":{"name":"Medical Consumables"}},{"id":"10001149","sku":"10001149","name":"Enteral Feeding Set (JP2-2-105)","description":"Gravity enteral feeding administration set for tube-fed patients.","price":23,"image":"/consumables_images/enteral-feeding-set-jp2-105.jpg","category":{"name":"Medical Consumables"}},{"id":"10001188","sku":"10001188","name":"Compat Ella Enteral Feeding Bag, 1L","description":"1-litre enteral feeding bag compatible with Compat Ella pump sets.","price":37,"image":"/consumables_images/compat-ella-enteral-feeding-bag-1l.jpg","category":{"name":"Medical Consumables"}},{"id":"10001190","sku":"10001190","name":"Flocare Enteral Feeding Container, 1L with Cap","description":"1-litre enteral feeding container with pack cap, for use with Flocare feeding sets.","price":21.5,"image":"/consumables_images/flocare-enteral-feeding-container-1l.jpg","category":{"name":"Medical Consumables"}},{"id":"10001189","sku":"10001189","name":"Flocare Infinity Enteral Feeding Pack Set","description":"Enteral feeding pack set for use with the Flocare Infinity pump.","price":21,"image":"/consumables_images/flocare-infinity-feeding-pack-set.jpg","category":{"name":"Medical Consumables"}},{"id":"10001191","sku":"10001191","name":"Enteral Feeding Transition Connector (ENlock/Funnel)","description":"Transition connector for adapting an enteral feeding tube between ENlock and funnel/catheter-tip fittings.","price":3,"image":"/consumables_images/enteral-feeding-transition-connector.jpg","category":{"name":"Medical Consumables"}},{"id":"10001225","sku":"10001225","name":"Bacterial/Viral Breathing Circuit Filter","description":"Bacterial and viral filter fitted in-line on a breathing circuit to protect against cross-contamination.","price":500,"image":"/consumables_images/bacterial-viral-breathing-circuit-filter.jpg","category":{"name":"Medical Consumables"}},{"id":"10001209","sku":"10001209","name":"Closed Suction Catheter, 12FR","description":"Closed-system suction catheter with a double-swivel elbow connector, 12FR, for tracheal suctioning without breaking the ventilator circuit.","price":55,"image":"/consumables_images/closed-suction-catheter-12fr.jpg","category":{"name":"Medical Consumables"}},{"id":"10001226","sku":"10001226","name":"HME (Heat & Moisture Exchanger) Filter","description":"Heat and moisture exchanger filter for airway humidification in ventilated or tracheostomy patients.","price":18,"image":"/consumables_images/hme-filter-heat-moisture-exchanger.jpg","category":{"name":"Medical Consumables"}},{"id":"10001227","sku":"10001227","name":"Sterile Tracheostomy Care Tray","description":"Sterile tracheostomy clean-and-care tray with a moisture-proof drape, for routine stoma care.","price":240,"image":"/consumables_images/sterile-tracheostomy-care-tray.jpg","category":{"name":"Medical Consumables"}},{"id":"10001205","sku":"10001205","name":"Suction Catheter, 12FR","description":"Single-use open suction catheter, 12FR.","price":148,"image":"/consumables_images/suction-catheter-12fr.jpg","category":{"name":"Medical Consumables"}},{"id":"10001206","sku":"10001206","name":"Suction Catheter, 14FR","description":"Single-use open suction catheter, 14FR.","price":11.5,"image":"/consumables_images/suction-catheter-14fr.jpg","category":{"name":"Medical Consumables"}},{"id":"10001224","sku":"10001224","name":"Tracheostomy Tube Holder, Adult","description":"Adjustable adult tracheostomy tube holder for securing the tube in place.","price":400,"image":"/consumables_images/tracheostomy-tube-holder-adult.jpg","category":{"name":"Medical Consumables"}},{"id":"10001005","sku":"10001005","name":"Bacterial/Viral Filter for Spirometer (MIR)","description":"Single-use bacterial/viral filter fitted between the patient mouthpiece and a MIR spirometer.","price":15,"image":"/consumables_images/spirometer-bacterial-viral-filter-mir.jpg","category":{"name":"Medical Consumables"}},{"id":"10001069","sku":"10001069","name":"Sidestream Nebulizer Disposable Kit","description":"Disposable nebulizer medication cup and mask assembly compatible with Sidestream nebulizer compressors.","price":16,"image":"/consumables_images/sidestream-nebulizer-disposable-kit.jpg","category":{"name":"Medical Consumables"}},{"id":"10001070","sku":"10001070","name":"Sidestream Nebulizer Disposable Kit, Angled Mouthpiece","description":"Disposable Sidestream-compatible nebulizer kit with an angled mouthpiece for medication delivery.","price":16,"image":"/consumables_images/sidestream-nebulizer-angled-mouthpiece.jpg","category":{"name":"Medical Consumables"}},{"id":"10001071","sku":"10001071","name":"Sidestream Nebulizer Disposable Kit, Child Mask","description":"Disposable Sidestream-compatible nebulizer kit fitted with a paediatric mask.","price":16,"image":"/consumables_images/sidestream-nebulizer-child-mask.jpg","category":{"name":"Medical Consumables"}},{"id":"MC-SPACER","sku":"MC-SPACER","name":"Optichamber Diamond Spacer Chamber","description":"Valved holding chamber (spacer) used with a metered-dose inhaler, available in Small, Medium and Large masks. Priced from SAR 20.8.","price":20.8,"image":"/consumables_images/optichamber-diamond-spacer-chamber.jpg","category":{"name":"Medical Consumables"}},{"id":"10001055","sku":"10001055","name":"Humidifier Connector Tube (Everflo)","description":"Connector tubing linking an oxygen humidifier bottle to an Everflo oxygen concentrator.","price":100,"image":"/consumables_images/humidifier-connector-tube-everflo.jpg","category":{"name":"Medical Consumables"}}]
+[
+  {
+    "id": "MC-GLV-LTX-PF",
+    "sku": "MC-GLV-LTX-PF",
+    "name": "Latex Examination Gloves, Powder-Free",
+    "description": "Disposable latex examination gloves, powder-free. Available in Small, Medium and Large. Priced from SAR 56 per box depending on size.",
+    "price": 56,
+    "image": "/consumables_images/latex-examination-gloves-powder-free.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 1
+  },
+  {
+    "id": "10001217",
+    "sku": "10001217",
+    "name": "Sterile Surgical Gloves, Powder-Free, Size 7.0",
+    "description": "Sterile powder-free surgical gloves, size 7.0, packed per pair for operating-room use.",
+    "price": 100,
+    "image": "/consumables_images/sterile-surgical-gloves-powder-free-size-7.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 2
+  },
+  {
+    "id": "MC-GLV-VNL-PF",
+    "sku": "MC-GLV-VNL-PF",
+    "name": "Vinyl Examination Gloves, Powder-Free",
+    "description": "Disposable vinyl examination gloves, powder-free. Available in Small, Medium, Large and X-Large. Priced from SAR 29 per box depending on size.",
+    "price": 29,
+    "image": "/consumables_images/vinyl-examination-gloves-powder-free.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 3
+  },
+  {
+    "id": "10001200",
+    "sku": "10001200",
+    "name": "Face Mask, Ear-Loop, 3-Ply (Box of 50)",
+    "description": "Three-layer disposable ear-loop face mask for general clinical and patient use. Box of 50.",
+    "price": 590,
+    "image": "/consumables_images/face-mask-ear-loop-3-ply.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 4
+  },
+  {
+    "id": "10001187",
+    "sku": "10001187",
+    "name": "Avant Gauze (Tracheostomy Gauze)",
+    "description": "Pre-slit gauze dressing sized for use around a tracheostomy stoma.",
+    "price": 85,
+    "image": "/consumables_images/avant-gauze-tracheostomy.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 5
+  },
+  {
+    "id": "MC-TAPE-3M-5CM",
+    "sku": "MC-TAPE-3M-5CM",
+    "name": "3M Micropore Paper Tape, 5cm x 9.1m (Box of 6)",
+    "description": "Hypoallergenic paper surgical tape, 5cm width, for securing dressings and tubing. Box of 6 rolls.",
+    "price": null,
+    "image": "/consumables_images/3m-micropore-paper-tape-5cm.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 6
+  },
+  {
+    "id": "MC-SWAB-ALC-200",
+    "sku": "MC-SWAB-ALC-200",
+    "name": "Alcohol Prep Swabs (Box of 200)",
+    "description": "Individually wrapped 70% isopropyl alcohol prep swabs for skin cleansing before injections or minor procedures. Box of 200.",
+    "price": null,
+    "image": "/consumables_images/alcohol-prep-swabs-box-200.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 7
+  },
+  {
+    "id": "MC-GAUZE-SWAB-4X4",
+    "sku": "MC-GAUZE-SWAB-4X4",
+    "name": "Sterile Gauze Swabs, 4x4in, 12-Ply (Box of 100)",
+    "description": "Sterile 12-ply woven gauze swabs, 4x4 inch, for wound dressing and general clinical use. Box of 5 packs of 100.",
+    "price": null,
+    "image": "/consumables_images/sterile-gauze-swabs-4x4-12ply.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 8
+  },
+  {
+    "id": "10001201",
+    "sku": "10001201",
+    "name": "Cotton-Tipped Applicators (Pack of 100)",
+    "description": "Sterile cotton-tipped wooden applicators for wound cleaning and topical application. Pack of 100.",
+    "price": 25,
+    "image": "/consumables_images/cotton-tipped-applicators-pack.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 9
+  },
+  {
+    "id": "10001208",
+    "sku": "10001208",
+    "name": "Iodine Swab Sticks (Box of 100)",
+    "description": "Single-use povidone-iodine swab sticks for skin antisepsis. Box of 100.",
+    "price": 1,
+    "image": "/consumables_images/iodine-swab-sticks-box-100.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 10
+  },
+  {
+    "id": "10001202",
+    "sku": "10001202",
+    "name": "3M Micropore Paper Tape, 2.5cm x 9.1m (Box of 12)",
+    "description": "Hypoallergenic paper surgical tape, 2.5cm (1 inch) width, for securing dressings and tubing. Box of 12 rolls.",
+    "price": 1,
+    "image": "/consumables_images/3m-micropore-paper-tape-2-5cm.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 11
+  },
+  {
+    "id": "MC-TAPE-FIX",
+    "sku": "MC-TAPE-FIX",
+    "name": "Mefix Self-Adhesive Fixation Tape",
+    "description": "Non-woven self-adhesive fixation tape for securing dressings, available in a range of roll widths and lengths. Priced from SAR 8.8 depending on size.",
+    "price": 8.8,
+    "image": "/consumables_images/mefix-self-adhesive-fixation-tape.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 12
+  },
+  {
+    "id": "M23FT",
+    "sku": "M23FT",
+    "name": "Mepitac Silicone Fixation Tape, 2cm x 3m",
+    "description": "Soft silicone adhesive fixation tape for sensitive or fragile skin, 2cm x 3m roll.",
+    "price": 763.4,
+    "image": "/consumables_images/mepitac-silicone-fixation-tape-2cm.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 13
+  },
+  {
+    "id": "M415FT",
+    "sku": "M415FT",
+    "name": "Mepitac Silicone Fixation Tape, 4cm x 1.5m",
+    "description": "Soft silicone adhesive fixation tape for sensitive or fragile skin, 4cm x 1.5m roll.",
+    "price": 441.3,
+    "image": "/consumables_images/mepitac-silicone-fixation-tape-4cm.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 14
+  },
+  {
+    "id": "MC-DRSG-ALGINATE",
+    "sku": "MC-DRSG-ALGINATE",
+    "name": "Melgisorb Plus Alginate Wound Dressing",
+    "description": "Highly absorbent calcium-alginate dressing for moderately to heavily exuding wounds. Available in multiple sizes, priced from SAR 128.2.",
+    "price": 128.2,
+    "image": "/consumables_images/melgisorb-plus-alginate-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 15
+  },
+  {
+    "id": "MC-DRSG-SILICONE",
+    "sku": "MC-DRSG-SILICONE",
+    "name": "Mepiform Soft Silicone Scar Dressing",
+    "description": "Self-adherent soft silicone sheet for scar management and post-surgical scarring. Available in multiple sizes, priced from SAR 264.2.",
+    "price": 264.2,
+    "image": "/consumables_images/mepiform-soft-silicone-scar-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 16
+  },
+  {
+    "id": "MC-DRSG-CONTACTMESH",
+    "sku": "MC-DRSG-CONTACTMESH",
+    "name": "Mepitel Silicone Wound Contact Layer",
+    "description": "Flexible, non-adherent silicone mesh wound contact layer, placed under secondary dressings. Available in multiple sizes, priced from SAR 202.4.",
+    "price": 202.4,
+    "image": "/consumables_images/mepitel-silicone-wound-contact-layer.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 17
+  },
+  {
+    "id": "MC-DRSG-CONTACTFILM",
+    "sku": "MC-DRSG-CONTACTFILM",
+    "name": "Mepitel Film Silicone Wound Contact Film",
+    "description": "Transparent, waterproof silicone-adhesive film for securing wounds or as a protective barrier. Available in multiple sizes, priced from SAR 320.4.",
+    "price": 320.4,
+    "image": "/consumables_images/mepitel-film-silicone-contact-film.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 18
+  },
+  {
+    "id": "MC-DRSG-CONTACTONE",
+    "sku": "MC-DRSG-CONTACTONE",
+    "name": "Mepitel One Silicone Wound Contact Layer",
+    "description": "One-piece atraumatic silicone wound contact layer with an absorbent core. Available in multiple sizes, priced from SAR 241.7.",
+    "price": 241.7,
+    "image": "/consumables_images/mepitel-one-silicone-contact-layer.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 19
+  },
+  {
+    "id": "MC-DRSG-FILM",
+    "sku": "MC-DRSG-FILM",
+    "name": "Mepore Adhesive Absorbent Dressing",
+    "description": "Self-adhesive absorbent dressing with a soft, breathable backing for low-to-moderately exuding wounds. Available in multiple sizes, priced from SAR 49.9.",
+    "price": 49.9,
+    "image": "/consumables_images/mepore-adhesive-absorbent-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 20
+  },
+  {
+    "id": "MC-DRSG-WPFILM",
+    "sku": "MC-DRSG-WPFILM",
+    "name": "Mepore Film Waterproof Dressing",
+    "description": "Transparent, waterproof adhesive film dressing that lets patients shower without exposing the wound. Available in multiple sizes, priced from SAR 313.7.",
+    "price": 313.7,
+    "image": "/consumables_images/mepore-film-waterproof-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 21
+  },
+  {
+    "id": "MC-DRSG-POSTOP",
+    "sku": "MC-DRSG-POSTOP",
+    "name": "Mepore Pro Post-Operative Dressing",
+    "description": "Absorbent, waterproof post-operative dressing designed to stay in place through showering. Available in multiple sizes, priced from SAR 81.0.",
+    "price": 81,
+    "image": "/consumables_images/mepore-pro-post-operative-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 22
+  },
+  {
+    "id": "MC-DRSG-NACLGAUZE",
+    "sku": "MC-DRSG-NACLGAUZE",
+    "name": "Mesalt Sodium Chloride-Impregnated Gauze",
+    "description": "Hypertonic sodium-chloride-impregnated gauze dressing for exuding and sloughy wounds. Available in multiple sizes, priced from SAR 138.3.",
+    "price": 138.3,
+    "image": "/consumables_images/mesalt-sodium-chloride-impregnated-gauze.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 23
+  },
+  {
+    "id": "285280",
+    "sku": "285280",
+    "name": "Mesalt Sodium Chloride Gauze Ribbon, 2cm x 100cm",
+    "description": "Hypertonic sodium-chloride-impregnated gauze ribbon for packing deep or cavity wounds, 2cm x 100cm.",
+    "price": 253,
+    "image": "/consumables_images/mesalt-sodium-chloride-gauze-ribbon.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 24
+  },
+  {
+    "id": "MC-DRSG-AGFOAM",
+    "sku": "MC-DRSG-AGFOAM",
+    "name": "Mepilex Ag Antimicrobial Silver Foam Dressing",
+    "description": "Soft silicone foam dressing with an antimicrobial silver layer for exuding or infected wounds. Available in multiple sizes, priced from SAR 258.6.",
+    "price": 258.6,
+    "image": "/consumables_images/mepilex-ag-antimicrobial-silver-foam.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 25
+  },
+  {
+    "id": "MC-DRSG-BORDER",
+    "sku": "MC-DRSG-BORDER",
+    "name": "Mepilex Border Silicone Foam Dressing",
+    "description": "Self-adherent silicone foam dressing with an absorbent border for moderately exuding wounds. Available in multiple sizes, priced from SAR 154.6.",
+    "price": 154.6,
+    "image": "/consumables_images/mepilex-border-silicone-foam-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 26
+  },
+  {
+    "id": "MC-DRSG-BORDERAG",
+    "sku": "MC-DRSG-BORDERAG",
+    "name": "Mepilex Border Ag Antimicrobial Foam Dressing",
+    "description": "Silicone foam border dressing with antimicrobial silver for infected or at-risk exuding wounds. Available in multiple sizes, priced from SAR 435.7.",
+    "price": 435.7,
+    "image": "/consumables_images/mepilex-border-ag-antimicrobial-foam.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 27
+  },
+  {
+    "id": "MC-DRSG-BORDERFLEX",
+    "sku": "MC-DRSG-BORDERFLEX",
+    "name": "Mepilex Border Flex Silicone Foam Dressing",
+    "description": "Flexible silicone foam border dressing shaped to move with the body on joints and curved areas. Available in multiple sizes, priced from SAR 449.7.",
+    "price": 449.7,
+    "image": "/consumables_images/mepilex-border-flex-silicone-foam.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 28
+  },
+  {
+    "id": "MC-DRSG-BORDERLITE",
+    "sku": "MC-DRSG-BORDERLITE",
+    "name": "Mepilex Border Lite Silicone Foam Dressing",
+    "description": "Thin, flexible silicone foam border dressing for low-to-moderately exuding wounds. Available in multiple sizes, priced from SAR 149.0.",
+    "price": 149,
+    "image": "/consumables_images/mepilex-border-lite-silicone-foam.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 29
+  },
+  {
+    "id": "MC-DRSG-POSTOPBORDER",
+    "sku": "MC-DRSG-POSTOPBORDER",
+    "name": "Mepilex Border Post-Op Silicone Foam Dressing",
+    "description": "Elongated silicone foam dressing shaped for surgical incision lines. Available in multiple sizes, priced from SAR 422.7.",
+    "price": 422.7,
+    "image": "/consumables_images/mepilex-border-post-op-silicone-foam.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 30
+  },
+  {
+    "id": "MC-DRSG-POSTOPBORDERAG",
+    "sku": "MC-DRSG-POSTOPBORDERAG",
+    "name": "Mepilex Border Post-Op Ag Antimicrobial Dressing",
+    "description": "Post-operative silicone foam dressing with antimicrobial silver for at-risk incision lines. Available in multiple sizes, priced from SAR 505.9.",
+    "price": 505.9,
+    "image": "/consumables_images/mepilex-border-post-op-ag-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 31
+  },
+  {
+    "id": "MC-DRSG-SACRUM",
+    "sku": "MC-DRSG-SACRUM",
+    "name": "Mepilex Border Sacrum Silicone Foam Dressing",
+    "description": "Butterfly-shaped silicone foam dressing contoured for the sacral area, for pressure-injury prevention and management. Available in multiple sizes, priced from SAR 514.4.",
+    "price": 514.4,
+    "image": "/consumables_images/mepilex-border-sacrum-silicone-foam.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 32
+  },
+  {
+    "id": "MC-DRSG-SACRUMAG",
+    "sku": "MC-DRSG-SACRUMAG",
+    "name": "Mepilex Border Sacrum Ag Antimicrobial Dressing",
+    "description": "Sacrum-shaped silicone foam dressing with antimicrobial silver for infected or at-risk pressure injuries. Available in multiple sizes, priced from SAR 860.1.",
+    "price": 860.1,
+    "image": "/consumables_images/mepilex-border-sacrum-ag-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 33
+  },
+  {
+    "id": "MC-DRSG-HEEL",
+    "sku": "MC-DRSG-HEEL",
+    "name": "Mepilex Heel Silicone Foam Dressing",
+    "description": "Boot-shaped silicone foam dressing contoured to the heel, for pressure-injury prevention and management. Available in multiple sizes, priced from SAR 354.1.",
+    "price": 354.1,
+    "image": "/consumables_images/mepilex-heel-silicone-foam-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 34
+  },
+  {
+    "id": "MC-DRSG-HEELAG",
+    "sku": "MC-DRSG-HEELAG",
+    "name": "Mepilex Heel Ag Antimicrobial Dressing",
+    "description": "Heel-shaped silicone foam dressing with antimicrobial silver for infected or at-risk heel wounds. Available in multiple sizes, priced from SAR 1,118.6.",
+    "price": 1118.6,
+    "image": "/consumables_images/mepilex-heel-ag-antimicrobial-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 35
+  },
+  {
+    "id": "MC-DRSG-LITE",
+    "sku": "MC-DRSG-LITE",
+    "name": "Mepilex Lite Silicone Foam Dressing",
+    "description": "Thin, flexible silicone foam dressing for lightly exuding wounds. Available in multiple sizes, priced from SAR 188.3.",
+    "price": 188.3,
+    "image": "/consumables_images/mepilex-lite-silicone-foam-dressing.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 36
+  },
+  {
+    "id": "MC-DRSG-TRANSFER",
+    "sku": "MC-DRSG-TRANSFER",
+    "name": "Mepilex Transfer Silicone Wound Contact Dressing",
+    "description": "Thin silicone dressing that transfers exudate into a secondary absorbent dressing while staying atraumatic on removal. Available in multiple sizes, priced from SAR 1,101.8.",
+    "price": 1101.8,
+    "image": "/consumables_images/mepilex-transfer-silicone-contact.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 37
+  },
+  {
+    "id": "MC-DRSG-TRANSFERAG",
+    "sku": "MC-DRSG-TRANSFERAG",
+    "name": "Mepilex Transfer Ag Antimicrobial Dressing",
+    "description": "Silicone wound contact dressing with antimicrobial silver that transfers exudate into a secondary dressing. Available in multiple sizes, priced from SAR 579.6.",
+    "price": 579.6,
+    "image": "/consumables_images/mepilex-transfer-ag-antimicrobial.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 38
+  },
+  {
+    "id": "10001223",
+    "sku": "10001223",
+    "name": "Foley Catheter, 18FR",
+    "description": "2-way Foley urinary catheter, 18FR, for short- or long-term bladder drainage.",
+    "price": 14,
+    "image": "/consumables_images/foley-catheter-18fr.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 39
+  },
+  {
+    "id": "10001221",
+    "sku": "10001221",
+    "name": "Flexi-Trak Catheter Anchoring Device",
+    "description": "Adhesive anchoring device that secures a urinary catheter to the skin to reduce tension and accidental dislodgement.",
+    "price": 14,
+    "image": "/consumables_images/flexi-trak-catheter-anchoring-device.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 40
+  },
+  {
+    "id": "10001222",
+    "sku": "10001222",
+    "name": "Urine Drainage Bag with Hanger, 2000ml",
+    "description": "2000ml urinary drainage bag with a bed/chair hanger, for use with an indwelling catheter.",
+    "price": 12,
+    "image": "/consumables_images/urine-drainage-bag-2000ml.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 41
+  },
+  {
+    "id": "10001218",
+    "sku": "10001218",
+    "name": "Sterile Urine Specimen Container, 120ml",
+    "description": "Sterile 120ml container for urine sample collection.",
+    "price": 0.3,
+    "image": "/consumables_images/sterile-urine-specimen-container-120ml.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 42
+  },
+  {
+    "id": "10001219",
+    "sku": "10001219",
+    "name": "Isopropyl Alcohol 70% Disinfectant, 5L",
+    "description": "70% isopropyl alcohol solution in a 5-litre container, for surface and skin disinfection in clinical settings.",
+    "price": 100,
+    "image": "/consumables_images/isopropyl-alcohol-70-disinfectant-5l.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 43
+  },
+  {
+    "id": "10001184",
+    "sku": "10001184",
+    "name": "Disposable Underpad, 60 x 90cm",
+    "description": "Absorbent disposable underpad for bed and incontinence protection, 60 x 90cm.",
+    "price": 20,
+    "image": "/consumables_images/disposable-underpad-60x90.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 44
+  },
+  {
+    "id": "10001185",
+    "sku": "10001185",
+    "name": "Disposable Wash Cloths (Pack)",
+    "description": "Soft disposable wash cloths for patient hygiene and bed baths.",
+    "price": 65,
+    "image": "/consumables_images/disposable-wash-cloths-pack.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 45
+  },
+  {
+    "id": "10001186",
+    "sku": "10001186",
+    "name": "Dentips Oral Care Swabs",
+    "description": "Foam-tipped oral care swabs for cleaning and moistening the mouth of patients unable to brush normally.",
+    "price": 0.7,
+    "image": "/consumables_images/dentips-oral-care-swabs.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 46
+  },
+  {
+    "id": "MC-STOPCOCK",
+    "sku": "MC-STOPCOCK",
+    "name": "3-Way Stop Cock",
+    "description": "Single-use 3-way stopcock for IV line fluid/medication administration and sampling.",
+    "price": 25,
+    "image": "/consumables_images/3-way-stopcock.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 47
+  },
+  {
+    "id": "10001147",
+    "sku": "10001147",
+    "name": "Enteral Feeding Set (JP2-2-001)",
+    "description": "Gravity enteral feeding administration set for tube-fed patients.",
+    "price": 30,
+    "image": "/consumables_images/enteral-feeding-set-jp2-001.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 48
+  },
+  {
+    "id": "10001148",
+    "sku": "10001148",
+    "name": "Enteral Feeding Set (JP2-2-101)",
+    "description": "Gravity enteral feeding administration set for tube-fed patients.",
+    "price": 30,
+    "image": "/consumables_images/enteral-feeding-set-jp2-101.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 49
+  },
+  {
+    "id": "10001149",
+    "sku": "10001149",
+    "name": "Enteral Feeding Set (JP2-2-105)",
+    "description": "Gravity enteral feeding administration set for tube-fed patients.",
+    "price": 23,
+    "image": "/consumables_images/enteral-feeding-set-jp2-105.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 50
+  },
+  {
+    "id": "10001188",
+    "sku": "10001188",
+    "name": "Compat Ella Enteral Feeding Bag, 1L",
+    "description": "1-litre enteral feeding bag compatible with Compat Ella pump sets.",
+    "price": 37,
+    "image": "/consumables_images/compat-ella-enteral-feeding-bag-1l.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 51
+  },
+  {
+    "id": "10001190",
+    "sku": "10001190",
+    "name": "Flocare Enteral Feeding Container, 1L with Cap",
+    "description": "1-litre enteral feeding container with pack cap, for use with Flocare feeding sets.",
+    "price": 21.5,
+    "image": "/consumables_images/flocare-enteral-feeding-container-1l.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 52
+  },
+  {
+    "id": "10001189",
+    "sku": "10001189",
+    "name": "Flocare Infinity Enteral Feeding Pack Set",
+    "description": "Enteral feeding pack set for use with the Flocare Infinity pump.",
+    "price": 21,
+    "image": "/consumables_images/flocare-infinity-feeding-pack-set.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 53
+  },
+  {
+    "id": "10001191",
+    "sku": "10001191",
+    "name": "Enteral Feeding Transition Connector (ENlock/Funnel)",
+    "description": "Transition connector for adapting an enteral feeding tube between ENlock and funnel/catheter-tip fittings.",
+    "price": 3,
+    "image": "/consumables_images/enteral-feeding-transition-connector.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 54
+  },
+  {
+    "id": "10001225",
+    "sku": "10001225",
+    "name": "Bacterial/Viral Breathing Circuit Filter",
+    "description": "Bacterial and viral filter fitted in-line on a breathing circuit to protect against cross-contamination.",
+    "price": 500,
+    "image": "/consumables_images/bacterial-viral-breathing-circuit-filter.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 55
+  },
+  {
+    "id": "10001209",
+    "sku": "10001209",
+    "name": "Closed Suction Catheter, 12FR",
+    "description": "Closed-system suction catheter with a double-swivel elbow connector, 12FR, for tracheal suctioning without breaking the ventilator circuit.",
+    "price": 55,
+    "image": "/consumables_images/closed-suction-catheter-12fr.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 56
+  },
+  {
+    "id": "10001226",
+    "sku": "10001226",
+    "name": "HME (Heat & Moisture Exchanger) Filter",
+    "description": "Heat and moisture exchanger filter for airway humidification in ventilated or tracheostomy patients.",
+    "price": 18,
+    "image": "/consumables_images/hme-filter-heat-moisture-exchanger.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 57
+  },
+  {
+    "id": "10001227",
+    "sku": "10001227",
+    "name": "Sterile Tracheostomy Care Tray",
+    "description": "Sterile tracheostomy clean-and-care tray with a moisture-proof drape, for routine stoma care.",
+    "price": 240,
+    "image": "/consumables_images/sterile-tracheostomy-care-tray.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 58
+  },
+  {
+    "id": "10001205",
+    "sku": "10001205",
+    "name": "Suction Catheter, 12FR",
+    "description": "Single-use open suction catheter, 12FR.",
+    "price": 148,
+    "image": "/consumables_images/suction-catheter-12fr.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 59
+  },
+  {
+    "id": "10001206",
+    "sku": "10001206",
+    "name": "Suction Catheter, 14FR",
+    "description": "Single-use open suction catheter, 14FR.",
+    "price": 11.5,
+    "image": "/consumables_images/suction-catheter-14fr.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 60
+  },
+  {
+    "id": "10001224",
+    "sku": "10001224",
+    "name": "Tracheostomy Tube Holder, Adult",
+    "description": "Adjustable adult tracheostomy tube holder for securing the tube in place.",
+    "price": 400,
+    "image": "/consumables_images/tracheostomy-tube-holder-adult.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 61
+  },
+  {
+    "id": "10001005",
+    "sku": "10001005",
+    "name": "Bacterial/Viral Filter for Spirometer (MIR)",
+    "description": "Single-use bacterial/viral filter fitted between the patient mouthpiece and a MIR spirometer.",
+    "price": 15,
+    "image": "/consumables_images/spirometer-bacterial-viral-filter-mir.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 62
+  },
+  {
+    "id": "10001069",
+    "sku": "10001069",
+    "name": "Sidestream Nebulizer Disposable Kit",
+    "description": "Disposable nebulizer medication cup and mask assembly compatible with Sidestream nebulizer compressors.",
+    "price": 16,
+    "image": "/consumables_images/sidestream-nebulizer-disposable-kit.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 63
+  },
+  {
+    "id": "10001070",
+    "sku": "10001070",
+    "name": "Sidestream Nebulizer Disposable Kit, Angled Mouthpiece",
+    "description": "Disposable Sidestream-compatible nebulizer kit with an angled mouthpiece for medication delivery.",
+    "price": 16,
+    "image": "/consumables_images/sidestream-nebulizer-angled-mouthpiece.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 64
+  },
+  {
+    "id": "10001071",
+    "sku": "10001071",
+    "name": "Sidestream Nebulizer Disposable Kit, Child Mask",
+    "description": "Disposable Sidestream-compatible nebulizer kit fitted with a paediatric mask.",
+    "price": 16,
+    "image": "/consumables_images/sidestream-nebulizer-child-mask.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 65
+  },
+  {
+    "id": "MC-SPACER",
+    "sku": "MC-SPACER",
+    "name": "Optichamber Diamond Spacer Chamber",
+    "description": "Valved holding chamber (spacer) used with a metered-dose inhaler, available in Small, Medium and Large masks. Priced from SAR 20.8.",
+    "price": 20.8,
+    "image": "/consumables_images/optichamber-diamond-spacer-chamber.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 66
+  },
+  {
+    "id": "10001055",
+    "sku": "10001055",
+    "name": "Humidifier Connector Tube (Everflo)",
+    "description": "Connector tubing linking an oxygen humidifier bottle to an Everflo oxygen concentrator.",
+    "price": 100,
+    "image": "/consumables_images/humidifier-connector-tube-everflo.jpg",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 67
+  },
+  {
+    "id": "MSC-01",
+    "sku": "MSC-01",
+    "name": "Endotracheal Tube, Cuffed",
+    "description": "Sterile, single-use cuffed tube for airway intubation and mechanical ventilation. Includes an inflation cuff with pilot balloon and a 15 mm connector. Sizes / variants: 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1001,
+    "catalogueNo": 1,
+    "unit": "pcs",
+    "sizes": "2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5",
+    "variants": [
+      {
+        "id": "MSC-01-01",
+        "code": "MSC-01-01",
+        "size": "2"
+      },
+      {
+        "id": "MSC-01-02",
+        "code": "MSC-01-02",
+        "size": "2.5"
+      },
+      {
+        "id": "MSC-01-03",
+        "code": "MSC-01-03",
+        "size": "3"
+      },
+      {
+        "id": "MSC-01-04",
+        "code": "MSC-01-04",
+        "size": "3.5"
+      },
+      {
+        "id": "MSC-01-05",
+        "code": "MSC-01-05",
+        "size": "4"
+      },
+      {
+        "id": "MSC-01-06",
+        "code": "MSC-01-06",
+        "size": "4.5"
+      },
+      {
+        "id": "MSC-01-07",
+        "code": "MSC-01-07",
+        "size": "5"
+      },
+      {
+        "id": "MSC-01-08",
+        "code": "MSC-01-08",
+        "size": "5.5"
+      },
+      {
+        "id": "MSC-01-09",
+        "code": "MSC-01-09",
+        "size": "6"
+      },
+      {
+        "id": "MSC-01-10",
+        "code": "MSC-01-10",
+        "size": "6.5"
+      },
+      {
+        "id": "MSC-01-11",
+        "code": "MSC-01-11",
+        "size": "7"
+      },
+      {
+        "id": "MSC-01-12",
+        "code": "MSC-01-12",
+        "size": "7.5"
+      }
+    ]
+  },
+  {
+    "id": "MSC-02",
+    "sku": "MSC-02",
+    "name": "Surgical Gown, Sterile",
+    "description": "Sterile disposable gown worn by the surgical team for protection against fluids and contamination. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_gloves.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 1002,
+    "catalogueNo": 2,
+    "unit": "pcs"
+  },
+  {
+    "id": "MSC-03",
+    "sku": "MSC-03",
+    "name": "Disposable Operation Sterile Surgical Kit",
+    "description": "Sterile single-use pack of drapes and basic items prepared for a surgical procedure. Unit: kit.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1003,
+    "catalogueNo": 3,
+    "unit": "kit"
+  },
+  {
+    "id": "MSC-04",
+    "sku": "MSC-04",
+    "name": "Suture Silk (Cutting)",
+    "description": "Sterile non-absorbable braided silk suture with a cutting needle, for skin and tissue closure. Sizes / variants: No. 1, No. 2. Unit: Box×12.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1004,
+    "catalogueNo": 4,
+    "unit": "Box×12",
+    "sizes": "No. 1, No. 2",
+    "variants": [
+      {
+        "id": "MSC-04-01",
+        "code": "MSC-04-01",
+        "size": "No. 1"
+      },
+      {
+        "id": "MSC-04-02",
+        "code": "MSC-04-02",
+        "size": "No. 2"
+      }
+    ]
+  },
+  {
+    "id": "MSC-05",
+    "sku": "MSC-05",
+    "name": "Suture Polypropylene / Prolene (Cutting)",
+    "description": "Sterile non-absorbable monofilament polypropylene suture with a cutting needle, for skin, vascular and general closure. Sizes / variants: No. 1, No. 2, No. 2.0. Unit: Box×12.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1005,
+    "catalogueNo": 5,
+    "unit": "Box×12",
+    "sizes": "No. 1, No. 2, No. 2.0",
+    "variants": [
+      {
+        "id": "MSC-05-01",
+        "code": "MSC-05-01",
+        "size": "No. 1"
+      },
+      {
+        "id": "MSC-05-02",
+        "code": "MSC-05-02",
+        "size": "No. 2"
+      },
+      {
+        "id": "MSC-05-03",
+        "code": "MSC-05-03",
+        "size": "No. 2.0"
+      }
+    ]
+  },
+  {
+    "id": "MSC-06",
+    "sku": "MSC-06",
+    "name": "Suture Vicryl (Round)",
+    "description": "Sterile absorbable braided polyglactin suture with a round-body needle, for soft-tissue approximation and internal closure. Sizes / variants: No. 0, 1, 2, 2/0, 3/0, 3, 4/0 double needle, 5/0 double needle. Unit: Box×12.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1006,
+    "catalogueNo": 6,
+    "unit": "Box×12",
+    "sizes": "No. 0, 1, 2, 2/0, 3/0, 3, 4/0 double needle, 5/0 double needle",
+    "variants": [
+      {
+        "id": "MSC-06-01",
+        "code": "MSC-06-01",
+        "size": "No. 0"
+      },
+      {
+        "id": "MSC-06-02",
+        "code": "MSC-06-02",
+        "size": "1"
+      },
+      {
+        "id": "MSC-06-03",
+        "code": "MSC-06-03",
+        "size": "2"
+      },
+      {
+        "id": "MSC-06-04",
+        "code": "MSC-06-04",
+        "size": "2/0"
+      },
+      {
+        "id": "MSC-06-05",
+        "code": "MSC-06-05",
+        "size": "3/0"
+      },
+      {
+        "id": "MSC-06-06",
+        "code": "MSC-06-06",
+        "size": "3"
+      },
+      {
+        "id": "MSC-06-07",
+        "code": "MSC-06-07",
+        "size": "4/0 double needle"
+      },
+      {
+        "id": "MSC-06-08",
+        "code": "MSC-06-08",
+        "size": "5/0 double needle"
+      }
+    ]
+  },
+  {
+    "id": "MSC-07",
+    "sku": "MSC-07",
+    "name": "I.V. Catheter Cannula",
+    "description": "Sterile peripheral intravenous cannula, colour-coded by gauge, with an injection port and wings. Sizes / variants: 16, 18, 20, 22, 24. Unit: Box×100.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1007,
+    "catalogueNo": 7,
+    "unit": "Box×100",
+    "sizes": "16, 18, 20, 22, 24",
+    "variants": [
+      {
+        "id": "MSC-07-01",
+        "code": "MSC-07-01",
+        "size": "16"
+      },
+      {
+        "id": "MSC-07-02",
+        "code": "MSC-07-02",
+        "size": "18"
+      },
+      {
+        "id": "MSC-07-03",
+        "code": "MSC-07-03",
+        "size": "20"
+      },
+      {
+        "id": "MSC-07-04",
+        "code": "MSC-07-04",
+        "size": "22"
+      },
+      {
+        "id": "MSC-07-05",
+        "code": "MSC-07-05",
+        "size": "24"
+      }
+    ]
+  },
+  {
+    "id": "MSC-08",
+    "sku": "MSC-08",
+    "name": "Nasogastric Tube",
+    "description": "Sterile flexible tube passed through the nose into the stomach for feeding, drainage or gastric decompression. Sizes / variants: 6, 8, 10, 12, 14, 16, 18. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 1008,
+    "catalogueNo": 8,
+    "unit": "pcs",
+    "sizes": "6, 8, 10, 12, 14, 16, 18",
+    "variants": [
+      {
+        "id": "MSC-08-01",
+        "code": "MSC-08-01",
+        "size": "6"
+      },
+      {
+        "id": "MSC-08-02",
+        "code": "MSC-08-02",
+        "size": "8"
+      },
+      {
+        "id": "MSC-08-03",
+        "code": "MSC-08-03",
+        "size": "10"
+      },
+      {
+        "id": "MSC-08-04",
+        "code": "MSC-08-04",
+        "size": "12"
+      },
+      {
+        "id": "MSC-08-05",
+        "code": "MSC-08-05",
+        "size": "14"
+      },
+      {
+        "id": "MSC-08-06",
+        "code": "MSC-08-06",
+        "size": "16"
+      },
+      {
+        "id": "MSC-08-07",
+        "code": "MSC-08-07",
+        "size": "18"
+      }
+    ]
+  },
+  {
+    "id": "MSC-09",
+    "sku": "MSC-09",
+    "name": "Suction Tube",
+    "description": "Sterile single-use suction catheter for clearing secretions from the airway or body cavities. Sizes / variants: 6, 8, 10, 12, 14, 16, 18, 20. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1009,
+    "catalogueNo": 9,
+    "unit": "pcs",
+    "sizes": "6, 8, 10, 12, 14, 16, 18, 20",
+    "variants": [
+      {
+        "id": "MSC-09-01",
+        "code": "MSC-09-01",
+        "size": "6"
+      },
+      {
+        "id": "MSC-09-02",
+        "code": "MSC-09-02",
+        "size": "8"
+      },
+      {
+        "id": "MSC-09-03",
+        "code": "MSC-09-03",
+        "size": "10"
+      },
+      {
+        "id": "MSC-09-04",
+        "code": "MSC-09-04",
+        "size": "12"
+      },
+      {
+        "id": "MSC-09-05",
+        "code": "MSC-09-05",
+        "size": "14"
+      },
+      {
+        "id": "MSC-09-06",
+        "code": "MSC-09-06",
+        "size": "16"
+      },
+      {
+        "id": "MSC-09-07",
+        "code": "MSC-09-07",
+        "size": "18"
+      },
+      {
+        "id": "MSC-09-08",
+        "code": "MSC-09-08",
+        "size": "20"
+      }
+    ]
+  },
+  {
+    "id": "MSC-10",
+    "sku": "MSC-10",
+    "name": "Foley's Catheter, 16 FR",
+    "description": "Sterile indwelling urinary catheter with an inflatable retention balloon and drainage funnel. Sizes / variants: 16 FR. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 1010,
+    "catalogueNo": 10,
+    "unit": "pcs",
+    "sizes": "16 FR"
+  },
+  {
+    "id": "MSC-11",
+    "sku": "MSC-11",
+    "name": "Foley's Catheter, 14 FR",
+    "description": "Sterile indwelling urinary catheter with an inflatable retention balloon and drainage funnel. Sizes / variants: 14 FR. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 1011,
+    "catalogueNo": 11,
+    "unit": "pcs",
+    "sizes": "14 FR"
+  },
+  {
+    "id": "MSC-12",
+    "sku": "MSC-12",
+    "name": "Urine Bag, 2 L",
+    "description": "2000 ml sterile urine drainage bag with a graduated scale, button/push-pull outlet valve and non-return valve. Unit: bag.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 1012,
+    "catalogueNo": 12,
+    "unit": "bag"
+  },
+  {
+    "id": "MSC-13",
+    "sku": "MSC-13",
+    "name": "Surgical Blade, No. 11",
+    "description": "Sterile stainless or carbon steel disposable scalpel blade for surgical incision. Sizes / variants: No. 11. Unit: Box×100.",
+    "price": null,
+    "image": "/product_img_scalpel.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1013,
+    "catalogueNo": 13,
+    "unit": "Box×100",
+    "sizes": "No. 11"
+  },
+  {
+    "id": "MSC-14",
+    "sku": "MSC-14",
+    "name": "Surgical Blade, No. 24",
+    "description": "Sterile stainless or carbon steel disposable scalpel blade for surgical incision. Sizes / variants: No. 24. Unit: Box×100.",
+    "price": null,
+    "image": "/product_img_scalpel.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1014,
+    "catalogueNo": 14,
+    "unit": "Box×100",
+    "sizes": "No. 24"
+  },
+  {
+    "id": "MSC-15",
+    "sku": "MSC-15",
+    "name": "Ventilator Circuit",
+    "description": "Disposable breathing circuit connecting the patient to a ventilator, with corrugated tubing and a Y-piece. Sizes / variants: Pediatric, Adult. Unit: kit.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1015,
+    "catalogueNo": 15,
+    "unit": "kit",
+    "sizes": "Pediatric, Adult",
+    "variants": [
+      {
+        "id": "MSC-15-01",
+        "code": "MSC-15-01",
+        "size": "Pediatric"
+      },
+      {
+        "id": "MSC-15-02",
+        "code": "MSC-15-02",
+        "size": "Adult"
+      }
+    ]
+  },
+  {
+    "id": "MSC-16",
+    "sku": "MSC-16",
+    "name": "Anesthesia Circuit",
+    "description": "Disposable breathing circuit for anaesthesia machines, with tubing, a Y-piece and a breathing bag. Sizes / variants: Pediatric, Adult. Unit: kit.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1016,
+    "catalogueNo": 16,
+    "unit": "kit",
+    "sizes": "Pediatric, Adult",
+    "variants": [
+      {
+        "id": "MSC-16-01",
+        "code": "MSC-16-01",
+        "size": "Pediatric"
+      },
+      {
+        "id": "MSC-16-02",
+        "code": "MSC-16-02",
+        "size": "Adult"
+      }
+    ]
+  },
+  {
+    "id": "MSC-17",
+    "sku": "MSC-17",
+    "name": "Bone Wax",
+    "description": "Sterile wax used to control bleeding from cut bone surfaces during surgery. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 1017,
+    "catalogueNo": 17,
+    "unit": "pcs"
+  },
+  {
+    "id": "MSC-18",
+    "sku": "MSC-18",
+    "name": "Absorbable Hemostatic Gelatin Sponge",
+    "description": "Sterile absorbable gelatin sponge applied to bleeding surfaces to help stop bleeding. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 1018,
+    "catalogueNo": 18,
+    "unit": "pcs"
+  },
+  {
+    "id": "MSC-19",
+    "sku": "MSC-19",
+    "name": "Oropharyngeal Airway",
+    "description": "Curved, colour-coded plastic airway inserted through the mouth to keep the tongue from blocking the airway. Sizes / variants: 000, 00, 0, 1, 2, 3, 4, 5, 6. Unit: pcs.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1019,
+    "catalogueNo": 19,
+    "unit": "pcs",
+    "sizes": "000, 00, 0, 1, 2, 3, 4, 5, 6",
+    "variants": [
+      {
+        "id": "MSC-19-01",
+        "code": "MSC-19-01",
+        "size": "000"
+      },
+      {
+        "id": "MSC-19-02",
+        "code": "MSC-19-02",
+        "size": "00"
+      },
+      {
+        "id": "MSC-19-03",
+        "code": "MSC-19-03",
+        "size": "0"
+      },
+      {
+        "id": "MSC-19-04",
+        "code": "MSC-19-04",
+        "size": "1"
+      },
+      {
+        "id": "MSC-19-05",
+        "code": "MSC-19-05",
+        "size": "2"
+      },
+      {
+        "id": "MSC-19-06",
+        "code": "MSC-19-06",
+        "size": "3"
+      },
+      {
+        "id": "MSC-19-07",
+        "code": "MSC-19-07",
+        "size": "4"
+      },
+      {
+        "id": "MSC-19-08",
+        "code": "MSC-19-08",
+        "size": "5"
+      },
+      {
+        "id": "MSC-19-09",
+        "code": "MSC-19-09",
+        "size": "6"
+      }
+    ]
+  },
+  {
+    "id": "MSC-20",
+    "sku": "MSC-20",
+    "name": "Disposable Gloves, Non-Sterile",
+    "description": "Non-sterile powder-free disposable examination gloves for general clinical use. Sizes / variants: M, L. Unit: Box×100.",
+    "price": null,
+    "image": "/product_img_gloves.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 1020,
+    "catalogueNo": 20,
+    "unit": "Box×100",
+    "sizes": "M, L",
+    "variants": [
+      {
+        "id": "MSC-20-01",
+        "code": "MSC-20-01",
+        "size": "M"
+      },
+      {
+        "id": "MSC-20-02",
+        "code": "MSC-20-02",
+        "size": "L"
+      }
+    ]
+  },
+  {
+    "id": "MSC-21",
+    "sku": "MSC-21",
+    "name": "Surgical Gloves, Sterile",
+    "description": "Sterile, individually wrapped surgical gloves for use in operating-theatre procedures. Sizes / variants: 6.5, 7, 7.5, 8. Unit: Box×50.",
+    "price": null,
+    "image": "/product_img_gloves.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 1021,
+    "catalogueNo": 21,
+    "unit": "Box×50",
+    "sizes": "6.5, 7, 7.5, 8",
+    "variants": [
+      {
+        "id": "MSC-21-01",
+        "code": "MSC-21-01",
+        "size": "6.5"
+      },
+      {
+        "id": "MSC-21-02",
+        "code": "MSC-21-02",
+        "size": "7"
+      },
+      {
+        "id": "MSC-21-03",
+        "code": "MSC-21-03",
+        "size": "7.5"
+      },
+      {
+        "id": "MSC-21-04",
+        "code": "MSC-21-04",
+        "size": "8"
+      }
+    ]
+  },
+  {
+    "id": "MSC-22",
+    "sku": "MSC-22",
+    "name": "Laryngeal Mask Airway",
+    "description": "Disposable supraglottic airway device with an inflatable cuff, inserted to secure the airway without intubation. Sizes / variants: 2, 2.5, 3, 3.5, 4, 4.5, 5. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_mask.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1022,
+    "catalogueNo": 22,
+    "unit": "pcs",
+    "sizes": "2, 2.5, 3, 3.5, 4, 4.5, 5",
+    "variants": [
+      {
+        "id": "MSC-22-01",
+        "code": "MSC-22-01",
+        "size": "2"
+      },
+      {
+        "id": "MSC-22-02",
+        "code": "MSC-22-02",
+        "size": "2.5"
+      },
+      {
+        "id": "MSC-22-03",
+        "code": "MSC-22-03",
+        "size": "3"
+      },
+      {
+        "id": "MSC-22-04",
+        "code": "MSC-22-04",
+        "size": "3.5"
+      },
+      {
+        "id": "MSC-22-05",
+        "code": "MSC-22-05",
+        "size": "4"
+      },
+      {
+        "id": "MSC-22-06",
+        "code": "MSC-22-06",
+        "size": "4.5"
+      },
+      {
+        "id": "MSC-22-07",
+        "code": "MSC-22-07",
+        "size": "5"
+      }
+    ]
+  },
+  {
+    "id": "MSC-23",
+    "sku": "MSC-23",
+    "name": "Ambu Bag",
+    "description": "Self-inflating manual resuscitator with face mask, valve and oxygen reservoir for emergency ventilation. Sizes / variants: Adult, Pediatric. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_mask.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1023,
+    "catalogueNo": 23,
+    "unit": "pcs",
+    "sizes": "Adult, Pediatric",
+    "variants": [
+      {
+        "id": "MSC-23-01",
+        "code": "MSC-23-01",
+        "size": "Adult"
+      },
+      {
+        "id": "MSC-23-02",
+        "code": "MSC-23-02",
+        "size": "Pediatric"
+      }
+    ]
+  },
+  {
+    "id": "MSC-24",
+    "sku": "MSC-24",
+    "name": "Adhesive E.C.G. Electrodes",
+    "description": "Disposable self-adhesive foam electrodes with a snap connector for ECG monitoring. Sizes / variants: Adult & children. Unit: Box×50.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1024,
+    "catalogueNo": 24,
+    "unit": "Box×50",
+    "sizes": "Adult & children"
+  },
+  {
+    "id": "MSC-25",
+    "sku": "MSC-25",
+    "name": "Syringe with Needle, 5 ml",
+    "description": "Sterile single-use syringe with attached needle for injection and aspiration. Sizes / variants: 5 ml. Unit: Box×100.",
+    "price": null,
+    "image": "/product_img_syringe.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1025,
+    "catalogueNo": 25,
+    "unit": "Box×100",
+    "sizes": "5 ml"
+  },
+  {
+    "id": "MSC-26",
+    "sku": "MSC-26",
+    "name": "Syringe with Needle, 10 ml",
+    "description": "Sterile single-use syringe with attached needle for injection and aspiration. Sizes / variants: 10 ml. Unit: Box×100.",
+    "price": null,
+    "image": "/product_img_syringe.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1026,
+    "catalogueNo": 26,
+    "unit": "Box×100",
+    "sizes": "10 ml"
+  },
+  {
+    "id": "MSC-27",
+    "sku": "MSC-27",
+    "name": "Syringe with Needle, 20 ml",
+    "description": "Sterile single-use syringe with attached needle for injection and aspiration. Sizes / variants: 20 ml. Unit: Box×25.",
+    "price": null,
+    "image": "/product_img_syringe.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1027,
+    "catalogueNo": 27,
+    "unit": "Box×25",
+    "sizes": "20 ml"
+  },
+  {
+    "id": "MSC-28",
+    "sku": "MSC-28",
+    "name": "Syringe with Needle, 50 ml",
+    "description": "Sterile single-use syringe with attached needle for injection and aspiration. Sizes / variants: 50 ml. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_syringe.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1028,
+    "catalogueNo": 28,
+    "unit": "pcs",
+    "sizes": "50 ml"
+  },
+  {
+    "id": "MSC-29",
+    "sku": "MSC-29",
+    "name": "Spinal Needle",
+    "description": "Sterile fine-gauge spinal anaesthesia needle with stylet and hub. Sizes / variants: 26, 25, 24, 22, 20, 18. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_syringe.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1029,
+    "catalogueNo": 29,
+    "unit": "pcs",
+    "sizes": "26, 25, 24, 22, 20, 18",
+    "variants": [
+      {
+        "id": "MSC-29-01",
+        "code": "MSC-29-01",
+        "size": "26"
+      },
+      {
+        "id": "MSC-29-02",
+        "code": "MSC-29-02",
+        "size": "25"
+      },
+      {
+        "id": "MSC-29-03",
+        "code": "MSC-29-03",
+        "size": "24"
+      },
+      {
+        "id": "MSC-29-04",
+        "code": "MSC-29-04",
+        "size": "22"
+      },
+      {
+        "id": "MSC-29-05",
+        "code": "MSC-29-05",
+        "size": "20"
+      },
+      {
+        "id": "MSC-29-06",
+        "code": "MSC-29-06",
+        "size": "18"
+      }
+    ]
+  },
+  {
+    "id": "MSC-30",
+    "sku": "MSC-30",
+    "name": "Gauze Bandage",
+    "description": "Sterile cotton gauze roller bandage for dressing retention and wound wrapping. Sizes / variants: 10 cm × 10 m, 7.5 cm × 10 m. Unit: roll.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 1030,
+    "catalogueNo": 30,
+    "unit": "roll",
+    "sizes": "10 cm × 10 m, 7.5 cm × 10 m",
+    "variants": [
+      {
+        "id": "MSC-30-01",
+        "code": "MSC-30-01",
+        "size": "10 cm × 10 m"
+      },
+      {
+        "id": "MSC-30-02",
+        "code": "MSC-30-02",
+        "size": "7.5 cm × 10 m"
+      }
+    ]
+  },
+  {
+    "id": "MSC-31",
+    "sku": "MSC-31",
+    "name": "Gauze Bandage, 7.5 cm × 10 m",
+    "description": "Sterile cotton gauze roller bandage for dressing retention and wound wrapping. Sizes / variants: 7.5 cm × 10 m. Unit: roll.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 1031,
+    "catalogueNo": 31,
+    "unit": "roll",
+    "sizes": "7.5 cm × 10 m"
+  },
+  {
+    "id": "MSC-32",
+    "sku": "MSC-32",
+    "name": "Gauze Roll",
+    "description": "Absorbent cotton gauze in a large roll for cutting to size. Sizes / variants: 36 cm × 100 m. Unit: roll.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 1032,
+    "catalogueNo": 32,
+    "unit": "roll",
+    "sizes": "36 cm × 100 m"
+  },
+  {
+    "id": "MSC-33",
+    "sku": "MSC-33",
+    "name": "Glucometer Strips",
+    "description": "Blood glucose test strips for a glucose meter. No manual code entry is needed. Unit: pcs.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1033,
+    "catalogueNo": 33,
+    "unit": "pcs"
+  },
+  {
+    "id": "MSC-34",
+    "sku": "MSC-34",
+    "name": "Central Venous Catheter",
+    "description": "Sterile multi-lumen catheter for central venous access, infusion and pressure monitoring. Sizes / variants: 3.5, 4, 4.5, 5, 6, 7, 7.5. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1034,
+    "catalogueNo": 34,
+    "unit": "pcs",
+    "sizes": "3.5, 4, 4.5, 5, 6, 7, 7.5",
+    "variants": [
+      {
+        "id": "MSC-34-01",
+        "code": "MSC-34-01",
+        "size": "3.5"
+      },
+      {
+        "id": "MSC-34-02",
+        "code": "MSC-34-02",
+        "size": "4"
+      },
+      {
+        "id": "MSC-34-03",
+        "code": "MSC-34-03",
+        "size": "4.5"
+      },
+      {
+        "id": "MSC-34-04",
+        "code": "MSC-34-04",
+        "size": "5"
+      },
+      {
+        "id": "MSC-34-05",
+        "code": "MSC-34-05",
+        "size": "6"
+      },
+      {
+        "id": "MSC-34-06",
+        "code": "MSC-34-06",
+        "size": "7"
+      },
+      {
+        "id": "MSC-34-07",
+        "code": "MSC-34-07",
+        "size": "7.5"
+      }
+    ]
+  },
+  {
+    "id": "MSC-35",
+    "sku": "MSC-35",
+    "name": "Rebreathing Mask",
+    "description": "Oxygen face mask with a reservoir bag for delivering higher oxygen concentrations. Sizes / variants: Adult, Pediatric. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_mask.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1035,
+    "catalogueNo": 35,
+    "unit": "pcs",
+    "sizes": "Adult, Pediatric",
+    "variants": [
+      {
+        "id": "MSC-35-01",
+        "code": "MSC-35-01",
+        "size": "Adult"
+      },
+      {
+        "id": "MSC-35-02",
+        "code": "MSC-35-02",
+        "size": "Pediatric"
+      }
+    ]
+  },
+  {
+    "id": "MSC-36",
+    "sku": "MSC-36",
+    "name": "Anesthesia Mask",
+    "description": "Transparent cushioned face mask for delivering anaesthetic gases and oxygen by bag-mask. Sizes / variants: Adult, Pediatric, Neonatal. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_mask.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1036,
+    "catalogueNo": 36,
+    "unit": "pcs",
+    "sizes": "Adult, Pediatric, Neonatal",
+    "variants": [
+      {
+        "id": "MSC-36-01",
+        "code": "MSC-36-01",
+        "size": "Adult"
+      },
+      {
+        "id": "MSC-36-02",
+        "code": "MSC-36-02",
+        "size": "Pediatric"
+      },
+      {
+        "id": "MSC-36-03",
+        "code": "MSC-36-03",
+        "size": "Neonatal"
+      }
+    ]
+  },
+  {
+    "id": "MSC-37",
+    "sku": "MSC-37",
+    "name": "Abdominal Gauze, Sterile",
+    "description": "Sterile absorbent abdominal pad for packing and absorbing fluid during abdominal surgery. Sizes / variants: 40 cm × 45 cm. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_gauze.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "2",
+    "order": 1037,
+    "catalogueNo": 37,
+    "unit": "pcs",
+    "sizes": "40 cm × 45 cm"
+  },
+  {
+    "id": "MSC-38",
+    "sku": "MSC-38",
+    "name": "Chest Tube with Trocar",
+    "description": "Sterile thoracic drainage catheter with trocar for draining air or fluid from the chest cavity. Sizes / variants: 16, 20, 24, 26, 28, 30, 32, 34, 36. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_catheter.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "4",
+    "order": 1038,
+    "catalogueNo": 38,
+    "unit": "pcs",
+    "sizes": "16, 20, 24, 26, 28, 30, 32, 34, 36",
+    "variants": [
+      {
+        "id": "MSC-38-01",
+        "code": "MSC-38-01",
+        "size": "16"
+      },
+      {
+        "id": "MSC-38-02",
+        "code": "MSC-38-02",
+        "size": "20"
+      },
+      {
+        "id": "MSC-38-03",
+        "code": "MSC-38-03",
+        "size": "24"
+      },
+      {
+        "id": "MSC-38-04",
+        "code": "MSC-38-04",
+        "size": "26"
+      },
+      {
+        "id": "MSC-38-05",
+        "code": "MSC-38-05",
+        "size": "28"
+      },
+      {
+        "id": "MSC-38-06",
+        "code": "MSC-38-06",
+        "size": "30"
+      },
+      {
+        "id": "MSC-38-07",
+        "code": "MSC-38-07",
+        "size": "32"
+      },
+      {
+        "id": "MSC-38-08",
+        "code": "MSC-38-08",
+        "size": "34"
+      },
+      {
+        "id": "MSC-38-09",
+        "code": "MSC-38-09",
+        "size": "36"
+      }
+    ]
+  },
+  {
+    "id": "MSC-39",
+    "sku": "MSC-39",
+    "name": "External Fixation",
+    "description": "Orthopaedic frame system with pins, rods and clamps for stabilising fractures from outside the body. Sizes / variants: Adult & children. Unit: set.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1039,
+    "catalogueNo": 39,
+    "unit": "set",
+    "sizes": "Adult & children"
+  },
+  {
+    "id": "MSC-40",
+    "sku": "MSC-40",
+    "name": "Surgical Plates and Screws",
+    "description": "Orthopaedic implants for internal fixation of fractures. Sizes / variants: Different types and sizes. Unit: pcs.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1040,
+    "catalogueNo": 40,
+    "unit": "pcs",
+    "sizes": "Different types and sizes"
+  },
+  {
+    "id": "MSC-41",
+    "sku": "MSC-41",
+    "name": "K-Wire",
+    "description": "Stainless steel Kirschner wires for temporary or definitive fracture fixation. Sizes / variants: Different sizes. Unit: pcs.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1041,
+    "catalogueNo": 41,
+    "unit": "pcs",
+    "sizes": "Different sizes"
+  },
+  {
+    "id": "MSC-42",
+    "sku": "MSC-42",
+    "name": "Face Mask",
+    "description": "Disposable 3-ply surgical face mask with nose strip and ear loops. Sizes / variants: Adult, Pediatric. Unit: pcs.",
+    "price": null,
+    "image": "/product_img_mask.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "1",
+    "order": 1042,
+    "catalogueNo": 42,
+    "unit": "pcs",
+    "sizes": "Adult, Pediatric",
+    "variants": [
+      {
+        "id": "MSC-42-01",
+        "code": "MSC-42-01",
+        "size": "Adult"
+      },
+      {
+        "id": "MSC-42-02",
+        "code": "MSC-42-02",
+        "size": "Pediatric"
+      }
+    ]
+  },
+  {
+    "id": "MSC-43",
+    "sku": "MSC-43",
+    "name": "Surgical Kit",
+    "description": "Set of basic surgical supplies packed together for procedures. Unit: kit.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1043,
+    "catalogueNo": 43,
+    "unit": "kit"
+  },
+  {
+    "id": "MSC-44",
+    "sku": "MSC-44",
+    "name": "Trauma Kit",
+    "description": "Emergency kit with supplies for controlling bleeding and treating injuries. Unit: kit.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1044,
+    "catalogueNo": 44,
+    "unit": "kit"
+  },
+  {
+    "id": "MSC-45",
+    "sku": "MSC-45",
+    "name": "CPR Kit",
+    "description": "Resuscitation kit with items such as a pocket mask and gloves for cardiopulmonary resuscitation. Unit: kit.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1045,
+    "catalogueNo": 45,
+    "unit": "kit"
+  },
+  {
+    "id": "MSC-46",
+    "sku": "MSC-46",
+    "name": "Burns Kit",
+    "description": "Kit with dressings and gel for first-line treatment of burns. Unit: kit.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1046,
+    "catalogueNo": 46,
+    "unit": "kit"
+  },
+  {
+    "id": "MSC-47",
+    "sku": "MSC-47",
+    "name": "Surgical Instrument Kit",
+    "description": "Stainless steel set of general surgical instruments such as scissors, forceps and clamps. Unit: kit.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1047,
+    "catalogueNo": 47,
+    "unit": "kit"
+  },
+  {
+    "id": "MSC-48",
+    "sku": "MSC-48",
+    "name": "Oxygen Regulator, Brass, Double Gauge",
+    "description": "Brass regulator with two gauges (cylinder pressure and flow) for medical oxygen cylinders. Unit: pcs.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "3",
+    "order": 1048,
+    "catalogueNo": 48,
+    "unit": "pcs"
+  },
+  {
+    "id": "MSC-49",
+    "sku": "MSC-49",
+    "name": "General Surgery Set",
+    "description": "Stainless steel instrument set for general surgical procedures. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1049,
+    "catalogueNo": 49,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-50",
+    "sku": "MSC-50",
+    "name": "Exploratory Laparotomy Set",
+    "description": "Instrument set for opening and examining the abdominal cavity. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1050,
+    "catalogueNo": 50,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-51",
+    "sku": "MSC-51",
+    "name": "Thoracic Surgery Set",
+    "description": "Instrument set for chest surgery, including a rib spreader and thoracic instruments. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1051,
+    "catalogueNo": 51,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-52",
+    "sku": "MSC-52",
+    "name": "Neurosurgery Set",
+    "description": "Fine instrument set for brain and cranial surgery. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1052,
+    "catalogueNo": 52,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-53",
+    "sku": "MSC-53",
+    "name": "Spine Surgery Set",
+    "description": "Instrument set for spinal procedures such as laminectomy. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1053,
+    "catalogueNo": 53,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-54",
+    "sku": "MSC-54",
+    "name": "Orthopedic Set, Upper Limb",
+    "description": "Instrument set for orthopaedic surgery of the arm, shoulder and hand. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1054,
+    "catalogueNo": 54,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-55",
+    "sku": "MSC-55",
+    "name": "Orthopedic Set, Lower Limb",
+    "description": "Instrument set for orthopaedic surgery of the leg, hip and foot. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1055,
+    "catalogueNo": 55,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-56",
+    "sku": "MSC-56",
+    "name": "ENT Surgery Set",
+    "description": "Instrument set for ear, nose and throat procedures. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1056,
+    "catalogueNo": 56,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-57",
+    "sku": "MSC-57",
+    "name": "Urology Surgery Set",
+    "description": "Instrument set for urological procedures. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1057,
+    "catalogueNo": 57,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-58",
+    "sku": "MSC-58",
+    "name": "Vascular Surgery Set",
+    "description": "Instrument set with vascular clamps and fine instruments for blood-vessel surgery. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1058,
+    "catalogueNo": 58,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-59",
+    "sku": "MSC-59",
+    "name": "Laparotomy Set",
+    "description": "Instrument set for abdominal surgery, including retractors. Unit: set.",
+    "price": null,
+    "image": "/icon_surgical_sets.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1059,
+    "catalogueNo": 59,
+    "unit": "set"
+  },
+  {
+    "id": "MSC-60",
+    "sku": "MSC-60",
+    "name": "Blood Bag, Double",
+    "description": "Sterile blood collection bag with one satellite bag and anticoagulant solution. Unit: bag.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1060,
+    "catalogueNo": 60,
+    "unit": "bag"
+  },
+  {
+    "id": "MSC-61",
+    "sku": "MSC-61",
+    "name": "Blood Bag, Triple",
+    "description": "Sterile blood collection bag with two satellite bags for component separation. Unit: bag.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1061,
+    "catalogueNo": 61,
+    "unit": "bag"
+  },
+  {
+    "id": "MSC-62",
+    "sku": "MSC-62",
+    "name": "I.V. Fluid Stand",
+    "description": "Height-adjustable stainless steel stand with hooks for hanging infusion bags. Unit: pcs.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "5",
+    "order": 1062,
+    "catalogueNo": 62,
+    "unit": "pcs"
+  },
+  {
+    "id": "MSC-63",
+    "sku": "MSC-63",
+    "name": "E.C.G. Paper",
+    "description": "Thermal recording paper for ECG machines. Unit: Pkt.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1063,
+    "catalogueNo": 63,
+    "unit": "Pkt"
+  },
+  {
+    "id": "MSC-64",
+    "sku": "MSC-64",
+    "name": "E.C.G. Gel",
+    "description": "Conductive gel applied to the skin for ECG and ultrasound contact. Unit: Liter.",
+    "price": null,
+    "image": "/icon_medical_consumables.png",
+    "category": {
+      "name": "Medical Consumables"
+    },
+    "section": "6",
+    "order": 1064,
+    "catalogueNo": 64,
+    "unit": "Liter"
+  }
+]
