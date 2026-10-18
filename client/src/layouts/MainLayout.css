@@ -840,8 +840,8 @@
 
 :root[data-brand="1"] .site-topbar-signin {
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #f4fbff;
+  border-color: rgba(var(--fg-rgb), 0.28);
+  color: var(--c-text);
 }
 
 .site-topbar-account-avatar {
