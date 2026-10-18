@@ -200,6 +200,8 @@
     "pagination_label": "Product pages",
     "pagination_pages": "Page numbers",
     "page_go": "Go to page {{page}}",
+    "page_jump": "Go to page",
+    "page_jump_go": "Go",
     "range_title": "Our Product Range",
     "range_subtitle": "Explore our specialised product categories — each curated to meet the rigorous demands of modern healthcare facilities.",
     "loading_categories": "Loading product categories…",

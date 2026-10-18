@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ProductCardSkeleton } from '../components/Skeleton';
@@ -139,6 +139,23 @@ function isReusableInstrumentProduct(inst) {
 }
 
 const PAGE_SIZE = 9;
+
+/** 1 … 4 5 [6] 7 8 … 286 — never render every page number. */
+function pageWindow(current, total) {
+  const pages = new Set([1, total]);
+  for (let p = current - 2; p <= current + 2; p += 1) {
+    if (p >= 1 && p <= total) pages.add(p);
+  }
+  const sorted = [...pages].sort((a, b) => a - b);
+  const items = [];
+  let previous = 0;
+  for (const p of sorted) {
+    if (p - previous > 1) items.push('gap');
+    items.push(p);
+    previous = p;
+  }
+  return items;
+}
 
 async function loadConsumablesCatalog() {
   const res = await fetch('/consumables.json');
@@ -322,6 +339,15 @@ function ProductListing() {
 
   // Reset page when search or consumables filter changes
   useEffect(() => { setPage(1); }, [debouncedSearch, consumablesFilter]);
+
+  const skipPageScroll = useRef(true);
+  useEffect(() => {
+    if (skipPageScroll.current) {
+      skipPageScroll.current = false;
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [page]);
 
   const filteredConsumables = useMemo(() => {
     if (!isConsumablesSlug) return products;
@@ -607,39 +633,68 @@ function ProductListing() {
           {/* Pagination */}
           {displayTotalPages > 1 && (
             <nav className="pagination" aria-label={t('products.pagination_label', 'Product pages')}>
-              <button
-                type="button"
-                className="page-btn page-btn--nav"
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                disabled={page === 1}
-              >
-                {t('products.prev')}
-              </button>
-              <div className="pagination-pages" role="group" aria-label={t('products.pagination_pages', 'Page numbers')}>
-                {Array.from({ length: displayTotalPages }, (_, i) => i + 1).map((n) => (
-                  <button
-                    key={n}
-                    type="button"
-                    className={`page-num-btn${page === n ? ' active' : ''}`}
-                    onClick={() => setPage(n)}
-                    aria-current={page === n ? 'page' : undefined}
-                    aria-label={t('products.page_go', { page: n, defaultValue: `Page ${n}` })}
-                  >
-                    {n}
-                  </button>
-                ))}
+              <div className="pagination-bar">
+                <button
+                  type="button"
+                  className="page-btn page-btn--nav"
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  disabled={page === 1}
+                >
+                  {t('products.prev')}
+                </button>
+                <div className="pagination-pages" role="group" aria-label={t('products.pagination_pages', 'Page numbers')}>
+                  {pageWindow(page, displayTotalPages).map((item, index) => (
+                    item === 'gap' ? (
+                      <span key={`gap-${index}`} className="page-ellipsis" aria-hidden="true">…</span>
+                    ) : (
+                      <button
+                        key={item}
+                        type="button"
+                        className={`page-num-btn${page === item ? ' active' : ''}`}
+                        onClick={() => setPage(item)}
+                        aria-current={page === item ? 'page' : undefined}
+                        aria-label={t('products.page_go', { page: item })}
+                      >
+                        {item}
+                      </button>
+                    )
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="page-btn page-btn--nav"
+                  onClick={() => setPage((p) => Math.min(displayTotalPages, p + 1))}
+                  disabled={page === displayTotalPages}
+                >
+                  {t('products.next')}
+                </button>
               </div>
-              <button
-                type="button"
-                className="page-btn page-btn--nav"
-                onClick={() => setPage((p) => Math.min(displayTotalPages, p + 1))}
-                disabled={page === displayTotalPages}
-              >
-                {t('products.next')}
-              </button>
               <p className="page-info">
                 {t('products.page_info', { page, totalPages: displayTotalPages, total: displayTotal })}
               </p>
+              {displayTotalPages > 7 && (
+                <form
+                  className="page-jump"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    const next = Number(new FormData(event.currentTarget).get('jump'));
+                    if (next >= 1 && next <= displayTotalPages) setPage(next);
+                    event.currentTarget.reset();
+                  }}
+                >
+                  <label htmlFor="product-page-jump">{t('products.page_jump')}</label>
+                  <input
+                    id="product-page-jump"
+                    name="jump"
+                    type="number"
+                    min="1"
+                    max={displayTotalPages}
+                    placeholder={String(page)}
+                    aria-label={t('products.page_jump')}
+                  />
+                  <button type="submit">{t('products.page_jump_go')}</button>
+                </form>
+              )}
             </nav>
           )}
         </>
